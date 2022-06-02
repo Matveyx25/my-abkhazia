@@ -2,7 +2,8 @@ import React from 'react'
 import Header from '../../components/Header/Header'
 import s from './AccountHotel.module.css'
 import { Sidebar } from '../../components/Sidebar/Sidebar';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
+import { Profile } from './pages/Profile';
 
 export const AccountHotel = () => {
   const location = useLocation()
@@ -17,14 +18,16 @@ export const AccountHotel = () => {
         <div className={s.container}>
             <div className={s.flex}>
                 <Sidebar />
-                <Routes>
-                  <Route exact path={location.pathname}>
-                    <h3>Please select a topic.</h3>
-                  </Route>
-                  <Route path={`${location.pathname}/profile`}>
-                    <>LK</>
-                  </Route>
-                </Routes>
+                <div className={s.contentWrapper}>
+                  <Routes>
+                    <Route
+                        path="/"
+                        exact
+                        element={<Navigate to="profile" replace />}
+                    />
+                    <Route index path="profile" element={<Profile/>}/>
+                  </Routes>
+                </div>
             </div>
         </div>
     </div>

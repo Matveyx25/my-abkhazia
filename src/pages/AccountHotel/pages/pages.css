@@ -1,0 +1,90 @@
+.account-page__title{
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+.account-page__image-wrapper{
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 86px;
+    overflow: hidden;
+}
+.account-page__image-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.account-page__info-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+}
+.account-page__info-list li:not(:last-child){
+    margin-bottom: 10px;
+}
+.account-page__info-list .mute{
+    color: rgba(0, 0, 0, 0.6);
+    margin-right: 10px;
+}
+.account-page__info-list .blue{
+    font-family: 'Century Gothic';
+    font-weight: 400;
+    font-size: 14px;
+    color: #58B4D1;
+    margin-left: 10px;
+}
+.account-page__jcsb{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.account-page__section:not(:last-child){
+    margin-bottom: 56px;
+}
+.account-page__section:last-child{
+    margin-bottom: 30px;
+}
+.account-page__btn{
+    width: 231px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+}
+.account-page__btn-outline{
+    width: 231px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #58B4D1;
+    background: #FFFFFF;
+    border: 1px solid #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    justify-content: center;
+}
+.account-page__row{
+    display: flex;
+    flex-direction: row;
+}
+.account-page__row button:not(:last-child){
+    margin-right: 34px;
+}

@@ -304,7 +304,7 @@ const Header = ({ wallet, closeEmail }) => {
             <p className="header__login-name">Анастасия</p>
             {menu && (
               <ul className="login-name__menu">
-                <li className="login-name__menu-item">Мой кабинет</li>
+                <li className="login-name__menu-item"><Link to="/hotel-account">Мой кабинет</Link></li>
                 <li className="login-name__menu-item">Добавить услугу</li>
                 <li
                   className="login-name__menu-item"
@@ -406,7 +406,7 @@ const Header = ({ wallet, closeEmail }) => {
               {/* )}  */}
             </article>
             <ul className="login-name__menu--mobile">
-              <li className="menu-mobile__item">Мой кабинет</li>
+              <li className="menu-mobile__item"><Link to="/hotel-account">Мой кабинет</Link></li>
               <li className="menu-mobile__item">Добавить услугу</li>
               <li
                 className="menu-mobile__item"

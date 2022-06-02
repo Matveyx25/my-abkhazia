@@ -47,7 +47,7 @@ function App() {
           <Route path="/report-problem" element={<ReportProblem />} />
           <Route path="/check-data" element={<CheckData />} />   
 
-          <Route path="/hotel-account/" element={<AccountHotel />} />     
+          <Route path="/hotel-account/*" element={<AccountHotel />} />     
         </Routes>
       </BrowserRouter>
     </div>
