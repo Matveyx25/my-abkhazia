@@ -1,0 +1,443 @@
+.check-data {
+  position: relative;
+}
+.check-data__check-block {
+  min-width: 350px;
+  min-height: 100px;
+  background-color: green;
+}
+.check-data__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.check-data__left-sidebar {
+  flex-grow: 5;
+  padding-right: 30px;
+}
+.check-data__cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.check-data__card {
+  width: 50%;
+  box-sizing: border-box;
+  padding-right: 30px;
+}
+.image-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.check-data__card-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+.check-data__card-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.check-data__card-sub-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+.check-data__card-link {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: #fb8500;
+  cursor: pointer;
+}
+.check-data__card-blue-block {
+  margin-top: 25px;
+  width: 100%;
+  padding: 20px 25px;
+  background: rgb(35%, 71%, 82%, 0.3);
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+.check-data__card-blue-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.check-data__card-blue-item-text {
+  margin-left: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+.check-data__card-blue-item:first-child {
+  margin-bottom: 10px;
+}
+.check-data__check-block {
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+.check-data__check-block-title {
+  padding: 20px 0;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  border-bottom: 1px #000000 solid;
+}
+.check-data__check-block-main-image {
+  display: block;
+  margin: 20px auto;
+}
+.check-block__card-name {
+  padding: 0px 20px;
+  margin-bottom: 5px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.check-block__card-type {
+  padding: 0 20px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  margin-bottom: 6px;
+}
+.check-block__card-sub-text-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+.check-block__card-sub-text {
+  margin-left: 8px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+}
+.check-block__zaezd-i-viezd {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-bottom: 1px black solid;
+  border-top: 1px black solid;
+  margin-top: 20px;
+}
+.check-block__zaezd-i-viezd-item {
+  width: 49%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.zaezd-i-viezd-item__title {
+  margin-bottom: 10px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.zaezd-i-viezd-item__text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.check-block__blue-label {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px;
+  width: 310px;
+  padding: 15px;
+  box-sizing: border-box;
+  background: rgb(35%, 71%, 82%, 0.3);
+  border-radius: 25px;
+}
+.check-block__blue-label-item {
+  margin: 0 20px;
+}
+.blue-label-item__number {
+  display: block;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+}
+.blue-label-item__text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #000000;
+}
+.check-block__price {
+  padding: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px black solid;
+  border-top: 1px black solid;
+}
+.check-block__price-item {
+  margin-bottom: 15px;
+}
+.check-block__price-item-text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.check-block__price-item-number {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.check-block__end-block {
+  padding: 20px;
+}
+.end-block__danger {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #ffffff;
+  border: 1px solid #e3170a;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  color: #e3170a;
+  text-align: center;
+}
+.end-block__wrapper-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.wrapper-price__item-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+.wrapper-price__item-number {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #58b4d1;
+}
+.wrapper-price__item-number--owner {
+  color: black;
+}
+.end-block__pay {
+  margin-top: 20px;
+  padding: 13px 5px;
+  width: 310px;
+  box-sizing: border-box;
+  background: #58b4d1;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+.check-block__zaezd-i-viezd-item--transfer {
+  width: 100%;
+}
+/* Модальное окно выбора оплаты */
+.modal-pay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-pay__wrapper {
+  position: relative;
+  width: 540px;
+  box-sizing: border-box;
+  padding: 60px;
+  background: #ffffff;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+.modal-pay__title {
+  display: block;
+  margin: 0 auto;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  padding-bottom: 10px;
+  width: 130px;
+  border-bottom: 1px solid #58b4d1;
+  margin-bottom: 30px;
+}
+.modal-pay__choise-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.modal-pay__submit {
+  margin-top: 30px;
+  padding: 13px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  background: #58b4d1;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.modal-pay__submit:hover {
+  box-shadow: 0px 4px 15px #58b4d1;
+}
+.modal-pay__close {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.modal-pay__close:hover {
+  box-shadow: 0px 4px 15px #58b4d1;
+}
+.check-pay-card {
+  margin-left: 20px;
+}
+.check-pay-card__block {
+  width: 320px;
+  padding: 30px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+}
+.check-pay-card__block-number-and-code {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+.block-number-and-code__number {
+  width: 48%;
+}
+.block-number-and-code__title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+.block-number-and-code__number {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.block-number-and-code__date {
+  width: 40%;
+}
+.type-of-card {
+  margin-top: 15px;
+}
+.modal-pay__thanks-text {
+  text-align: center;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.modal-pay__submit-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-pay__submit-wrapper .modal-pay__submit {
+  width: 40%;
+}
+.modal-pay__submit--white {
+  background: #ffffff;
+  color: #58b4d1;
+  box-sizing: border-box;
+  border: 1px #58b4d1 solid;
+}

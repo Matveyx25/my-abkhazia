@@ -1,0 +1,141 @@
+.transfer-automobile .page-way__decoration {
+  margin: 0 10px;
+}
+.transfer-automobile .housing-catalog__page-way {
+  width: 300px;
+}
+.page-way__first:hover,
+.transfer-automobile .page-way__second-automobile:hover {
+  color: #58b4d1;
+}
+.housing-catalog__searching-results-image {
+  position: relative;
+}
+.transfer-automobile__hour-message {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 8px 15px;
+  background: #ffffff;
+  border: 1px solid #fb8500;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #fb8500;
+}
+.transfer-automobile__offer {
+  width: 100%;
+  padding: 0 12%;
+  margin-top: 0px;
+  margin-bottom: 65px;
+  box-sizing: border-box;
+}
+.transfer-automobile__offer-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  width: 100%;
+  padding: 10px 25px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.transfer-automobile__sub-title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.transfer-automobile__sub-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.transfer-automobile__time-to-destination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 25px;
+}
+.transfer-automobile__time-to-destination-text {
+  margin-left: 6px;
+}
+
+.transfer-automobile__change-button {
+  padding: 10.5px 13px;
+  background: #58b4d1;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.transfer-automobile__change-button:hover {
+  opacity: 1;
+}
+.transfer-auto__add-back-travel {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: #58b4d1;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.transfer-auto__add-back-travel:hover {
+  opacity: 1;
+}
+.transfer-automobile__to,
+.transfer-automobile__back {
+  padding-right: 5px;
+}
+.transfer-automobile__time-to-destination {
+  min-width: 115px;
+}
+.transfer-booking__form {
+  margin-top: 30px;
+}
+
+@media (max-width: 800px) {
+  .transfer-automobile__offer-body {
+    display: block;
+  }
+  .transfer-automobile__sub-text {
+    margin-bottom: 24px;
+  }
+  .transfer-auto__add-back-travel {
+    margin-bottom: 24px;
+  }
+  .transfer-automobile__time-to-destination {
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+  .transfer-automobile__change-button {
+    margin-bottom: 10px;
+  }
+  .transfer-booking__form-submit {
+    margin-bottom: 20px;
+  }
+}

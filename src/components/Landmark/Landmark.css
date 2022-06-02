@@ -1,0 +1,130 @@
+.landmarks {
+  padding: 0 12%;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 65px;
+}
+.landmarks__title {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.landmarks__title-text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-right: 60px;
+}
+.landmarks__title-decoration {
+  height: 1px;
+  min-width: 1px;
+  background: black;
+  flex-grow: 7;
+}
+.landmarks__options {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.landmarks__option {
+  width: 33%;
+  box-sizing: border-box;
+  padding-right: 100px;
+  padding-bottom: 20px;
+}
+.landmarks__option-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 17px;
+}
+.landmarks__option-title-image-wrapper {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+}
+.landmarks__option-title-text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.landmarks__option-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.landmarks__option-item-type {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.landmarks__option-item-number {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+
+@media (max-width: 1350px) {
+  .landmarks__option {
+    padding-right: 50px;
+  }
+}
+@media (max-width: 1150px) {
+  .landmarks {
+    padding: 0 5%;
+  }
+}
+@media (max-width: 950px) {
+  .landmarks__option {
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 100px;
+  }
+}
+@media (max-width: 800px) {
+  .landmarks__option {
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 650px) {
+  .landmarks__title-text {
+    margin-right: 17px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .landmarks__option {
+    width: 100%;
+    max-width: 350px;
+    padding-right: 0px;
+  }
+}
+@media (max-width: 450px) {
+    .landmarks__option {
+        width: 100%;
+        max-width: none;
+        padding-right: 0px;
+      }
+}

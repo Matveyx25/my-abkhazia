@@ -1,0 +1,21 @@
+.searching-results__item .searching-results__additions {
+  border-left: 1px solid #dfdfdf !important;
+  padding-left: 2px;
+}
+.housing-catalog__searching-results-item
+  .housing-catalog__searching-results-image {
+  border-top-right-radius: 0px;
+}
+.housing-catalog__searching-results-item .searching-results-image__image {
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 25px;
+}
+@media (max-width: 1150px) {
+  .housing-catalog__searching-results-item .searching-results-image__image {
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 0px;
+  }
+  .searching-results__item .searching-results__price {
+    text-align: left;
+  }
+}

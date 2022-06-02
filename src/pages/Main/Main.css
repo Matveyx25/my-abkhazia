@@ -1,0 +1,908 @@
+.main__banner {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 20px 12% 20px 12%;
+  background: url(../../../public/images/main-banner.jpg) no-repeat;
+  background-size: cover;
+}
+.main__banner-title {
+  max-width: 770px;
+  margin: 0 auto;
+  margin-top: 120px;
+  margin-bottom: 50px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 69px;
+  text-align: center;
+  color: #ffffff;
+}
+.main__banner-slogan {
+  max-width: 770px;
+  padding-bottom: 55px;
+  margin: 0 auto;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  text-align: center;
+}
+.main__banner-link-list {
+  position: relative;
+  bottom: -75px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 25px 0px 25px 0px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+}
+.main__banner-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 70px;
+}
+.main__banner-link:hover .main__banner-link-text {
+  color: #58b4d1;
+}
+.main__banner-link-image {
+  display: block;
+  margin: 0 auto;
+}
+.main__banner-link-text {
+  width: 100%;
+  text-align: center;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+/* Исследуйте Абхазию */
+
+.main__explore-abkhazia {
+  width: 100%;
+  padding: 175px 12% 120px 12%;
+  box-sizing: border-box;
+}
+.explore-abkhazia__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.explore-abkhazia__title-text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: #000000;
+  margin-right: 36px;
+}
+.explore-abkhazia__title-strike {
+  min-width: 5px;
+  height: 2px;
+  background: #000000;
+  flex-grow: 77;
+}
+.explore-abkhazia__town-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 1160px;
+  margin: 0 auto;
+}
+.town-images__gagra,
+.town-images__wrapper {
+  height: 430px;
+}
+.town-images__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.town-images__town {
+  position: relative;
+  min-height: 200px;
+  background-size: auto, 100%;
+  width: 350px;
+}
+.town-images__gagra {
+  width: 400px;
+}
+.town-images__town .town-images__absolute-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.town-images__title {
+  position: relative;
+  z-index: 2;
+  margin: 35px 0 0 20px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+}
+
+/*  Лучшие предложения */
+.main__top-destinations {
+  width: 100%;
+  padding: 0 12% 120px 12%;
+  box-sizing: border-box;
+}
+.top-destinations__slider--mobile {
+  display: none;
+}
+.top-destinations__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.top-destinations__title-text {
+  margin: 0 82px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  text-align: center;
+  color: #000000;
+}
+.top-destinations__title-strike {
+  height: 2px;
+  min-width: 5px;
+  flex-grow: 77;
+  background: #000000;
+}
+
+.top-destinations__slider {
+  position: relative;
+}
+
+.top-destinations__slider-left,
+.top-destinations__slider-right {
+  position: absolute;
+  top: 130px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  mask-image: url(../../../public/images/main-arrow-left.svg);
+  background-color: #58b4d1;
+  cursor: pointer;
+}
+.top-destinations__slider-left:hover,
+.top-destinations__slider-right:hover {
+  opacity: 0.8;
+  box-shadow: 0px 4px 15px #58b4d1;
+}
+
+.top-destinations__slider-left {
+  left: -67px;
+}
+.top-destinations__slider-right {
+  right: -67px;
+  transform: rotate(180deg);
+}
+
+.top-destinations__slider-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.top-destinations__slider-item {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: url(../../../public/images/main-slider-gag-waterfall.jpg)
+    no-repeat;
+  background-size: 100%, auto;
+}
+.slider-item--gag-waterfall {
+  background: url(../../../public/images/main-slider-gag-waterfall.jpg)
+    no-repeat;
+}
+.slider-item--ritsa {
+  background: url(../../../public/images/main-slider-ritsa.jpg) no-repeat;
+}
+.slider-item--kundig {
+  background: url(../../../public/images/main-slider-kundig.jpg) no-repeat;
+}
+.slider-item--new-afon {
+  background: url(../../../public/images/main-slider-new-afon.jpg) no-repeat;
+}
+.slider-item--lost-town {
+  background: url(../../../public/images/main-slider-lost-town.jpg) no-repeat;
+}
+.slider-item--gagra {
+  background: url(../../../public/images/main-slider-gagra.jpg) no-repeat;
+}
+.top-destinations__slider-item:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: 105px;
+  background: #ffffff;
+  opacity: 0.7;
+  border-radius: 0px 0px 25px 25px;
+  z-index: 2;
+}
+.top-destinations__slider-title {
+  position: relative;
+  z-index: 3;
+  margin-top: 250px;
+  display: block;
+  width: 100%;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 6px;
+}
+.top-destinations__slider-stars {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.top-destinations__slider-star {
+  margin-right: 4px;
+}
+.top-destinations__slider-category {
+  position: relative;
+  z-index: 3;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/*   Города Абхазии       */
+
+.main__cities-of-abkhazia {
+  width: 100%;
+  padding: 0 12%;
+  box-sizing: border-box;
+}
+.cities-of-abkhazia__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 55px;
+}
+.cities-of-abkhazia__title-text {
+  margin-right: 50px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: #000000;
+}
+.cities-of-abkhazia__title-decoration {
+  height: 2px;
+  min-width: 5px;
+  background: #000000;
+  flex-grow: 77;
+}
+.cities-of-abkhazia__map {
+  position: relative;
+  width: 1110px;
+  height: 785px;
+  margin: 0 auto;
+  background: url(../../../public/images/main-map.jpg);
+  background-size: 100%, auto;
+}
+
+.map__item {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.map-item__circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px transparent solid;
+}
+.map-item__image {
+  display: none;
+  position: relative;
+  top: -50px;
+  right: -20px;
+  border: 1px solid #58b4d1;
+  border-radius: 25px;
+}
+.map__gagra {
+  top: 19.1%;
+  left: 13.4%;
+}
+.map__ritsa {
+  top: 6.6242%;
+  left: 27.5676%;
+}
+.map__pitsunda {
+  top: 32.5%;
+  left: 16.3%;
+}
+.map__new-afon {
+  top: 38.9%;
+  left: 38%;
+}
+.map__suhum {
+  top: 46.4968%;
+  left: 47.5775%;
+}
+.map__tkuarchal {
+  top: 62.7%;
+  left: 78.098%;
+}
+.map__item:hover .map-item__circle {
+  background: #fb8500;
+  border: 1px #fb8500 solid;
+}
+.map__item:hover .map-item__image {
+  display: block;
+}
+
+.map__ritsa .map-item__image,
+.map__tkuarchal .map-item__image {
+  right: 240px;
+}
+/* Кухня и автомобиль */
+.main__kitchen-and-car {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 120px 12%;
+  box-sizing: border-box;
+}
+.kitchen-and-car__car,
+.kitchen-and-car__kitchen {
+  width: 48%;
+}
+.kitchen-and-car__title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: #000000;
+  margin-bottom: 50px;
+}
+.kitchen-and-car__car-image {
+  background: url(../../../public/images/main-car.jpg) no-repeat;
+  min-height: 500px;
+  background-size: cover;
+}
+.kitchen-and-car__kitchen-image {
+  background: url(../../../public/images/main-kitchen.jpg) no-repeat;
+  min-height: 500px;
+  background-size: cover;
+}
+
+.kitchen-and-car__kitchen-title,
+.kitchen-and-car__car-title {
+  padding: 35px 0 20px 35px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+}
+.kitchen-and-car__car-link,
+.kitchen-and-car__kitchen-link {
+  display: block;
+  width: 160px;
+  margin-left: 35px;
+  padding: 15px 41px;
+  box-sizing: border-box;
+  background: #58b4d1;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+}
+.kitchen-and-car__car-link:hover,
+.kitchen-and-car__kitchen-link:hover {
+  background: #58b4d1;
+  box-shadow: 0px 4px 15px #58b4d1;
+}
+
+@media (max-width: 1500px) {
+  .explore-abkhazia__town-images {
+    width: 780px;
+  }
+  .town-images__wrapper--pitsunda {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 780px;
+    height: 260px;
+  }
+  .town-images__pitsunda {
+    width: 400px;
+  }
+}
+@media (max-width: 1400px) {
+  .top-destinations__slider-item {
+    width: 300px;
+    height: 300px;
+    border-radius: 25px;
+  }
+  .top-destinations__slider-title {
+    margin-top: 190px;
+  }
+  .top-destinations__slider-item:before {
+    width: 300px;
+  }
+  .top-destinations__slider-left,
+  .top-destinations__slider-right {
+    top: 120px;
+  }
+  .cities-of-abkhazia__map {
+    position: relative;
+    width: 740px;
+    height: 523px;
+    margin: 0 auto;
+    background: url(../../../public/images/main-map.jpg);
+    background-size: 100%, auto;
+  }
+}
+@media (max-width: 1200px) {
+  .top-destinations__slider-item {
+    width: 250px;
+    height: 250px;
+  }
+  .top-destinations__slider-title {
+    margin-top: 140px;
+    min-height: 40px;
+  }
+  .top-destinations__slider-item:before {
+    width: 100%;
+    height: 105px;
+  }
+  .top-destinations__slider-left,
+  .top-destinations__slider-right {
+    top: 90px;
+  }
+}
+@media (max-width: 1100px) {
+  /* Откройте все грани */
+  .main__banner-title {
+    font-size: 40px;
+    line-height: 46px;
+  }
+
+  .main__banner-link-list {
+    display: none;
+  }
+}
+@media (max-width: 1050px) {
+  /* Исследуйте Абхазию */
+  .main__explore-abkhazia {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 90px 5% 48px 5%;
+  }
+
+  /* Лучшие направления */
+  .main__top-destinations {
+    padding-bottom: 20px;
+  }
+
+  .top-destinations__title-text {
+    font-size: 40px;
+    line-height: 49px;
+    margin-right: 24px;
+    margin-left: 24px;
+  }
+
+  .top-destinations__slider {
+    display: none;
+  }
+  .top-destinations__slider--mobile {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .top-destinations__slider-left--mobile,
+  .top-destinations__slider-right--mobile {
+    position: absolute;
+    top: 224px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .top-destinations__slider-right--mobile img {
+    transform: rotate(180deg);
+  }
+  .top-destinations__slider-left--mobile:hover,
+  .top-destinations__slider-right--mobile:hover {
+    box-shadow: 0px 4px 15px #58b4d1;
+  }
+  .top-destinations__slider-left--mobile {
+    left: 10px;
+  }
+  .top-destinations__slider-right--mobile {
+    right: 10px;
+  }
+  .top-destinations__slider-item {
+    width: 100%;
+    height: 500px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .top-destinations__slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+  .main__top-destinations {
+    padding: 0 5%;
+  }
+  .top-destinations__slider-title {
+    margin-top: 385px;
+  }
+
+  /* Города Абхазии */
+  .main__cities-of-abkhazia {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 48px 5%;
+  }
+  .cities-of-abkhazia__title {
+    margin-right: 25px;
+  }
+  .cities-of-abkhazia__title-text {
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    color: #000000;
+    margin-right: 25px;
+  }
+  .cities-of-abkhazia__map {
+    max-width: 700px;
+    max-height: 500px;
+  }
+  /* Кухня и авто */
+  .main__kitchen-and-car {
+    display: block;
+    width: 100%;
+    padding: 48px 5%;
+    box-sizing: border-box;
+  }
+  .kitchen-and-car__car {
+    width: 100%;
+  }
+  .kitchen-and-car__title {
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 42px;
+    color: #000000;
+    width: 100%;
+    margin-bottom: 34px;
+  }
+  .kitchen-and-car__kitchen {
+    width: 100%;
+    margin-top: 16px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 850px) {
+  /* Исследуйте Абхазию */
+  .explore-abkhazia__town-images {
+    display: block;
+    width: 100%;
+    min-width: none;
+    max-height: none;
+  }
+  .town-images__gagra {
+    max-width: 100%;
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+    min-height: 72.9%;
+    background-size: 100%, 100%;
+    margin-bottom: 12px;
+  }
+  .town-images__gagra .town-images__title {
+    margin: 0;
+    padding: 0;
+  }
+  .town-images__wrapper {
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: none;
+    max-height: none;
+    height: auto;
+  }
+  .town-images__town {
+    min-width: none;
+    width: 100%;
+    height: 57%;
+    min-height: 310px;
+    box-sizing: border-box;
+    background-size: 100%, 100%;
+    margin: 16px 0;
+  }
+  .town-images__title {
+    padding: 16px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  /* Исследуйте Абхазию */
+  .explore-abkhazia__title {
+    margin-bottom: 24px;
+  }
+  .explore-abkhazia__title-text {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  /* Лучшие направления */
+  .main__top-destinations {
+    padding: 0 5%;
+  }
+  .main__top-destinations .top-destinations__title {
+    margin-right: 0;
+    padding-bottom: 0;
+    margin-bottom: 30px;
+  }
+
+  .top-destinations__title-text {
+    font-size: 30px;
+    line-height: 36px;
+    margin-right: 18px;
+    margin-left: 18px;
+  }
+
+  /* Города Абхазии */
+  .cities-of-abkhazia__map {
+    max-width: 540px;
+    max-height: 381px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Откройте все грани */
+  .main__banner-title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  /* Исследуйте Абхазию */
+  .explore-abkhazia__title-text {
+    font-size: 26px;
+    line-height: 30px;
+    margin-right: 16px;
+  }
+  .town-images__town {
+    min-height: 230px;
+  }
+
+  /* Лучшие направления */
+
+  .top-destinations__slider-item {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .top-destinations__slider--mobile {
+    width: 100%;
+    height: 300px;
+  }
+  .top-destinations__title {
+    padding-bottom: 0;
+    margin-right: 30px;
+  }
+
+  .top-destinations__title-text {
+    font-size: 26px;
+    line-height: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .top-destinations__slider-left--mobile,
+  .top-destinations__slider-right--mobile {
+    top: 134px;
+    width: 52px;
+    height: 52px;
+  }
+  .top-destinations__slider-right--mobile img {
+    transform: rotate(180deg);
+  }
+  .top-destinations__slider-left--mobile:hover,
+  .top-destinations__slider-right--mobile:hover {
+    background: #747474;
+  }
+
+  .top-destinations__slider-item {
+    width: 100%;
+    height: 300px;
+  }
+  .top-destinations__slider-item:before {
+    width: 100%;
+  }
+  .top-destinations__slider-title {
+    margin-top: 185px;
+  }
+
+  /* Города Абхазии */
+  .main__cities-of-abkhazia {
+    color: #000000;
+  }
+  .cities-of-abkhazia__title-text {
+    margin-right: 12px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .cities-of-abkhazia__map {
+    max-width: 500px;
+    max-height: 357px;
+  }
+  .cities-of-abkhazia__map {
+    max-width: 400px;
+    max-height: 283px;
+  }
+
+  .map-item__circle {
+    width: 15px;
+    height: 15px;
+  }
+
+  .map__gagra {
+    top: 17.8%;
+    left: 12.5%;
+  }
+  .map__ritsa {
+    top: 5.7%;
+    left: 26.5%;
+  }
+  .map__pitsunda {
+    top: 31%;
+    left: 15%;
+  }
+  .map__new-afon {
+    top: 37.3%;
+    left: 37.3%;
+  }
+  .map__suhum {
+    top: 45%;
+    left: 46.5%;
+  }
+  .map__tkuarchal {
+    top: 61.5%;
+    left: 77%;
+  }
+  .map__ritsa .map-item__image {
+    left: 20px;
+  }
+
+  .map-item__image {
+    width: 150px;
+    height: 94.5px;
+  }
+
+  /* Кухня и авто */
+  .kitchen-and-car__title {
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+  .kitchen-and-car__kitchen-image,
+  .kitchen-and-car__car-image {
+    min-height: 400px;
+  }
+  .kitchen-and-car__car-title,
+  .kitchen-and-car__kitchen-title {
+    padding-top: 16px;
+    padding-left: 16px;
+  }
+  .kitchen-and-car__car-link,
+  .kitchen-and-car__kitchen-link {
+    margin-left: 16px;
+  }
+  .map__tkuarchal .map-item__image {
+    right: 180px;
+  }
+}
+@media (max-width: 450px) {
+  /* Откройте все грани */
+  .main__banner-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  /* Исследуйте Абхазию */
+  .explore-abkhazia__title-text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .main__banner-slogan {
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .town-images__town {
+    min-height: 165px;
+  }
+
+  /* Города Абхазии */
+  .cities-of-abkhazia__map {
+    max-width: 280px;
+    max-height: 198px;
+  }
+
+  .map-item__image {
+    width: 150px;
+    height: 95px;
+    top: -35px;
+    right: -10px;
+    border-radius: 10px;
+  }
+  .map__tkuarchal .map-item__image {
+    right: 180px;
+  }
+
+  /* Кухня и авто */
+  .kitchen-and-car__kitchen-image,
+  .kitchen-and-car__car-image {
+    min-height: 269px;
+  }
+}

@@ -1,0 +1,572 @@
+.transfer-catalog__go-back {
+  padding: 15px 12%;
+  margin-bottom: 25px;
+}
+.transfer-catalog__go-back-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.transfer-catalog__go-back-image {
+  margin-right: 10px;
+}
+.transfer-catalog__go-back-text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+.transfer-catalog__stages-of-registration {
+  padding: 0 12%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 65px;
+}
+.stages-of-registration__number {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #58b4d1;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+.stages-of-registration__text {
+  margin: 0 10px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+.stages-of-registration__decoration {
+  width: 210px;
+  height: 1px;
+  margin: 0 10px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.stages-of-registration__number--non-active {
+  opacity: 0.5;
+}
+.stages-of-registration__text__number--non-active {
+  opacity: 0.3;
+}
+
+.transfer-catalog__order {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 12%;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+/* Левый Sidebar */
+.transfer-catalog__order-data {
+  flex-grow: 77;
+  min-width: 100px;
+}
+
+.transfer-order__message {
+  position: relative;
+  margin-right: 30px;
+  padding: 20px 40px 20px 44px;
+  box-sizing: border-box;
+  background: rgba(88, 180, 209, 0.3);
+  border-radius: 25px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+.transfer-catalog__order-data--absolute {
+  position: absolute;
+  top: 21px;
+  left: 25px;
+  z-index: 2;
+}
+.transfer-catalog__order-title-wrapper {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 30px 30px 0;
+}
+.order-title-wrapper__text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  margin-right: 26px;
+}
+.order-title-wrapper__decoration {
+  height: 1px;
+  min-width: 25px;
+  background: black;
+  flex-grow: 77;
+}
+.transfer-catalog__contacts {
+  width: 350px;
+  padding: 12px 25px;
+  box-sizing: border-box;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  margin-bottom: 32px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.transfer-catalog__contacts-image {
+  margin-left: 10px;
+}
+.transfer-catalog__alert-message {
+  margin-top: 40px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+}
+.transfer-catalog__calculator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+}
+.transfer-catalog__calculator-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 30px 0;
+  max-width: 350px;
+}
+.calculator-block__title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.calculator-block__weight {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.calculator-block__price {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #58b4d1;
+}
+/*
+    Форма заказа
+*/
+.transfer-catalog__order-check {
+  width: 350px;
+  min-width: 350px;
+  padding: 20px 0;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+.order-check__title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  padding-bottom: 20px;
+  border-bottom: 1px black solid;
+}
+.order-check__auto {
+  position: relative;
+  padding: 20px 20px 20px 50px;
+}
+.order-check__auto-image {
+  position: absolute;
+  top: 23.2px;
+  left: 21.6px;
+}
+.order-check__auto-type {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.order-check__auto-passengers {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.order-check__way-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 20px 15px 20px;
+}
+.order-check__way-where-and-price {
+  display: block;
+  width: 50%;
+}
+.order-check__way-where {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  margin-bottom: 7px;
+}
+.order-check__way-price {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.order-check__way-direction {
+  width: 40%;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.3);
+}
+.order-check__total {
+  border-top: 1px black solid;
+}
+.order-check__auto-type {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.order-check__result {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.order-check__price {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #58b4d1;
+  margin: 10px 0px 15px 20px;
+}
+.order-check__submit {
+  padding: 13px 0;
+  background: #58b4d1;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  margin: 20px 15px 0px 20px;
+}
+.booking-to__time {
+  position: relative;
+  padding-left: 24px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  margin-bottom: 25px;
+}
+.booking-to__time:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: url(../../../public/images/transfer/timer-blue.svg);
+}
+.booking-to__description {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  margin-bottom: 14px;
+}
+.booking-to__place {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.booking-to__ticket {
+  padding: 12px 25px;
+  margin-right: 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  max-width: 100%;
+  min-width: 180px;
+  box-sizing: border-box;
+}
+.transfer-catalog__booking {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-right: 30px;
+}
+
+.transfer-catalog__booking-to-passengers {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  margin-top: 20px;
+}
+.transfer-catalog__booking-wrapper {
+  width: 50%;
+  border-right: 1px #dfdfdf solid;
+}
+.transfer-catalog__back {
+  width: 50%;
+  padding-left: 15px;
+  box-sizing: border-box;
+  height: 100%;
+}
+.back-timer__tongler {
+  width: 40px;
+  height: 20px;
+  padding: 2px 2px;
+  background: #58b4d1;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+.back-timer__tongler-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: white;
+  margin-left: auto;
+}
+.back-timer__tongler--non-active {
+  background: #dfdfdf;
+}
+.back-timer__tongler--non-active .back-timer__tongler-circle {
+  background: rgba(0, 0, 0, 0.6);
+  margin-left: 0;
+  margin-right: auto;
+}
+.transfer-catalog__back-timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 27px;
+}
+.transfer-catalog__where-is-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.transfer-catalog .transfer-catalog__item .transfer-booking__form-search {
+  margin-left: 0;
+}
+.transfer-catalog
+  .transfer-catalog__item
+  .transfer-booking__form-image--calendar {
+  left: 30px;
+  top: 28px;
+}
+.transfer-catalog .transfer-catalog__item .transfer-booking__form-search--data {
+  border-right: none;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  padding: 15px 19px 15px 38px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 30px;
+  width: 180px;
+}
+.transfer-catalog .transfer-catalog__item .transfer-booking__form-search--time {
+}
+.transfer-catalog .transfer-catalog__item:before {
+  display: none;
+}
+.transfer-catalog .transfer-catalog__item .transfer-booking__form-search--time {
+  border-right: none;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  padding: 15px 19px 15px 38px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 100px;
+}
+.transfer-catalog .transfer-catalog__item .transfer-booking__form-image--time {
+  left: 45px;
+}
+.transfer-catalog .form-search--data__calendar-wrapper {
+  left: 15px;
+  top: 60px;
+}
+.transfer-catalog__time-and-date {
+  margin-top: 35px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.transfer-catalog__underline {
+  text-decoration: underline;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  cursor: pointer;
+}
+@media (max-width: 1400px) {
+  .transfer-catalog__order {
+    display: block;
+  }
+  .transfer-catalog__order-check {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1150px) {
+  .transfer-catalog__go-back,
+  .transfer-catalog__stages-of-registration,
+  .transfer-catalog__order {
+    padding: 0 5%;
+  }
+}
+@media (max-width: 800px) {
+  .transfer-catalog
+    .transfer-catalog__item
+    .transfer-booking__form-search--time {
+    margin-right: 0;
+  }
+  .transfer-catalog
+    .transfer-catalog__item
+    .transfer-booking__form-search--data {
+    margin-right: 0;
+  }
+  .stages-of-registration__number {
+    min-width: 42px;
+  }
+}
+@media (max-width: 700px) {
+  .transfer-catalog__booking {
+    display: block;
+  }
+  .transfer-catalog__booking-wrapper {
+    border-right: 0px;
+    width: 100%;
+  }
+  .transfer-catalog__back {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .transfer-catalog__contacts {
+    width: 290px;
+  }
+  .transfer-catalog .transfer-catalog__order-check {
+    max-width: 280px;
+    min-width: 270px;
+  }
+  .stages-of-registration__text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .stages-of-registration__text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .stages-of-registration__text__number--non-active,
+  .stages-of-registration__text {
+    margin-right: 0;
+  }
+  .stages-of-registration__number {
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 4px;
+  }
+}

@@ -1,0 +1,60 @@
+.impression-card .blue-header__number {
+  margin-left: 5px;
+}
+.impression-card .description-properties__property-wrapper {
+  justify-content: flex-start;
+}
+.impression-card .description-properties__property-number {
+  margin-left: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.hotel-number .transfer-booking__form-item .transfer-booking__form-search {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+.form-time__input_radio {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
+.form-time__input_radio-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.form-time__input_radio-circle--active {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+}
+.impression-card .form-time__input-wrapper {
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  padding: 20px;
+  z-index: 78;
+}
+.form-time__input_radio-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}

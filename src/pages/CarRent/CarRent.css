@@ -1,0 +1,22 @@
+.car-rent__item {
+  flex-wrap: wrap;
+}
+.car-rent__sub-private {
+  width: 100%;
+  margin-top: 10px;
+  display: none;
+}
+.care-rent__main-input:checked ~ .car-rent__sub-private {
+  display: block;
+}
+.housing-catalog__searching-results-item {
+  box-sizing: border-box;
+}
+.housing-catalog__searching-results-image {
+  width: 100%;
+  border-radius: 25px;
+}
+.searching-results-image__image {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}

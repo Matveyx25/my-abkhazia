@@ -1,0 +1,810 @@
+/* Забронируйте трансфер */
+.transfer__booking {
+  width: 100%;
+  padding: 0 12%;
+  box-sizing: border-box;
+}
+.transfer__booking-tongler {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.booking-tongler__strike {
+  display: block;
+  width: 40px;
+  height: 20px;
+  padding: 2px;
+  background: #dfdfdf;
+  border-radius: 25px;
+  box-sizing: border-box;
+  margin-right: 6px;
+}
+.booking-tongler__strike--both {
+  background: #58b4d1;
+}
+.booking-tongler__circle {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  margin-left: 2px;
+}
+.booking-tongler__circle--both {
+  margin-right: 1px;
+  margin-left: auto;
+  background: #ffffff;
+}
+.booking-tongler__text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  padding-bottom: 5px;
+}
+
+.transfer-booking__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  margin-bottom: 65px;
+}
+.transfer-booking__form-item {
+  position: relative;
+  height: 100%;
+  border-radius: 25px;
+  flex-grow: 2;
+}
+.transfer-booking__form-item:before {
+  position: absolute;
+  content: "";
+  left: 17px;
+  top: 13px;
+  width: 1px;
+  height: 50px;
+  background: #dfdfdf;
+}
+.transfer-booking__form-item:first-child {
+  margin-left: -17px;
+}
+.transfer-booking__form-item:first-child:before {
+  display: none;
+}
+.transfer-booking__form-item:first-child .transfer-booking__form-top-text {
+  left: 37px;
+}
+.transfer-booking__form-top-text {
+  position: absolute;
+  top: 15px;
+  left: 37px;
+  display: block;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.transfer-booking__form-search {
+  display: block;
+  padding: 41px 10px 15px 38px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  margin-left: 17px;
+  border-radius: 25px;
+  outline: none;
+}
+.transfer-booking__form-search::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.transfer-booking__form-search::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.transfer-booking__form-search:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.transfer-booking__form-search::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.transfer-booking__form-search::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.transfer-booking__form-search:focus {
+  background: #58b4d1;
+  opacity: 0.3;
+}
+.transfer-booking__form-image {
+  position: absolute;
+  bottom: 19px;
+  left: 37px;
+}
+.transfer-booking__form-submit {
+  padding: 13px 45px;
+  background: #58b4d1;
+  opacity: 0.5;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  margin-right: 25px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+.transfer-booking__form-submit:hover {
+  opacity: 1;
+}
+.form-time__input-wrapper {
+  position: absolute;
+  top: 90px;
+  left: 17px;
+  width: 100%;
+  z-index: 10;
+  width: 170px;
+  box-sizing: border-box;
+}
+.form-time__input {
+  position: relative;
+  width: 100%;
+  padding: 12.5px 27px 12.5px 40px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  outline: #58b4d1;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.form-time__input:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: red;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+.transfer-booking__form-item--time {
+  margin-right: 17px;
+}
+.sub-menu__timer-image {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  width: 18px;
+  height: 19px;
+  background: url(../../../public/images/transfer/timer--black.svg) no-repeat;
+  z-index: 10;
+}
+.sub-menu__timer-arrow-down {
+  position: absolute;
+  top: 29px;
+  left: 100px;
+  background: url(../../../public/images/transfer/arrow-down.svg) no-repeat;
+  width: 13.3em;
+  height: 8px;
+}
+.sub-menu__timer-arrow-up {
+  position: absolute;
+  top: 8px;
+  left: 100px;
+  background: url(../../../public/images/transfer/arrow-up.svg) no-repeat;
+  width: 13.3em;
+  height: 8px;
+}
+.transfer-booking__form-search--time {
+  margin-left: 20px;
+  width: 170px;
+  box-sizing: border-box;
+  margin-right: -18px;
+}
+.transfer-booking__form-image--time {
+  bottom: 15px;
+}
+.transfer-booking__form-image--person {
+  bottom: 17px;
+}
+.transfer-booking__form-image--calendar {
+  bottom: 17px;
+}
+.transfer__title-strike {
+  height: 1px;
+}
+
+.transfer-booking__form-sub-menu {
+  position: absolute;
+  top: 90px;
+  left: 17px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 0px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  z-index: 8;
+  min-width: 210px;
+}
+.form-sub-menu__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 24px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.form-sub-menu__item:hover {
+  background: #58b4d1;
+  color: white;
+}
+.form-sub-menu__image-wrapper {
+  width: 24px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+}
+.form-sub-menu__image {
+}
+.transfer__person-sub-menu {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  top: 90px;
+  left: 17px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  z-index: 7;
+  min-width: 250px;
+}
+.person-sub-menu__age-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.person-sub-menu__age-type-block {
+  min-width: 100px;
+  margin-bottom: 15px;
+}
+.person-sub-menu__title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 4px;
+}
+.person-sub-menu__text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.person-sub-menu__minus,
+.person-sub-menu__plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  background-color: #58b4d1;
+  font-size: 20px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.person-sub-menu__minus:hover,
+.person-sub-menu__plus:hover {
+  opacity: 1;
+}
+.minus {
+  width: 10px;
+  height: 2px;
+  background: white;
+}
+.person-sub-menu__counter {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #000000;
+}
+.person-sub-menu__submit {
+  padding: 13px 40px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #58b4d1;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #58b4d1;
+  margin: 0 auto;
+}
+.person-sub-menu__submit:hover {
+  color: #ffffff;
+  background: #58b4d1;
+  border-color: #ffffff;
+}
+
+/* Как работает трансфер */
+
+.transfer__how-it-works {
+  width: 100%;
+  padding: 0 12%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 65px;
+}
+.how-it-works__card {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  width: 350px;
+  height: 281px;
+  left: 0px;
+  top: 0px;
+  background: #58b4d1;
+  border-radius: 25px;
+  box-sizing: border-box;
+  margin-right: 30px;
+  flex-grow: 2;
+}
+.how-it-works__card:last-child {
+  margin-right: 0;
+}
+.how-it-works__card-title {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.how-it-works__card-text-1 {
+  width: 100%;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  margin-bottom: -45px;
+}
+.how-it-works__card-text-2 {
+  width: 100%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+/*  В чем преимущества */
+
+.transfer__benefits {
+  padding: 0 12%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.transfer__benefits-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 0 auto;
+}
+.transfer-benefits__item {
+  position: relative;
+  width: 45%;
+  min-height: 170px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.transfer-benefits__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.transfer-benefits__title {
+  margin-top: 55px;
+  margin-bottom: 15px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+.transfer-benefits__text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+/* Транспорт на ваш выбор */
+
+.transfer__choise-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 12%;
+  margin-bottom: 65px;
+}
+.transfer__choise-item {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.15));
+  border-radius: 25px;
+  box-sizing: border-box;
+  margin-right: 30px;
+  flex-grow: 2;
+}
+.transfer__choise-item:last-child {
+  margin-right: 0;
+}
+.transfer__choise-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+.transfer__choise-text {
+  position: absolute;
+  top: 290px;
+  left: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+.form-search--data__calendar-wrapper {
+  position: absolute;
+  top: 90px;
+  right: -17px;
+  width: 300px;
+  z-index: 7;
+}
+.transfer-booking__form--back {
+  margin-top: -50px;
+}
+
+@media (max-width: 1600px) {
+  .transfer__choise-item {
+    height: 350px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .how-it-works__card {
+    width: 280px;
+  }
+
+  .transfer__choise-item {
+    height: 280px;
+  }
+  .transfer__choise-image {
+    height: 280px;
+  }
+  .transfer__choise-text {
+    top: 210px;
+    width: 230px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .transfer__booking {
+    padding: 0 5%;
+  }
+  .transfer__how-it-works {
+    padding: 0 5%;
+  }
+  .transfer__benefits {
+    padding: 0 5%;
+  }
+  .transfer__benefits-list {
+    width: 80%;
+  }
+  .transfer__choise-list {
+    padding: 0 5%;
+  }
+}
+@media (max-width: 1000px) {
+  .searching-results-title--transfer {
+    width: 580px;
+  }
+
+  .transfer-booking__form-search--data {
+    max-height: 85px;
+    overflow: hidden;
+  }
+
+  .how-it-works__card {
+    width: 235px;
+    padding: 20px;
+  }
+  .how-it-works__card-title {
+    font-size: 30px;
+    line-height: 32px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  .how-it-works__card-text-1 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .how-it-works__card-text-2 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .transfer__choise-item {
+    height: 250px;
+  }
+  .transfer__choise-image {
+    height: 250px;
+  }
+  .transfer__choise-text {
+    top: 150px;
+    width: 160px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+@media (max-width: 850px) {
+  .transfer__choise-item {
+    height: 230px;
+  }
+  .transfer__choise-image {
+    height: 230px;
+  }
+}
+
+@media (max-width: 800px) {
+  .cities__body-title .searching-results-title--transfer {
+    width: 470px;
+    max-width: 470px;
+  }
+  .transfer-booking__form-image--calendar {
+    bottom: 18px;
+  }
+  .form-search--data__calendar-wrapper {
+    right: none;
+    left: 0;
+  }
+  .transfer-booking__form {
+    display: block;
+  }
+  .transfer-booking__form-submit {
+    margin: 12px 5%;
+    width: 90%;
+    padding: 17px 0;
+    min-height: 43px;
+    box-sizing: border-box;
+  }
+  .transfer__person-sub-menu {
+    margin-right: 0px;
+    margin-left: 0;
+    left: 0;
+  }
+  .transfer-booking__form .transfer-booking__form-item {
+    position: relative;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .transfer-booking__form-item:after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: #dfdfdf;
+    display: block;
+    z-index: 12;
+  }
+  .transfer-booking__form-item--time:after {
+    display: none;
+  }
+  .transfer-booking__form-search {
+    margin-left: 0;
+    padding-left: 57px;
+  }
+  .transfer-booking__form-item:before {
+    display: none;
+  }
+  .transfer__how-it-works {
+    display: block;
+  }
+  .how-it-works__card {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    width: 100%;
+    height: 281px;
+    background: #58b4d1;
+    border-radius: 25px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-bottom: 12px;
+  }
+  .how-it-works__card-text-1 {
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .how-it-works__card-text-2 {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .how-it-works__card {
+    height: 350px;
+  }
+  .how-it-works__card-title {
+    font-size: 40px;
+    line-height: 49px;
+  }
+  .how-it-works__card-text-1 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .transfer__choise-item {
+    height: 210px;
+  }
+  .transfer__choise-image {
+    height: 210px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cities__body-title .searching-results-title--transfer {
+    width: 370px;
+    max-width: 370px;
+  }
+
+  .transfer__benefits-list {
+    display: block;
+  }
+  .transfer-benefits__item {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 10px;
+  }
+  .transfer-benefits__image {
+    position: absolute;
+    top: -50px;
+    left: 0;
+  }
+  .transfer-benefits__image--car {
+    top: -40px;
+  }
+  .transfer-benefits__image--tower {
+    top: -40px;
+  }
+  .transfer-benefits__image--mountains {
+    top: -35px;
+  }
+
+  .transfer__choise-list {
+    display: block;
+  }
+  .transfer__choise-item {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .transfer__choise-image {
+    width: 100%;
+    height: 400px;
+  }
+  .transfer__choise-text {
+    top: 340px;
+    width: 400px;
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .top-destinations__title {
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 450px) {
+  .cities__body-title .searching-results-title--transfer {
+    width: 270px;
+    max-width: 270px;
+  }
+
+  .housing-catalog__searching-results-title {
+    width: 220px;
+  }
+
+  .how-it-works__card {
+    width: 100%;
+  }
+  .transfer__choise-item {
+    width: 288px;
+    height: 288px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.15));
+    border-radius: 25px;
+  }
+  .transfer__choise-image {
+    width: 100%;
+    height: 288px;
+  }
+  .transfer__choise-text {
+    top: 225px;
+    width: 240px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

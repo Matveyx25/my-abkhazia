@@ -1,0 +1,730 @@
+label {
+  cursor: pointer;
+}
+
+.housing-catalog__link-list-wrapper {
+  width: 100%;
+  padding: 0 12%;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.housing-catalog__link-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px 10px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+}
+.link-item__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.link-item__link-image {
+  margin-right: 7px;
+}
+.link-item__link-text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.link-item__link-text:hover {
+  color: #58b4d1;
+}
+.link-item__link--active .link-item__link-text {
+  color: #58b4d1;
+  font-weight: 700;
+}
+.housing-catalog__page-way {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 12% 50px 12%;
+  width: 155px;
+}
+.page-way__first,
+.page-way__second {
+  position: relative;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+.page-way__decoration {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #58b4d1;
+  margin: 0 10px;
+}
+.housing-catalog__main {
+  padding: 0px 12% 50px 12%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.housing-catalog__form {
+  width: 255px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+.housing-catalog__form-title {
+  padding: 20px 10px;
+  text-align: center;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  border-bottom: 1px black solid;
+}
+
+.housing-catalog__housing,
+.housing-catalog__town,
+.housing-catalog__rooms,
+.housing-catalog__sleeping-places,
+.housing-catalog__time,
+.housing-catalog__price {
+  padding: 20px 25px;
+  border-bottom: 1px black solid;
+}
+.housing-catalog__price {
+  border-bottom: 0px transparent solid;
+}
+
+.housing-catalog__housing-title,
+.housing-catalog__town-title,
+.housing-catalog__rooms-title,
+.housing-catalog__time-title,
+.housing-catalog__price-title,
+.housing-catalog__sleeping-places-title {
+  padding-bottom: 15px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
+  color: #000000;
+}
+.housing-catalog__price-title {
+  padding-bottom: 35px;
+}
+.housing-catalog__housing-wrapper,
+.housing-catalog__town-item,
+.sub-private__label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.sub-private__label {
+  margin-left: 21px;
+}
+.housing-catalog__housing-wrapper:last-child {
+  margin-bottom: 0;
+}
+.housing-catalog__housing-input,
+.housing-catalog__town-input,
+.housing-catalog__rooms-input,
+.housing-catalog__sleeping-places-input,
+.housing-catalog__time-input,
+.housing-catalog__private-house {
+  display: none;
+}
+.housing-catalog__housing-pseudo-radio,
+.housing-catalog__housing-pseudo-checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px black solid;
+  opacity: 0.3;
+}
+.housing-catalog__housing-pseudo-checkbox {
+  border-radius: 2px;
+}
+
+.housing-catalog__housing-input:checked
+  + .housing-catalog__housing-pseudo-radio:before,
+.housing-catalog__time-input:checked
+  + .housing-catalog__housing-pseudo-radio:before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #58b4d1;
+  top: 5px;
+  left: 5px;
+}
+.housing-catalog__housing-input:checked
+  + .housing-catalog__housing-pseudo-radio,
+.housing-catalog__time-input:checked ~ .housing-catalog__housing-pseudo-radio {
+  border-color: #58b4d1;
+  opacity: 1;
+}
+
+.housing-catalog__private-house:checked
+  ~ .housing-catalog__housing-pseudo-checkbox,
+.housing-catalog__town-input:checked
+  ~ .housing-catalog__housing-pseudo-checkbox,
+.housing-catalog__rooms-input:checked
+  ~ .housing-catalog__housing-pseudo-checkbox,
+.housing-catalog__sleeping-places-input:checked
+  ~ .housing-catalog__housing-pseudo-checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #58b4d1;
+  border-color: #58b4d1;
+  opacity: 1;
+}
+
+.housing-catalog__private-house:checked
+  ~ .housing-catalog__housing-pseudo-checkbox:before,
+.housing-catalog__town-input:checked
+  ~ .housing-catalog__housing-pseudo-checkbox:before,
+.housing-catalog__rooms-input:checked
+  ~ .housing-catalog__housing-pseudo-checkbox:before,
+.housing-catalog__sleeping-places-input:checked
+  ~ .housing-catalog__housing-pseudo-checkbox:before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  width: 13px;
+  height: 2px;
+  background: #ffffff;
+  transform: rotate(-60deg);
+  z-index: 5;
+}
+.housing-catalog__private-house:checked
+  ~ .housing-catalog__housing-pseudo-checkbox:after,
+.housing-catalog__town-input:checked
+  ~ .housing-catalog__housing-pseudo-checkbox:after,
+.housing-catalog__rooms-input:checked
+  ~ .housing-catalog__housing-pseudo-checkbox:after,
+.housing-catalog__sleeping-places-input:checked
+  ~ .housing-catalog__housing-pseudo-checkbox:after {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 4px;
+  width: 5px;
+  height: 2px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  z-index: 5;
+}
+.housing-catalog__sub-private {
+  display: none;
+}
+.housing-catalog__sub-private--open {
+  display: block;
+}
+
+.housing-catalog__private-house:checked + .housing-catalog__sub-private {
+  display: block;
+}
+
+.housing-catalog__housing-label {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.housing-catalog__town-see-all {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+  color: #58b4d1;
+  cursor: pointer;
+}
+.town-see-all__triangle {
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 8px solid transparent;
+  border-top: 14px solid #58b4d1;
+}
+.town-see-all__triangle--up {
+  border: 8px solid transparent;
+  border-bottom: 14px solid #58b4d1;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.housing-catalog__searching-results {
+  margin-left: 30px;
+  flex-grow: 77;
+}
+.housing-catalog__searching-results-title-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.housing-catalog__searching-results-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+  margin-right: 17px;
+}
+.housing-catalog__searching-results-title-decoration {
+  min-width: 5px;
+  height: 1px;
+  background: #000000;
+  flex-grow: 77;
+}
+.housing-catalog__searching-results-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  margin-bottom: 30px;
+}
+.searching-results__additions {
+  height: 100%;
+}
+.searching-results__item {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 231px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.searching-results__item-title {
+  display: block;
+  width: 100%;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+.searching-results__price {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 150px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #58b4d1;
+}
+.searching-results__more-link {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+  color: #fb8500;
+}
+.searching-results__reviews {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.searching-results__reviews-stars {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+.searching-results__reviews-star {
+  width: 13px;
+  height: 13px;
+  margin-right: 4px;
+  mask-image: url(../../../public/images/housing-catalog/star.svg);
+  background: #fb8500;
+}
+.searching-results__reviews-star:last-child {
+  margin-right: 10px;
+}
+.searching-results__reviews-star--non-active {
+  mask-image: url(../../../public/images/housing-catalog/star-non-active.svg);
+}
+.searching-results__reviews-number {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.searching-results__sub-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.searching-results__sub-title-room,
+.searching-results__sub-title-town {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.searching-results__sub-title-decoration {
+  margin: 0 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #58b4d1;
+}
+.searching-results__addition {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+.housing-catalog__filter-tongler {
+  display: none;
+}
+
+.housing-catalog__searching-results-image {
+  position: relative;
+  width: 100%;
+}
+
+.searching-results__sup-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 8px 15px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #fb8500;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #fb8500;
+}
+.housing-catalog__form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0px;
+  width: 250px;
+  box-sizing: border-box;
+}
+
+.housing-catalog__form-button-reset,
+.housing-catalog__form-button-apply {
+  width: 120px;
+  padding: 13px 0;
+  text-align: center;
+  background: #ffffff;
+  opacity: 1;
+  border: 1px solid #58b4d1;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #58b4d1;
+  cursor: pointer;
+}
+.housing-catalog__form-button-apply {
+  background: #58b4d1;
+  color: #ffffff;
+}
+.housing-catalog__form-button-reset:hover {
+  box-shadow: 0px 4px 15px #58b4d1;
+  opacity: 1;
+}
+.housing-catalog__form-button-apply:hover {
+  opacity: 1;
+  box-shadow: 0px 4px 15px #58b4d1;
+}
+.housing-catalog__form-button-reset:active,
+.housing-catalog__form-button-apply:active {
+  box-shadow: none;
+  opacity: 1;
+}
+.housing-catalog__form-button-reset:disabled,
+.housing-catalog__form-button-apply:disabled {
+  opacity: 0.5;
+  box-shadow: none;
+}
+.housing-catalog__filter-tongler-wrapper {
+  cursor: pointer;
+}
+.housing-catalog__form-buttons {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+
+  .searching-results__item-title {
+    max-width: 240px;
+  }
+
+  .searching-results__item {
+    padding-left: 15px;
+  }
+
+  .searching-results__price {
+    width: 65px;
+    font-size: 14px;
+    line-height: 17px;
+    right: 15px;
+  }
+  .searching-results__more-link {
+    right: 15px;
+  }
+}
+
+.MuiSlider-thumbColorPrimary .css-1kz0hui-MuiSlider-valueLabel {
+  padding-bottom: 0;
+  margin-bottom: -15px;
+}
+
+@media (max-width: 1150px) {
+  .housing-catalog__main {
+    padding: 0 5%;
+    margin-bottom: 48px;
+  }
+
+  .housing-catalog__link-list-wrapper {
+    display: none;
+  }
+  .housing-catalog__page-way {
+    padding-bottom: 16px;
+  }
+  .page-way__first {
+    position: relative;
+    font-size: 0px;
+    line-height: 0px;
+    width: 24px;
+    height: 24px;
+  }
+  .page-way__first:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    mask-image: url(../../../public/images/housing-catalog/go-back.svg);
+    background: #58b4d1;
+  }
+  .page-way__decoration {
+    display: none;
+  }
+  .page-way__second {
+    display: none;
+  }
+  .housing-catalog__filter-tongler {
+    display: none;
+    width: 100%;
+    padding: 0 12%;
+    box-sizing: border-box;
+  }
+  .housing-catalog__filter-tongler-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .housing-catalog__filter-image {
+    margin-right: 12px;
+  }
+  .housing-catalog__filter-title {
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+  .housing-catalog__searching-results-title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .housing-catalog__searching-results-item {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+  }
+  .housing-catalog__searching-results-image {
+    position: relative;
+    width: 100%;
+  }
+  .searching-results-image__image {
+    width: 100%;
+  }
+  .searching-results__item {
+    padding: 18px 16px;
+    margin-bottom: 12px;
+  }
+  .searching-results__additions {
+    margin-bottom: 36px;
+  }
+  .searching-results__price {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 14px;
+  }
+  .searching-results__more-link {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .housing-catalog__page-way {
+    padding: 15px 5%;
+  }
+}
+
+@media (max-width: 800px) {
+  .housing-catalog__searching-results-title {
+    font-size: 24px;
+    line-height: 28px;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .housing-catalog__filter-tongler {
+    display: block;
+    padding: 0 5%;
+  }
+  .housing-catalog__main {
+    position: relative;
+  }
+  .housing-catalog__form {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    box-sizing: border-box;
+    z-index: 78;
+  }
+  .housing-catalog__main-form-wrapper {
+    display: none;
+  }
+  .housing-catalog__main-form-wrapper--open {
+    display: block;
+  }
+  .housing-catalog__form-buttons--open {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: -82px;
+    left: 0;
+    z-index: 79;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+    background: #ffffff;
+    box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 25px 25px 25px 25px;
+  }
+  .housing-catalog__filter-tongler-wrapper {
+    position: relative;
+  }
+  .housing-catalog__filter-image--active {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .housing-catalog__filter-title--active {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  .housing-catalog__searching-results {
+    margin-left: 0;
+  }
+  .housing-catalog__searching-results-item {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 450px) {
+  .housing-catalog__searching-results-title {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .town-images__gagra {
+    height: 165px;
+    width: 100%;
+    padding-top: 16px;
+    padding-left: 16px;
+    box-sizing: border-box;
+    background-size: 100%, 100%;
+  }
+}

@@ -1,0 +1,410 @@
+.hotel-number {
+  width: 100%;
+  padding: 0 12%;
+  box-sizing: border-box;
+  margin-bottom: 65px;
+}
+.hotel-number__title {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.hotel-number__title-text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-right: 100px;
+}
+.hotel-number__title-decoration {
+  height: 1px;
+  min-width: 10px;
+  flex-grow: 5;
+  background: #000000;
+}
+.hotel-number__body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.hotel-number__cards {
+  position: relative;
+  display: block;
+  flex-grow: 3;
+}
+
+.hotel-number__reservation {
+  min-width: 350px;
+  height: 300px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 25px;
+  margin-left: 30px;
+  box-sizing: border-box;
+}
+.hotel-number__card-wrapper {
+  flex-grow: 5;
+}
+
+.hotel-number__card {
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-grow: 5;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+.hotel-number__card:last-child {
+  margin-bottom: 0;
+}
+.hotel-number__card-image {
+  width: 255px;
+  height: 300px;
+  border-radius: 25px 0 0 25px;
+}
+.hotel-number__card-arrow-left {
+  position: absolute;
+  top: 125px;
+  left: 10px;
+  cursor: pointer;
+}
+.hotel-number__card-arrow-right {
+  position: absolute;
+  top: 125px;
+  left: 213px;
+  cursor: pointer;
+}
+.hotel-number__card-arrow-left,
+.hotel-number__card-arrow-right {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.hotel-number__card-arrow-left:hover,
+.hotel-number__card-arrow-right:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+}
+.hotel-number__card-arrow-right img {
+  transform: rotate(180deg);
+}
+.hotel-number__card-glass {
+  position: absolute;
+  top: 10px;
+  left: 221px;
+}
+.hotel-number__card-head {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 9.5px 15px;
+  background: #ffffff;
+  border: 1px solid #e3170a;
+  border-radius: 25px;
+}
+.hotel-number__card-head-text {
+  margin-left: 10px;
+  text-align: center;
+  color: #e3170a;
+}
+.hotel-number__card-options {
+  padding: 30px 15px 30px 30px;
+  flex-grow: 5;
+}
+.hotel-number__card-options-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.card-options__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.card-options__list-item {
+  height: 50px;
+  margin-right: 30px;
+}
+.card-options__list-item-image-number {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.list-item-image-number__image-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-item-image-number__number {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-left: 6px;
+}
+.list-item-image-number__number-sup {
+  font-size: 10px;
+  line-height: 10px;
+  padding-bottom: 20px;
+}
+.card-options__danger-and-price {
+  margin: 20px 0;
+  padding-left: 10px;
+  border-left: 1px #dfdfdf solid;
+}
+.card-options__danger {
+  padding: 8px 15px;
+  background: #ffffff;
+  border: 1px solid #e3170a;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #e3170a;
+  margin-bottom: 10px;
+  max-width: 220px;
+}
+.card-options__price {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.card-options__reserve {
+  position: absolute;
+  bottom: 30px;
+  left: 285px;
+  padding: 13px 24px;
+  background: #58b4d1;
+  opacity: 0.5;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+.card-options__about-number {
+  position: absolute;
+  bottom: 42px;
+  right: 30px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: #fb8500;
+  cursor: pointer;
+}
+.hotel-number__card-sub-options {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 30px 25px;
+  box-sizing: border-box;
+}
+.hotel-number__card-option {
+  padding-bottom: 10px;
+  width: 350px;
+  margin-right: 30px;
+}
+.hotel-number__card-option-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+.card-option__property-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.card-option__property {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 10px;
+}
+.card-option__property-number {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.hotel-number__card-sub-options-wrapper {
+  position: relative;
+}
+.card-sub-options__close {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: #fb8500;
+  text-align: center;
+  cursor: pointer;
+}
+/* Бронирование */
+.hotel-number__reservation {
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 25px;
+}
+.hotel-number__reservation-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  padding: 20px;
+  border-bottom: 1px black solid;
+  text-align: center;
+}
+.card-hotel-number {
+  left: 0;
+}
+.transfer-booking__form-item .number-hotel-card {
+  margin-left: 0 !important;
+}
+.hotel-number .transfer-booking__form-item--hotel-number-card {
+  width: 45%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hotel-number .transfer-booking__form-item .transfer-booking__form-search {
+  width: 90%;
+  margin-top: 40px;
+  padding: 5px 10px 5px 24px;
+  padding-left: 34px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  font-size: 14px;
+  line-height: 33px;
+  overflow: hidden;
+  max-height: 43px;
+  box-sizing: border-box;
+}
+.hotel-number
+  .hotel-number__date-wrapper
+  .transfer-booking__form-top-text--card-hotel-number {
+  right: 0;
+  left: 10px;
+  top: 20px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.hotel-number__card-reserve {
+  top: 53px;
+  left: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.hotel-number .transfer-booking__form-item--hotel-number-card:before {
+  display: none;
+}
+.transfer-booking__form-search--data--number-hotel-card {
+  margin-left: 10px;
+}
+.hotel-number__date-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+.hotel-number .transfer-booking__form-item:before {
+  display: none;
+}
+.hotel-number .transfer-booking__form-top-text {
+  top: -20px;
+  margin-left: 0px;
+  left: 10px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.hotel-number .transfer-booking__form-image--person {
+  top: 15px;
+  left: 30px;
+}
+.hotel-number__reservation-submit {
+  display: block;
+  box-sizing: border-box;
+  width: 310px;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 13px;
+  background: #58b4d1;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+.hotel-number__reservation-submit:hover {
+}
+.close-hotel-number-sub-options {
+  display: none;
+}

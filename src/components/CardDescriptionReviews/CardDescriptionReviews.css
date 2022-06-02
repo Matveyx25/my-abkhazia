@@ -1,0 +1,753 @@
+.card-description {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 12%;
+  box-sizing: border-box;
+  margin-bottom: 65px;
+}
+.card-description__options-bar {
+  margin-right: 30px;
+  flex-grow: 7;
+}
+.card-description__owner {
+  min-width: 350px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+.card-description__owner-option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.card-description__owner-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 16px;
+}
+.card-description__owner-data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.card-description__owner-photo {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.owner-data__name {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+.owner-data__registration {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.owner-option__image-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+}
+.owner-option__text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.card-description__owner-write {
+  display: block;
+  width: 180px;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  background: #58b4d1;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 auto;
+}
+.card-description__owner-write:hover {
+  box-shadow: 0px 4px 15px #58b4d1;
+}
+
+/* Описание */
+
+.card-description__options-bar-tongle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  margin-bottom: 14.5px;
+}
+.card-description__option-bar {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  padding-bottom: 10px;
+  width: 160px;
+  border-bottom: 1px solid #000000;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.card-description__option-bar--active {
+  border-color: #58b4d1;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
+
+.option__description-wrapper {
+  width: 650px;
+  margin-bottom: 27px;
+}
+.option__description-wrapper-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+.option__description-wrapper-text:last-child {
+  margin-bottom: 0px;
+}
+.option__description-properties-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.option__description-properties {
+  width: 250px;
+  margin-right: 50px;
+}
+.option__description-properties:last-child {
+  margin-right: 0;
+}
+.description-properties__title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.description-properties__title-text {
+  margin-left: 9px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.description-properties__property-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.description-properties__property {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Услуги */
+.card-description__services-bar {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.services-bar__item {
+  width: 350px;
+  box-sizing: border-box;
+  margin-right: 100px;
+  margin-bottom: 20px;
+}
+.services-bar__item-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 14px;
+}
+.services-bar__item-option {
+  list-style-type: disc;
+  margin-left: 13px;
+  margin-bottom: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+/* Правила */
+.card-description__rules-bar-down-wrapper {
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.card-description__rules-bar-down {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.rules-bar-down__text {
+  margin-left: 13px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+/*  Отзывы */
+.card-description__accounts-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+.card-description__accounts-options {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+.card-description__accounts-option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  margin-bottom: 16px;
+}
+.accounts-option__title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  min-width: 145px;
+}
+.accounts-option__star {
+  margin-right: 4px;
+}
+.card-description__accounts-profile-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.card-description__accounts-profile {
+  width: 50%;
+  box-sizing: border-box;
+  padding-right: 30px;
+  margin-bottom: 30px;
+}
+.accounts-profile__option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.accounts-profile__option-name-stars-date {
+  margin-left: 15px;
+}
+.accounts-profile__option-name {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 6px;
+}
+.accounts-profile__stars {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.accounts-option__star {
+  margin-right: 4px;
+}
+.accounts-option__star:last-child {
+  margin-right: 0;
+}
+.accounts-profile__option-date {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.accounts-profile__description {
+  margin-top: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.accounts-profile__see-more-button {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: #fb8500;
+  cursor: pointer;
+}
+/* Голубая плашка */
+.options-bar__blue-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 25px 0;
+  width: 100%;
+  border-radius: 25px;
+  background: rgba(88, 180, 209, 0.5);
+  margin-bottom: 30px;
+}
+.blue-header__image-and-number {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 5px;
+}
+.blue-header__image-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.blue-header__number {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.blue-header__option {
+  margin-top: 7px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+@media (max-width: 1700px) {
+  .card-description__services-bar {
+    justify-content: space-between;
+  }
+  .services-bar__item {
+    margin-right: 0;
+  }
+  .card-description__option-bar {
+    margin-bottom: 30px;
+    margin-right: 100px;
+  }
+}
+@media (max-width: 1350px) {
+  .option__description-wrapper {
+    width: auto;
+  }
+  .card-description__accounts-profile {
+    min-width: 300px;
+  }
+}
+@media (max-width: 1250px) {
+  .options-bar__blue-header {
+    width: auto;
+    min-width: 200px;
+  }
+  .card-description__options-bar-tongle {
+    justify-content: space-between;
+  }
+  .card-description__option-bar {
+    margin-right: 50px;
+  }
+  .card-description__options-bar {
+    width: auto;
+    min-width: none;
+  }
+  .option__description-properties {
+    margin-right: 0;
+  }
+}
+@media (max-width: 1150px) {
+  .card-description {
+    padding: 0 5%;
+  }
+}
+@media (max-width: 1050px) {
+  .card-description__accounts-option {
+    margin-right: 30px;
+  }
+  .option__description-properties-wrapper {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 900px) {
+  .card-description__option-bar {
+    margin-right: 0;
+  }
+}
+@media (max-width: 810px) {
+  .card-description {
+    display: block;
+  }
+  .card-description__owner {
+    margin-top: 30px;
+  }
+  .card-description__option-bar {
+    margin-right: 100px;
+  }
+  .card-description__options-bar {
+    margin-right: 0;
+  }
+}
+@media (max-width: 700px) {
+  .card-description__accounts-profile {
+    width: 80%;
+    margin-right: 0;
+  }
+}
+@media (max-width: 600px) {
+  .card-description__option-bar {
+    margin-right: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .card-description__option-bar {
+    margin-right: 0px;
+  }
+  .blue-header__item {
+    margin-bottom: 17px;
+  }
+}
+@media (max-width: 400px) {
+  .blue-header__item {
+    width: 80px;
+    justify-content: flex-start;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  .card-description__accounts-profile {
+    width: 100%;
+  }
+  .accounts-profile__description {
+    min-width: 100%;
+  }
+  .card-description__option-bar {
+    width: 150px;
+  }
+}
+@media (max-width: 370px) {
+  .blue-header__item {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .card-description__option-bar {
+    width: 170px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+}
+
+/* Модальное окно*/
+
+.modale-reviews {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 11;
+}
+.modale-reviews__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 64%;
+  margin-left: 18%;
+  margin-top: 105px;
+  background: #ffffff;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  min-height: 500px;
+  box-sizing: border-box;
+  padding: 70px;
+  padding-right: 0;
+  max-height: 690px;
+}
+.modale-reviews__left-sidebar {
+  margin-right: 50px;
+  min-width: 260px;
+}
+.modale-reviews__right-sidebar {
+  padding-right: 70px;
+  max-height: 550px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.modale-reviews__right-sidebar::-webkit-scrollbar {
+  width: 10px;
+  background-color: #dfdfdf;
+  border-radius: 5px;
+}
+.modale-reviews__right-sidebar::-webkit-scrollbar-thumb {
+  width: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.left-sidebar__close-button {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.left-sidebar__close-button:hover,
+.left-sidebar__close-button-2:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+}
+.modale-reviews__wrapper--mobile {
+  position: relative;
+}
+.modale-reviews__left-sidebar .card-description__accounts-title--mobile {
+  margin-top: 0 !important;
+}
+.modale-reviews__wrapper-mobile {
+  position: relative;
+}
+.left-sidebar__close-button--2 {
+  display: none;
+}
+.option__description-sub-list--wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.option__description-sub-list {
+  width: 50%;
+}
+.option__description-sub-list-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+.option__description-sub-list-item {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+.option__description-title--town-card-only {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 25px;
+  margin-top: 20px;
+  display: none;
+}
+.town-card .option__description-title--town-card-only {
+  display: block;
+}
+.town-card .option__description-properties {
+  width: 50%;
+}
+.description-properties__property-number {
+  margin-left: 10px;
+}
+.town-card .options-bar__blue-header {
+  width: 50%;
+  max-width: 730px;
+}
+@media (max-width: 1450px) {
+  .modale-reviews__wrapper--mobile {
+    margin-left: 8%;
+    width: 84%;
+  }
+}
+@media (max-width: 1250px) {
+  .modale-reviews__wrapper--mobile {
+    margin-left: 18%;
+    width: 64%;
+  }
+  .modale-reviews__wrapper {
+    max-height: 690px;
+  }
+  .modale-reviews__right-sidebar {
+    max-height: 550px;
+  }
+}
+@media (max-width: 1050px) {
+  .modale-reviews__wrapper--mobile {
+    margin-left: 8%;
+    width: 84%;
+  }
+}
+@media (max-width: 800px) {
+  .modale-reviews__wrapper--mobile {
+    margin-left: 5%;
+    width: 90%;
+    padding: 42px 0 42px 22px;
+  }
+  .modale-reviews__right-sidebar {
+    padding-right: 22px;
+  }
+  .modale-reviews__right-sidebar .card-description__accounts-profile {
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .modale-reviews__left-sidebar {
+    margin-right: 20px;
+  }
+  .modale-reviews__left-sidebar .card-description__accounts-profile {
+    margin-right: 0;
+  }
+}
+@media (max-width: 650px) {
+  .modale-reviews__wrapper--mobile {
+    padding: 42px 0 42px 12px;
+  }
+  .modale-reviews__right-sidebar {
+    padding-right: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .modale-reviews__wrapper-mobile {
+    width: 90%;
+    margin-top: 120px;
+    padding: 40px 0 25px 0;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background: #ffffff;
+    margin-left: 5%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+  }
+  .modale-reviews__wrapper--mobile {
+    width: 100%;
+    padding-top: 25px;
+    margin-left: 0;
+    margin-top: 0;
+    display: block;
+    max-height: 570px;
+    overflow-y: scroll;
+    box-shadow: none;
+  }
+  .modale-reviews__wrapper--mobile::-webkit-scrollbar {
+    width: 10px;
+    background-color: #dfdfdf;
+    border-radius: 5px;
+  }
+  .modale-reviews__wrapper--mobile::-webkit-scrollbar-thumb {
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+  }
+  .modale-reviews__right-sidebar {
+    padding-right: 0px;
+    max-height: none;
+    overflow-y: auto;
+  }
+  .modale-reviews__left-sidebar {
+    margin-bottom: 24px;
+  }
+  .left-sidebar__close-button {
+    top: 0px;
+  }
+  .left-sidebar__close-button--2 {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .left-sidebar__close-button {
+    display: none;
+  }
+}

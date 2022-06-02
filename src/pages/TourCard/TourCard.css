@@ -1,0 +1,134 @@
+.blue-header__number {
+  margin-left: 5px;
+}
+.description-properties__property-wrapper {
+  justify-content: flex-start;
+}
+.tour-card .description-properties__property-number {
+  margin-left: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.option__description-sub-list {
+  margin-bottom: 25px;
+}
+.reservation__dop-options {
+  width: 100%;
+  padding: 25px;
+  padding-right: 0;
+  padding-left: 20px;
+  height: 330px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px black solid;
+}
+.reservation__dop-options-wrapper {
+  overflow-y: scroll;
+  max-height: 270px;
+}
+.dop-options__our-option {
+  padding-right: 5px;
+}
+.dop-options__our-option-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.dop-options__our-option-circle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #58b4d1;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+.dop-options__our-option-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.dop-options__our-option-title:hover .dop-options__our-option-text {
+  color: #58b4d1;
+}
+.our-option-text__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.our-option-text__item-title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.our-option-text__item-price {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+.strike--1 {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  width: 13px;
+  height: 2px;
+  background: #ffffff;
+  transform: rotate(-60deg);
+  z-index: 5;
+}
+.strike--2 {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 4px;
+  width: 5px;
+  height: 2px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  z-index: 5;
+}
+.transfer-booking__form-item {
+  position: relative;
+}
+.reservation__dop-options {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 10;
+}
+.calendar__reservation .transfer-booking__form-search {
+  color: #000000;
+}
+.calendar__body .react-calendar__navigation__label__labelText--from {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+.calendar__table-and-numbers__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}

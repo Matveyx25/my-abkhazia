@@ -1,0 +1,50 @@
+.card-card .blue-header__number:first-child {
+  margin-left: 15px;
+}
+.card-card .blue-header__image-wrapper:first-child {
+  width: auto;
+}
+.reservation-time__wrapper {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.reservation-time__wrapper .transfer-booking__form-item--time {
+}
+
+.card-card .reservation-time__wrapper .transfer-booking__form-item--time {
+  width: 50%;
+  box-sizing: border-box;
+  margin: 0 10px;
+  margin-top: 42px;
+}
+.reservation-time__wrapper
+  .transfer-booking__form-item--time
+  .transfer-booking__form-search--time {
+  margin: 0;
+  box-shadow: none;
+}
+.reservation-time__wrapper
+  .transfer-booking__form-item--time
+  .transfer-booking__form-image--time {
+  left: 13px;
+}
+.reservation-time__wrapper
+  .transfer-booking__form-item--time
+  .transfer-booking__form-top-text {
+  left: 0px;
+}
+.reservation-time__wrapper
+  .transfer-booking__form-item--time
+  .form-time__input-wrapper {
+  left: 0px;
+}
+.reservation__price {
+  margin-top: 10px;
+}
+.card-card .reservation__danger {
+  margin-bottom: 0;
+}

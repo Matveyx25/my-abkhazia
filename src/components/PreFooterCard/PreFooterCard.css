@@ -1,0 +1,56 @@
+.top-destinations__slider-category--card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.slider-category--card-type,
+.slider-category--card-town {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.slider-category--card-decoration {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #58b4d1;
+  margin: 0 4px;
+}
+.top-destinations__title-text--card {
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0 20px;
+}
+.top-destinations__title-strike--card {
+  height: 1px;
+}
+.main__top-destinations {
+  margin-bottom: 65px;
+}
+.top-destinations__slider-item {
+  position: relative;
+  border-radius: 25px;
+}
+.top-destinations__slider-item:before {
+  z-index: 3;
+}
+.top-destinations__slider-item-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border-radius: 25px;
+}
+
+@media (max-width: 600px) {
+  .top-destinations__title-text--card {
+    font-size: 16px;
+    line-height: 19.6px;
+    margin: 0 5px;
+  }
+}

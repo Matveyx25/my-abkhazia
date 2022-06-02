@@ -1,0 +1,220 @@
+.housing-catalog__page-way {
+  width: 600px;
+}
+.housing-card .card-description__options-bar {
+  width: 30%;
+  box-sizing: border-box;
+}
+.housing-card .option__description-properties {
+  width: 250px;
+  margin-right: 40px;
+  margin-bottom: 25px;
+}
+.option__description-properties-wrapper {
+  flex-wrap: wrap;
+}
+.housing-card .description-properties__property-wrapper {
+  justify-content: flex-start;
+}
+.housing-card .description-properties__property-number {
+  margin-left: 10px;
+}
+.calendar {
+  width: 100%;
+  padding: 0 12%;
+  box-sizing: border-box;
+  margin-bottom: 65px;
+}
+.calendar__title-wraper {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.calendar__title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-right: 25px;
+}
+.calendar__decoration {
+  height: 1px;
+  width: 1px;
+  flex-grow: 5;
+  background: #000000;
+}
+.calendar .react-calendar {
+  border: none;
+  box-shadow: none;
+  margin-bottom: 30px;
+}
+.calendar__reservation-information {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.calendar__reservation-information-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 20px;
+}
+.reservation-information-close__number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: #58b4d1;
+  border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  font-feature-settings: "tnum" on, "lnum" on;
+  color: #ffffff;
+}
+.reservation-information-close__text,
+.reservation-information-block__text,
+.reservation-information-free__text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  font-feature-settings: "tnum" on, "lnum" on;
+  color: #000000;
+  margin-left: 10px;
+}
+.reservation-information-free__number {
+  background: white;
+  color: #000000;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  font-feature-settings: "tnum" on, "lnum" on;
+  color: #000000;
+}
+.reservation-information-block__number {
+  background: #fcfcfc;
+  border: 1px solid #dfdfdf;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  font-feature-settings: "tnum" on, "lnum" on;
+  color: #747474;
+}
+.calendar__body .calendar__reservation {
+  width: 350px;
+  height: auto;
+}
+.calendar__body .hotel-number__reservation {
+  height: auto;
+  padding-bottom: 20px;
+}
+.calendar__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.calendar__body .hotel-number__reservation {
+  left: 0;
+  margin-left: 0;
+}
+.calendar__body .transfer-booking__form-item--hotel-number-card:before {
+  display: none;
+}
+.calendar__body .transfer-booking__form-item:before {
+  display: none;
+}
+.transfer-booking__form-tongler {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+.form-tongler__wrapper {
+  width: 40px;
+  height: 20px;
+  background: #dfdfdf;
+  border-radius: 25px;
+  margin-left: 22px;
+  margin-right: 10px;
+}
+.form-tongler__wrapper--active {
+  background: #58b4d1;
+}
+.form-tongler__circle {
+  margin-top: 2px;
+  margin-left: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.form-tongler__circle--active {
+  margin-right: 2px;
+  margin-left: auto;
+  background: #ffffff;
+}
+.transfer-booking__form-tongler-text {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+.reservation__danger-and-price {
+  box-sizing: border-box;
+  margin: 15px 20px;
+  padding-left: 10px;
+  border-left: 1px solid #dfdfdf;
+}
+.reservation__danger {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #ffffff;
+  border: 1px solid #e3170a;
+  border-radius: 25px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #e3170a;
+  margin-bottom: 20px;
+}
+.reservation__price {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.calendar__reservation .react-calendar__month-view__days .react-calendar__month-view__days__day {
+  border-color: #DFDFDF !important;
+}

@@ -1,0 +1,391 @@
+input,
+textarea {
+  border: 0px transparent solid;
+}
+.footer__form {
+  width: 100%;
+  height: auto;
+  padding: 80px 12% 80px 12%;
+  box-sizing: border-box;
+  background: url(../../../public/images/footer-background.jpg);
+  background-size: 100%, auto;
+}
+.footer__form-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+.footer__form-message {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.footer__form-body {
+  max-width: 540px;
+}
+.form-body__name-and-email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.form-body__name,
+.form-body__email {
+  padding: 12px 25px;
+  width: 255px;
+  height: 43px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 25px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.form-body__question {
+  padding: 12px 25px;
+  width: 540px;
+  height: 120px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 25px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+}
+.form-body__submit {
+  width: 160px;
+  height: 47px;
+  padding: 15px 41px;
+  box-sizing: border-box;
+  background: #58b4d1;
+  border-radius: 25px;
+
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.form-body__submit--disabled {
+  background: #58b4d1;
+  opacity: 0.5;
+}
+
+.form-body__submit:hover {
+  box-shadow: 0px 4px 15px #58b4d1;
+}
+.form-body__checkbox-wrapper {
+  margin-bottom: 10px;
+}
+.form-body__checkbox {
+  display: none;
+}
+.form-body__checkbox-label {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.footer-checkbox__box {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #58b4d1;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.form-body__checkbox-label:before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 4px;
+  width: 14px;
+  height: 2px;
+  background: #ffffff;
+  transform: rotate(-60deg);
+  z-index: 5;
+  display: none;
+}
+.form-body__checkbox-label:after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 3px;
+  width: 6px;
+  height: 2px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  z-index: 5;
+  display: none;
+}
+.footer-checkbox__text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+.form-body__checkbox-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.form-body__checkbox:checked + .form-body__checkbox-label:before,
+.form-body__checkbox:checked + .form-body__checkbox-label:after {
+  display: block;
+}
+
+.footer__link-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 55px 12% 20px 12%;
+  background: #747474;
+}
+.link-list__logo-and-social {
+  width: 150px;
+  height: auto;
+}
+.logo-and-social__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.logo-and-social__logo {
+  margin-right: 13px;
+  mask-image: url("../../../public/images/header-logo-image.svg");
+  background-color: white;
+  width: 47px;
+  height: 37px;
+}
+.logo-and-social__text {
+  width: 52px;
+  height: 38px;
+  box-sizing: border-box;
+  mask-image: url("../../../public/images/header-logo-text.svg");
+  background: white no-repeat;
+}
+.logo-and-social__social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link-list__pages {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.link-list__rest,
+.link-list__partners {
+  margin-right: 70px;
+}
+.link-list__rest-title,
+.link-list__partners-title,
+.link-list__feedback-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.link-list__rest-item,
+.link-list__partners-item,
+.link-list__feedback-item {
+  margin-bottom: 10px;
+}
+.link-list__rest-item-link,
+.link-list__partners-item-link,
+.link-list__feedback-item-link {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+  text-align: left;
+}
+.social-item-link__image--vk {
+  mask-image: url("../../../public/images/footer-vk.svg");
+  background-color: white;
+  width: 32px;
+  height: 19px;
+}
+.social-item-link__image--fb {
+  mask-image: url("../../../public/images/footer-fb.svg");
+  background-color: white;
+  width: 32px;
+  height: 32px;
+}
+.social-item-link__image--inst {
+  mask-image: url("../../../public/images/footer-inst.svg");
+  background-color: white;
+  width: 25px;
+  height: 25px;
+}
+.logo-and-social__social-item-link:hover .social-item-link__image {
+  background-color: #58b4d1;
+}
+
+.footer__copyright {
+  width: 100%;
+  padding: 50px 12% 20px 12%;
+  box-sizing: border-box;
+  background: #747474;
+}
+.footer__copyright-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.copyright-list__item {
+  margin-right: 30px;
+}
+.copyright-list__item-link {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  text-align: left;
+  text-decoration: underline;
+}
+.copyright-list__item-link:hover,
+.link-list__rest-item-link:hover,
+.link-list__partners-item-link:hover,
+.link-list__feedback-item-link:hover {
+  color: #58b4d1;
+}
+.form-body__checkbox-label {
+  cursor: pointer;
+}
+.copyright-list__item-link--not-underline {
+  text-decoration: none;
+}
+@media (max-width: 1500px) {
+  .footer__form {
+    background-size: cover;
+  }
+}
+@media (max-width: 1100px) {
+  .link-list__pages .link-list__rest,
+  .link-list__pages .link-list__partners {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 1000px) {
+  .footer__form {
+    padding: 50px 5%;
+  }
+  .footer__form-title {
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .footer__form-title-br {
+    display: none;
+  }
+  .footer__form-message {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .form-body__name-and-email {
+    display: block;
+  }
+  .form-body__name {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .form-body__email {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .form-body__question {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+  }
+  .form-body__submit {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .footer-checkbox__box {
+    min-width: 20px;
+    min-height: 20px;
+  }
+  .footer-checkbox__text {
+    margin-top: 8px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #ffffff;
+  }
+  .form-body__checkbox-link {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .footer__link-list {
+    display: block;
+  }
+  .link-list__logo-and-social {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .link-list__pages {
+    display: block;
+    margin: 0 auto;
+  }
+  .link-list__rest-title,
+  .link-list__partners-title,
+  .link-list__feedback-title {
+    margin-top: 18px;
+    margin-bottom: 16px;
+    padding: 0;
+  }
+  .footer__copyright {
+    padding-top: 0;
+  }
+  .footer__copyright-list {
+    display: block;
+  }
+}

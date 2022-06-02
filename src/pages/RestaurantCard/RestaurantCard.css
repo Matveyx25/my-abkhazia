@@ -1,0 +1,67 @@
+.hotel-number .transfer-booking__form-item--time {
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+}
+.hotel-number .transfer-booking__form-image--time {
+  left: 25px;
+  top: 13px;
+}
+.hotel-number .form-time__input-wrapper {
+  top: 50px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+.calendar__reservation-information-close-half
+  .reservation-information-close__number {
+  background: #fb8500;
+}
+.reservation__price--bron {
+  color: #58b4d1;
+}
+.calendar__reservation-information__timetable {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.reservation-information__timetable-title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-bottom: 12px;
+}
+.reservation-information__timetable-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 7px;
+}
+.calendar__reservation-information__qr-code {
+  padding: 35px;
+  box-sizing: border-box;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.reservation-information__qr-code__title {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #fb8500;
+}
+.calendar__table-and-numbers {
+  width: auto;
+  max-width: none;
+  flex-grow: 5;
+}

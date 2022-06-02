@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/open-sans.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/open-sans.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("./fonts/open-sans.otf") format("opentype"),
+    /* Open Type Font */ url("./fonts/open-sans.svg") format("svg"),
+    /* Legacy iOS */ url("./fonts/open-sans.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("./fonts/open-sans.woff") format("woff"),
+    /* Modern Browsers */ url("./fonts/open-sans.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/open-sans-semibold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/open-sans-semibold.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("./fonts/open-sans-semibold.otf") format("opentype"),
+    /* Open Type Font */ url("./fonts/open-sans-semibold.svg") format("svg"),
+    /* Legacy iOS */ url("./fonts/open-sans-semibold.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("./fonts/open-sans-semibold.woff")
+      format("woff"),
+    /* Modern Browsers */ url("./fonts/open-sans-semibold.woff2")
+      format("woff2"); /* Modern Browsers */
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/open-sans-bold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/open-sans-bold.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("./fonts/open-sans-bold.otf") format("opentype"),
+    /* Open Type Font */ url("./fonts/open-sans-bold.svg") format("svg"),
+    /* Legacy iOS */ url("./fonts/open-sans-bold.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("./fonts/open-sans-bold.woff") format("woff"),
+    /* Modern Browsers */ url("./fonts/open-sans-bold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url("./fonts/CenturyGothic.eot");
+  src: local("./fonts/Century Gothic"), local("CenturyGothic"),
+    url("./fonts/CenturyGothic.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/CenturyGothic.woff") format("woff"),
+    url("./fonts/CenturyGothic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url("./fonts/CenturyGothic-Bold.eot");
+  src: local("./fonts/Century Gothic Bold"), local("CenturyGothic-Bold"),
+    url("./fonts/CenturyGothic-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/CenturyGothic-Bold.woff") format("woff"),
+    url("./fonts/CenturyGothic-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) #dfdfdf;
+}
+/* Стилизуем кнопки*/
+
+.react-calendar__navigation .react-calendar__navigation__prev2-button {
+  display: none;
+  background: #58b4d1;
+  border-radius: 16px;
+  width: 32px;
+  height: 33px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../public/images/left.svg) no-repeat;
+}
+.react-calendar
+  .react-calendar__navigation
+  .react-calendar__navigation__prev-button {
+  padding: 0;
+  background: #58b4d1;
+  border-radius: 16px;
+  width: 32px !important;
+  height: 33px;
+  min-width: 32px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../public/images/left.svg) no-repeat;
+  opacity: 0.7;
+}
+.react-calendar__navigation
+  .react-calendar__navigation__prev-button:enabled:hover,
+.react-calendar__navigation
+  .react-calendar__navigation__prev-button:enabled:focus {
+  background: #58b4d1;
+  background: url(../public/images/left.svg) no-repeat;
+  opacity: 1;
+}
+.react-calendar
+  .react-calendar__navigation
+  .react-calendar__navigation__next-button {
+  padding: 0;
+  background: #58b4d1;
+  border-radius: 16px;
+  width: 32px !important;
+  min-width: 32px;
+  height: 33px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../public/images/main-arrow-right.svg) no-repeat;
+  opacity: 0.7;
+}
+.react-calendar__navigation
+  .react-calendar__navigation__next-button:enabled:hover,
+.react-calendar__navigation
+  .react-calendar__navigation__next-button:enabled:focus {
+  background: #58b4d1;
+  background: url(../public/images/main-arrow-right.svg) no-repeat;
+  opacity: 1;
+}
+.react-calendar__navigation .react-calendar__navigation__next2-button {
+  display: none;
+  background: #58b4d1;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../public/images/main-arrow-right.svg) no-repeat;
+}
+.react-calendar button:enabled:hover,
+.react-calendar button:enabled:focus {
+  background: #58b4d1;
+  color: white;
+}
+
+/* Navigation stilization*/
+.react-calendar .react-calendar__navigation .react-calendar__navigation__label {
+  background: transparent;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.react-calendar
+  .react-calendar__navigation
+  .react-calendar__navigation__label:hover {
+  background: transparent;
+  color: #58b4d1;
+}
+/* Стилизуем недели*/
+
+.react-calendar .react-calendar__month-view__weekdays__weekday {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  font-feature-settings: "tnum" on, "lnum" on;
+  color: #000000;
+}
+/* Стилизуем номерки дат */
+.react-calendar .react-calendar__month-view__days__day {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  font-feature-settings: "tnum" on, "lnum" on;
+  border: 1px gray solid;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.react-calendar {
+  box-sizing: border-box;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  border: none;
+}
+input[type="time"]::-webkit-clear-button {
+  display: none;
+}
+input[type="time"]::-ms-clear {
+    display: none;
+}

@@ -1,0 +1,27 @@
+.housing-catalog__searching-results-image {
+  width: 255px;
+}
+.housing-catalog__town:last-child {
+  border-bottom: none;
+}
+.housing-catalog__town--last {
+  border-bottom: none;
+}
+
+@media (max-width: 1150px) {
+  .housing-catalog__searching-results-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 675px) {
+  .housing-catalog__searching-results-title {
+    max-width: 170px;
+  }
+}
+
+@media (max-width: 600px) {
+  .housing-catalog__searching-results-title {
+    max-width: 410px;
+  }
+}

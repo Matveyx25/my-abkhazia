@@ -1,0 +1,61 @@
+.sentence-form__body {
+  width: 400px;
+}
+
+.sentence-form__text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 30px;
+}
+.sentence-form__title {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+}
+.sentence-form .form-body__checkbox-wrapper {
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.sentence-form .form-body__checkbox-link {
+  color: black !important;
+  font-size: 12px;
+  line-height: 16px;
+}
+.sentence-form .footer-checkbox__box {
+  min-width: 20px;
+  min-height: 20px;
+}
+.sentence-form .footer-checkbox__text {
+  margin-top: 6px;
+}
+.sentence-form .form-body__submit {
+  margin-top: 30px;
+}
+.sentence-form .input-form__wrapper {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+.input-form__wrapper--your-question {
+  width: 100%;
+  height: 140px;
+}
+.sentence-form__half {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.sentence-form__half-wrapper {
+  width: 48%;
+}

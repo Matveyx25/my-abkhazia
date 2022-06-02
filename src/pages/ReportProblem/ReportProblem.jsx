@@ -1,0 +1,160 @@
+import React, { useState } from "react";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Navigation from "../../components/Navigation/Navigation";
+import "./ReportProblem.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+const ReportProblem = () => {
+  const [checkedButton, changeChecked] = useState(true);
+
+  const tongleCheked = () => {
+    if (checkedButton) {
+      changeChecked(false);
+    } else {
+      changeChecked(true);
+    }
+  };
+  return (
+    <div className="sentence-form">
+      <Header />
+      <Navigation />
+      <section className="housing-catalog__page-way">
+        <Link to="/" className="page-way__first">
+          Главная
+        </Link>
+        <div className="page-way__decoration"></div>
+        <p className="page-way__second page-way__second--hover">
+          Сообщить о проблеме
+        </p>
+      </section>
+      <section className="hotel-number calendar">
+        <article className="calendar__title-wraper">
+          <h5 className="calendar__title">Сообщить о проблеме</h5>
+          <p className="calendar__decoration"></p>
+        </article>
+        <form className="sentence-form__body" action="">
+          <p className="sentence-form__text">
+            Если у Вас возникли какие-либо проблемы, сообщите об этом нам, и мы
+            свяжемся с Вами ближайщее время.
+          </p>
+          <label className="sentence-form__title" htmlFor="report__form-name">
+            Имя*
+          </label>
+          <input
+            class="form-body__name input-form__wrapper"
+            id="report__form-name"
+            type="text"
+            placeholder="Введите Ваше имя"
+            required
+          ></input>
+          <label
+            className="sentence-form__title"
+            htmlFor="report__form-email"
+          >
+            E-mail*
+          </label>
+          <input
+            class="form-body__name input-form__wrapper"
+            id="report__form-email"
+            type="email"
+            placeholder="Введите адрес электронной почты"
+            required
+          />
+          <div className="sentence-form__half">
+            <div className="sentence-form__half-wrapper">
+              <label
+                className="sentence-form__title"
+                htmlFor="report__form-country"
+              >
+                Страна*
+              </label>
+              <input
+                class="form-body__name input-form__wrapper"
+                id="report__form-country"
+                type="text"
+                placeholder="Россия"
+                required
+              />
+            </div>
+            <div className="sentence-form__half-wrapper">
+              <label
+                className="sentence-form__title"
+                htmlFor="report__form-phone-number"
+              >
+                Номер телефона*
+              </label>
+              <input
+                class="form-body__name input-form__wrapper"
+                id="report__form-phone-number"
+                type="tel"
+                placeholder="+7 (000) 000-00-00"
+                required
+              />
+            </div>
+          </div>
+          <label
+            className="sentence-form__title"
+            htmlFor="report__form-message"
+          >
+            Ваша проблема*
+          </label>
+          <textarea
+            class="form-body__name input-form__wrapper input-form__wrapper--your-question"
+            id="report__form-message"
+            type="text"
+            placeholder="Введите текст Вашего предложеня"
+            required
+          />
+          <input
+            class="form-body__submit"
+            type="submit"
+            value="Отправить"
+          ></input>
+          <div className="form-body__checkbox-wrapper">
+            {checkedButton == true ? (
+              <input
+                className="form-body__checkbox"
+                type="checkbox"
+                id="footer-checkbox-input"
+                required
+                checked
+              />
+            ) : (
+              <input
+                className="form-body__checkbox"
+                type="checkbox"
+                id="footer-checkbox-input"
+                required
+              />
+            )}
+            <label
+              className="form-body__checkbox-label"
+              htmlFor="footer-checkbox-input"
+              onClick={() => tongleCheked()}
+            >
+              <div className="footer-checkbox__box"></div>
+              <p className="footer-checkbox__text sentence-form__title">
+                Нажимая на кнопку, я соглашаюсь с{" "}
+                <a className="form-body__checkbox-link" href="#">
+                  Условиями
+                </a>{" "}
+                и{" "}
+                <a className="form-body__checkbox-link" href="#">
+                  Политикой конфиденциальности
+                </a>
+              </p>
+            </label>
+          </div>
+          <p className="sentence-form__title">
+            * Поля обязательны для заполнения
+          </p>
+        </form>
+      </section>
+
+      <Footer form={true} />
+    </div>
+  );
+};
+
+export default ReportProblem;
