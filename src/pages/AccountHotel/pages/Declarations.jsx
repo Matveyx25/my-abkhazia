@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { AccountLinkList } from '../../../components/AccountLinkList/AccountLinkList';
 import CardEdit from '../../../components/CardEdit/CardEdit';
 import './pages.css'
 
@@ -21,56 +22,7 @@ export const Declarations = () => {
             <button className="account-page__btn-dashed"><img src="../images/plus.svg"/>Добавить еще услугу</button>
         </div>
 
-        <ul className="main__banner-link-list">
-          <li className="main__banner-link-list-item">
-              <img
-                className="main__banner-link-image"
-                src="../images/apartment_building_construction_home_hotel_icon 1.svg"
-                alt=""
-              />
-              <p className="main__banner-link-text">Отели</p>
-          </li>
-          <li className="main__banner-link-list-item">
-              <img
-                className="main__banner-link-image"
-                src="../images/bxs_home.svg"
-                alt=""
-              />
-              <p className="main__banner-link-text">Частное жилье</p>
-          </li>
-          <li className="main__banner-link-list-item">
-              <img
-                className="main__banner-link-image"
-                src="../images/header-tours.svg"
-                alt=""
-              />
-              <p className="main__banner-link-text">Эскурсии и впечатления</p>
-          </li>
-          <li className="main__banner-link-list-item">
-              <img
-                className="main__banner-link-image"
-                src="../images/header-transfer.svg"
-                alt=""
-              />
-              <p className="main__banner-link-text">Трансфер</p>
-          </li>
-          <li className="main__banner-link-list-item">
-              <img
-                className="main__banner-link-image"
-                src="../images/header-rent.svg"
-                alt=""
-              />
-              <p className="main__banner-link-text">Аренда авто</p>
-          </li>
-          <li className="main__banner-link-list-item">
-              <img
-                className="main__banner-link-image"
-                src="../images/header-kitchen.svg"
-                alt=""
-              />
-              <p className="main__banner-link-text">Кухня Абхазии</p>
-          </li>
-        </ul>
+        <AccountLinkList/>
 
         <div className="account-page__filter-wrapper">
           <form className="account-page__filter">

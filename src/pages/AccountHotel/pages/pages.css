@@ -5,6 +5,13 @@
     color: #000000;
     margin-bottom: 30px;
 }
+.account-page__subtitle {
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+}
 
 .account-page__image-wrapper {
     width: 115px;
@@ -206,6 +213,9 @@
     font-size: 14px;
     color: #000000;
 }
+.account-page__filter input{
+    display: none;
+}
 .account-page__filter label{
     padding: 13px 20px;
     border-radius: 25px;
@@ -262,4 +272,135 @@
     width: 48px;
     height: 48px;
     margin-bottom: 10px;
+}
+
+
+.account-page__reviews-wrapper{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.settings-page__btn-fill{
+    display: block;
+    border: none;
+    width: 172px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+}
+.settings-page__btn-submit{
+    display: block;
+    border: none;
+    width: 200px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+}
+.settings-page__btn-outlined{
+    display: block;
+    border: none;
+    width: 172px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #58B4D1;
+    background: #fff;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid #58B4D1;
+    justify-content: center;
+    margin-top: 15px;
+}
+.account-page__settings-form .account-page__subtitle:not(:first-child){
+    margin-top: 30px;
+}
+.account-page__settings-form button{
+    cursor: pointer;
+}
+.account-page__settings-form .settings-page__btn-submit{
+    margin-top: 30px;
+}
+.account-page__inputs-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.account-page__input-block{
+    margin-top: 20px;
+    max-width: 318px;
+    width: 100%;
+}
+.account-page__input-position{
+    position: relative;
+    width: 100%;
+}
+.account-page__input-block p{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.account-page__input-block input{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    position: relative;
+    max-width: 318px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 25px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    outline: none !important;
+}
+.account-page__input-block input:valid,
+.account-page__input-block input:focus{
+    border: 1px solid #000000;
+}
+.account-page__input-block input:invalid{
+    border: none;
+}
+.account-page__input-block span{
+    display: block;
+    cursor: pointer;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration-line: underline;
+    color: #FB8500;
+    margin-top: 15px;
+}
+.account-page__input-block input[type="placeholder"]{}
+.account-page__input-block .account-page__invisible-eye,
+.account-page__input-block .account-page__visible-eye{
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    z-index: 100;
+    cursor: pointer;
 }
