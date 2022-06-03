@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import ImgsViewer from "react-images-viewer";
 import "./CardPostHeader.css";
 
 const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
   const [cardImageNumber, changeNumber] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [stateSrc, setSrc] = useState('');
+  const [curr, setCurr] = useState(0);
 
   const upCardImageNumber = () => {
     if (cardImageNumber == imagesArr.length - 1) {
@@ -21,6 +25,23 @@ const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
       changeNumber(some - 1);
     }
   };
+
+  const openViewer = (src) => {
+    setIsOpen(true)
+    let arr = []
+    if(Array.isArray(src)){
+      arr = src.map(el => ({src: el}))
+      setSrc(arr)
+    }else{
+      setSrc([{src: src}])
+    }
+  }
+
+  const closeViewer = () => {
+    setIsOpen(false)
+    setSrc('')
+    setCurr(0)
+  }
 
   return (
     <div className="card-post-header">
@@ -149,6 +170,14 @@ const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
         </article>
       </section>
       <section className="town-card__galery">
+        <ImgsViewer
+          imgs={stateSrc}
+          isOpen={isOpen}
+          onClose={closeViewer}
+          onClickPrev={() => setCurr(curr - 1)}
+          onClickNext={() => setCurr(curr + 1)}
+          currImg={curr}
+        />
         <article className="town-card__galery-item">
           <img
             className="table-message__item__absolute-image"
@@ -156,6 +185,7 @@ const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
             alt="glass"
             width="24"
             height="24"
+            onClick={() => openViewer(imagesArr[0])}
           />
           <img
             className="town-card__galery-item-image"
@@ -194,7 +224,7 @@ const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
           />
         </article>
         <article className="town-card__galery-item ">
-          <p className="town-card__galery-item-link ">Показать все фото</p>
+          <p className="town-card__galery-item-link " onClick={() => openViewer(imagesArr)}>Показать все фото</p>
           <img
             className="town-card__galery-item-image town-card__galery-item-image-half"
             src={

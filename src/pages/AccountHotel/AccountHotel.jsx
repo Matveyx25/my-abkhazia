@@ -7,6 +7,7 @@ import { Profile } from './pages/Profile';
 import { Declarations } from './pages/Declarations';
 import { Reviews } from './pages/Reviews';
 import { Settings } from './pages/Settings';
+import { Messenger } from './pages/Messenger';
 
 export const AccountHotel = () => {
   return (
@@ -30,6 +31,7 @@ export const AccountHotel = () => {
                     <Route index path="declarations" element={<Declarations/>}/>
                     <Route index path="reviews" element={<Reviews />}/>
                     <Route index path="settings" element={<Settings />}/>
+                    <Route index path="messenger" element={<Messenger />}/>
                   </Routes>
                 </div>
             </div>

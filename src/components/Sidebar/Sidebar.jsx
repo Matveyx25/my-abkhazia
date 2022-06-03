@@ -21,7 +21,7 @@ export const Sidebar = () => {
             <img src="../../images/bxs_calendar.svg"/>    
             Календарь занятости
         </NavLink>
-        <NavLink to="email" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
+        <NavLink to="messenger" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
             <img src="../../images/clarity_email-solid.svg"/>    
             Сообщения
         </NavLink>
