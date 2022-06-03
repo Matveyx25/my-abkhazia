@@ -2,12 +2,11 @@ import React from 'react'
 import Header from '../../components/Header/Header'
 import s from './AccountHotel.module.css'
 import { Sidebar } from '../../components/Sidebar/Sidebar';
-import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { Profile } from './pages/Profile';
+import { Declarations } from './pages/Declarations';
 
 export const AccountHotel = () => {
-  const location = useLocation()
-
   return (
     <div>
         <Header/>
@@ -26,6 +25,7 @@ export const AccountHotel = () => {
                         element={<Navigate to="profile" replace />}
                     />
                     <Route index path="profile" element={<Profile/>}/>
+                    <Route index path="declarations" element={<Declarations/>}/>
                   </Routes>
                 </div>
             </div>

@@ -1,11 +1,12 @@
-.account-page__title{
+.account-page__title {
     font-family: 'Century Gothic';
     font-weight: 700;
     font-size: 24px;
     color: #000000;
     margin-bottom: 30px;
 }
-.account-page__image-wrapper{
+
+.account-page__image-wrapper {
     width: 115px;
     height: 115px;
     border-radius: 50%;
@@ -13,12 +14,14 @@
     margin-right: 86px;
     overflow: hidden;
 }
-.account-page__image-wrapper img{
+
+.account-page__image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.account-page__info-list{
+
+.account-page__info-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -27,33 +30,40 @@
     font-size: 14px;
     color: #000000;
 }
-.account-page__info-list li:not(:last-child){
+
+.account-page__info-list li:not(:last-child) {
     margin-bottom: 10px;
 }
-.account-page__info-list .mute{
+
+.account-page__info-list .mute {
     color: rgba(0, 0, 0, 0.6);
     margin-right: 10px;
 }
-.account-page__info-list .blue{
+
+.account-page__info-list .blue {
     font-family: 'Century Gothic';
     font-weight: 400;
     font-size: 14px;
     color: #58B4D1;
     margin-left: 10px;
 }
-.account-page__jcsb{
+
+.account-page__jcsb {
     display: flex;
     flex-grow: 1;
     flex-direction: row;
     justify-content: space-between;
 }
-.account-page__section:not(:last-child){
+
+.account-page__section:not(:last-child) {
     margin-bottom: 56px;
 }
-.account-page__section:last-child{
+
+.account-page__section:last-child {
     margin-bottom: 30px;
 }
-.account-page__btn{
+
+.account-page__btn {
     width: 231px;
     padding: 13px;
     display: flex;
@@ -67,7 +77,8 @@
     border: none;
     justify-content: center;
 }
-.account-page__btn-outline{
+
+.account-page__btn-outline {
     width: 231px;
     padding: 13px;
     display: flex;
@@ -81,10 +92,174 @@
     font-size: 14px;
     justify-content: center;
 }
-.account-page__row{
+
+.account-page__btn-dashed {
+    width: 220px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #58B4D1;
+    background: #FFFFFF;
+    border: 1px dashed #58B4D1;
+    border-radius: 30px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.account-page__btn-dashed img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-right: 10px;
+}
+
+.account-page__row {
     display: flex;
     flex-direction: row;
 }
-.account-page__row button:not(:last-child){
+
+.account-page__row button:not(:last-child) {
     margin-right: 34px;
+}
+
+.decorations-section .account-page__btn-dashed {
+    margin-bottom: 30px;
+}
+
+/* main banner */
+
+.decorations-section .main__banner-link-list {
+    position: relative;
+    display: flex;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 0px 25px 0px;
+    background: #ffffff;
+    box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+}
+
+.decorations-section .main__banner-link-list-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.decorations-section .main__banner-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.decorations-section .main__banner-link:hover .main__banner-link-text {
+    color: #58b4d1;
+}
+
+.decorations-section .main__banner-link-list-item:hover .main__banner-link-text {
+    color: #58b4d1;
+    cursor: pointer;
+}
+
+.decorations-section .main__banner-link-image {
+    display: block;
+    margin: 0 auto;
+    margin-right: 8px;
+}
+
+.decorations-section .main__banner-link-text {
+    width: 100%;
+    text-align: center;
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+
+
+.account-page__filter-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+.account-page__filter-wrapper input {
+    display: none;
+}
+.account-page__filter {
+    display: flex;
+    align-items: center;
+    max-width: 465px;
+    width: 100%;
+    justify-content: space-between;
+    font-family: 'Century Gothic';
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+}
+.account-page__filter label{
+    padding: 13px 20px;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+.account-page__filter input:checked + label{
+    background: rgba(88, 180, 209, 0.3);
+    font-weight: 700;
+    box-sizing: border-box;
+}
+.account-page__filter-fill {
+    display: flex;
+    align-items: center;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+    background: #DFDFDF;
+    border-radius: 25px;
+}
+.account-page__filter-fill label{
+    padding: 13px 30px;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+.account-page__filter-fill input:checked + label{
+    background: #58B4D1;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.account-page__result-wrapper{
+    margin-top: 20px;
+}
+.account-page__btn-add-hotel{
+    width: 100%;
+    height: 275px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    margin-bottom: 30px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.account-page__btn-add-hotel img{
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
 }

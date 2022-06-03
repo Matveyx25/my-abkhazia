@@ -1,0 +1,78 @@
+.housing-catalog__searching-results-item.for-edit .housing-catalog__searching-results-image{
+  width: 317px;
+  height: 275px;
+}
+.housing-catalog__searching-results-item.for-edit .searching-results-image__image{
+  width: 317px;
+  height: 275px;
+}
+.searching-results__btn-wrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.searching-results__btn-wrapper .searching-results__more-link{
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+  color: #fb8500;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+.searching-results__calendar-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  padding: 13px;
+  font-family: 'Century Gothic';
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background: #58B4D1;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+.searching-results__edit-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  padding: 13px;
+  font-family: 'Century Gothic';
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background: #fb8500;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+.searching-results__btn-wrapper a:not(:first-child){
+  margin-left: 30px;
+}
+.searching-results__addition-draft {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family: 'Century Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #E3170A;
+  padding: 8px 15px;
+  border: 1px solid #E3170A;
+  border-radius: 25px;
+  width: fit-content;
+}
