@@ -1,4 +1,4 @@
-.tabbar{
+.tabbar, .tabbarLr{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -6,6 +6,17 @@
     align-items: center;
     gap: 30px;
     margin-bottom: 30px;
+}
+.tabbarLr p{
+    width: fit-content;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000;
+    font-family: 'Century Gothic';
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    cursor: pointer;
 }
 .tabbar p{
     width: 104px;
@@ -18,7 +29,7 @@
     text-align: center;
     cursor: pointer;
 }
-.tabbar p.active{
+.tabbar p.active, .tabbarLr p.active{
     border-bottom: 1px solid #58B4D1;
     font-weight: 700;
     color: #000000;

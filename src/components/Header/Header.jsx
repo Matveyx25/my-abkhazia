@@ -56,7 +56,7 @@ const Header = ({ wallet, closeEmail }) => {
   const [registration, changeRegistration] = useState(true);
   const [email, changeVisibilityEmail] = useState(true);
 
-  const [modalLogin, setModalLogin] = useState(true);
+  const [modalLogin, setModalLogin] = useState(false);
 
   const tongBurger = () => {
     if (burger) {

@@ -217,12 +217,14 @@ export const Settings = () => {
                 <img
                   src="../images/eye-invisible-filled.svg"
                   className="account-page__invisible-eye"
+                  alt=""
                   onClick={changeVisible}
                 />
               ) : (
                 <img
                   src="../images/eye-filled.svg"
                   className="account-page__visible-eye"
+                  alt=""
                   onClick={changeVisible}
                 />
               )}
