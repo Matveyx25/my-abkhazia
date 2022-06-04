@@ -1,0 +1,143 @@
+.tabbar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.tabbar p{
+    width: 104px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000;
+    font-family: 'Century Gothic';
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    cursor: pointer;
+}
+.tabbar p.active{
+    border-bottom: 1px solid #58B4D1;
+    font-weight: 700;
+    color: #000000;
+}
+.form{
+    width: 410px;
+}
+.inputBlock{
+    margin-top: 20px;
+    max-width: 410px;
+    width: 100%;
+    position: relative;
+}
+.inputBlock p{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.inputBlock input{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    position: relative;
+    max-width: 410px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 25px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    outline: none !important;
+}
+.inputBlock input:valid,
+.inputBlock input:focus{
+    border: 1px solid #000000;
+}
+.inputBlock input:invalid{
+    border: none;
+}
+.inputBlock span{
+    display: block;
+    cursor: pointer;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration-line: underline;
+    color: #FB8500;
+    margin-top: 15px;
+}
+.inputBlock .eye{
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    z-index: 100;
+    cursor: pointer;
+}
+.forget{margin-top: 15px;}
+.submitBtn{
+    display: block;
+    border: none;
+    width: 100%;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+    margin-top: 30px;
+}
+.or{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.or p{
+    font-family: 'Century Gothic';
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+.or span{
+    width: 33%;
+    height: 1px;
+    background: #000;
+}
+.withPhone{
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    padding: 13px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+    position: relative;
+}
+.withPhone img{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 9px;
+    left: 25px;
+}
+.withPhone:not(:last-child){
+    margin-bottom: 15px;
+}

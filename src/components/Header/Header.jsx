@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { Modal } from "../Modal/Modal";
+import { Login } from "../Login/Login";
 
 const city = [
   "Гагра",
@@ -53,6 +55,8 @@ const Header = ({ wallet, closeEmail }) => {
   const [categoryTongler, tongCategoryWindow] = useState(false);
   const [registration, changeRegistration] = useState(true);
   const [email, changeVisibilityEmail] = useState(true);
+
+  const [modalLogin, setModalLogin] = useState(true);
 
   const tongBurger = () => {
     if (burger) {
@@ -107,6 +111,7 @@ const Header = ({ wallet, closeEmail }) => {
   return (
     <div>
       <section className="header">
+        <Login visible={modalLogin} onClose={() => setModalLogin(false)}/>
         <article className="header__logo">
           <div className="header__logo-image-wrapper">
             <img
@@ -232,10 +237,14 @@ const Header = ({ wallet, closeEmail }) => {
 
         {!registration && (
           <article className="header__enter">
-            <a className="header__enter-register" href="№">
+            <a className="header__enter-register" href="#">
               Зарегистрироваться
             </a>
-            <a className="header__enter-button" href="№">
+            <a
+              className="header__enter-button"
+              href="#"
+              onClick={() => setModalLogin(true)}
+            >
               Войти
             </a>
           </article>
@@ -304,7 +313,9 @@ const Header = ({ wallet, closeEmail }) => {
             <p className="header__login-name">Анастасия</p>
             {menu && (
               <ul className="login-name__menu">
-                <li className="login-name__menu-item"><Link to="/hotel-account">Мой кабинет</Link></li>
+                <li className="login-name__menu-item">
+                  <Link to="/hotel-account">Мой кабинет</Link>
+                </li>
                 <li className="login-name__menu-item">Добавить услугу</li>
                 <li
                   className="login-name__menu-item"
@@ -365,13 +376,13 @@ const Header = ({ wallet, closeEmail }) => {
           <article className="header__enter--mobile">
             <a
               className="header__enter-register header__enter-register--mobile"
-              href="№"
+              href="#"
             >
               Зарегистрироваться
             </a>
             <a
               className="header__enter-button header__enter-button--mobile"
-              href="№"
+              href="#"
             >
               Войти
             </a>
@@ -406,7 +417,9 @@ const Header = ({ wallet, closeEmail }) => {
               {/* )}  */}
             </article>
             <ul className="login-name__menu--mobile">
-              <li className="menu-mobile__item"><Link to="/hotel-account">Мой кабинет</Link></li>
+              <li className="menu-mobile__item">
+                <Link to="/hotel-account">Мой кабинет</Link>
+              </li>
               <li className="menu-mobile__item">Добавить услугу</li>
               <li
                 className="menu-mobile__item"
