@@ -458,44 +458,50 @@ const HotelNumber = () => {
                     </p>
                     <p className="card-options__price">{el.price}₽ сутки</p>
                   </section>
+                  <div className="card-options__jcsb">
+                    <p className="card-options__reserve">Забронировать</p>
+                    <p
+                      className="card-options__about-number"
+                      onClick={() => seeSubOptions(el.imageArr[1])}
+                    >
+                      Подробнее о номере
+                    </p>
+                  </div>
                 </div>
-                <p className="card-options__reserve">Забронировать</p>
-                <p
-                  className="card-options__about-number"
-                  onClick={() => seeSubOptions(el.imageArr[1])}
-                >
-                  Подробнее о номере
-                </p>
+                
               </div>
               <div
                 className="hotel-number__card-sub-options-wrapper close-hotel-number-sub-options"
                 id={el.imageArr[1]}
               >
                 <div className="hotel-number__card-sub-options">
-                  {el.options.map((option) => (
-                    <div className="hotel-number__card-option">
-                      <h5 className="hotel-number__card-option-title">
-                        {option.title}
-                      </h5>
-                      {option.optionList.map((el) => (
-                        <div className="card-option__property-item">
-                          <p className="card-option__property">
-                            {el.optionProperty}
-                          </p>
-                          <p className="card-option__property-number">
-                            {el.optionPropertyNumber}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
+                  <div className="hotel-number__sub-flex">
+                    {el.options.map((option) => (
+                      <div className="hotel-number__card-option">
+                        <h5 className="hotel-number__card-option-title">
+                          {option.title}
+                        </h5>
+                        {option.optionList.map((el) => (
+                          <div className="card-option__property-item">
+                            <p className="card-option__property">
+                              {el.optionProperty}
+                            </p>
+                            <p className="card-option__property-number">
+                              {el.optionPropertyNumber}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                  <p
+                    className="card-sub-options__close"
+                    onClick={() => closeSubOptions(el.imageArr[1])}
+                  >
+                    Свернуть
+                  </p>
                 </div>
-                <p
-                  className="card-sub-options__close"
-                  onClick={() => closeSubOptions(el.imageArr[1])}
-                >
-                  Свернуть
-                </p>
+                
               </div>
             </article>
           ))}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Checkbox.css";
 
-const Checkbox = ({ inputName, inputValue, inputId, labelText, subMenu, clickFunction }) => {
+const Checkbox = ({ inputName, inputValue, inputId, labelText, subMenu, clickFunction, changeFunction, checked }) => {
   return (
     <label
     onClick={()=> clickFunction()}
@@ -20,6 +20,8 @@ const Checkbox = ({ inputName, inputValue, inputId, labelText, subMenu, clickFun
         name={inputName}
         value={inputValue}
         id={inputId}
+        onChange={changeFunction}
+        checked={checked}
       />
       <div className="housing-catalog__housing-pseudo-checkbox"></div>
       <p

@@ -242,7 +242,6 @@ label {
 .housing-catalog__private-house:checked + .housing-catalog__sub-private {
   display: block;
 }
-
 .housing-catalog__housing-label {
   font-family: "Open Sans";
   font-style: normal;

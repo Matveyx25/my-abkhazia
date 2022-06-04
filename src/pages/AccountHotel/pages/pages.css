@@ -351,6 +351,7 @@
     margin-top: 20px;
     max-width: 318px;
     width: 100%;
+    position: relative;
 }
 .account-page__input-position{
     position: relative;
@@ -504,4 +505,46 @@
 .messenger-page__messages{
     max-height: 100%;
     overflow-y: auto;
+}
+.account-page__radios{
+    position: absolute;
+    top: 83px;
+    left: 0;
+    z-index: 100;
+    padding: 30px;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: none;
+}
+.account-page__radios::after{
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background: #FFFFFF;
+    border-width: 1px 0px 0px 1px;
+    border-style: solid;
+    border-color: #000000;
+    left: 50%;
+    top: -2px;
+    transform: rotate(45deg) translateX(-50%);
+}
+.account-page__radios:hover{
+    display: block;
+}
+.account-page__radios label p{
+    margin-bottom: 0;
+}
+.account-page__radios label{
+    margin-bottom: 0;
+}
+.account-page__radios label:not(:last-child){
+    margin-bottom: 17px;
+}
+.account-page__input-with-radio:focus + .account-page__radios{
+    display: block;
 }
