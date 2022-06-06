@@ -8,6 +8,7 @@ import { Declarations } from './pages/Declarations';
 import { Reviews } from './pages/Reviews';
 import { Settings } from './pages/Settings';
 import { Messenger } from './pages/Messenger';
+import { Calendar } from './pages/Calendar';
 
 export const AccountHotel = () => {
   return (
@@ -28,10 +29,11 @@ export const AccountHotel = () => {
                         element={<Navigate to="profile" replace />}
                     />
                     <Route index path="profile" element={<Profile/>}/>
-                    <Route index path="declarations" element={<Declarations/>}/>
-                    <Route index path="reviews" element={<Reviews />}/>
-                    <Route index path="settings" element={<Settings />}/>
-                    <Route index path="messenger" element={<Messenger />}/>
+                    <Route path="declarations" element={<Declarations/>}/>
+                    <Route path="reviews" element={<Reviews />}/>
+                    <Route path="settings" element={<Settings />}/>
+                    <Route path="messenger" element={<Messenger />}/>
+                    <Route path="calendar" element={<Calendar />}/>
                   </Routes>
                 </div>
             </div>
