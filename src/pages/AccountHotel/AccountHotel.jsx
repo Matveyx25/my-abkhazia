@@ -8,7 +8,7 @@ import { Declarations } from './pages/Declarations';
 import { Reviews } from './pages/Reviews';
 import { Settings } from './pages/Settings';
 import { Messenger } from './pages/Messenger';
-import { Calendar } from './pages/Calendar';
+import { CalendarPage } from './pages/CalendarPage';
 
 export const AccountHotel = () => {
   return (
@@ -33,7 +33,7 @@ export const AccountHotel = () => {
                     <Route path="reviews" element={<Reviews />}/>
                     <Route path="settings" element={<Settings />}/>
                     <Route path="messenger" element={<Messenger />}/>
-                    <Route path="calendar" element={<Calendar />}/>
+                    <Route path="calendar" element={<CalendarPage />}/>
                   </Routes>
                 </div>
             </div>

@@ -406,11 +406,11 @@
     cursor: pointer;
 }
 
-.messenger-page__section .card-description__owner{
+.card-description__owner.small{
     max-width: 318px;
     max-height: fit-content;
 }
-.messenger-page__section .card-description__owner-write{
+.card-description__owner.small .card-description__owner-write{
     width: 220px;
     box-sizing: border-box;
     padding: 13px 15px;

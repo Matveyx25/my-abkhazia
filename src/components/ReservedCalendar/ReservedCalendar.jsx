@@ -3,7 +3,7 @@ import s from "./ReservedCalendar.module.css";
 const { JsonCalendar } = require("json-calendar");
 const calendar = new JsonCalendar({ today: new Date() });
 
-export const ReservedCalendar = () => {
+export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser}) => {
     const ruMonths = [
         "Январь",
         "Февраль",
@@ -64,79 +64,111 @@ export const ReservedCalendar = () => {
   };
 
   return (
-    <div className={s.wrapper}>
-      <p className={s.gridTitle}>Месяц</p>
-      <p className={s.gridTitle}>Дата</p>
-      <p className={s.gridTitle}>Кол-во номеров</p>
-      <p className={s.gridTitle}>Туристы</p>
-      <div className={s.monthName}>
-        <div>
+    <div>
+      <div className={s.wrapper}>
+        <p className={s.gridTitle}>Месяц</p>
+        <p className={s.gridTitle}>Дата</p>
+        <p className={s.gridTitle}>Кол-во номеров</p>
+        <p className={s.gridTitle}>Туристы</p>
+        <div className={s.monthName}>
+          <div>
+            <img
+              src="../images/arrow-right-circle-fill.svg"
+              className={indexMonth <= 0 && s.disabled}
+              onClick={onPrev}
+              alt=""
+            />
+            {month}
+          </div>
           <img
             src="../images/arrow-right-circle-fill.svg"
-            className={indexMonth <= 0 && s.disabled}
-            onClick={onPrev}
+            className={`${s.next} ${indexMonth >= 11 ? s.disabled : null}`}
+            onClick={onNext}
             alt=""
           />
-          {month}
         </div>
-        <img
-          src="../images/arrow-right-circle-fill.svg"
-          className={`${s.next} ${indexMonth >= 11 ? s.disabled : null}`}
-          onClick={onNext}
-          alt=""
-        />
+        <div className={s.weekWrapper}>
+          <table className={s.days}>
+            <tbody>
+              <tr>
+                {weeks?.map((week) =>
+                  week?.map((day, index) => {
+                    if (day.className.includes("month-day")) {
+                      return (
+                        <td
+                          key={index}
+                          className={day.dayName.ru == "Вс" && s.lastTd}
+                        >
+                          <div className={s.day}>
+                            <span>{day.dayName.ru}</span>
+                            <span>{day.day}</span>
+                          </div>
+                        </td>
+                      );
+                    }
+                  })
+                )}
+              </tr>
+              <tr>
+                {weeks?.map((week) =>
+                  week?.map((day, index) => {
+                    if (day.className.includes("month-day")) {
+                      return (
+                        <td
+                          key={index}
+                          className={day.dayName.ru == "Вс" && s.lastTd}
+                        >
+                          <div className={s.rooms}>
+                            <p key={day.day}>4</p>
+                          </div>
+                        </td>
+                      );
+                    }
+                  })
+                )}
+              </tr>
+              <tr>
+                <td></td>
+                <td
+                  colSpan={10}
+                  className={`${s.colspanTd} ${activeUser && s.active}`}
+                >
+                  <div onClick={clickHandler}>Андрей</div>
+                </td>
+              </tr>
+              {user && user.monthIn == month ? 
+              (
+                <tr>
+                  {weeks?.map((week) =>
+                  week?.map((day) => {
+                    if (day.className.includes("month-day")) {
+                      console.log(day.day);
+                      if(+day.day < +user.dayIn || +day.day >= +user.dayOut) {
+                        return (
+                          <td key={day.day}></td>
+                        );
+                      }else if(+day.day == +user.dayIn){
+                        return (
+                        <td
+                          key={day.day}
+                          colSpan={user.dayOut - user.dayIn + 1}
+                          className={`${s.colspanTd} ${activeUser && s.active}`}
+                        >
+                          <div onClick={clickHandler}>{user.name}
+                          {removeUser && <img src="../images/close-white.svg" onClick={removeUser}/>}
+                          </div>
+                        </td>
+                        )
+                      }
+                    }
+                  })
+                )}
+                </tr>)
+                 : null}
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div className={s.weekWrapper}>
-        <table className={s.days}>
-          <tbody>
-            <tr>
-              {weeks?.map((week) =>
-                week?.map((day, index) => {
-                  if (day.className.includes("month-day")) {
-                    return (
-                      <td
-                        key={index}
-                        className={day.dayName.ru == "Вс" && s.lastTd}
-                      >
-                        <div className={s.day}>
-                          <span>{day.dayName.ru}</span>
-                          <span>{day.day}</span>
-                        </div>
-                      </td>
-                    );
-                  }
-                })
-              )}
-            </tr>
-            <tr>
-              {weeks?.map((week) =>
-                week?.map((day, index) => {
-                  if (day.className.includes("month-day")) {
-                    return (
-                      <td
-                        key={index}
-                        className={day.dayName.ru == "Вс" && s.lastTd}
-                      >
-                        <div className={s.rooms}>
-                          <p key={day.day}>4</p>
-                        </div>
-                      </td>
-                    );
-                  }
-                })
-              )}
-            </tr>
-            <tr>
-              <td></td>
-              <td colSpan={10} className={s.colspanTd}>
-                <div>Андрей</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    
     </div>
   );
 };
