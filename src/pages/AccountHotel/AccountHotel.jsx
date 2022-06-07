@@ -9,6 +9,7 @@ import { Reviews } from './pages/Reviews';
 import { Settings } from './pages/Settings';
 import { Messenger } from './pages/Messenger';
 import { CalendarPage } from './pages/CalendarPage';
+import Footer from '../../components/Footer/Footer';
 
 export const AccountHotel = () => {
   return (
@@ -38,6 +39,7 @@ export const AccountHotel = () => {
                 </div>
             </div>
         </div>
+        <Footer/>
     </div>
   )
 }

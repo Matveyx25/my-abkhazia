@@ -2,7 +2,7 @@ import React from "react";
 import Radio from "../Radio/Radio";
 import s from "./CalendarCardAccount.module.css";
 
-export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms}) => {
+export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, option}) => {
   return (
     <div className={active ? `${s.wrapper} ${s.active}` : s.wrapper}>
       <h1 className={s.title}>{label}</h1>
@@ -10,6 +10,9 @@ export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms}) =>
       {freeRooms && <div className={s.jcsb}>
         <p>{freeRooms} номеров</p>
         <p className={s.blue}>Категория 1</p>
+      </div>}
+      {option && <div className={s.jcsb}>
+        <p>{option}</p>
       </div>}
       <span className={s.line}></span>
       <Radio

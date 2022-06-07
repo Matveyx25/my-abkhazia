@@ -108,6 +108,21 @@
     box-sizing: border-box;
     color: #FFFFFF;
 }
+.notColspanTd div{
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background: #FB8500;
+    border-radius: 10px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+}
 .colspanTd.active div{
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15), inset 0px 8px 10px rgba(0, 0, 0, 0.15);
 }

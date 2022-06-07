@@ -35,20 +35,6 @@
     font-size: 12px;
     color: #000000;
 }
-.input{
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 25px;
-    width: 317px;
-    padding: 12px 25px;
-    box-sizing: border-box;
-    font-family: 'Open Sans';
-    font-weight: 400;
-    font-size: 14px;
-    margin-top: 10px;
-    outline: none !important;
-}
 .tourist{
     margin-top: 30px;
 }
@@ -67,7 +53,9 @@
     gap: 30px;
 }
 
-
+.form .inputBlock, .form .inputBlock input, .form .inputBlock textarea{
+    max-width:317px;
+}
 .inputBlock{
     margin-top: 15px;
     max-width: 262px;
@@ -81,7 +69,7 @@
     color: #000000;
     margin-bottom: 10px;
 }
-.inputBlock input{
+.inputBlock input, .inputBlock textarea{
     background: #FFFFFF;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     border-radius: 25px;
@@ -96,11 +84,18 @@
     color: #000000;
     outline: none !important;
 }
+.inputBlock textarea{
+    resize: none;
+    height: 100px;
+}
 .inputBlock input:valid,
-.inputBlock input:focus{
+.inputBlock input:focus,
+.inputBlock textarea:valid,
+.inputBlock textarea:focus{
     border: 1px solid #000000;
 }
-.inputBlock input:invalid{
+.inputBlock input:invalid,
+.inputBlock textarea:invalid{
     border: none;
 }
 .inputBlock span{

@@ -4,6 +4,7 @@ import { AccountLinkList } from "../../../components/AccountLinkList/AccountLink
 import s from "./Calendar.module.css";
 import { CalendarHotel } from './CalendarHotel';
 import { CalendarHouse } from "./CalendarHouse";
+import { CalendarExcursion } from "./CalendarExcursion";
 
 export const CalendarPage = () => {
   const [value, setValue] = useState(0);
@@ -71,6 +72,7 @@ export const CalendarPage = () => {
         {
           'Отели': <CalendarHotel />,
           'Частное жилье': <CalendarHouse />,
+          'Эскурсии и впечатления': <CalendarExcursion/>,
         }[pageType]
       }
     </div>

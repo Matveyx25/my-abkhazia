@@ -69,6 +69,7 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
         <p className={s.gridTitle}>Месяц</p>
         <p className={s.gridTitle}>Дата</p>
         {type == 'hotel' && <p className={s.gridTitle}>Кол-во номеров</p>}
+        {type == 'excursion' && <p className={s.gridTitle}>Кол-во человек</p>}
         <p className={`${s.gridTitle} ${s.last}`}>Туристы</p>
         <div className={s.monthName}>
           <div>
@@ -127,7 +128,25 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   })
                 )}
               </tr>}
-              <tr>
+             {type == 'excursion' && <tr>
+                {weeks?.map((week) =>
+                  week?.map((day, index) => {
+                    if (day.className.includes("month-day")) {
+                      return (
+                        <td
+                          key={index}
+                          className={day.dayName.ru == "Вс" && s.lastTd}
+                        >
+                          <div className={s.rooms}>
+                            <p key={day.day}>20</p>
+                          </div>
+                        </td>
+                      );
+                    }
+                  })
+                )}
+              </tr>}
+              {(type == 'house' || type == 'hotel') && <tr>
                 <td></td>
                 <td
                   colSpan={10}
@@ -135,7 +154,16 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                 >
                   <div onClick={clickHandler}>Андрей</div>
                 </td>
-              </tr>
+              </tr>}
+              {type == 'excursion' && <tr>
+                <td></td>
+                <td></td>
+                <td
+                  className={`${s.notColspanTd} ${activeUser && s.active}`}
+                >
+                  <div>2 вз.</div>
+                </td>
+              </tr>}
               {user && user.monthIn == month ? 
               (
                 <tr>
