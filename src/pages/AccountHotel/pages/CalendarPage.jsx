@@ -17,7 +17,7 @@ export const CalendarPage = () => {
   const [phone, setPhone] = useState();
   const [touristName, setTouristName] = useState();
 
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
   const [user, setUser] = useState({name: 'Нина', dayIn: 3, dayOut: 13, monthIn: 'Июнь'});
 
   const [activeUser, setActiveUser] = useState(false);

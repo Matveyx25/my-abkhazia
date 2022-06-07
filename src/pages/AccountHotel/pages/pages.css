@@ -548,3 +548,7 @@
 .account-page__input-with-radio:focus + .account-page__radios{
     display: block;
 }
+
+.account-page__settings-form .account-page__image-wrapper{
+    margin-right: 30px;
+}
