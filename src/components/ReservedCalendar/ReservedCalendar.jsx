@@ -33,11 +33,13 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
     calendar.weeks[0].find((el) => el.className.includes("month-day")).monthIndex
   );
   const [month, setMonth] = useState(ruMonths[indexMonth]);
-  const [weeks, setWeeks] = useState(calendar.weeks.map((w) => w.map((d) => ({
+  const [weeks, setWeeks] = useState(
+    calendar.weeks.map((w) => w.map((d) => ({
       day: d.day,
       className: d.className,
       dayName: ruDays.find(el => el.en == calendar.dayNames[d.date.getDay()].abbr)
-    }))))
+    })))
+    )
 
   useEffect(() => {
     const DATE = new Date();
@@ -69,8 +71,10 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
         <p className={s.gridTitle}>Месяц</p>
         <p className={s.gridTitle}>Дата</p>
         {type == 'hotel' && <p className={s.gridTitle}>Кол-во номеров</p>}
-        {type == 'excursion' && <p className={s.gridTitle}>Кол-во человек</p>}
-        <p className={`${s.gridTitle} ${s.last}`}>Туристы</p>
+        {(type == 'excursion' || type == 'excursion2') && <p className={s.gridTitle}>Кол-во человек</p>}
+        <p className={`${s.gridTitle} ${s.last}`}>
+          {type == 'excursion2'? "Время" : "Туристы"}
+        </p>
         <div className={s.monthName}>
           <div>
             <img
@@ -128,7 +132,7 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   })
                 )}
               </tr>}
-             {type == 'excursion' && <tr>
+             {(type == 'excursion' || type == 'excursion2') && <tr>
                 {weeks?.map((week) =>
                   week?.map((day, index) => {
                     if (day.className.includes("month-day")) {
@@ -162,6 +166,33 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   className={`${s.notColspanTd} ${activeUser && s.active}`}
                 >
                   <div>2 вз.</div>
+                </td>
+              </tr>}
+              {type == 'excursion2' && <tr>
+                <td></td>
+                <td></td>
+                <td
+                  className={`${s.notColspanTd} ${activeUser && s.active}`}
+                >
+                  <div>
+                    <p>12:00</p>
+                    <p>2 вз.</p>
+                  </div>
+                  <div className={s.outlined}>
+                    <p>12:00</p>
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td
+                  className={`${s.notColspanTd} ${activeUser && s.active}`}
+                >
+                  <div className={s.outlined}>
+                    <p>12:00</p>
+                  </div>
+                  <div className={s.outlined}>
+                    <p>12:00</p>
+                  </div>
                 </td>
               </tr>}
               {user && user.monthIn == month ? 

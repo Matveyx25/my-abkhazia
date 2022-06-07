@@ -2,9 +2,9 @@ import React from "react";
 import Radio from "../Radio/Radio";
 import s from "./CalendarCardAccount.module.css";
 
-export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, option}) => {
+export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, option, clickHandler}) => {
   return (
-    <div className={active ? `${s.wrapper} ${s.active}` : s.wrapper}>
+    <div className={active ? `${s.wrapper} ${s.active}` : s.wrapper} onClick={clickHandler}>
       <h1 className={s.title}>{label}</h1>
       {subtitle && <h2 className={s.subtitle}>{subtitle}</h2>}
       {freeRooms && <div className={s.jcsb}>
@@ -17,13 +17,13 @@ export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, opt
       <span className={s.line}></span>
       <Radio
         labelText="Открыто для бронирования"
-        inputId="open_reserve"
+        inputId={"open_reserve" + id}
         inputName={"reserve_input" + id}
         checked={true}
       />
       <Radio
         labelText="Открыто для бронирования"
-        inputId="close_reserve"
+        inputId={"close_reserve" + id}
         inputName={"reserve_input" + id}
       />
       <h1 className={s.inputTitle}>Свободная дата С</h1>
