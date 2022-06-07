@@ -2,15 +2,15 @@ import React from "react";
 import Radio from "../Radio/Radio";
 import s from "./CalendarCardAccount.module.css";
 
-export const CalendarCardAccount = ({id, active}) => {
+export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms}) => {
   return (
     <div className={active ? `${s.wrapper} ${s.active}` : s.wrapper}>
-      <h1 className={s.title}>Отель у моря “Бамбучо”</h1>
-      <hs className={s.subtitle}>Бюджетный двухместный номер с 1 кроватью</hs>
-      <div className={s.jcsb}>
-        <p>5 номеров</p>
+      <h1 className={s.title}>{label}</h1>
+      {subtitle && <h2 className={s.subtitle}>{subtitle}</h2>}
+      {freeRooms && <div className={s.jcsb}>
+        <p>{freeRooms} номеров</p>
         <p className={s.blue}>Категория 1</p>
-      </div>
+      </div>}
       <span className={s.line}></span>
       <Radio
         labelText="Открыто для бронирования"

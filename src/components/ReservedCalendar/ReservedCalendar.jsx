@@ -3,7 +3,7 @@ import s from "./ReservedCalendar.module.css";
 const { JsonCalendar } = require("json-calendar");
 const calendar = new JsonCalendar({ today: new Date() });
 
-export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser}) => {
+export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, type}) => {
     const ruMonths = [
         "Январь",
         "Февраль",
@@ -68,8 +68,8 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser}) =
       <div className={s.wrapper}>
         <p className={s.gridTitle}>Месяц</p>
         <p className={s.gridTitle}>Дата</p>
-        <p className={s.gridTitle}>Кол-во номеров</p>
-        <p className={s.gridTitle}>Туристы</p>
+        {type == 'hotel' && <p className={s.gridTitle}>Кол-во номеров</p>}
+        <p className={`${s.gridTitle} ${s.last}`}>Туристы</p>
         <div className={s.monthName}>
           <div>
             <img
@@ -109,7 +109,7 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser}) =
                   })
                 )}
               </tr>
-              <tr>
+             {type == 'hotel' && <tr>
                 {weeks?.map((week) =>
                   week?.map((day, index) => {
                     if (day.className.includes("month-day")) {
@@ -126,7 +126,7 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser}) =
                     }
                   })
                 )}
-              </tr>
+              </tr>}
               <tr>
                 <td></td>
                 <td
@@ -142,7 +142,6 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser}) =
                   {weeks?.map((week) =>
                   week?.map((day) => {
                     if (day.className.includes("month-day")) {
-                      console.log(day.day);
                       if(+day.day < +user.dayIn || +day.day >= +user.dayOut) {
                         return (
                           <td key={day.day}></td>

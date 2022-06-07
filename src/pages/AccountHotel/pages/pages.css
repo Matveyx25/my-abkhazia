@@ -552,3 +552,6 @@
 .account-page__settings-form .account-page__image-wrapper{
     margin-right: 30px;
 }
+.main__banner-link-text.active{
+    color: #58B4D1;
+}
