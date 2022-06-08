@@ -5,6 +5,8 @@ import s from "./Calendar.module.css";
 import { CalendarHotel } from './CalendarHotel';
 import { CalendarHouse } from "./CalendarHouse";
 import { CalendarExcursion } from "./CalendarExcursion";
+import { CalendarRent } from "./CalendarRent";
+import { CalendarFood } from "./CalendarFood";
 
 export const CalendarPage = () => {
   const [value, setValue] = useState(0);
@@ -73,6 +75,8 @@ export const CalendarPage = () => {
           'Отели': <CalendarHotel />,
           'Частное жилье': <CalendarHouse />,
           'Эскурсии и впечатления': <CalendarExcursion/>,
+          'Аренда авто': <CalendarRent/>,
+          'Кухня Абхазии': <CalendarFood/>,
         }[pageType]
       }
     </div>

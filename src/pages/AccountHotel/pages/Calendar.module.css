@@ -1,4 +1,4 @@
-.edit{
+.edit, .editOutlined{
     background: #FB8500;
     border-radius: 25px;
     border: none;
@@ -9,6 +9,11 @@
     line-height: 17px;
     color: #FFFFFF;
     margin-top: 40px;
+}
+.editOutlined{
+    background: #fff;
+    border: 1px solid #58B4D1;
+    color: #58B4D1;
 }
 .savebtn{
     background: #58B4D1;
@@ -52,12 +57,15 @@
     flex-direction: row;
     gap: 30px;
 }
+.ModalRow:not(:last-child){
+    margin-bottom: 30px;
+}
 
 .form .inputBlock, .form .inputBlock input, .form .inputBlock textarea{
     max-width:317px;
 }
 .inputBlock{
-    margin-top: 15px;
+    /* margin-top: 15px; */
     max-width: 262px;
     width: 100%;
     position: relative;

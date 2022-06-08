@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import s from './TimeInput.module.css'
 
-export const TimeInput = () => {
+export const TimeInput = ({label}) => {
 const TimesForReservation = ["10:00", "11:00", "12:00"];
 
 const [timeChoise, changeTime] = useState("12:00");
@@ -17,7 +17,7 @@ const tongleTime = () => {
 
   return (
     <div>
-        <p className={s.dateTitle}>Время</p>
+        <p className={s.dateTitle}>{label || 'Время'}</p>
         <div className={s.inputBlock}>
         <img
             src="../../images/transfer/timer.svg"

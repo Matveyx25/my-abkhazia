@@ -127,6 +127,23 @@
     box-sizing: border-box;
     color: #FFFFFF;
 }
+.rentTd div{
+    padding: 0;
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #58B4D1;
+    border-radius: 10px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    text-align: center;
+}
 .notColspanTd div.outlined{
     background: #fff;
     color: #000;

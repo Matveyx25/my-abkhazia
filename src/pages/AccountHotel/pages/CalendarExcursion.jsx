@@ -97,7 +97,9 @@ export const CalendarExcursion = () => {
                 <CalendarInput label="Заезд"/>
                 <TimeInput/>
               </div>
-              <GuestsInput />
+              <div className={s.ModalRow}>
+                <GuestsInput />
+              </div>
               <div className={s.ModalRow}>
                 <div className={s.inputBlock}>
                   <p>Имя гостя</p>

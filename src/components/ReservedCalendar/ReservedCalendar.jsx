@@ -70,10 +70,10 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
       <div className={s.wrapper}>
         <p className={s.gridTitle}>Месяц</p>
         <p className={s.gridTitle}>Дата</p>
-        {type == 'hotel' && <p className={s.gridTitle}>Кол-во номеров</p>}
-        {(type == 'excursion' || type == 'excursion2') && <p className={s.gridTitle}>Кол-во человек</p>}
+        {type === 'hotel' && <p className={s.gridTitle}>Кол-во номеров</p>}
+        {(type === 'excursion' || type === 'excursion2' || type === 'food') && <p className={s.gridTitle}>Кол-во человек</p>}
         <p className={`${s.gridTitle} ${s.last}`}>
-          {type == 'excursion2'? "Время" : "Туристы"}
+          {type === 'excursion2' || type === 'rent' || type === 'food' ? "Время" : "Туристы"}
         </p>
         <div className={s.monthName}>
           <div>
@@ -114,7 +114,7 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   })
                 )}
               </tr>
-             {type == 'hotel' && <tr>
+             {type === 'hotel' && <tr>
                 {weeks?.map((week) =>
                   week?.map((day, index) => {
                     if (day.className.includes("month-day")) {
@@ -132,7 +132,7 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   })
                 )}
               </tr>}
-             {(type == 'excursion' || type == 'excursion2') && <tr>
+             {(type === 'excursion' || type == 'excursion2' || type === 'food') && <tr>
                 {weeks?.map((week) =>
                   week?.map((day, index) => {
                     if (day.className.includes("month-day")) {
@@ -150,7 +150,7 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   })
                 )}
               </tr>}
-              {(type == 'house' || type == 'hotel') && <tr>
+              {(type === 'house' || type == 'hotel') && <tr>
                 <td></td>
                 <td
                   colSpan={10}
@@ -168,7 +168,23 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   <div>2 вз.</div>
                 </td>
               </tr>}
-              {type == 'excursion2' && <tr>
+              {type == 'rent' && <tr>
+                <td></td>
+                <td></td>
+                <td
+                  className={s.rentTd}
+                >
+                  <div>с 8:00 до 20:00</div>
+                </td>
+                <td></td>
+                <td
+                colSpan={2}
+                  className={s.rentTd}
+                >
+                  <div>С 8:00 До 8:00</div>
+                </td>
+              </tr>}
+              {type === 'excursion2' && <tr>
                 <td></td>
                 <td></td>
                 <td
@@ -195,7 +211,40 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   </div>
                 </td>
               </tr>}
-              {user && user.monthIn == month ? 
+              {type === 'food' && <tr>
+                <td></td>
+                <td></td>
+                <td
+                  className={`${s.notColspanTd} ${activeUser && s.active}`}
+                >
+                  <div>
+                    <p>10:00</p>
+                    <p>19 ост.</p>
+                  </div>
+                  <div className={s.outlined}>
+                    <p>12:00</p>
+                  </div>
+                  <div className={s.outlined}>
+                    <p>14:00</p>
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td
+                  className={`${s.notColspanTd} ${activeUser && s.active}`}
+                >
+                  <div>
+                    <p>10:00</p>
+                  </div>
+                  <div className={s.outlined}>
+                    <p>12:00</p>
+                  </div>
+                  <div className={s.outlined}>
+                    <p>14:00</p>
+                  </div>
+                </td>
+              </tr>}
+              {user && user.monthIn === month ? 
               (
                 <tr>
                   {weeks?.map((week) =>
