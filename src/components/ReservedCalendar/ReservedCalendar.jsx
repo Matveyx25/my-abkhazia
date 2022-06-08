@@ -71,9 +71,13 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
         <p className={s.gridTitle}>Месяц</p>
         <p className={s.gridTitle}>Дата</p>
         {type === 'hotel' && <p className={s.gridTitle}>Кол-во номеров</p>}
-        {(type === 'excursion' || type === 'excursion2' || type === 'food') && <p className={s.gridTitle}>Кол-во человек</p>}
+        {type === 'transfer' && <p className={s.gridTitle}>Всего машин</p>}
+        {type === 'food' && <p className={s.gridTitle}>Кол-во столиков</p>}
+        {(type === 'excursion' || type === 'excursion2') && <p className={s.gridTitle}>Кол-во человек</p>}
         <p className={`${s.gridTitle} ${s.last}`}>
-          {type === 'excursion2' || type === 'rent' || type === 'food' ? "Время" : "Туристы"}
+          {(type === 'excursion2' || type === 'rent' || type === 'food') && "Время" }
+          {(type === 'hotel' || type === 'house' || type === 'excursion') &&  "Туристы"}
+          {type === 'transfer' &&  "Время забора"}
         </p>
         <div className={s.monthName}>
           <div>
@@ -132,6 +136,24 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   })
                 )}
               </tr>}
+             {type === 'transfer' && <tr>
+                {weeks?.map((week) =>
+                  week?.map((day, index) => {
+                    if (day.className.includes("month-day")) {
+                      return (
+                        <td
+                          key={index}
+                          className={day.dayName.ru == "Вс" && s.lastTd}
+                        >
+                          <div className={s.rooms}>
+                            <p key={day.day}>4</p>
+                          </div>
+                        </td>
+                      );
+                    }
+                  })
+                )}
+              </tr>}
              {(type === 'excursion' || type == 'excursion2' || type === 'food') && <tr>
                 {weeks?.map((week) =>
                   week?.map((day, index) => {
@@ -166,6 +188,18 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                   className={`${s.notColspanTd} ${activeUser && s.active}`}
                 >
                   <div>2 вз.</div>
+                </td>
+              </tr>}
+              {type == 'transfer' && <tr>
+                <td></td>
+                <td></td>
+                <td
+                  className={`${s.notColspanTd} ${activeUser && s.active}`}
+                >
+                  <div>
+                    <p>В 9:00</p> 
+                    <p>1 зак.</p> 
+                  </div>
                 </td>
               </tr>}
               {type == 'rent' && <tr>

@@ -95,7 +95,7 @@ export const CalendarFood = () => {
       <form className={s.form}>
       <div className={s.inputRow}>
           <div className={s.inputBlock}>
-            <p className={s.inputTitle}>Цена за один день</p>
+            <p className={s.inputTitle}>Цена за средний чек</p>
             <input
               type="text"
               className={s.input}
