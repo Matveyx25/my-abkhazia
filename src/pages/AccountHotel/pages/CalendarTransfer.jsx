@@ -6,6 +6,7 @@ import { ReservedCalendar } from "../../../components/ReservedCalendar/ReservedC
 import { CalendarCardAccount } from "../../../components/CalendarCardAccount/CalendarCardAccount";
 import { TimeInput } from "../../../components/TimeInput/TimeInput";
 import { LocationInput } from "../../../components/LocationInput/LocationInput";
+import { TouristCard } from '../../../components/TouristCard/TouristCard';
 
 export const CalendarTransfer = () => {
   const [priceDay, setPriceDay] = useState("2 000₽");
@@ -19,6 +20,7 @@ export const CalendarTransfer = () => {
   const [touristName, setTouristName] = useState();
 
   const [modal, setModal] = useState(false);
+  const [activeUser, setActiveUser] = useState(true);
 
   return (
     <div>
@@ -199,7 +201,21 @@ export const CalendarTransfer = () => {
       <button className={s.edit} onClick={() => setModal(true)}>
         Внести правки в календарь
       </button>
-
+      {activeUser && (
+        <div className={s.tourist}>
+          <TouristCard btnTitle="Удалить бронь" options={[
+            {title: 'От:', value: 'Аэропорт Сочи'},
+            {title: '№ рейса:', value: '2325'},
+            {title: 'Дата и время:', value: '4 мая, ср., в 9:00'},
+            {title: 'До:', value: 'Гагра, улица и дом'},
+            {title: 'Пассажиры:', value: '2 взрослых'},
+            {title: 'Обратный трансфер:', value: '11 мая,ср. в 21:00'},
+          ]}/>
+          <p className={s.closeBtn} onClick={() => setActiveUser(false)}>
+            Скрыть
+          </p>
+        </div>
+      )}
       <form className={s.form}>
         <div className={s.inputRow}>
           <div className={s.inputBlock}>

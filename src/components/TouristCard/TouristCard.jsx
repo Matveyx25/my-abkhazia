@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TouristCard = ({btnTitle}) => {
+export const TouristCard = ({btnTitle, options}) => {
   return (
     <article className="card-description__owner small">
           <h5 className="card-description__owner-title">Турист</h5>
@@ -49,6 +49,14 @@ export const TouristCard = ({btnTitle}) => {
               15 отзывов
             </p>
           </div>
+          {options && <div className="account-page__tourist-options">
+            <span className="tourist-options__line"></span>
+            <ul>
+              {options.map((el, index) => (
+                <li key={index}><span className="tourist-options__bold">{el.title}</span>{el.value}</li>
+              ))}
+            </ul>
+            </div>}
           <p className="card-description__owner-write" href="#">
             {btnTitle}
           </p>
