@@ -10,6 +10,7 @@ import { Settings } from './pages/Settings';
 import { Messenger } from './pages/Messenger';
 import { CalendarPage } from './pages/CalendarPage';
 import Footer from '../../components/Footer/Footer';
+import { CreateHotel } from './pages/CreatePages/CreateHotel';
 
 export const AccountHotel = () => {
   return (
@@ -35,6 +36,7 @@ export const AccountHotel = () => {
                     <Route path="settings" element={<Settings />}/>
                     <Route path="messenger" element={<Messenger />}/>
                     <Route path="calendar" element={<CalendarPage />}/>
+                    <Route path="declarations/create-hotel" element={<CreateHotel />}/>
                   </Routes>
                 </div>
             </div>

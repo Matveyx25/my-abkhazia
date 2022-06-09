@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import { AccountLinkList } from '../../../components/AccountLinkList/AccountLinkList';
 import CardEdit from '../../../components/CardEdit/CardEdit';
 import './pages.css'
+import { Link } from 'react-router-dom';
 
 export const Declarations = () => {
   const [value1, setValue1] = useState(0);
   const [value2, setValue2] = useState(0);
+
+  const [pageType, setPageType] = useState('Отели')
 
   const changeValue1 = (event) => {
     setValue1(event.target.value);
@@ -22,7 +25,7 @@ export const Declarations = () => {
             <button className="account-page__btn-dashed"><img src="../images/plus.svg"/>Добавить еще услугу</button>
         </div>
 
-        <AccountLinkList/>
+        <AccountLinkList pageType={pageType} clickHandler={setPageType}/>
 
         <div className="account-page__filter-wrapper">
           <form className="account-page__filter">
@@ -70,10 +73,10 @@ export const Declarations = () => {
                 status="draft"
                 link="/hotel-card"
               />
-          <button className="account-page__btn-add-hotel">
+          <Link to="create-hotel" className="account-page__btn-add-hotel">
             <img src="../images/plus-add-hotel.svg" alt="" />
             <p>Добавить еще отель</p>
-          </button>
+          </Link>
         </div>
     </div>
   )

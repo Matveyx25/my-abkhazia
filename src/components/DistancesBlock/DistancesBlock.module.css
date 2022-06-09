@@ -1,0 +1,13 @@
+
+.distanceTitle{
+    margin-top: 25px;
+}
+.inputsWrapper label{
+    margin-top: 15px;
+    max-width: 317px;
+}
+.distansInput{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}

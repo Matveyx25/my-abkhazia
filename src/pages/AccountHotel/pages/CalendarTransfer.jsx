@@ -7,20 +7,19 @@ import { CalendarCardAccount } from "../../../components/CalendarCardAccount/Cal
 import { TimeInput } from "../../../components/TimeInput/TimeInput";
 import { LocationInput } from "../../../components/LocationInput/LocationInput";
 import { TouristCard } from '../../../components/TouristCard/TouristCard';
+import { act } from "react-dom/test-utils";
 
 export const CalendarTransfer = () => {
   const [priceDay, setPriceDay] = useState("2 000₽");
 
   const [phone, setPhone] = useState();
-  const [from, setFrom] = useState();
-  const [to, setTo] = useState();
   const [backCheck, setBackCheck] = useState(false);
   const [chair, setChair] = useState(0);
   const [booster, setBooster] = useState(0);
   const [touristName, setTouristName] = useState();
 
   const [modal, setModal] = useState(false);
-  const [activeUser, setActiveUser] = useState(true);
+  const [activeUser, setActiveUser] = useState(false);
 
   return (
     <div>
@@ -197,7 +196,7 @@ export const CalendarTransfer = () => {
           option="5 машин"
         />
       </div>
-      <ReservedCalendar type="transfer" />
+      <ReservedCalendar type="transfer" activeUser={activeUser} clickHandler={() => setActiveUser(true)}/>
       <button className={s.edit} onClick={() => setModal(true)}>
         Внести правки в календарь
       </button>

@@ -14,8 +14,7 @@ const Radio = ({
     <label
       className="housing-catalog__housing-wrapper"
       htmlFor={inputId}
-      onClick={() => clickFunction()}
-      onChange={changeFunction}
+      onClick={clickFunction ? () => clickFunction() : null}
     >
       <input
         className="housing-catalog__housing-input"
@@ -23,7 +22,8 @@ const Radio = ({
         name={inputName}
         value={inputValue}
         id={inputId}
-        checked={checked}
+        defaultChecked={checked}
+        onChange={changeFunction ? changeFunction : null}
       />
       <div className="housing-catalog__housing-pseudo-radio"></div>
       <p className="housing-catalog__housing-label">{labelText}</p>

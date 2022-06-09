@@ -1,0 +1,158 @@
+.inputsWrapper label{
+    margin-top: 15px;
+    max-width: 317px;
+}
+.timeInputsWrapper{
+    margin-left: 30px;
+    flex-grow:1;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.timeInputsWrapper .row p{
+    font-weight: 400;
+    font-size: 12px;
+}
+.timeInputsWrapper .row{
+    margin-top: 15px;
+}
+.timeInputsWrapper input{
+    max-width: 200px;
+    margin-top: 0px;
+}
+
+.inputBlock{
+    width: fit-content;
+    position: relative;
+    margin-top: 15px;
+}
+.inputBlock input{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    position: relative;
+    max-width: 262px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 25px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    outline: none !important;
+}
+.inputBlock textarea{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    position: relative;
+    width: 317px;
+    box-sizing: border-box;
+    padding: 12px 25px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    outline: none !important;
+    resize: none;
+    height: 100px;
+}
+.inputBlock input:valid,
+.inputBlock input:focus,
+.inputBlock textarea:valid,
+.inputBlock textarea:focus{
+    border: 1px solid #000000;
+}
+.inputBlock input:invalid,
+.inputBlock textarea:invalid{
+    border: none;
+}
+.textareaWrapper h4{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #58B4D1;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.textareaWrapper{
+    width: 100%;
+    margin-top: 25px;
+}
+.addTextarea img{
+    width: 32px;
+    height: 32px;
+    margin-bottom: 10px;
+}
+.textareaRow{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.addTextarea{
+    width: 317px;
+    height: 100px;
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+    margin-left: 30px;
+    cursor: pointer;
+}
+.mt15{
+    margin-top: 15px;
+}
+.mt25{
+    margin-top: 25px;
+}
+.ml40{
+    margin-left: 40px;
+}
+.btnsRow{
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+.btn{
+    display: block;
+    border: none;
+    width: 210px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+}
+.btnOutlined{
+    display: block;
+    border: none;
+    width: 210px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #58B4D1;
+    background: #FFFFFF;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+    border: 1px solid #58B4D1;
+}

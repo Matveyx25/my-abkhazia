@@ -196,7 +196,7 @@ export const ReservedCalendar = ({clickHandler, activeUser, user, removeUser, ty
                 <td
                   className={`${s.notColspanTd} ${activeUser && s.active}`}
                 >
-                  <div>
+                  <div onClick={clickHandler}>
                     <p>В 9:00</p> 
                     <p>1 зак.</p> 
                   </div>
