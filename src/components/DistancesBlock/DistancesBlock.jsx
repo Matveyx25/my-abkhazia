@@ -1,44 +1,42 @@
 import React, { useState } from "react";
 import DistanceInput from "../DistanceInput/DistanceInput";
-import s from "./DistancesBlock.module.css"
+import s from "./DistancesBlock.module.css";
 
 export const DistancesBlock = () => {
   const [distance, setDistance] = useState([
-    { title: "Ресторан", value: "", type: "shops" },
-    { title: "Кафе/бар", value: "", type: "shops" },
-    { title: "Столовая", value: "", type: "shops" },
-    { title: "Супермаркет", value: "", type: "shops" },
-    { title: "Прдуктовый магазин", value: "", type: "shops" },
-    { title: "Аптека", value: "", type: "shops" },
-    { title: "Море", value: "", type: "nature" },
-    { title: "Пляж", value: "", type: "nature" },
-    { title: "Озеро", value: "", type: "nature" },
-    { title: "Горы", value: "", type: "nature" },
-    { title: "Пруд", value: "", type: "nature" },
-    { title: "Лес", value: "", type: "nature" },
-    { title: "Река", value: "", type: "nature" },
-    { title: "Порт", value: "", type: "transport" },
-    { title: "Автобусная станция", value: "", type: "transport" },
-    { title: "Остановка общ. транспорта", value: "", type: "transport" },
-    { title: "Зоопарк", value: "", type: "dosug" },
-    { title: "Дельфинарий", value: "", type: "dosug" },
-    { title: "Парк аттракционов", value: "", type: "dosug" },
-    { title: "Океанариум", value: "", type: "dosug" },
-    { title: "Цирк", value: "", type: "dosug" },
-    { title: "Ночной клуб", value: "", type: "dosug" },
-    { title: "Банк/банкомат", value: "", type: "other" },
-    { title: "Больница", value: "", type: "other" },
-    { title: "Салон красоты", value: "", type: "other" },
-    { title: "Химчистка", value: "", type: "other" },
-    { title: "Центр города", value: "", type: "other" },
+    { title: "Ресторан", value: "", type: "shops", slug: 'rest' },
+    { title: "Кафе/бар", value: "", type: "shops", slug: 'cafe' },
+    { title: "Столовая", value: "", type: "shops", slug: 'stol' },
+    { title: "Супермаркет", value: "", type: "shops", slug: 'market' },
+    { title: "Прдуктовый магазин", value: "", type: "shops", slug: 'product' },
+    { title: "Аптека", value: "", type: "shops", slug: 'health' },
+    { title: "Море", value: "", type: "nature", slug: 'sea' },
+    { title: "Пляж", value: "", type: "nature", slug: 'plyaz' },
+    { title: "Озеро", value: "", type: "nature", slug: 'ozero' },
+    { title: "Горы", value: "", type: "nature", slug: 'mount' },
+    { title: "Пруд", value: "", type: "nature", slug: 'prud' },
+    { title: "Лес", value: "", type: "nature", slug: 'forest' },
+    { title: "Река", value: "", type: "nature", slug: 'river' },
+    { title: "Порт", value: "", type: "transport", slug: 'port' },
+    { title: "Автобусная станция", value: "", type: "transport", slug: 'bus' },
+    { title: "Остановка общ. транспорта", value: "", type: "transport", slug: 'transport' },
+    { title: "Зоопарк", value: "", type: "dosug", slug: 'zoo' },
+    { title: "Дельфинарий", value: "", type: "dosug", slug: 'dolphin' },
+    { title: "Парк аттракционов", value: "", type: "dosug", slug: 'attractions' },
+    { title: "Океанариум", value: "", type: "dosug", slug: 'ocean' },
+    { title: "Цирк", value: "", type: "dosug", slug: 'cirk' },
+    { title: "Ночной клуб", value: "", type: "dosug", slug: 'club' },
+    { title: "Банк/банкомат", value: "", type: "other", slug: 'bank' },
+    { title: "Больница", value: "", type: "other", slug: 'hospital' },
+    { title: "Салон красоты", value: "", type: "other", slug: 'beuty' },
+    { title: "Химчистка", value: "", type: "other", slug: 'clean' },
+    { title: "Центр города", value: "", type: "other", slug: 'center' },
   ]);
 
-
-
-  let updateDistance = (title, event) => {
-    console.log(title);
+  let updateDistance = (dist, event) => {
+    console.log(dist.slug);
     let newDistance = [...distance];
-    newDistance.find(el => el.title == title).value = event.target.value;
+    newDistance.find((el) => el.slug == dist.slug).value = event.target.value;
     setDistance(newDistance);
   };
 
@@ -47,14 +45,15 @@ export const DistancesBlock = () => {
       <h2 className={s.distanceTitle}>Рестораны, кафе и покупки</h2>
       <div className={s.distansInput}>
         {distance.map((dist, index) => {
-          if (dist.type == "shops") {
+          if(dist.type == "shops") {
             return (
-              <DistanceInput
-                label={dist.title}
-                value={dist.value}
-                index={index}
-                handel={(event) => updateDistance(dist.title, event)}
-              />
+                <DistanceInput
+                  label={dist.title}
+                  value={dist.value}
+                  slug={dist.slug}
+                  key={dist.slug}
+                  handel={(event) => updateDistance(dist, event)}
+                />
             );
           }
         })}
@@ -64,12 +63,13 @@ export const DistancesBlock = () => {
         {distance.map((dist, index) => {
           if (dist.type == "nature") {
             return (
-              <DistanceInput
-                label={dist.title}
-                value={dist.value}
-                index={index}
-                handel={(event) => updateDistance(dist.title, event)}
-              />
+                <DistanceInput
+                  label={dist.title}
+                  value={dist.value}
+                  slug={dist.slug}
+                  key={dist.slug}
+                  handel={(event) => updateDistance(dist, event)}
+                />
             );
           }
         })}
@@ -82,8 +82,9 @@ export const DistancesBlock = () => {
               <DistanceInput
                 label={dist.title}
                 value={dist.value}
-                index={index}
-                handel={(event) => updateDistance(dist.title, event)}
+                slug={dist.slug}
+                key={dist.slug}
+                handel={(event) => updateDistance(dist, event)}
               />
             );
           }
@@ -94,12 +95,13 @@ export const DistancesBlock = () => {
         {distance.map((dist, index) => {
           if (dist.type == "dosug") {
             return (
-              <DistanceInput
-                label={dist.title}
-                value={dist.value}
-                index={index}
-                handel={(event) => updateDistance(dist.title, event)}
-              />
+                <DistanceInput
+                  label={dist.title}
+                  value={dist.value}
+                  slug={dist.slug}
+                  key={dist.slug}
+                  handel={(event) => updateDistance(dist, event)}
+                />
             );
           }
         })}
@@ -109,12 +111,13 @@ export const DistancesBlock = () => {
         {distance.map((dist, index) => {
           if (dist.type == "other") {
             return (
-              <DistanceInput
-                label={dist.title}
-                value={dist.value}
-                index={index}
-                handel={(event) => updateDistance(dist.title, event)}
-              />
+                <DistanceInput
+                  label={dist.title}
+                  value={dist.value}
+                  slug={dist.slug}
+                  key={dist.slug}
+                  handel={(event) => updateDistance(dist, event)}
+                />
             );
           }
         })}
