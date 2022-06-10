@@ -12,6 +12,7 @@ import { CalendarPage } from './pages/CalendarPage';
 import Footer from '../../components/Footer/Footer';
 import { CreateHotel } from './pages/CreatePages/CreateHotel';
 import { CreateHotelNumber } from './pages/CreatePages/CreateHotelNumber';
+import { CreateHouse } from './pages/CreatePages/CreateHouse';
 
 export const AccountHotel = () => {
   return (
@@ -38,6 +39,7 @@ export const AccountHotel = () => {
                     <Route path="messenger" element={<Messenger />}/>
                     <Route path="calendar" element={<CalendarPage />}/>
                     <Route path="declarations/create-hotel" element={<CreateHotel />}/>
+                    <Route path="declarations/create-house" element={<CreateHouse />}/>
                     <Route path="declarations/create-hotel/create-number" element={<CreateHotelNumber />}/>
                   </Routes>
                 </div>

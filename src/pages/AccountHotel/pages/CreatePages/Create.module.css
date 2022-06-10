@@ -32,6 +32,10 @@
     max-width: 610px;
     width: 100%;
 }
+.comfortRow{
+    display: flex;
+    gap: 30px;
+}
 .jcsb .inputsWrapper:last-child{
     margin-right: 100px;
 }
@@ -44,6 +48,12 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+}
+.row30{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 30px;
 }
 .timeInputsWrapper .row p{
     font-weight: 400;
@@ -233,4 +243,15 @@
     flex-wrap: wrap;
     margin-top: 15px;
     gap: 30px;
+}
+.w317{
+    max-width: 317px;
+    width: 100%;
+}
+.priceBlock{
+    margin-left: 30px;
+}
+.priceBlock .inputBlock input{
+    max-width:317px;
+    width: 317px;
 }
