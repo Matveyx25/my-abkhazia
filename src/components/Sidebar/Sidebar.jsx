@@ -14,27 +14,27 @@ export const Sidebar = () => {
             Сергей
         </NavLink>
         <NavLink to="declarations" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
-            <img src="../../images/fluent_clipboard.svg"/>    
+            <img src="/images/fluent_clipboard.svg"/>    
             Мои объявления
         </NavLink>
         <NavLink to="calendar" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
-            <img src="../../images/bxs_calendar.svg"/>    
+            <img src="/images/bxs_calendar.svg"/>    
             Календарь занятости
         </NavLink>
         <NavLink to="messenger" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
-            <img src="../../images/clarity_email-solid.svg"/>    
+            <img src="/images/clarity_email-solid.svg"/>    
             Сообщения
         </NavLink>
         <NavLink to="wallet" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
-            <img src="../../images/clarity_wallet-solid.svg"/>    
+            <img src="/images/clarity_wallet-solid.svg"/>    
             Кошелек
         </NavLink>
         <NavLink to="reviews" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
-            <img src="../../images/bi_people-fill.svg"/>    
+            <img src="/images/bi_people-fill.svg"/>    
             Отзывы
         </NavLink>
         <NavLink to="settings" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
-            <img src="../../images/ci_settings-filled.svg"/>    
+            <img src="/images/ci_settings-filled.svg"/>    
             Настройки
         </NavLink>
     </div>

@@ -116,7 +116,7 @@ const Header = ({ wallet, closeEmail }) => {
           <div className="header__logo-image-wrapper">
             <img
               className="header__logo-image"
-              src="../images/logo-color.svg"
+              src="/images/logo-color.svg"
               alt="header-logo-image"
               width="118"
               height="74"
@@ -165,7 +165,7 @@ const Header = ({ wallet, closeEmail }) => {
                     >
                       <img
                         className="search-town__choise-item-image"
-                        src="../images/header-label.svg"
+                        src="/images/header-label.svg"
                         alt="label"
                       />
                       <p className="search-town__choise-item-text">{el}</p>
@@ -226,7 +226,7 @@ const Header = ({ wallet, closeEmail }) => {
           <button className="header__search-submit" type="submit">
             <img
               className="search-submit__image"
-              src="../images/header-glass.svg"
+              src="/images/header-glass.svg"
               alt="glass"
               width="39"
               height="39"
@@ -259,7 +259,7 @@ const Header = ({ wallet, closeEmail }) => {
             {/*  {wallet == true && (  */}
             <div className="header__wallet">
               <img
-                src="../../images/transfer/wallet.svg"
+                src="/images/transfer/wallet.svg"
                 width="20.6"
                 height="18.7"
                 alt="wallet"
@@ -267,7 +267,7 @@ const Header = ({ wallet, closeEmail }) => {
               <p className="header__wallet-money">0 ₽</p>
               <div className="header-wallet__email-wrapper">
                 <img
-                  src="../../images/transfer/email.svg"
+                  src="/images/transfer/email.svg"
                   width="24"
                   height="24"
                   alt="email"
@@ -280,7 +280,7 @@ const Header = ({ wallet, closeEmail }) => {
             <div className="header__login-image-wrapper">
               <img
                 className="header__login-image"
-                src="../images/carbon_user-avatar-filled.svg"
+                src="/images/carbon_user-avatar-filled.svg"
                 alt="header-user"
                 width="28"
                 height="28"
@@ -333,14 +333,14 @@ const Header = ({ wallet, closeEmail }) => {
               className={
                 registration ? "header__nav-login" : "header__nav-login--close"
               }
-              src="../images/header-mobile-login.svg"
+              src="/images/header-mobile-login.svg"
               alt="login"
               width="28"
               height="28"
             />
             <div className="nav-login-wrapper__red-hook">
               <img
-                src="../../images/header__email.svg"
+                src="/images/header__email.svg"
                 alt="email"
                 width="12"
                 height="12"
@@ -349,7 +349,7 @@ const Header = ({ wallet, closeEmail }) => {
           </div>
           <img
             className="header__nav-glass"
-            src="../images/glass-blue.svg"
+            src="/images/glass-blue.svg"
             alt="glass"
             width="25.5"
             height="25.5"
@@ -362,7 +362,7 @@ const Header = ({ wallet, closeEmail }) => {
             <img
               className="header__nav-burger"
               src={
-                burger ? "../images/burger--close.svg" : "../images/burger.svg"
+                burger ? "/images/burger--close.svg" : "/images/burger.svg"
               }
               alt="burger"
               width={burger ? "28" : "22"}
@@ -407,7 +407,7 @@ const Header = ({ wallet, closeEmail }) => {
               {/* {wallet == true && (  */}
               <div className="header__wallet">
                 <img
-                  src="../../images/transfer/wallet.svg"
+                  src="/images/transfer/wallet.svg"
                   width="20.6"
                   height="18.7"
                   alt="wallet"
@@ -434,7 +434,7 @@ const Header = ({ wallet, closeEmail }) => {
           <li className="header__nav-link-wrapper">
             <Link className="header__nav-link" to="/housing-catalog">
               <div className="header__nav-image-wrapper">
-                <img className="" src="../images/header-residence.svg" alt="" />
+                <img className="" src="/images/header-residence.svg" alt="" />
               </div>
               <p className="header__nav-link-text">Проживание</p>
             </Link>
@@ -442,7 +442,7 @@ const Header = ({ wallet, closeEmail }) => {
           <li className="header__nav-link-wrapper">
             <Link className="header__nav-link" to="/tours">
               <div className="header__nav-image-wrapper">
-                <img className="" src="../images/header-tours.svg" alt="" />
+                <img className="" src="/images/header-tours.svg" alt="" />
               </div>
               <p className="header__nav-link-text">Эскурсии и впечатления</p>
             </Link>
@@ -450,7 +450,7 @@ const Header = ({ wallet, closeEmail }) => {
           <li className="header__nav-link-wrapper">
             <Link className="header__nav-link" to="/transfer">
               <div className="header__nav-image-wrapper">
-                <img className="" src="../images/header-transfer.svg" alt="" />
+                <img className="" src="/images/header-transfer.svg" alt="" />
               </div>
 
               <p className="header__nav-link-text">Трансфер</p>
@@ -459,7 +459,7 @@ const Header = ({ wallet, closeEmail }) => {
           <li className="header__nav-link-wrapper">
             <Link className="header__nav-link" to="/car-rent">
               <div className="header__nav-image-wrapper">
-                <img className="" src="../images/header-rent.svg" alt="" />
+                <img className="" src="/images/header-rent.svg" alt="" />
               </div>
               <p className="header__nav-link-text">Аренда авто</p>
             </Link>
@@ -467,7 +467,7 @@ const Header = ({ wallet, closeEmail }) => {
           <li className="header__nav-link-wrapper">
             <Link className="header__nav-link" to="/cooking">
               <div className="header__nav-image-wrapper">
-                <img className="" src="../images/header-kitchen.svg" alt="" />
+                <img className="" src="/images/header-kitchen.svg" alt="" />
               </div>
               <p className="header__nav-link-text">Кухня Абхазии</p>
             </Link>
@@ -475,7 +475,7 @@ const Header = ({ wallet, closeEmail }) => {
           <li className="header__nav-link-wrapper">
             <Link className="header__nav-link" to="/cities">
               <div className="header__nav-image-wrapper">
-                <img className="" src="../images/header-label.svg" alt="" />
+                <img className="" src="/images/header-label.svg" alt="" />
               </div>
               <p className="header__nav-link-text">Города Абхазии</p>
             </Link>

@@ -4,8 +4,9 @@ import s from "./Create.module.css";
 import Radio from "../../../../components/Radio/Radio";
 import ReactImageUploading from "react-images-uploading";
 import { TimeInput } from "../../../../components/TimeInput/TimeInput";
-import { DistanceInput } from '../../../../components/DistanceInput/DistanceInput';
+import { DistanceInput } from "../../../../components/DistanceInput/DistanceInput";
 import { DistancesBlock } from "../../../../components/DistancesBlock/DistancesBlock";
+import { Link } from "react-router-dom";
 
 export const CreateHotel = () => {
   const [organizationName, setOrganizationName] = useState(
@@ -23,6 +24,9 @@ export const CreateHotel = () => {
   const [hotelOptions, setHotelOptions] = useState([]);
   const [onLocal, setOlLocal] = useState([]);
   const [activeRelux, setActiveRelux] = useState([]);
+  const [sales, setSales] = useState([
+    {value: '', id: 1},
+  ]);
 
   const [options, setOptions] = useState([
     { title: "Трансфер от / до жд вокзала", slug: "zdvokzal", value: "0" },
@@ -61,7 +65,7 @@ export const CreateHotel = () => {
 
   const [moveModal, setMoveModal] = React.useState(false);
   const [images, setImages] = React.useState([]);
-  const maxNumber = 69;
+  const maxNumber = 1;
 
   const onChange = (imageList, addUpdateIndex) => {
     setImages(imageList);
@@ -71,6 +75,12 @@ export const CreateHotel = () => {
     let newOptions = [...options];
     newOptions.find((op) => op.slug === option.slug).value = event.target.value;
     setOptions(newOptions);
+  };
+
+  const updateSales = (id, event) => {
+    let newSales = [...sales];
+    newSales.find(el => el.id === id).value = event.target.value;
+    setSales(newSales);
   };
 
   return (
@@ -347,17 +357,23 @@ export const CreateHotel = () => {
         <div className={s.timeInputsWrapper}>
           <h2>Условия проживания:</h2>
           <div className={s.row}>
-            <TimeInput label="Время заезда*" />
-            <TimeInput label="Время выезда*" />
-            <div>
-              <p>Минимальный срок проживания*</p>
-              <div className={s.inputBlock}>
-                <input
-                  type="number"
-                  name="transfer__time"
-                  value={minDay}
-                  onChange={(event) => setMinDay(event.target.value)}
-                />
+            <div className={s.ml30}>
+              <TimeInput label="Время заезда*" />
+            </div>
+            <div className={s.ml30}>
+              <TimeInput label="Время выезда*" />
+            </div>
+            <div className={s.ml30}>
+              <div>
+                <p>Минимальный срок проживания*</p>
+                <div className={s.inputBlock}>
+                  <input
+                    type="number"
+                    name="transfer__time"
+                    value={minDay}
+                    onChange={(event) => setMinDay(event.target.value)}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -366,18 +382,24 @@ export const CreateHotel = () => {
           <h2>Скидки:</h2>
           <h4>Опишите скидку или акцию, если она у вас имеется</h4>
           <div className={s.textareaRow}>
-            <div>
-              <p>1. Скидка или акция</p>
-              <div className={s.inputBlock}>
-                <textarea
-                  placeholder="Введите текст..."
-                  value={textarea1}
-                  onChange={(event) => setTextarea1(event.target.value)}
-                  required
-                />
-              </div>
-            </div>
-            <div className={s.addTextarea}>
+            {sales.map((el, index) => {
+              return (
+                <div>
+                  <p>{index + 1}. Скидка или акция</p>
+                  <div className={s.inputBlock}>
+                    <textarea
+                      placeholder="Введите текст..."
+                      value={el.value}
+                      id={el.id}
+                      onChange={(event) => updateSales(el.id, event)}
+                      required
+                    />
+                  </div>
+                  {sales.length > 1 && <button className={s.removeDesc} onClick={() => setSales([...sales].filter(sale => sale.id != el.id))}>Удалить скидку</button>}
+                </div>
+              );
+            })}
+            <div className={s.addTextarea} onClick={() => setSales([...sales, {value: '', id: sales[sales.length - 1].id + 1}])}>
               <img src="../../images/plus-add-hotel.svg" alt="" />
               <p>Добавить скидку</p>
             </div>
@@ -459,109 +481,111 @@ export const CreateHotel = () => {
           <div className={s.inputsWrapper}>
             <h2>В отеле:</h2>
             <div className={s.row}>
-            <div>
-              <Checkbox
-                labelText="Детская площадка"
-                inputId="childplace"
-                inputName="onlocal"
-                inputValue="childplace"
-                changeFunction={(event) =>
-                  setOlLocal(
-                    event.target.checked
-                      ? [...onLocal, event.target.value]
-                      : onLocal.filter((item) => item !== event.target.value)
-                  )
-                }
-              />
-              <Checkbox
-                labelText="Бассейн"
-                inputId="pool"
-                inputName="onlocal"
-                inputValue="pool"
-                changeFunction={(event) =>
-                  setOlLocal(
-                    event.target.checked
-                      ? [...onLocal, event.target.value]
-                      : onLocal.filter((item) => item !== event.target.value)
-                  )
-                }
-              />
-              <Checkbox
-                labelText="Площадка для пикника"
-                inputId="picknik"
-                inputName="onlocal"
-                inputValue="picknik"
-                changeFunction={(event) =>
-                  setOlLocal(
-                    event.target.checked
-                      ? [...onLocal, event.target.value]
-                      : onLocal.filter((item) => item !== event.target.value)
-                  )
-                }
-              />
-            </div>
-            <div className={s.ml40}>
-              <Checkbox
-                labelText="Веранда или терраса"
-                inputId="terrasa"
-                inputName="onlocal"
-                inputValue="terrasa"
-                changeFunction={(event) =>
-                  setOlLocal(
-                    event.target.checked
-                      ? [...onLocal, event.target.value]
-                      : onLocal.filter((item) => item !== event.target.value)
-                  )
-                }
-              />
-              <Checkbox
-                labelText="Внутренний свой двор"
-                inputId="selfplace"
-                inputName="onlocal"
-                inputValue="selfplace"
-                changeFunction={(event) =>
-                  setOlLocal(
-                    event.target.checked
-                      ? [...onLocal, event.target.value]
-                      : onLocal.filter((item) => item !== event.target.value)
-                  )
-                }
-              />
-              <Checkbox
-                labelText="Собственный берег"
-                inputId="waterplace"
-                inputName="onlocal"
-                inputValue="waterplace"
-                changeFunction={(event) =>
-                  setOlLocal(
-                    event.target.checked
-                      ? [...onLocal, event.target.value]
-                      : onLocal.filter((item) => item !== event.target.value)
-                  )
-                }
-              />
-            </div>
+              <div>
+                <Checkbox
+                  labelText="Детская площадка"
+                  inputId="childplace"
+                  inputName="onlocal"
+                  inputValue="childplace"
+                  changeFunction={(event) =>
+                    setOlLocal(
+                      event.target.checked
+                        ? [...onLocal, event.target.value]
+                        : onLocal.filter((item) => item !== event.target.value)
+                    )
+                  }
+                />
+                <Checkbox
+                  labelText="Бассейн"
+                  inputId="pool"
+                  inputName="onlocal"
+                  inputValue="pool"
+                  changeFunction={(event) =>
+                    setOlLocal(
+                      event.target.checked
+                        ? [...onLocal, event.target.value]
+                        : onLocal.filter((item) => item !== event.target.value)
+                    )
+                  }
+                />
+                <Checkbox
+                  labelText="Площадка для пикника"
+                  inputId="picknik"
+                  inputName="onlocal"
+                  inputValue="picknik"
+                  changeFunction={(event) =>
+                    setOlLocal(
+                      event.target.checked
+                        ? [...onLocal, event.target.value]
+                        : onLocal.filter((item) => item !== event.target.value)
+                    )
+                  }
+                />
+              </div>
+              <div className={s.ml40}>
+                <Checkbox
+                  labelText="Веранда или терраса"
+                  inputId="terrasa"
+                  inputName="onlocal"
+                  inputValue="terrasa"
+                  changeFunction={(event) =>
+                    setOlLocal(
+                      event.target.checked
+                        ? [...onLocal, event.target.value]
+                        : onLocal.filter((item) => item !== event.target.value)
+                    )
+                  }
+                />
+                <Checkbox
+                  labelText="Внутренний свой двор"
+                  inputId="selfplace"
+                  inputName="onlocal"
+                  inputValue="selfplace"
+                  changeFunction={(event) =>
+                    setOlLocal(
+                      event.target.checked
+                        ? [...onLocal, event.target.value]
+                        : onLocal.filter((item) => item !== event.target.value)
+                    )
+                  }
+                />
+                <Checkbox
+                  labelText="Собственный берег"
+                  inputId="waterplace"
+                  inputName="onlocal"
+                  inputValue="waterplace"
+                  changeFunction={(event) =>
+                    setOlLocal(
+                      event.target.checked
+                        ? [...onLocal, event.target.value]
+                        : onLocal.filter((item) => item !== event.target.value)
+                    )
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>
         <div>
-        <h2 className="account-page__input-block-title">Добавление карточки номера</h2>
-            <button
-              className="account-page__upload-photo-btn"
-            >
-            <div>
-                <img src="../../images/plus-add-hotel.svg" alt=""/>
-                <p>Добавить категорию номера</p>
-            </div>
-            </button>
+          <h2 className="account-page__input-block-title">
+            Добавление карточки номера
+          </h2>
+          <Link to="create-number">
+          <div className="account-page__upload-photo-btn" to="create-number">
+              <img src="../../images/plus-add-hotel.svg" alt="" />
+              <p>Добавить категорию номера</p>
+          </div>
+          </Link>
         </div>
         <div>
-        <h2 className="account-page__input-block-title">Ориентиры поблизости </h2>
-       <DistancesBlock/>
+          <h2 className="account-page__input-block-title">
+            Ориентиры поблизости{" "}
+          </h2>
+          <DistancesBlock />
         </div>
         <div className={s.inputsWrapper}>
-            <h2 className={s.mt25}>Активный отдых:</h2>
-            <div className={s.row}>
+          <h2 className={s.mt25}>Активный отдых:</h2>
+          <div className={s.row}>
             <div>
               <Checkbox
                 labelText="Аквапарк"
@@ -569,10 +593,12 @@ export const CreateHotel = () => {
                 inputName="activeRelax"
                 inputValue="aquapark"
                 changeFunction={(event) =>
-                    setActiveRelux(
+                  setActiveRelux(
                     event.target.checked
                       ? [...activeRelux, event.target.value]
-                      : activeRelux.filter((item) => item !== event.target.value)
+                      : activeRelux.filter(
+                          (item) => item !== event.target.value
+                        )
                   )
                 }
               />
@@ -582,10 +608,12 @@ export const CreateHotel = () => {
                 inputName="activeRelax"
                 inputValue="diving"
                 changeFunction={(event) =>
-                    setActiveRelux(
+                  setActiveRelux(
                     event.target.checked
                       ? [...activeRelux, event.target.value]
-                      : activeRelux.filter((item) => item !== event.target.value)
+                      : activeRelux.filter(
+                          (item) => item !== event.target.value
+                        )
                   )
                 }
               />
@@ -595,10 +623,12 @@ export const CreateHotel = () => {
                 inputName="activeRelax"
                 inputValue="hourse"
                 changeFunction={(event) =>
-                    setActiveRelux(
+                  setActiveRelux(
                     event.target.checked
                       ? [...activeRelux, event.target.value]
-                      : activeRelux.filter((item) => item !== event.target.value)
+                      : activeRelux.filter(
+                          (item) => item !== event.target.value
+                        )
                   )
                 }
               />
@@ -610,10 +640,12 @@ export const CreateHotel = () => {
                 inputName="activeRelax"
                 inputValue="bigteniss"
                 changeFunction={(event) =>
-                setActiveRelux(
+                  setActiveRelux(
                     event.target.checked
                       ? [...activeRelux, event.target.value]
-                      : activeRelux.filter((item) => item !== event.target.value)
+                      : activeRelux.filter(
+                          (item) => item !== event.target.value
+                        )
                   )
                 }
               />
@@ -626,7 +658,9 @@ export const CreateHotel = () => {
                   setActiveRelux(
                     event.target.checked
                       ? [...activeRelux, event.target.value]
-                      : activeRelux.filter((item) => item !== event.target.value)
+                      : activeRelux.filter(
+                          (item) => item !== event.target.value
+                        )
                   )
                 }
               />
@@ -639,7 +673,9 @@ export const CreateHotel = () => {
                   setActiveRelux(
                     event.target.checked
                       ? [...activeRelux, event.target.value]
-                      : activeRelux.filter((item) => item !== event.target.value)
+                      : activeRelux.filter(
+                          (item) => item !== event.target.value
+                        )
                   )
                 }
               />
@@ -651,10 +687,12 @@ export const CreateHotel = () => {
                 inputName="activeRelax"
                 inputValue="mounting"
                 changeFunction={(event) =>
-                setActiveRelux(
+                  setActiveRelux(
                     event.target.checked
                       ? [...activeRelux, event.target.value]
-                      : activeRelux.filter((item) => item !== event.target.value)
+                      : activeRelux.filter(
+                          (item) => item !== event.target.value
+                        )
                   )
                 }
               />
@@ -667,7 +705,9 @@ export const CreateHotel = () => {
                   setActiveRelux(
                     event.target.checked
                       ? [...activeRelux, event.target.value]
-                      : activeRelux.filter((item) => item !== event.target.value)
+                      : activeRelux.filter(
+                          (item) => item !== event.target.value
+                        )
                   )
                 }
               />
@@ -680,18 +720,20 @@ export const CreateHotel = () => {
                   setActiveRelux(
                     event.target.checked
                       ? [...activeRelux, event.target.value]
-                      : activeRelux.filter((item) => item !== event.target.value)
+                      : activeRelux.filter(
+                          (item) => item !== event.target.value
+                        )
                   )
                 }
               />
             </div>
-            </div>
           </div>
+        </div>
       </div>
       <div className={s.btnsRow}>
-                <button className={s.btn}>Перейти к календарю</button>
-                <button className={s.btnOutlined}>Сохранить как черновик</button>
-          </div>
+        <button className={s.btn}>Перейти к календарю</button>
+        <button className={s.btnOutlined}>Сохранить как черновик</button>
+      </div>
     </div>
   );
 };
