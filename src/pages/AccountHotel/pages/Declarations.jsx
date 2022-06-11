@@ -85,6 +85,10 @@ export const Declarations = () => {
             <img src="../images/plus-add-hotel.svg" alt="" />
             <p>Добавить еще экскурсию</p>
           </Link>
+          <Link to="create-impression" className="account-page__btn-add-hotel">
+            <img src="../images/plus-add-hotel.svg" alt="" />
+            <p>Добавить еще впечатления</p>
+          </Link>
         </div>
     </div>
   )

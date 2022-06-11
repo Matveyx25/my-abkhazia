@@ -14,6 +14,7 @@ import { CreateHotel } from './pages/CreatePages/CreateHotel';
 import { CreateHotelNumber } from './pages/CreatePages/CreateHotelNumber';
 import { CreateHouse } from './pages/CreatePages/CreateHouse';
 import { CreateExcursion } from './pages/CreatePages/CreateExcursion';
+import { CreateImpression } from './pages/CreatePages/CreateImpression';
 
 export const AccountHotel = () => {
   return (
@@ -42,6 +43,7 @@ export const AccountHotel = () => {
                     <Route path="declarations/create-hotel" element={<CreateHotel />}/>
                     <Route path="declarations/create-house" element={<CreateHouse />}/>
                     <Route path="declarations/create-excursion" element={<CreateExcursion />}/>
+                    <Route path="declarations/create-impression" element={<CreateImpression />}/>
                     <Route path="declarations/create-hotel/create-number" element={<CreateHotelNumber />}/>
                   </Routes>
                 </div>
