@@ -116,6 +116,10 @@
 .inputBlock textarea:invalid{
     border: none;
 }
+.inputBlock .input{
+    max-width: 317px;
+    margin-top: 10px;
+}
 .textareaWrapper h4{
     font-family: 'Open Sans';
     font-style: normal;
@@ -129,6 +133,11 @@
     width: 100%;
     margin-top: 25px;
 }
+.addInput img{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
 .addTextarea img{
     width: 32px;
     height: 32px;
@@ -138,6 +147,22 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+}
+.addInput{
+    width: 317px;
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-top: 35px;
 }
 .addTextarea{
     width: 317px;
@@ -254,4 +279,7 @@
 .priceBlock .inputBlock input{
     max-width:317px;
     width: 317px;
+}
+.subtitleBlue{
+    color: #58B4D1;
 }

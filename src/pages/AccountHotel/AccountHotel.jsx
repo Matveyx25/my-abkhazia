@@ -13,6 +13,7 @@ import Footer from '../../components/Footer/Footer';
 import { CreateHotel } from './pages/CreatePages/CreateHotel';
 import { CreateHotelNumber } from './pages/CreatePages/CreateHotelNumber';
 import { CreateHouse } from './pages/CreatePages/CreateHouse';
+import { CreateExcursion } from './pages/CreatePages/CreateExcursion';
 
 export const AccountHotel = () => {
   return (
@@ -40,6 +41,7 @@ export const AccountHotel = () => {
                     <Route path="calendar" element={<CalendarPage />}/>
                     <Route path="declarations/create-hotel" element={<CreateHotel />}/>
                     <Route path="declarations/create-house" element={<CreateHouse />}/>
+                    <Route path="declarations/create-excursion" element={<CreateExcursion />}/>
                     <Route path="declarations/create-hotel/create-number" element={<CreateHotelNumber />}/>
                   </Routes>
                 </div>

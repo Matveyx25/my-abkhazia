@@ -68,10 +68,10 @@ export const CreateHouse = () => {
   return (
     <div>
       <div className="account-page__breadcrumps">
-        <p>Добавление отеля</p>
+        <p>Добавление дома</p>
       </div>
       <div className="account-page__jcsb">
-        <h1 className="account-page__title">Заполнение информации об отеле</h1>
+        <h1 className="account-page__title">Заполнение информации о доме</h1>
         <button className="account-page__btn160">
           <img src="../../images/eye-filled_white.svg" />
           Просмотр
