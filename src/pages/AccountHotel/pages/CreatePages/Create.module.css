@@ -407,6 +407,7 @@
     background: #FFFFFF;
     box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
     border-radius: 25px;
+    position: relative;
 }
 .numberCard .imageBlock{
     overflow: hidden;
@@ -472,4 +473,57 @@
     font-weight: 700;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.3);
+}
+.qrCard .btn160{
+    margin-top: auto;
+}
+.removeQr, .removeNumber{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.qrCard{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    width: 317px;
+    height: 317px;
+    box-sizing: border-box;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    margin-top: 15px;
+}
+.qrNumber{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 36px;
+}
+.qrCardText{
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 67px;
+}
+.btn160{
+    display: block;
+    border: none;
+    width: 160px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+    cursor: pointer;
 }

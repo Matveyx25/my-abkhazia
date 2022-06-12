@@ -581,6 +581,7 @@ export const CreateHotel = () => {
                   <p className={s.titleNumber}>Бюджетный двухместный номер с 1 кроватью </p>
                   <p className={s.blueNumber}>5 номеров</p>
                 </div>
+                <img src="/images/dashicons_trash-white.svg" alt="" className={s.removeNumber}/>
             </div>
             <Link to="create-number">
             <div className={s.addNumber} to="create-number">

@@ -441,13 +441,22 @@ export const CreateFood = () => {
 
       <h2 className="account-page__input-block-title">QR-код и акция</h2>
       <h2>Добавление QR-кода и акции</h2>
-      <div className={s.addQR} onClick={() => {
-          setModalText("")
-          setQRModal(true)
-        }}>
-        <img src="/images/plus-add-hotel.svg" alt=""/>
-        <p>Добавить QR-код и акцию</p>
+      <div className={s.row30}>
+        <div className={s.qrCard}>
+          <p className={s.qrNumber}>1</p>
+          <p className={s.qrCardText}>QR-код и акция</p>
+          <button className={s.btn160}>Изменить</button>
+          <img src="/images/dashicons_trash-blue.svg" alt="" className={s.removeQr}/>
+        </div>
+        <div className={s.addQR} onClick={() => {
+            setModalText("")
+            setQRModal(true)
+          }}>
+          <img src="/images/plus-add-hotel.svg" alt=""/>
+          <p>Добавить QR-код и акцию</p>
+        </div>
       </div>
+      
 
       <div className={s.btnsRow}>
         <Link className={s.btn} to="../calendar/create-food">Перейти к календарю</Link>
