@@ -15,6 +15,9 @@ import { CreateHotelNumber } from './pages/CreatePages/CreateHotelNumber';
 import { CreateHouse } from './pages/CreatePages/CreateHouse';
 import { CreateExcursion } from './pages/CreatePages/CreateExcursion';
 import { CreateImpression } from './pages/CreatePages/CreateImpression';
+import { CreateFood } from './pages/CreatePages/CreateFood';
+import { CreateRent } from './pages/CreatePages/CreateRent';
+import { CreateTransfer } from './pages/CreatePages/CreateTransfer';
 
 export const AccountHotel = () => {
   return (
@@ -44,6 +47,9 @@ export const AccountHotel = () => {
                     <Route path="declarations/create-house" element={<CreateHouse />}/>
                     <Route path="declarations/create-excursion" element={<CreateExcursion />}/>
                     <Route path="declarations/create-impression" element={<CreateImpression />}/>
+                    <Route path="declarations/create-food" element={<CreateFood />}/>
+                    <Route path="declarations/create-rent" element={<CreateRent />}/>
+                    <Route path="declarations/create-transfer" element={<CreateTransfer />}/>
                     <Route path="declarations/create-hotel/create-number" element={<CreateHotelNumber />}/>
                   </Routes>
                 </div>

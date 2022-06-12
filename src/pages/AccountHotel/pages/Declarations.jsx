@@ -89,6 +89,18 @@ export const Declarations = () => {
             <img src="../images/plus-add-hotel.svg" alt="" />
             <p>Добавить еще впечатления</p>
           </Link>
+          <Link to="create-food" className="account-page__btn-add-hotel">
+            <img src="../images/plus-add-hotel.svg" alt="" />
+            <p>Добавить еще кухни</p>
+          </Link>
+          <Link to="create-rent" className="account-page__btn-add-hotel">
+            <img src="../images/plus-add-hotel.svg" alt="" />
+            <p>Добавить еще аренду авто</p>
+          </Link>
+          <Link to="create-transfer" className="account-page__btn-add-hotel">
+            <img src="../images/plus-add-hotel.svg" alt="" />
+            <p>Добавить еще трансфер</p>
+          </Link>
         </div>
     </div>
   )

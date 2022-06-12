@@ -4,7 +4,7 @@ import "./Checkbox.css";
 const Checkbox = ({ inputName, inputValue, inputId, labelText, subMenu, clickFunction, changeFunction, checked }) => {
   return (
     <label
-    onClick={()=> clickFunction()}
+    onClick={clickFunction ? () => clickFunction() : null}
       className={
         subMenu == true ? "sub-private__label" : "housing-catalog__town-item"
       }
