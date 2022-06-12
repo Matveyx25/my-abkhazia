@@ -25,6 +25,7 @@ import { CreateCalendarExcursion } from './pages/CreateCalendar/CreateCalendarEx
 import { CreateCalendarRent } from './pages/CreateCalendar/CreateCalendarRent';
 import { CreateCalendarTransfer } from './pages/CreateCalendar/CreateCalendarTransfer';
 import { CreateCalendarFood } from './pages/CreateCalendar/CreateCalendarFood';
+import { Wallet } from './pages/Wallet';
 
 export const AccountHotel = () => {
   return (
@@ -50,6 +51,7 @@ export const AccountHotel = () => {
                     <Route path="settings" element={<Settings />}/>
                     <Route path="messenger" element={<Messenger />}/>
                     <Route path="calendar" element={<CalendarPage />}/>
+                    <Route path="wallet" element={<Wallet />}/>
                     <Route path="calendar/create-hotel" element={<CreateCalendarHotel />}/>
                     <Route path="calendar/create-house" element={<CreateCalendarHouse />}/>
                     <Route path="calendar/create-excursion" element={<CreateCalendarExcursion />}/>

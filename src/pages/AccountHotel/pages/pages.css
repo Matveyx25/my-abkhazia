@@ -742,3 +742,203 @@
     margin-top: 30px;
 
 }
+.account-page__wallet-row{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.account-page__balance-desc{
+    max-width: 440px;
+}
+.account-page__wallet-ballance-card img{
+    width: 24px;
+    height: 24px;
+}
+.account-page__wallet-ballance-card{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 35px 40px;
+    box-sizing: border-box;
+    max-width: 317px;
+    width: 100%;
+}
+.account-page__wallet-ballance{
+    font-weight: 700;
+    font-size: 36px;
+}
+.account-page__add-ballance-btn{
+    width: 100%;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+    margin-top: 35px;
+}
+.account-page__row-30{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+.account-page__wallet-card{
+    width: 317px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    padding: 30px 35px;
+    padding-right: 50px;
+    box-sizing: border-box;
+    position: relative;
+}
+.account-page__wallet-card img{
+    width: 50px;
+    height: 30px;
+    margin-top: 15px;
+}
+.account-page__wallet-card .account-page__jcsb h2{
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.account-page__btn-remove-card{
+    width: 24px !important;
+    height: 24px !important;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.account-page__wallet-add-card img{
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+}
+.account-page__wallet-add-card{
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    width: 317px;
+    height: 156px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+}
+.account-page__history-title{
+    margin-top: 25px;
+}
+.account-page__history{
+    margin-top: 15px;
+}
+.account-page__line{
+    width: 100%;
+    height: 1px;
+    background: #DFDFDF;
+    margin-top: 30px;
+    display: block;
+}
+.ballance-page__title{
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #58B4D1;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.ballance-page__company-imgs{
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.balance-page__input-number{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    outline: none !important;
+    padding: 12px 25px;
+    width: 410px;
+    padding-right: 0;
+    box-sizing: border-box;
+    margin-top: 25px;
+}
+.balance-page__input-date{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    outline: none !important;
+    padding: 12px 25px;
+    padding-right: 0;
+    width: 102px;
+    box-sizing: border-box;
+}
+.balance-page__input-ccv{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    outline: none !important;
+    padding: 12px 25px;
+    padding-right: 0;
+    width: 176px;
+    box-sizing: border-box;
+}
+.balance-page__inputs-row{
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    width: 410px;
+}
+.balance-page__btns button{
+    max-width: 160px;
+}
+.balance-page__btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+.ballance-page__desc{
+    max-width: 310px;
+    margin-top: 25px;
+}
+.ballance-page__center-text{
+    text-align: center;
+    max-width: 330px;
+    width: fit-content;
+    margin: 0 auto;
+}
+.ballance-page__modal-content label{
+    margin-top: 20px;
+}
+.ballance-page__modal-content{
+    width: 410px;
+}
+.account-page__btn-100{
+    width: 100%;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+    margin-top: 30px;
+}
