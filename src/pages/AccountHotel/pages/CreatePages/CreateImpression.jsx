@@ -3,6 +3,7 @@ import s from "./Create.module.css";
 import Radio from "../../../../components/Radio/Radio";
 import ReactImageUploading from "react-images-uploading";
 import { CounterInput } from "../../../../components/CounterInput/CounterInput";
+import { Link } from "react-router-dom";
 
 export const CreateImpression = () => {
   const [excursionName, setExcursionName] = useState(
@@ -238,7 +239,7 @@ export const CreateImpression = () => {
         </div>
         </div>
       <div className={s.btnsRow}>
-        <button className={s.btn}>Перейти к календарю</button>
+        <Link className={s.btn} to="../calendar/create-impression">Перейти к календарю</Link>
         <button className={s.btnOutlined}>Сохранить как черновик</button>
       </div>
     </div>

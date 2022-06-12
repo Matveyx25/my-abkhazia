@@ -4,6 +4,7 @@ import Radio from "../../../../components/Radio/Radio";
 import ReactImageUploading from "react-images-uploading";
 import Checkbox from "../../../../components/Checkbox/Checkbox";
 import { Modal } from '../../../../components/Modal/Modal';
+import { Link } from "react-router-dom";
 
 export const CreateFood = () => {
   const [excursionName, setExcursionName] = useState("Ресторан Абаата");
@@ -449,7 +450,7 @@ export const CreateFood = () => {
       </div>
 
       <div className={s.btnsRow}>
-        <button className={s.btn}>Перейти к календарю</button>
+        <Link className={s.btn} to="../calendar/create-food">Перейти к календарю</Link>
         <button className={s.btnOutlined}>Сохранить как черновик</button>
       </div>
     </div>

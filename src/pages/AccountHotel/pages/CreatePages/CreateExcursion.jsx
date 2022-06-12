@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./Create.module.css";
 import Radio from "../../../../components/Radio/Radio";
 import ReactImageUploading from "react-images-uploading";
+import { Link } from "react-router-dom";
 
 export const CreateExcursion = () => {
   const [excursionName, setExcursionName] = useState(
@@ -335,12 +336,12 @@ export const CreateExcursion = () => {
             );
           })}
           <div className={s.addTextarea} onClick={() => setOptions([...options, {value: '', id: options[options.length - 1].id + 1}])}>
-            <img src="../../images/plus-add-hotel.svg" alt="" />
+            <img src="/images/plus-add-hotel.svg" alt="" />
             <p>Добавить скидку</p>
           </div>
         </div>
       <div className={s.btnsRow}>
-        <button className={s.btn}>Перейти к календарю</button>
+        <Link className={s.btn} to="../calendar/create-excursion">Перейти к календарю</Link>
         <button className={s.btnOutlined}>Сохранить как черновик</button>
       </div>
     </div>

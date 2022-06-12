@@ -1218,7 +1218,7 @@ export const CreateHouse = () => {
         </div>
       </div>
       <div className={s.btnsRow}>
-        <button className={s.btn}>Перейти к календарю</button>
+        <button className={s.btn} to='../calendar/create-house'>Перейти к календарю</button>
         <button className={s.btnOutlined}>Сохранить как черновик</button>
       </div>
     </div>

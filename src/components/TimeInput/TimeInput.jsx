@@ -20,7 +20,7 @@ const tongleTime = () => {
         <p className={s.dateTitle}>{label || 'Время'}</p>
         <div className={s.inputBlock}>
         <img
-            src="../../images/transfer/timer.svg"
+            src="/images/transfer/timer.svg"
             width="18"
             height="18"
             alt=""

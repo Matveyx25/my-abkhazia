@@ -18,6 +18,13 @@ import { CreateImpression } from './pages/CreatePages/CreateImpression';
 import { CreateFood } from './pages/CreatePages/CreateFood';
 import { CreateRent } from './pages/CreatePages/CreateRent';
 import { CreateTransfer } from './pages/CreatePages/CreateTransfer';
+import { CreateCalendarHotel } from './pages/CreateCalendar/CreateCalendarHotel';
+import { CreateCalendarHouse } from './pages/CreateCalendar/CreateCalendarHouse';
+import { CreateCalendarImpretion } from './pages/CreateCalendar/CreateCalendarImpretion';
+import { CreateCalendarExcursion } from './pages/CreateCalendar/CreateCalendarExcursion';
+import { CreateCalendarRent } from './pages/CreateCalendar/CreateCalendarRent';
+import { CreateCalendarTransfer } from './pages/CreateCalendar/CreateCalendarTransfer';
+import { CreateCalendarFood } from './pages/CreateCalendar/CreateCalendarFood';
 
 export const AccountHotel = () => {
   return (
@@ -43,6 +50,13 @@ export const AccountHotel = () => {
                     <Route path="settings" element={<Settings />}/>
                     <Route path="messenger" element={<Messenger />}/>
                     <Route path="calendar" element={<CalendarPage />}/>
+                    <Route path="calendar/create-hotel" element={<CreateCalendarHotel />}/>
+                    <Route path="calendar/create-house" element={<CreateCalendarHouse />}/>
+                    <Route path="calendar/create-excursion" element={<CreateCalendarExcursion />}/>
+                    <Route path="calendar/create-rent" element={<CreateCalendarRent />}/>
+                    <Route path="calendar/create-transfer" element={<CreateCalendarTransfer />}/>
+                    <Route path="calendar/create-food" element={<CreateCalendarFood />}/>
+                    <Route path="calendar/create-impression" element={<CreateCalendarImpretion />}/>
                     <Route path="declarations/create-hotel" element={<CreateHotel />}/>
                     <Route path="declarations/create-house" element={<CreateHouse />}/>
                     <Route path="declarations/create-excursion" element={<CreateExcursion />}/>

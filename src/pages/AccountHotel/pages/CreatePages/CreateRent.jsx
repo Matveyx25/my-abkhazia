@@ -4,6 +4,7 @@ import ReactImageUploading from "react-images-uploading";
 import Checkbox from "../../../../components/Checkbox/Checkbox";
 import { Modal } from '../../../../components/Modal/Modal';
 import { CounterInput } from "../../../../components/CounterInput/CounterInput";
+import { Link } from "react-router-dom";
 
 export const CreateRent = () => {
   const [carName, setCarName] = useState("Audi Q5");
@@ -493,7 +494,7 @@ export const CreateRent = () => {
       </div>
 
       <div className={s.btnsRow}>
-        <button className={s.btn}>Перейти к календарю</button>
+        <Link className={s.btn} to="../calendar/create-rent">Перейти к календарю</Link>
         <button className={s.btnOutlined}>Сохранить как черновик</button>
       </div>
     </div>

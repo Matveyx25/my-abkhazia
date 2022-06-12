@@ -49,7 +49,7 @@ export const Declarations = () => {
         </div>
 
         <div className="account-page__result-wrapper">
-        <CardEdit
+        {pageType == 'Отели' && <> <CardEdit
                 image="../images/housing-catalog/item-1.jpg"
                 title='Отель у моря "Бамбучо"'
                 stars={5}
@@ -76,31 +76,37 @@ export const Declarations = () => {
           <Link to="create-hotel" className="account-page__btn-add-hotel">
             <img src="../images/plus-add-hotel.svg" alt="" />
             <p>Добавить еще отель</p>
-          </Link>
-          <Link to="create-house" className="account-page__btn-add-hotel">
+          </Link></>}
+        {pageType == 'Частное жилье' && <> 
+        <Link to="create-house" className="account-page__btn-add-hotel">
             <img src="../images/plus-add-hotel.svg" alt="" />
             <p>Добавить еще частное жилье</p>
-          </Link>
-          <Link to="create-excursion" className="account-page__btn-add-hotel">
+          </Link></>}
+        {pageType == 'Эскурсии и впечатления' && <> 
+        <Link to="create-excursion" className="account-page__btn-add-hotel">
             <img src="../images/plus-add-hotel.svg" alt="" />
             <p>Добавить еще экскурсию</p>
           </Link>
-          <Link to="create-impression" className="account-page__btn-add-hotel">
+        <Link to="create-impression" className="account-page__btn-add-hotel">
             <img src="../images/plus-add-hotel.svg" alt="" />
             <p>Добавить еще впечатления</p>
-          </Link>
-          <Link to="create-food" className="account-page__btn-add-hotel">
-            <img src="../images/plus-add-hotel.svg" alt="" />
-            <p>Добавить еще кухни</p>
-          </Link>
-          <Link to="create-rent" className="account-page__btn-add-hotel">
-            <img src="../images/plus-add-hotel.svg" alt="" />
-            <p>Добавить еще аренду авто</p>
-          </Link>
-          <Link to="create-transfer" className="account-page__btn-add-hotel">
+          </Link></>}
+        {pageType == 'Трансфер' && <> 
+        <Link to="create-transfer" className="account-page__btn-add-hotel">
             <img src="../images/plus-add-hotel.svg" alt="" />
             <p>Добавить еще трансфер</p>
           </Link>
+        </>}
+        {pageType == 'Аренда авто' && <> 
+        <Link to="create-rent" className="account-page__btn-add-hotel">
+            <img src="../images/plus-add-hotel.svg" alt="" />
+            <p>Добавить еще аренду авто</p>
+          </Link></>}
+        {pageType == 'Кухня Абхазии' && <> 
+        <Link to="create-food" className="account-page__btn-add-hotel">
+            <img src="../images/plus-add-hotel.svg" alt="" />
+            <p>Добавить еще кухни</p>
+          </Link></>}
         </div>
     </div>
   )

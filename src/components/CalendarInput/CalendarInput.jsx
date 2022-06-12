@@ -25,7 +25,7 @@ export const CalendarInput = ({label, error}) => {
    
     <div className={s.inputBlock}>
       <img
-        src="../../../images/transfer/calendar.svg"
+        src="/images/transfer/calendar.svg"
         width="13.5"
         height="15"
         alt=""

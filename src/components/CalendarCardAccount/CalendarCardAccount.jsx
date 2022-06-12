@@ -2,8 +2,9 @@ import React from "react";
 import Radio from "../Radio/Radio";
 import s from "./CalendarCardAccount.module.css";
 
-export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, option, clickHandler}) => {
+export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, option, clickHandler, opened, setOpened, error}) => {
   return (
+    <div className={error && s.error}>
     <div className={active ? `${s.wrapper} ${s.active}` : s.wrapper} onClick={clickHandler}>
       <h1 className={s.title}>{label}</h1>
       {subtitle && <h2 className={s.subtitle}>{subtitle}</h2>}
@@ -19,22 +20,27 @@ export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, opt
         labelText="Открыто для бронирования"
         inputId={"open_reserve" + id}
         inputName={"reserve_input" + id}
-        checked={true}
+        changeFunction={() => setOpened(true)}
+        checked={opened}
       />
       <Radio
-        labelText="Открыто для бронирования"
+        labelText="Закрыто для бронирования"
         inputId={"close_reserve" + id}
         inputName={"reserve_input" + id}
+        changeFunction={() => setOpened(false)}
+        checked={!opened}
       />
-      <h1 className={s.inputTitle}>Свободная дата С</h1>
+      {opened && <> <h1 className={s.inputTitle}>Свободная дата С</h1>
       <p className={s.inputWrapper}>
-        <img src="../images/bxs_calendar-black.svg" />2 мая, пн
+        <img src="/images/bxs_calendar-black.svg" />2 мая, пн
       </p>
       <h1 className={s.inputTitle}>Свободная дата До</h1>
       <p className={s.inputWrapper}>
-        <img src="../images/bxs_calendar-black.svg" />
+        <img src="/images/bxs_calendar-black.svg" />
         30 сентября, пн
-      </p>
+      </p></>}
+    </div>
+    {error && <p className={s.errorText}>Чтобы активировать, Вам нужно выбрать свободные даты или закрыть эту категорию для бронирования.</p>}
     </div>
   );
 };

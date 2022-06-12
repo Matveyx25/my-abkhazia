@@ -4,6 +4,7 @@ import ReactImageUploading from "react-images-uploading";
 import Checkbox from "../../../../components/Checkbox/Checkbox";
 import { CounterInput } from "../../../../components/CounterInput/CounterInput";
 import Radio from "../../../../components/Radio/Radio";
+import { Link } from "react-router-dom";
 
 export const CreateTransfer = () => {
   const [companyName, setCompanyName] = useState("Компания");
@@ -637,7 +638,7 @@ export const CreateTransfer = () => {
         </div>
 
       <div className={s.btnsRow}>
-        <button className={s.btn}>Перейти к календарю</button>
+        <Link className={s.btn} to="../calendar/create-transfer">Перейти к календарю</Link>
         <button className={s.btnOutlined}>Сохранить как черновик</button>
       </div>
     </div>
