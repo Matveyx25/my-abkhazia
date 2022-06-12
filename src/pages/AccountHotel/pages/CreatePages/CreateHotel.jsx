@@ -570,12 +570,26 @@ export const CreateHotel = () => {
           <h2 className="account-page__input-block-title">
             Добавление карточки номера
           </h2>
-          <Link to="create-number">
-          <div className="account-page__upload-photo-btn" to="create-number">
-              <img src="../../images/plus-add-hotel.svg" alt="" />
-              <p>Добавить категорию номера</p>
+          <div className={s.row30}>
+            <div className={s.numberCard}> 
+                <div className={s.imageBlock}>
+                  <img src="/images/hotel-number/item--1.jpg" alt="" />
+                </div>
+                <div className={s.contentNumber}>
+                  <span className={s.line}></span>
+                  <p className={s.descNumber}>Эконом, отдельный номер</p>
+                  <p className={s.titleNumber}>Бюджетный двухместный номер с 1 кроватью </p>
+                  <p className={s.blueNumber}>5 номеров</p>
+                </div>
+            </div>
+            <Link to="create-number">
+            <div className={s.addNumber} to="create-number">
+                <img src="../../images/plus-add-hotel.svg" alt="" />
+                <p>Добавить категорию номера</p>
+            </div>
+            </Link>
           </div>
-          </Link>
+          
         </div>
         <div>
           <h2 className="account-page__input-block-title">

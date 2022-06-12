@@ -198,9 +198,7 @@ export const CreateCalendarFood = () => {
           <button className={`${s.btn200} ${s.orange}`} onClick={() => setCalendarModal(true)}>Добавить расписание</button>
         </div>
       </div>
-      {openedForReserved && <ReservedCalendar
-        type="createFood"
-      />}
+      {openedForReserved && <ReservedCalendar type="createFood"/>}
       <div className={s.inputRow}>
         <div className={s.inputBlock}>
           <p className={s.inputTitle}>Цена за средни йчек</p>

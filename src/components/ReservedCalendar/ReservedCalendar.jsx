@@ -101,19 +101,9 @@ export const ReservedCalendar = ({
           type === "createExcursion") && (
           <p className={s.gridTitle}>Кол-во человек</p>
         )}
-        {(type != "createHotel" ||
-          type != "createHouse" ||
-          type != "createExcursion" ||
-          type != "createRent" ||
-          type != "createFood") && (
-          <p className={`${s.gridTitle} ${s.last}`}>
-            {(type === "excursion2" || type === "rent" || type === "food") &&
-              "Время"}
-            {(type === "hotel" || type === "house" || type === "excursion") &&
-              "Туристы"}
-            {type === "transfer" && "Время забора"}
-          </p>
-        )}
+        {(type === "excursion2" || type === "rent" || type === "food") && <p className={`${s.gridTitle} ${s.last}`}>Время</p>}
+        {(type === "hotel" || type === "house" || type === "excursion") && <p className={`${s.gridTitle} ${s.last}`}>Туристы</p>}
+        {type === "transfer" && <p className={`${s.gridTitle} ${s.last}`}>Время забора</p>}
         <div className={s.monthName}>
           <div>
             <img
