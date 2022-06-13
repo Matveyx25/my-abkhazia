@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Message } from '../../../components/Message/Message';
 import { TouristCard } from '../../../components/TouristCard/TouristCard';
 
 export const Messenger = () => {
+  const [moveModal, setMoveModal] = useState(false);
+
   return (
     <div className="messenger-page__section">
       <h1 className="account-page__title">Сообщения</h1>
@@ -13,7 +15,19 @@ export const Messenger = () => {
               <img src="../images/arrow-right-circle-fill.svg"/>
               Назад
             </div>
-            <img src="../images/three-circle-vertical-fill.svg" alt="" />
+            <div className="image-item__three-dots">
+              <img src="../images/three-circle-vertical-fill.svg" alt="" onClick={() => setMoveModal(!moveModal)}/>
+              {moveModal && (
+                        <div className="image-item__btn-wrapper">
+                          <button onClick={() => setMoveModal(false)}>
+                            Очистить чат
+                          </button>
+                          <button onClick={() => setMoveModal(false)}>
+                            Удалить чат
+                          </button>
+                        </div>
+                      )}
+            </div>
           </div>
           <div className="messenger-page__chat">
             <div className="messenger-page__messages">

@@ -174,9 +174,14 @@ export const Settings = () => {
             <input
               placeholder="телефон"
               value={phone}
-              onChange={(event) => setPhone(event.target.value)}
+              onChange={(event) => {
+                if(isDisabledPhone){
+                  setPhone(phone)
+                }else{
+                  setPhone(event.target.value)
+                }
+              }}
               type="text"
-              disabled={isDisabledPhone}
               required
             />
             <span onClick={() => setDisabledPhone(!isDisabledPhone)}>
@@ -190,9 +195,14 @@ export const Settings = () => {
             <input
               placeholder="Е-mail"
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(event) => {
+                if(isDisabledMail){
+                  setEmail(email)
+                }else{
+                  setEmail(event.target.value)
+                }
+              }}
               type="text"
-              disabled={isDisabledMail}
               required
             />
             <span onClick={() => setDisabledMail(!isDisabledMail)}>
@@ -208,9 +218,14 @@ export const Settings = () => {
               <input
                 placeholder="Пароль"
                 value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                onChange={(event) => {
+                  if(isDisabledPassword){
+                    setPassword(password)
+                  }else{
+                    setPassword(event.target.value)
+                  }
+                }}
                 type={visible ? "text" : "password"}
-                disabled={isDisabledPassword}
                 required
               />
               {visible ? (

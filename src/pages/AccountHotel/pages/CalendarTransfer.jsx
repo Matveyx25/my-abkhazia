@@ -17,6 +17,7 @@ export const CalendarTransfer = () => {
   const [chair, setChair] = useState(0);
   const [booster, setBooster] = useState(0);
   const [touristName, setTouristName] = useState();
+  const [openedForReserved, setOpenedForReserved] = useState(true);
 
   const [modal, setModal] = useState(false);
   const [activeUser, setActiveUser] = useState(false);
@@ -194,9 +195,12 @@ export const CalendarTransfer = () => {
           id="1"
           label="Автомобиль эконом класса"
           option="5 машин"
+          opened={openedForReserved}
+          setOpened={setOpenedForReserved}
         />
       </div>
-      <ReservedCalendar type="transfer" activeUser={activeUser} clickHandler={() => setActiveUser(true)}/>
+      {openedForReserved &&
+      <ReservedCalendar type="transfer" activeUser={activeUser} clickHandler={() => setActiveUser(true)}/>}
       <button className={s.edit} onClick={() => setModal(true)}>
         Внести правки в календарь
       </button>

@@ -70,6 +70,9 @@
     margin-bottom: 30px;
 }
 
+.account-page__btn:hover {
+    box-shadow: 0px 4px 15px #58B4D1;
+}
 .account-page__btn {
     width: 231px;
     padding: 13px;
@@ -88,6 +91,9 @@
     width: 32px;
     height: 32px;
     margin-right: 10px;
+}
+.account-page__btn160:hover {
+    box-shadow: 0px 4px 15px #58B4D1;
 }
 .account-page__btn160 {
     width: 160px;
@@ -126,6 +132,9 @@
     background: #58B4D1;
     margin-bottom: 2px;
 }
+.account-page__btn-outline:hover {
+    box-shadow: 0px 4px 15px #58B4D1;
+}
 .account-page__btn-outline {
     width: 231px;
     padding: 13px;
@@ -141,6 +150,9 @@
     justify-content: center;
 }
 
+.account-page__btn-dashed:hover {
+    box-shadow: 0px 4px 15px #58B4D1;
+}
 .account-page__btn-dashed {
     width: 220px;
     padding: 13px;
@@ -246,12 +258,10 @@
 .account-page__filter {
     display: flex;
     align-items: center;
-    max-width: 465px;
-    width: 100%;
-    justify-content: space-between;
     font-family: 'Century Gothic';
     font-weight: 400;
     font-size: 14px;
+    gap: 10px;
     color: #000000;
 }
 .account-page__filter input{
@@ -324,6 +334,9 @@
     gap: 20px;
 }
 
+.settings-page__btn-fill:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
 .settings-page__btn-fill{
     display: block;
     border: none;
@@ -340,6 +353,9 @@
     border: none;
     justify-content: center;
 }
+.settings-page__btn-submit:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
 .settings-page__btn-submit{
     display: block;
     border: none;
@@ -355,6 +371,9 @@
     font-size: 14px;
     border: none;
     justify-content: center;
+}
+.settings-page__btn-outlined:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
 }
 .settings-page__btn-outlined{
     display: block;
@@ -421,6 +440,7 @@
     outline: none !important;
 }
 .account-page__input-block input:valid,
+.account-page__input-block input:disabled:valid,
 .account-page__input-block input:focus{
     border: 1px solid #000000;
 }
@@ -480,6 +500,9 @@
     display: flex;
     gap: 30px;
     margin-top: 30px;
+}
+.messenger-page__btn-send:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
 }
 .messenger-page__btn-send{
     display: block;
@@ -662,6 +685,18 @@
     top: 15px;
     right: 15px;
 }
+.image-item__three-dots{
+    position: relative;
+}
+.image-item__three-dots .image-item__btn-wrapper{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    width: 160px;
+    box-sizing: border-box;
+    top: 50px;
+    right: 0;
+}
 .image-item__btn-wrapper{
     position: absolute;
     right: 15px;
@@ -768,6 +803,9 @@
     font-weight: 700;
     font-size: 36px;
 }
+.account-page__add-ballance-btn:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
 .account-page__add-ballance-btn{
     width: 100%;
     padding: 13px;
@@ -809,9 +847,23 @@
     font-size: 14px;
     margin-bottom: 15px;
 }
-.account-page__btn-remove-card{
+.account-page__btn-remove-card:hover img:first-child{
+    display: none;
+}
+.account-page__btn-remove-card:hover img:last-child{
+    display: block;
+}
+.account-page__btn-remove-card img:first-child{
+    display: block;
+}
+.account-page__btn-remove-card img:last-child{
+    display: none;
+}
+.account-page__btn-remove-card img{
     width: 24px !important;
     height: 24px !important;
+}
+.account-page__btn-remove-card{
     position: absolute;
     top: 15px;
     right: 15px;
@@ -830,9 +882,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-weight: 700;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 .account-page__history-title{
     margin-top: 25px;
@@ -901,6 +955,9 @@
     margin-top: 20px;
     width: 410px;
 }
+.balance-page__btns button:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
 .balance-page__btns button{
     max-width: 160px;
 }
@@ -927,6 +984,9 @@
 .ballance-page__modal-content{
     width: 410px;
 }
+.account-page__btn-100:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
 .account-page__btn-100{
     width: 100%;
     padding: 13px;
@@ -941,4 +1001,13 @@
     border: none;
     justify-content: center;
     margin-top: 30px;
+}
+button{
+    cursor: pointer;
+}
+.ballance-page__card-radios{
+    margin-left: 20px;
+}
+.ballance-page__card-radios label{
+    align-items: flex-start;
 }

@@ -13,21 +13,28 @@ export const CalendarHouse = () => {
     const [life, setLife] = useState("от 3 ночей");
     const [phone, setPhone] = useState();
     const [touristName, setTouristName] = useState();
+  const [openedForReserved, setOpenedForReserved] = useState(true);
+
   
     const [modal, setModal] = useState(false);
   
     const [activeUser, setActiveUser] = useState(false);
 
+    const [filter, setFilter] = useState(0)
+    const changeFilter = (event) => {
+      setFilter(event.target.value);
+    };
+
   return (
     <div>
-        <Modal visible={modal} onClose={() => setModal(false)}>
+      <Modal visible={modal} onClose={() => setModal(false)}>
         <h1 className={s.modalTitle}>Правки в календарь</h1>
         <div className={s.modalContent}>
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Заезд"/>
-                <CalendarInput label="Выезд"/>
+                <CalendarInput label="Заезд" />
+                <CalendarInput label="Выезд" />
               </div>
               <div className={s.ModalRow}>
                 <div className={s.inputBlock}>
@@ -58,35 +65,84 @@ export const CalendarHouse = () => {
               </div>
             </div>
             <div className={s.leftBlock}>
-              <CalendarInput label="Заезд" error="Выберите дату, недоступную для брони"/>
+              <CalendarInput
+                label="Заезд"
+                error="Выберите дату, недоступную для брони"
+              />
               <button className={s.btn160} disabled>
-                  Применить
-                </button>
-                <div className={s.addBtn}>
-                  <img src="../images/plus-add-hotel.svg" alt=""/>
-                  Добавить еще дату
-                </div>
+                Применить
+              </button>
+              <div className={s.addBtn}>
+                <img src="../images/plus-add-hotel.svg" alt="" />
+                Добавить еще дату
+              </div>
             </div>
           </div>
-          <ReservedCalendar type='house'/>
+          <ReservedCalendar type="house" />
           <div className={s.footerBtn}>
-                 <button className={s.btn160} disabled>
-                  Сохранить
-                </button>
-                 <button className={`${s.btn160} ${s.outlined}`} onClick={() => setModal(false)}>
-                  Отменить
-                </button>
+            <button className={s.btn160} disabled>
+              Сохранить
+            </button>
+            <button
+              className={`${s.btn160} ${s.outlined}`}
+              onClick={() => setModal(false)}
+            >
+              Отменить
+            </button>
           </div>
         </div>
       </Modal>
-      <div className="account-page__reviews-wrapper">
-        <CalendarCardAccount id="1" label="1 комнатная квартира"/>
+      <div className="account-page__filter-wrapper">
+        <form className="account-page__filter">
+          <input
+            type="radio"
+            value="0"
+            id="filterAll"
+            name="filter"
+            checked={filter == 0}
+            onChange={changeFilter}
+          />
+          <label htmlFor="filterAll">Все</label>
+          <input
+            type="radio"
+            value="1"
+            id="filterHotel"
+            name="filter"
+            checked={filter == 1}
+            onChange={changeFilter}
+          />
+          <label htmlFor="filterHotel">Квартиры</label>
+          <input
+            type="radio"
+            value="2"
+            id="filterGuest"
+            name="filter"
+            checked={filter == 2}
+            onChange={changeFilter}
+          />
+          <label htmlFor="filterGuest">Дома</label>
+          <input
+            type="radio"
+            value="3"
+            id="filterMiniHotel"
+            name="filter"
+            checked={filter == 3}
+            onChange={changeFilter}
+          />
+          <label htmlFor="filterMiniHotel">Комнаты</label>
+        </form>
       </div>
+      <div className="account-page__reviews-wrapper">
+        <CalendarCardAccount id="1" label="1 комнатная квартира" 
+        opened={openedForReserved}
+        setOpened={setOpenedForReserved}/>
+      </div>
+      {openedForReserved &&
       <ReservedCalendar
         activeUser={activeUser}
         clickHandler={() => setActiveUser(true)}
-        type='house'
-      />
+        type="house"
+      />}
       <button className={s.edit} onClick={() => setModal(true)}>
         Внести правки в календарь
       </button>
@@ -129,5 +185,5 @@ export const CalendarHouse = () => {
       </div>
       <button className={s.savebtn}>Сохранить изменения</button>
     </div>
-  )
+  );
 }

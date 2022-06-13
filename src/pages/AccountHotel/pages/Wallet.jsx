@@ -9,6 +9,7 @@ export const Wallet = () => {
   const [ballanceModal, setBallanceModal] = useState(false)
   const [removed, setRemoved] = useState(false)
   const [balanced, setBalanced] = useState(false)
+  const [payType, setPayType] = useState()
 
   return (
     <div className="messenger-page__section">
@@ -58,8 +59,36 @@ export const Wallet = () => {
         {!balanced ?<> <p>
           Выберите подходящий Вам способ, чтобы пополнить кошелек:
         </p>
-        <Radio labelText="Картой онлайн на сайте" inputId="insite" inputValue="Картой онлайн на сайте" inputName="balance"/>
-        <Radio labelText="Прикрепленной картой" inputId="outsite" inputValue="Прикрепленной картой" inputName="balance"/>
+        <Radio labelText="Картой онлайн на сайте" inputId="insite" inputValue="Картой онлайн на сайте" inputName="balance" checked={payType == 'Картой онлайн на сайте'} changeFunction={event => setPayType(event.target.value)}/>
+        <Radio labelText="Прикрепленной картой" inputId="outsite" inputValue="Прикрепленной картой" inputName="balance" checked={payType == 'Прикрепленной картой'} changeFunction={event => setPayType(event.target.value)}/>
+         {payType == 'Прикрепленной картой' && <div className="ballance-page__card-radios">
+              <Radio labelText={<div className="account-page__wallet-card">
+                <div className="account-page__jcsb">
+                  <div>
+                    <h2>Номер карты</h2>
+                    <p>220220******9127</p>
+                  </div>
+                  <div>
+                    <h2>Срок карты</h2>
+                    <p>09/24</p>
+                  </div>
+                </div>
+                <img src="/images/mir-card.svg"/>
+              </div>} inputId="mircard" inputValue="MIR" inputName="cards"/>
+              <Radio labelText={<div className="account-page__wallet-card">
+                <div className="account-page__jcsb">
+                  <div>
+                    <h2>Номер карты</h2>
+                    <p>220220******9127</p>
+                  </div>
+                  <div>
+                    <h2>Срок карты</h2>
+                    <p>09/24</p>
+                  </div>
+                </div>
+                <img src="/images/mastercard_payment.svg"/>
+              </div>} inputId="master" inputValue="mastercard" inputName="cards"/>
+         </div>}
           <button className="account-page__btn-100" onClick={() => setBalanced(true)}>Пополнить</button></> :
         <> <p className="ballance-page__center-text">
           Ваш кошелек пополнен! 
@@ -100,9 +129,12 @@ export const Wallet = () => {
             </div>
           </div>
           <img src="/images/mir-card.svg"/>
-          <img src="/images/dashicons_trash.svg" className="account-page__btn-remove-card" onClick={() => setRemoveModal(true)}/>
+          <div className="account-page__btn-remove-card" onClick={() => setRemoveModal(true)}>
+              <img src="/images/dashicons_trash.svg" />
+              <img src="/images/dashicons_trash-blue.svg" />
+          </div>
         </div>
-        <div className="account-page__wallet-add-card" onClick={() => modal(true)}>
+        <div className="account-page__wallet-add-card" onClick={() => setModal(true)}>
           <img src="/images/plus-add-hotel.svg" alt="" />
           <p>Добавить карту</p>
         </div>

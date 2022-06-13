@@ -12,6 +12,8 @@ export const CalendarRent = () => {
 
     const [phone, setPhone] = useState();
     const [touristName, setTouristName] = useState();
+  const [openedForReserved, setOpenedForReserved] = useState(true);
+
   
     const [modal, setModal] = useState(false);
 
@@ -59,7 +61,9 @@ export const CalendarRent = () => {
               </div>
             </div>
             <div className={s.leftBlock}>
-              <CalendarInput label="Заезд" error="Выберите дату, недоступную для брони"/>
+              <CalendarInput label="Заезд" error="Выберите дату, недоступную для брони"
+              opened={openedForReserved}
+              setOpened={setOpenedForReserved}/>
               <button className={s.btn160} disabled>
                   Применить
                 </button>
@@ -85,9 +89,10 @@ export const CalendarRent = () => {
       <div className="account-page__reviews-wrapper">
         <CalendarCardAccount id="1" label="Audi Q5"/>
       </div>
+      {openedForReserved &&
       <ReservedCalendar
         type='rent'
-      />
+      />}
       <button className={s.edit} onClick={() => setModal(true)}>
         Внести правки в календарь
       </button>

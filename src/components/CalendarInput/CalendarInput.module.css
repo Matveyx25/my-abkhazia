@@ -5,6 +5,7 @@
     font-weight: 700;
     font-size: 14px;
     display: flex;
+    position: relative;
 }
 .dateTitle img{
     width: 18px;
@@ -45,4 +46,23 @@
     position: absolute;
     left: 17px;
     top: 14px;
+}
+.dateTitle img:hover + .popupError{
+    display: block;
+}
+.popupError{
+    padding: 20px 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    box-sizing: border-box;
+    width: 353px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    position: absolute;
+    display: none;
+    top: 35px;
+    right: -10px;
+    z-index: 1000;
 }

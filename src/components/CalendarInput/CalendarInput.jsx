@@ -17,6 +17,9 @@ export const CalendarInput = ({label, error}) => {
       <p className={s.dateTitle}>
         {error} 
         <img src="../images/exclamation-mark.svg" alt=""/> 
+        <div className={s.popupError}>
+        Вы можете выбрать дату, когда возможно нужен выходной или вам необходимо по каким либо обстоятельствам отменить бронь на конкретную дату
+        </div>
       </p>
       : 
       <p className={s.dateTitle}>

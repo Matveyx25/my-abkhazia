@@ -11,6 +11,7 @@ export const CalendarFood = () => {
 
     const [phone, setPhone] = useState();
     const [touristName, setTouristName] = useState();
+  const [openedForReserved, setOpenedForReserved] = useState(true);
   
     const [modal, setModal] = useState(false);
 
@@ -22,8 +23,8 @@ export const CalendarFood = () => {
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Дата посещения"/>
-                <TimeInput/>
+                <CalendarInput label="Дата посещения" />
+                <TimeInput />
               </div>
               <div className={s.ModalRow}>
                 <div className={s.inputBlock}>
@@ -54,35 +55,40 @@ export const CalendarFood = () => {
               </div>
             </div>
             <div className={s.leftBlock}>
-              <CalendarInput label="Заезд" error="Выберите дату, недоступную для брони"/>
+              <CalendarInput
+                label="Заезд"
+                error="Выберите дату, недоступную для брони"
+              />
               <button className={s.btn160} disabled>
-                  Применить
-                </button>
-                <div className={s.addBtn}>
-                  <img src="../images/plus-add-hotel.svg" alt=""/>
-                  Добавить еще дату
-                </div>
+                Применить
+              </button>
+              <div className={s.addBtn}>
+                <img src="../images/plus-add-hotel.svg" alt="" />
+                Добавить еще дату
+              </div>
             </div>
           </div>
-          <ReservedCalendar
-            type='food'
-          />
+          <ReservedCalendar type="food" />
           <div className={s.footerBtn}>
-                 <button className={s.btn160} disabled>
-                  Сохранить
-                </button>
-                 <button className={`${s.btn160} ${s.outlined}`} onClick={() => setModal(false)}>
-                  Отменить
-                </button>
+            <button className={s.btn160} disabled>
+              Сохранить
+            </button>
+            <button
+              className={`${s.btn160} ${s.outlined}`}
+              onClick={() => setModal(false)}
+            >
+              Отменить
+            </button>
           </div>
         </div>
       </Modal>
       <div className="account-page__reviews-wrapper">
-        <CalendarCardAccount id="1" label="Ресторан Абатаа"/>
+        <CalendarCardAccount id="1" label="Ресторан Абатаа" 
+        opened={openedForReserved}
+        setOpened={setOpenedForReserved}/>
       </div>
-      <ReservedCalendar
-        type='food'
-      />
+      {openedForReserved &&
+      <ReservedCalendar type="food" />}
       <div className={s.ModalRow}>
         <button className={s.edit} onClick={() => setModal(true)}>
           Внести правки в календарь
@@ -91,9 +97,9 @@ export const CalendarFood = () => {
           Изменить расписание
         </button>
       </div>
-      
+
       <form className={s.form}>
-      <div className={s.inputRow}>
+        <div className={s.inputRow}>
           <div className={s.inputBlock}>
             <p className={s.inputTitle}>Цена за средний чек</p>
             <input
@@ -103,9 +109,9 @@ export const CalendarFood = () => {
               onChange={(event) => setPriceDay(event.target.value)}
             />
           </div>
-          </div>
+        </div>
         <button className={s.savebtn}>Сохранить изменения</button>
       </form>
     </div>
-  )
+  );
 }
