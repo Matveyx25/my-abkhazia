@@ -152,7 +152,7 @@
     color: #000;
     border: 1px solid #000;
 }   
-.colspanTd.active div, .notColspanTd.active div{
+.colspanTd.active div, .notColspanTd.active div, .rentTd.active div{
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15), inset 0px 8px 10px rgba(0, 0, 0, 0.15);
 }
 .colspanTd img{

@@ -46,7 +46,10 @@ export const Messenger = () => {
               <div className="messenger-page__input-block">
                 <button className="messenger-page__emoji"><img src="../images/smile.svg" alt="" /></button>              
                   <input placeholder="Введите сообщение"/>
-                <button className="messenger-page__clip"><img src="../images/paper-clip.svg" alt="" /></button>              
+                <button className="messenger-page__clip"><img src="../images/paper-clip.svg" alt="" /></button>   
+                <button className="messenger-page__btn-send-mobile">
+                  <img src="/images/send.svg" alt="" />
+                </button>
               </div>
               <button className="messenger-page__btn-send">Отправить</button>
             </div>

@@ -4,8 +4,8 @@ import s from "./Create.module.css";
 import Radio from "../../../../components/Radio/Radio";
 import ReactImageUploading from "react-images-uploading";
 import { TimeInput } from "../../../../components/TimeInput/TimeInput";
-import { DistanceInput } from "../../../../components/DistanceInput/DistanceInput";
 import { DistancesBlock } from "../../../../components/DistancesBlock/DistancesBlock";
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
 import { Link } from "react-router-dom";
 
 export const CreateHotel = () => {
@@ -84,15 +84,16 @@ export const CreateHotel = () => {
   };
 
   return (
-    <div>
+    <div className="create-hotel-page">
       <div className="account-page__breadcrumps">
         <p>Добавление отеля</p>
       </div>
       <div className="account-page__jcsb">
         <h1 className="account-page__title">Заполнение информации об отеле</h1>
-        <button className="account-page__btn160">
+        <button className="account-page__btn160 intitle">
           <img src="../../images/eye-filled_white.svg" />
-          Просмотр
+          <img src="../../images/eye-filled-blue.svg" className="blue-eye"/>
+          <p>Просмотр</p> 
         </button>
       </div>
       <form action="" className="account-page__settings-form">
@@ -235,22 +236,22 @@ export const CreateHotel = () => {
         onChange={(event) => setDesc(event.target.value)}
       ></textarea>
       <h2 className="account-page__input-block-title">Услуги</h2>
-      <table className="account-page__options-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Не предоставляется</th>
-            <th>Включены в стоимость</th>
-            <th>За дополнительную плату</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Table className="account-page__options-table">
+        <Thead>
+          <Tr>
+            <Th></Th>
+            <Th>Не предоставляется</Th>
+            <Th>Включены в стоимость</Th>
+            <Th>За дополнительную плату</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
           {options.map((option, index) => (
-            <tr key={index}>
-              <td>
+            <Tr key={index}>
+              <Td>
                 <p>{option.title}</p>
-              </td>
-              <td>
+              </Td>
+              <Td>
                 <div>
                   <Radio
                     inputName={option.slug}
@@ -259,8 +260,8 @@ export const CreateHotel = () => {
                     changeFunction={(event) => updateOptions(option, event)}
                   />
                 </div>
-              </td>
-              <td>
+              </Td>
+              <Td>
                 <div>
                   <Radio
                     inputName={option.slug}
@@ -269,8 +270,8 @@ export const CreateHotel = () => {
                     changeFunction={(event) => updateOptions(option, event)}
                   />
                 </div>
-              </td>
-              <td>
+              </Td>
+              <Td>
                 <div>
                   <Radio
                     inputName={option.slug}
@@ -279,11 +280,11 @@ export const CreateHotel = () => {
                     changeFunction={(event) => updateOptions(option, event)}
                   />
                 </div>
-              </td>
-            </tr>
+              </Td>
+            </Tr>
           ))}
-        </tbody>
-      </table>
+        </Tbody>
+      </Table>
       <h2 className="account-page__input-block-title">Правила и скидки</h2>
       <div className={s.row}>
         <div className={s.inputsWrapper}>
@@ -479,7 +480,7 @@ export const CreateHotel = () => {
             />
           </div>
           <div className={s.inputsWrapper}>
-            <h2>В отеле:</h2>
+            <h2>На территории:</h2>
             <div className={s.row}>
               <div>
                 <Checkbox
@@ -583,11 +584,9 @@ export const CreateHotel = () => {
                 </div>
                 <img src="/images/dashicons_trash-white.svg" alt="" className={s.removeNumber}/>
             </div>
-            <Link to="create-number">
-            <div className={s.addNumber} to="create-number">
+            <Link to="create-number" className={s.addNumber}>
                 <img src="../../images/plus-add-hotel.svg" alt="" />
                 <p>Добавить категорию номера</p>
-            </div>
             </Link>
           </div>
           

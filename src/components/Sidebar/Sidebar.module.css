@@ -48,4 +48,10 @@
     height: 32px;
     margin-right: 20px;
 }
+@media screen and (max-width: 1150px){
+    .wrapper{
+        background: #CDE9F1;
+        margin: 0 -16px;
+    }
+}
 

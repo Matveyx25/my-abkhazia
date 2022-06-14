@@ -1011,3 +1011,350 @@ button{
 .ballance-page__card-radios label{
     align-items: flex-start;
 }
+.messenger-page__btn-send-mobile img{
+    width: 18px !important;
+    height: 18px !important;
+}
+.messenger-page__btn-send-mobile{
+    display: none;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    background: #58B4D1 !important;
+    border-radius: 50%;
+}
+.account-page__filter-btns{
+    display: none;
+}
+.account-page__filter-title{
+    display: none;
+}
+.account-page__filter-mobile{
+    display: none;
+}
+.intitle .blue-eye{
+    display: none;
+}
+.account-page__back-btn{
+    display: none;
+}
+@media screen and (max-width: 1150px) {
+    .account-page__back-btn{
+        display: block;
+        margin-bottom: 24px;
+    }
+    .profile-page .account-page__row{
+        flex-wrap: wrap;
+    }
+    .profile-page .account-page__jcsb{
+        flex-wrap: wrap;
+    }
+    .profile-page .account-page__info-list{
+        margin-top: 16px;
+    }
+    .profile-page .account-page__info-list .blue{
+        display: block;
+        margin: 0;
+    }
+    .account-page__title{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 565px) {
+    .account-page__input-block input{
+        max-width: 100%;
+    }
+    .account-page__input-block {
+        max-width: 100%;
+    }
+    .profile-page .account-page__row button:not(:last-child){
+        margin-right: 0;
+    }
+    .profile-page .account-page__row button{
+        width: 100%;
+    }
+    .profile-page .account-page__btn{
+        margin-bottom: 12px;
+    }
+    .messenger-page__input-block{
+        flex-wrap: wrap;
+        padding: 12px;
+    }
+    .messenger-page__send-block{
+        flex-direction: column;
+    }
+    .messenger-page__input-block button:first-child {
+        margin-right: 10px;
+    }
+    .messenger-page__input-block input {
+        margin: 0;
+    }
+    .messenger-page__btn-send-mobile{
+        display: flex;
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .messenger-page__btn-send{
+        display: none;
+    }
+    .messenger-page__input-block button {
+        order: 1;
+        margin-top: 25px;
+    }
+    .balance-page__input-number{
+        width: 100%;
+        margin-top: 16px;
+    } 
+    .balance-page__input-ccv{
+        width: 100%;
+    }
+    .balance-page__input-date{
+        width: calc(50% - 10px);
+    }
+    .balance-page__inputs-row{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .balance-page__btns{
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 12px;
+    }
+    .balance-page__btns button{
+        max-width: 100%;
+        width: 100%;
+    }
+    .ballance-page__desc{
+        max-width: 100%;
+        margin-top: 12px;
+    }
+    .ballance-page__modal-content{
+        width: 100%;
+    }
+    .account-page__wallet-card{
+        width: fit-content;
+    }
+    .account-page__filter-wrapper-mobile.visible{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        z-index: 1000;
+        /* padding: 16px; */
+        box-sizing: border-box;
+    }
+    .account-page__filter-wrapper-mobile.visible .line{
+        display: block;
+        margin-top: 24px;
+        width: 100%;
+        height: 1px;
+        background: #dfdfdf;
+    }
+    .account-page__filter-wrapper-mobile{
+        display: none;
+    }
+    .account-page__filter-wrapper{
+        flex-direction: column;
+        align-items: start;
+    }
+    .account-page__filter-mobile{
+        font-weight: 700;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+    }
+
+    .decorations-section .main__banner-link-list {
+        align-items: start;
+        justify-content: start;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    .decorations-section .main__banner-link-list-item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+    .account-page__filter{
+        flex-direction: column;
+        align-items: start;
+    }
+    .account-page__filter-btns{
+        display: flex;
+        margin-top: auto;
+        margin-bottom: 0;
+        margin-bottom: -16px;
+        margin-left: -16px;
+        margin-right: -16px;
+        width: 100vw;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 25px 25px 0px 0px;
+        padding: 18px 16px;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .account-page__filter-btns button{
+        width: calc(50% - 10px);
+    }
+    .account-page__filter-title img{
+        position: absolute;
+        left: 0;
+    }
+    .account-page__filter-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 24px;
+        position: relative;
+    }
+    .decorations-section .searching-results__btn-wrapper a:not(:first-child){
+        margin: 0;
+    }
+    .decorations-section .searching-results__btn-wrapper a{
+        width: 100%;
+    }
+    .decorations-section .searching-results__btn-wrapper .account-page__row{
+        gap: 12px;
+        width: 100%;
+    }
+    .decorations-section .searching-results__btn-wrapper .account-page__row,
+    .decorations-section .searching-results__btn-wrapper{
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .decorations-section .housing-catalog__searching-results-image,
+    .decorations-section .housing-catalog__searching-results-image img{
+        width: 100% !important;
+    }
+    .account-page__filter-fill label{
+        width: 100%;
+        text-align: center;
+    }
+    .account-page__filter-fill{
+        flex-direction: column;
+        margin-bottom: 24px;
+        margin-top: 24px;
+    }
+    .decorations-section .account-page__jcsb.title-row{
+        flex-direction: column;
+    }
+    .decorations-section .account-page__btn-dashed{
+        width: 100%;
+        margin-top: 15px;
+    }
+    .account-page__filter-scroll{
+        max-height: 100vh;
+        overflow-y: auto;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    .account-page__upload-photo-btn{
+        margin: 0;
+        margin-top: 24px;
+        width: 100%;
+    }
+    .create-hotel-page .account-page__inputs-row{
+        gap: 12px;
+    }
+    .create-hotel-page .account-page__input-block{
+        margin-top: 0;
+    }
+    .intitle{
+        width: fit-content;
+        padding: 0;
+        background: none;
+        height: fit-content;
+    }
+    .intitle p{
+        display: none;
+    }
+    .intitle img:not(.blue-eye){
+        display: none;
+    }
+    .intitle .blue-eye{
+        display: block;
+        margin: 0;
+    }
+    .account-page__breadcrumps{
+        display: none;
+    }
+    .account-page__inputs-row{
+        gap: 12px;
+    }
+    .account-page__input-block{
+        margin-top: 0;
+    }
+}
+
+.responsiveTable {
+    width: 100%;
+  }
+  
+  .responsiveTable td .tdBefore {
+    display: none;
+  }
+  
+  @media screen and (max-width: 40em) {
+    .responsiveTable table,
+    .responsiveTable thead,
+    .responsiveTable tbody,
+    .responsiveTable th,
+    .responsiveTable td,
+    .responsiveTable tr {
+      display: block;
+    }
+  
+    .responsiveTable thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      border-bottom: 2px solid #333;
+    }
+  
+    .responsiveTable tbody tr {
+      padding: 16px 0;
+      border-top: 1px solid #DFDFDF;
+    }
+  
+    .responsiveTable td.pivoted:not(:first-child) {
+        border: none !important;
+        position: relative;
+        padding-left: calc(50% + 10px) !important;
+        text-align: left !important;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+      }
+    .responsiveTable td .tdBefore {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: calc(80% - 20px);
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      text-align: left !important;
+      font-weight: 700;
+    }
+    .account-page__options-table td{
+        padding: 0 !important;
+    }
+    .account-page__options-table td:not(:last-child){
+        margin-bottom: 14px;
+    }
+  }
+  

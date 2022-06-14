@@ -2,6 +2,7 @@ import React from 'react'
 import { Modal } from '../../../components/Modal/Modal'
 import { useState } from 'react';
 import Radio from '../../../components/Radio/Radio';
+import { Link } from 'react-router-dom';
 
 export const Wallet = () => {
   const [modal, setModal] = useState(false)
@@ -101,6 +102,9 @@ export const Wallet = () => {
         }
         </div>
       </Modal>
+      <Link className="account-page__back-btn" to="../">
+          <img src="/images/arrow-right-circle-fill.svg" alt=""/>
+      </Link>
       <h1 className="account-page__title">Кошелек</h1>
       <div className="account-page__wallet-row">
         <div className="account-page__wallet-ballance-card">

@@ -35,3 +35,11 @@
     width: 32px;
     height: 32px;
 }
+@media screen and (max-width: 565px){
+    .modalDialog{
+        padding: 40px 12px;
+    }
+    .modalBody{
+        padding: 16px;
+    }
+}

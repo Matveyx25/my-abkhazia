@@ -1,35 +1,38 @@
-import React, { useState } from 'react'
-import s from './Calendar.module.css'
-import { Modal } from '../../../components/Modal/Modal';
-import { CalendarInput } from '../../../components/CalendarInput/CalendarInput';
-import { ReservedCalendar } from '../../../components/ReservedCalendar/ReservedCalendar';
-import { CalendarCardAccount } from '../../../components/CalendarCardAccount/CalendarCardAccount';
-import { TouristCard } from '../../../components/TouristCard/TouristCard';
-import { GuestsInput } from '../../../components/GuestsInput/GuestsInput';
-import { TimeInput } from '../../../components/TimeInput/TimeInput';
+import React, { useState } from "react";
+import s from "./Calendar.module.css";
+import { Modal } from "../../../components/Modal/Modal";
+import { CalendarInput } from "../../../components/CalendarInput/CalendarInput";
+import { ReservedCalendar } from "../../../components/ReservedCalendar/ReservedCalendar";
+import { CalendarCardAccount } from "../../../components/CalendarCardAccount/CalendarCardAccount";
+import { TouristCard } from "../../../components/TouristCard/TouristCard";
+import { GuestsInput } from "../../../components/GuestsInput/GuestsInput";
+import { TimeInput } from "../../../components/TimeInput/TimeInput";
 
 export const CalendarExcursion = () => {
-    const [calendarId, setCalendar] = useState(1);
+  const [calendarId, setCalendar] = useState(1);
 
-    const [priceAdult, setPriceAdult] = useState("2 000₽");
-    const [priceKids, setPriceKids] = useState("1 500₽");
-    const [priceBaby, setPriceBaby] = useState("1 000₽");
-    const [priceAdult2, setPriceAdult2] = useState("350₽");
-    const [priceKids2, setPriceKids2] = useState("250₽");
-    const [priceBaby2, setPriceBaby2] = useState("Бесплатно");
+  const [priceAdult, setPriceAdult] = useState("2 000₽");
+  const [priceKids, setPriceKids] = useState("1 500₽");
+  const [priceBaby, setPriceBaby] = useState("1 000₽");
+  const [priceAdult2, setPriceAdult2] = useState("350₽");
+  const [priceKids2, setPriceKids2] = useState("250₽");
+  const [priceBaby2, setPriceBaby2] = useState("Бесплатно");
 
-    const [phone, setPhone] = useState();
+  const [phone, setPhone] = useState();
   const [openedForReserved, setOpenedForReserved] = useState(true);
   const [openedForReserved2, setOpenedForReserved2] = useState(true);
-    const [touristName, setTouristName] = useState();
-    const [desc, setDesc] = useState("Экологичсекий сбор на озере Рица");
-  
-    const [modal, setModal] = useState(false);
-    const [modal2, setModal2] = useState(false);
-    const [filter, setFilter] = useState(0)
-    const changeFilter = (event) => {
-      setFilter(event.target.value);
-    };
+  const [touristName, setTouristName] = useState();
+  const [desc, setDesc] = useState("Экологичсекий сбор на озере Рица");
+
+  const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
+  const [filter, setFilter] = useState(0);
+
+  const [activeUser, setActiveUser] = useState(false);
+
+  const changeFilter = (event) => {
+    setFilter(event.target.value);
+  };
   return (
     <div>
       <Modal visible={modal} onClose={() => setModal(false)}>
@@ -38,7 +41,7 @@ export const CalendarExcursion = () => {
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Заезд" />
+                <CalendarInput label="Дата экскурсии" />
                 <GuestsInput />
               </div>
               <div className={s.ModalRow}>
@@ -103,7 +106,7 @@ export const CalendarExcursion = () => {
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Заезд" />
+                <CalendarInput label="Дата экскурсии" />
                 <TimeInput />
               </div>
               <div className={s.ModalRow}>
@@ -165,37 +168,6 @@ export const CalendarExcursion = () => {
           </div>
         </div>
       </Modal>
-      <div className="account-page__filter-wrapper">
-        <form className="account-page__filter">
-          <input
-            type="radio"
-            value="0"
-            id="filterAll"
-            name="filter"
-            checked={filter == 0}
-            onChange={changeFilter}
-          />
-          <label htmlFor="filterAll">Все</label>
-          <input
-            type="radio"
-            value="1"
-            id="filterHotel"
-            name="filter"
-            checked={filter == 1}
-            onChange={changeFilter}
-          />
-          <label htmlFor="filterHotel">Экскурсии</label>
-          <input
-            type="radio"
-            value="2"
-            id="filterGuest"
-            name="filter"
-            checked={filter == 2}
-            onChange={changeFilter}
-          />
-          <label htmlFor="filterGuest">Впечатления</label>
-        </form>
-      </div>
       <div className="account-page__reviews-wrapper">
         <CalendarCardAccount
           id="1"
@@ -216,12 +188,24 @@ export const CalendarExcursion = () => {
           setOpened={setOpenedForReserved2}
         />
       </div>
-      {(calendarId == 1  && openedForReserved)&& (
+      {calendarId == 1 && openedForReserved && (
         <div>
-          <ReservedCalendar type="excursion" />
+          <ReservedCalendar
+            type="excursion"
+            activeUser={activeUser}
+            clickHandler={() => setActiveUser(true)}
+          />
           <button className={s.edit} onClick={() => setModal(true)}>
             Внести правки в календарь
           </button>
+          {activeUser && (
+            <div className={s.tourist}>
+              <TouristCard btnTitle="Написать туристу" />
+              <p className={s.closeBtn} onClick={() => setActiveUser(false)}>
+                Скрыть
+              </p>
+            </div>
+          )}
           <form className={s.form}>
             <div className={s.inputRow}>
               <div className={s.inputBlock}>
@@ -253,7 +237,7 @@ export const CalendarExcursion = () => {
               </div>
             </div>
 
-            <div className={s.inputBlock}>
+            <div className={`${s.inputBlock} ${s.mt15}`}>
               <p className={s.inputTitle}>1. Доп. опция</p>
               <textarea
                 className={s.input}
@@ -261,7 +245,7 @@ export const CalendarExcursion = () => {
                 onChange={(event) => setDesc(event.target.value)}
               />
             </div>
-            <div className={s.inputBlock}>
+            <div className={`${s.inputBlock} ${s.mt15}`}>
               <p className={s.inputTitle}>Цена за взрослый билет с 13 лет</p>
               <input
                 type="text"
@@ -270,7 +254,7 @@ export const CalendarExcursion = () => {
                 onChange={(event) => setPriceAdult2(event.target.value)}
               />
             </div>
-            <div className={s.inputBlock}>
+            <div className={`${s.inputBlock} ${s.mt15}`}>
               <p className={s.inputTitle}>Цена за детский билет до 12 лет</p>
               <input
                 type="text"
@@ -279,7 +263,7 @@ export const CalendarExcursion = () => {
                 onChange={(event) => setPriceKids2(event.target.value)}
               />
             </div>
-            <div className={s.inputBlock}>
+            <div className={`${s.inputBlock} ${s.mt15}`}>
               <p className={s.inputTitle}>Цена за детский билет до 7 лет</p>
               <input
                 type="text"
@@ -292,12 +276,24 @@ export const CalendarExcursion = () => {
           </form>
         </div>
       )}
-      {(calendarId == 2 && openedForReserved2) && (
+      {calendarId == 2 && openedForReserved2 && (
         <div>
-          <ReservedCalendar type="excursion2" />
+          <ReservedCalendar
+            type="excursion2"
+            activeUser={activeUser}
+            clickHandler={() => setActiveUser(true)}
+          />
           <button className={s.edit} onClick={() => setModal2(true)}>
             Внести правки в календарь
           </button>
+          {activeUser && (
+            <div className={s.tourist}>
+              <TouristCard btnTitle="Написать туристу" />
+              <p className={s.closeBtn} onClick={() => setActiveUser(false)}>
+                Скрыть
+              </p>
+            </div>
+          )}
           <form className={s.form}>
             <div className={s.inputRow}>
               <div className={s.inputBlock}>
@@ -334,4 +330,4 @@ export const CalendarExcursion = () => {
       )}
     </div>
   );
-}
+};

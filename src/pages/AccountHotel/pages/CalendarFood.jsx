@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
-import s from './Calendar.module.css'
-import { Modal } from '../../../components/Modal/Modal';
-import { CalendarInput } from '../../../components/CalendarInput/CalendarInput';
-import { ReservedCalendar } from '../../../components/ReservedCalendar/ReservedCalendar';
-import { CalendarCardAccount } from '../../../components/CalendarCardAccount/CalendarCardAccount';
-import { TimeInput } from '../../../components/TimeInput/TimeInput';
+import React, { useState } from "react";
+import s from "./Calendar.module.css";
+import { Modal } from "../../../components/Modal/Modal";
+import { CalendarInput } from "../../../components/CalendarInput/CalendarInput";
+import { ReservedCalendar } from "../../../components/ReservedCalendar/ReservedCalendar";
+import { CalendarCardAccount } from "../../../components/CalendarCardAccount/CalendarCardAccount";
+import { TimeInput } from "../../../components/TimeInput/TimeInput";
+import { TouristCard } from "../../../components/TouristCard/TouristCard";
 
 export const CalendarFood = () => {
-    const [priceDay, setPriceDay] = useState("2 000₽");
+  const [priceDay, setPriceDay] = useState("2 000₽");
 
-    const [phone, setPhone] = useState();
-    const [touristName, setTouristName] = useState();
+  const [phone, setPhone] = useState();
+  const [touristName, setTouristName] = useState();
   const [openedForReserved, setOpenedForReserved] = useState(true);
-  
-    const [modal, setModal] = useState(false);
+
+  const [modal, setModal] = useState(false);
+  const [activeUser, setActiveUser] = useState(false);
 
   return (
     <div>
@@ -83,12 +85,20 @@ export const CalendarFood = () => {
         </div>
       </Modal>
       <div className="account-page__reviews-wrapper">
-        <CalendarCardAccount id="1" label="Ресторан Абатаа" 
-        opened={openedForReserved}
-        setOpened={setOpenedForReserved}/>
+        <CalendarCardAccount
+          id="1"
+          label="Ресторан Абатаа"
+          opened={openedForReserved}
+          setOpened={setOpenedForReserved}
+        />
       </div>
-      {openedForReserved &&
-      <ReservedCalendar type="food" />}
+      {openedForReserved && (
+        <ReservedCalendar
+          type="food"
+          activeUser={activeUser}
+          clickHandler={() => setActiveUser(true)}
+        />
+      )}
       <div className={s.ModalRow}>
         <button className={s.edit} onClick={() => setModal(true)}>
           Внести правки в календарь
@@ -97,6 +107,14 @@ export const CalendarFood = () => {
           Изменить расписание
         </button>
       </div>
+      {activeUser && (
+          <div className={s.tourist}>
+            <TouristCard btnTitle="Написать туристу" />
+            <p className={s.closeBtn} onClick={() => setActiveUser(false)}>
+              Скрыть
+            </p>
+          </div>
+        )}
 
       <form className={s.form}>
         <div className={s.inputRow}>
@@ -114,4 +132,4 @@ export const CalendarFood = () => {
       </form>
     </div>
   );
-}
+};

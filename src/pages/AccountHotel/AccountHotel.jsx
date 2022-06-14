@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
 import s from './AccountHotel.module.css'
 import { Sidebar } from '../../components/Sidebar/Sidebar';
@@ -28,22 +28,40 @@ import { CreateCalendarFood } from './pages/CreateCalendar/CreateCalendarFood';
 import { Wallet } from './pages/Wallet';
 
 export const AccountHotel = () => {
+  const [width, setWindowWidth] = useState(0);
+
+  useEffect(() => { 
+
+    updateDimensions();
+
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize",updateDimensions);
+   }, [])
+
+  const updateDimensions = () => {
+    const width = window.innerWidth
+    setWindowWidth(width)
+  }
+
   return (
     <div>
-        <Header/>
+        <Header />
         <div className={s.title}>
             <h1>Мой кабинет</h1>
             <span></span>
         </div>
         <div className={s.container}>
             <div className={s.flex}>
-                <Sidebar />
+                {width > 1150 && <Sidebar />}
                 <div className={s.contentWrapper}>
                   <Routes>
                     <Route
                         path="/"
                         exact
-                        element={<Navigate to="profile" replace />}
+                        element={width > 1150 ?
+                        <Navigate to="profile" replace />:
+                        <Sidebar/>
+                      }
                     />
                     <Route index path="profile" element={<Profile/>}/>
                     <Route path="declarations" element={<Declarations/>}/>
@@ -76,15 +94,11 @@ export const AccountHotel = () => {
           <div className="logo-and-social__wrapper">
             <img
               className="header__logo-image"
-              src="../images/logo-color.svg"
+              src="/images/logo-color.svg"
               alt="header-logo-image"
               width="118"
               height="74"
             />
-            {/*
-                  <div className="logo-and-social__logo"></div>
-            <div className="logo-and-social__text"></div>
-      */}
           </div>
           <ul className="logo-and-social__social">
             <li className="logo-and-social__social-item">

@@ -1,14 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './pages.css'
 
 export const Profile = () => {
   return (
-    <div>
+    <div className="profile-page">
         <div className="account-page__section">
+            <Link className="account-page__back-btn" to="../">
+                <img src="/images/arrow-right-circle-fill.svg" alt=""/>
+            </Link>
             <h1 className="account-page__title">Личная информация</h1>
             <div className="account-page__row">
                 <div className="account-page__image-wrapper">
-                    <img src="https://us.123rf.com/450wm/vadymvdrobot/vadymvdrobot2003/vadymvdrobot200300051/142744663-image-of-a-young-strong-happy-cheery-sports-man-posing-outdoors-in-nature-green-park-looking-camera-.jpg?ver=6"/>
+                    <img src="/images/tour-card/owner.jpg" alt=""/>
                 </div>
                 <div className="account-page__jcsb">
                     <ul className="account-page__info-list">

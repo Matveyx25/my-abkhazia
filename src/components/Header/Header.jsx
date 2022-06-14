@@ -45,7 +45,7 @@ const justCategory = [
   },
 ];
 
-const Header = ({ wallet, closeEmail }) => {
+const Header = ({ wallet, closeEmail}) => {
   const [town, changeTown] = useState("Выберите город");
   const [category, changeCategory] = useState("Выберите категорию");
   const [menu, changeMenuVisibility] = useState(false);
@@ -328,7 +328,7 @@ const Header = ({ wallet, closeEmail }) => {
           </article>
         )}
         <div className="header__nav">
-          <div className="header__nav-login-wrapper">
+          <Link className="header__nav-login-wrapper" to="../hotel-account">
             <img
               className={
                 registration ? "header__nav-login" : "header__nav-login--close"
@@ -346,7 +346,7 @@ const Header = ({ wallet, closeEmail }) => {
                 height="12"
               />{" "}
             </div>
-          </div>
+          </Link>
           <img
             className="header__nav-glass"
             src="/images/glass-blue.svg"

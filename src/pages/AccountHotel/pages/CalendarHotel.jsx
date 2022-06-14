@@ -97,46 +97,6 @@ export const CalendarHotel = () => {
           </div>
         </div>
       </Modal>
-      <div className="account-page__filter-wrapper">
-        <form className="account-page__filter">
-          <input
-            type="radio"
-            value="0"
-            id="filterAll"
-            name="filter"
-            checked={filter == 0}
-            onChange={changeFilter}
-          />
-          <label htmlFor="filterAll">Все</label>
-          <input
-            type="radio"
-            value="1"
-            id="filterHotel"
-            name="filter"
-            checked={filter == 1}
-            onChange={changeFilter}
-          />
-          <label htmlFor="filterHotel">Отели</label>
-          <input
-            type="radio"
-            value="2"
-            id="filterGuest"
-            name="filter"
-            checked={filter == 2}
-            onChange={changeFilter}
-          />
-          <label htmlFor="filterGuest">Гостевые дома</label>
-          <input
-            type="radio"
-            value="3"
-            id="filterMiniHotel"
-            name="filter"
-            checked={filter == 3}
-            onChange={changeFilter}
-          />
-          <label htmlFor="filterMiniHotel">Мини-гостиницы</label>
-        </form>
-      </div>
       <div className="account-page__reviews-wrapper">
         <CalendarCardAccount
           id="1"

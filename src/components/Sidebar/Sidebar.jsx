@@ -2,11 +2,11 @@ import React from 'react'
 import s from './Sidebar.module.css'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 
-export const Sidebar = () => {
+export const Sidebar = ({visibleMenu}) => {
     const location = useLocation()
      
   return (
-    <div className={s.wrapper}>
+    <div className={`${s.wrapper} ${visibleMenu == false && s.closemenu}`}>
         <NavLink to="profile" className={s.profileLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
             <div className={s.imgWrapper}>
                 <img src="https://us.123rf.com/450wm/vadymvdrobot/vadymvdrobot2003/vadymvdrobot200300051/142744663-image-of-a-young-strong-happy-cheery-sports-man-posing-outdoors-in-nature-green-park-looking-camera-.jpg?ver=6"/>

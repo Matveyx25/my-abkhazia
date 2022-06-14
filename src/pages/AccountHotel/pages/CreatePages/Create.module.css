@@ -539,3 +539,57 @@
     justify-content: center;
     cursor: pointer;
 }
+@media screen and (max-width: 565px){
+    .timeInputsWrapper .row{
+        gap: 12px;
+    }
+    .timeInputsWrapper input{
+        max-width:100% !important;
+        width:100% !important;
+    }
+    .timeInputsWrapper{
+        margin-left: 0;
+    }
+    .numberCard{
+        width: 100%;
+    }
+    .addNumber, .addInput, .addQR, .qrCard {
+        width: 100%;
+    }
+    .addTextarea{
+        margin-top: 0;
+        width: 100%;
+    }
+    .inputsWrapper{
+        margin-top: 12px;
+    }
+    .inputsWrapper .row{
+        margin-left: 0;
+        gap: 0;
+        flex-direction: column;
+    }
+    .inputsWrapper .ml40{
+        margin-left: 0;
+    }
+    .btnsRow{
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .btnsRow button,  .btnsRow a{
+        width: 100%;
+    }
+    .kitchenRow, .comfortRow, .optionsRow{
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 0;
+    }
+    .priceBlock{
+        margin-left: 0;
+    }
+    .col50{
+        flex-grow: 1;
+    }
+    .row50p .jcsb{
+        flex-direction: column;
+    }
+}

@@ -222,7 +222,7 @@ export const ReservedCalendar = ({
                   <td></td>
                   <td></td>
                   <td className={`${s.notColspanTd} ${activeUser && s.active}`}>
-                    <div>2 вз.</div>
+                    <div onClick={clickHandler}>2 вз.</div>
                   </td>
                 </tr>
               )}
@@ -242,8 +242,8 @@ export const ReservedCalendar = ({
                 <tr>
                   <td></td>
                   <td></td>
-                  <td className={s.rentTd}>
-                    <div>с 8:00 до 20:00</div>
+                  <td className={`${s.rentTd} ${activeUser && s.active}`}>
+                    <div onClick={clickHandler}>с 8:00 до 20:00</div>
                   </td>
                   <td></td>
                   <td colSpan={2} className={s.rentTd}>
@@ -256,7 +256,7 @@ export const ReservedCalendar = ({
                   <td></td>
                   <td></td>
                   <td className={`${s.notColspanTd} ${activeUser && s.active}`}>
-                    <div>
+                    <div onClick={clickHandler}>
                       <p>12:00</p>
                       <p>2 вз.</p>
                     </div>
@@ -281,7 +281,7 @@ export const ReservedCalendar = ({
                   <td></td>
                   <td></td>
                   <td className={`${s.notColspanTd} ${activeUser && s.active}`}>
-                    <div>
+                    <div onClick={clickHandler}>
                       <p>10:00</p>
                       <p>19 ост.</p>
                     </div>

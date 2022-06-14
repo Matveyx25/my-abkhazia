@@ -65,9 +65,10 @@ export const CreateExcursion = () => {
       </div>
       <div className="account-page__jcsb">
         <h1 className="account-page__title">Заполнение информации о экскурсии</h1>
-        <button className="account-page__btn160">
+        <button className="account-page__btn160 intitle">
           <img src="../../images/eye-filled_white.svg" />
-          Просмотр
+          <img src="../../images/eye-filled-blue.svg" className="blue-eye"/>
+          <p>Просмотр</p> 
         </button>
       </div>
       <form action="" className="account-page__settings-form">

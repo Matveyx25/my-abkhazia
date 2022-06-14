@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Radio from "../../../components/Radio/Radio";
 import Checkbox from '../../../components/Checkbox/Checkbox';
+import { Link } from "react-router-dom";
 
 export const Settings = () => {
   const [visible, setVisible] = useState(false);
@@ -34,6 +35,9 @@ export const Settings = () => {
 
   return (
     <div>
+      <Link className="account-page__back-btn" to="../">
+            <img src="/images/arrow-right-circle-fill.svg" alt=""/>
+        </Link>
       <h1 className="account-page__title">Настройки</h1>
       <form action="" className="account-page__settings-form">
         <h2 className="account-page__subtitle">Личная информация</h2>

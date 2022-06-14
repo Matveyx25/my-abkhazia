@@ -7,6 +7,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 .title{
     display: flex;
@@ -32,4 +33,16 @@
 .contentWrapper{
     margin-left: 30px;
     width: 100%;
+}
+@media screen and (max-width: 1150px) {
+    .title{
+        display: none;
+    }
+    .container{
+        margin: 16px;
+        min-height: none;
+    }
+    .contentWrapper{
+        margin: 0;
+    }
 }
