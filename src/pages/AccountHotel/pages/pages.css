@@ -1300,6 +1300,9 @@ button{
     .account-page__input-block{
         margin-top: 0;
     }
+    .card-description__owner.small{
+        max-width: 100%;
+    }
 }
 
 .responsiveTable {

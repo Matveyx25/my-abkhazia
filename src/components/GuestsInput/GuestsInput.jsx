@@ -42,7 +42,7 @@ export const GuestsInput = () => {
   };
 
   return (
-    <div>
+    <div className={s.dateWrapper}>
       <p className={s.dateTitle}>Гости</p>
       <div className={s.inputBlock}>
       <img

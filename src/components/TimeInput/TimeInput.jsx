@@ -16,7 +16,7 @@ const tongleTime = () => {
   };
 
   return (
-    <div>
+    <div className={s.dateWrapper}>
         <p className={s.dateTitle}>{label || 'Время'}</p>
         <div className={s.inputBlock}>
         <img

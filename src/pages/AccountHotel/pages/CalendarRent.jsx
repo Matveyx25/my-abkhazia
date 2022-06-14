@@ -92,7 +92,9 @@ export const CalendarRent = () => {
         </div>
       </Modal>
       <div className="account-page__reviews-wrapper">
-        <CalendarCardAccount id="1" label="Audi Q5" />
+        <CalendarCardAccount id="1" label="Audi Q5" 
+        opened={openedForReserved}
+        setOpened={setOpenedForReserved}/>
       </div>
       {openedForReserved && (
         <ReservedCalendar

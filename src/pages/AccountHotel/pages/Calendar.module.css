@@ -396,3 +396,44 @@
     flex-wrap: wrap;
     gap: 30px;
 }
+@media screen and (max-width: 565px){
+    .edit{
+        width: 100%;
+        margin-top: 30px;
+    }
+    .inputRow{
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .inputBlock, .inputBlock input{
+        max-width:100%;
+    }
+    .savebtn{
+        width: 100%;
+        margin-top: 24px;
+    }
+    .modalContent{
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .ModalRow{
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        gap: 15px;
+        box-sizing: border-box;
+    }
+    .btn160, .btn200{
+        width: 100%;
+    }
+    .leftBlock{
+        margin-top: 24px;
+    }
+    .addBtn{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .footerBtn{
+        flex-direction: column;
+        gap: 14px;
+    }
+}

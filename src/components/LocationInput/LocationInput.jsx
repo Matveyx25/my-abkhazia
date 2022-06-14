@@ -7,7 +7,7 @@ export const LocationInput = ({label}) => {
     const [from, setFrom] = useState();
 
   return (
-    <div>
+    <div className={s.dateWrapper}>
       <p className={s.dateTitle}>{label}</p>
       <div className={s.inputBlock}>
         <img

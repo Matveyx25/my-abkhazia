@@ -4,7 +4,7 @@ import s from "./CalendarCardAccount.module.css";
 
 export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, option, clickHandler, opened, setOpened, error}) => {
   return (
-    <div className={error && s.error}>
+    <div className={error ? `${s.error} ${s.r100}` : s.r100}>
     <div className={active ? `${s.wrapper} ${s.active}` : s.wrapper} onClick={clickHandler}>
       <h1 className={s.title}>{label}</h1>
       {subtitle && <h2 className={s.subtitle}>{subtitle}</h2>}

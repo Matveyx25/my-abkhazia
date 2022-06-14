@@ -1,27 +1,29 @@
-
-.dateTitle{
+.dateTitle {
     font-family: 'Century Gothic';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     display: flex;
 }
-.dateTitle img{
+
+.dateTitle img {
     width: 18px;
     height: 18px;
     margin-left: 10px;
 }
-.dateWrapper{
+
+.dateWrapper {
     width: fit-content;
     position: relative;
 }
 
-.inputBlock{
+.inputBlock {
     width: fit-content;
     position: relative;
     margin-top: 15px;
 }
-.inputBlock input{
+
+.inputBlock input {
     background: #FFFFFF;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
@@ -34,19 +36,35 @@
     font-weight: 400;
     font-size: 14px;
 }
+
 .inputBlock input:valid,
-.inputBlock input:focus{
+.inputBlock input:focus {
     border: 1px solid #000000;
 }
-.inputBlock input:invalid{
+
+.inputBlock input:invalid {
     border: none;
 }
-.inputBlock img{
+
+.inputBlock img {
     position: absolute;
     left: 17px;
     top: 14px;
 }
-.menu{
+
+.menu {
     top: 55px !important;
     left: 0 !important;
+}
+
+@media screen and (max-width: 565px) {
+    .dateWrapper {
+        width: 100%;
+    }
+    .inputBlock {
+        width: 100%;
+    }
+    .inputBlock input {
+        width: 100%;
+    }
 }

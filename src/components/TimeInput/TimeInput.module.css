@@ -61,3 +61,8 @@
     top: 55px;
     left: 0;
 }
+@media screen and (max-width: 565px){
+    .dateWrapper, .inputBlock, .inputBlock input{
+        width: 100%;
+    }
+}
