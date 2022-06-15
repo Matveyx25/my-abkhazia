@@ -416,7 +416,7 @@ const CardDescriptionReviews = ({
               <div className="owner-option__image-wrapper">
                 <img
                   className="owner-option__image"
-                  src="../../images/card-description/protection.svg"
+                  src="/images/card-description/protection.svg"
                   alt="protection"
                   width="18.6"
                   height="22"
@@ -428,13 +428,13 @@ const CardDescriptionReviews = ({
             </div>
             <div className="card-description__owner-option">
               <div className="owner-option__image-wrapper">
-                <img
+               {ownerTitle == "Гид-Экскурсовод" && <img
                   className="owner-option__image"
-                  src="../../images/card-description/home.svg"
+                  src="/images/tour-card/excursion-man.svg"
                   alt="protection"
                   width="20"
                   height="20"
-                />
+                />}
               </div>
               <p className="owner-option__text">
                 {Description.owner.ownerHouse}{" "}
@@ -445,7 +445,7 @@ const CardDescriptionReviews = ({
               <div className="owner-option__image-wrapper">
                 <img
                   className="owner-option__image"
-                  src="../../images/card-description/star.svg"
+                  src="/images/card-description/star.svg"
                   alt="protection"
                   width="24"
                   height="24"

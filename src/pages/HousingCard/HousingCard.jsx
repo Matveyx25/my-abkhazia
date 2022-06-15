@@ -701,7 +701,7 @@ const HousingCard = () => {
                   <p className="reservation__danger">
                     Укажите дату заезда и выезда
                   </p>
-                  <p className="reservation__price">1 300₽ сутки</p>
+                  <p className="reservation__price">{tongler ? "35 000₽ меясяц" : "1 300₽ сутки"}</p>
                 </div>
                 <input
                   className="hotel-number__reservation-submit"

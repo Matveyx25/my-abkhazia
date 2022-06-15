@@ -17,56 +17,56 @@ import CalendarCardReservation from "../../components/CalendarCardReservation/Ca
 const Zaglushka = [
   {
     id: 0,
-    image: "../../images/impression-card/slider--3.jpg",
+    image: "/images/impression-card/slider--3.jpg",
     title: "Рисование на песке",
     category: "Природа",
     stars: 5,
   },
   {
     id: 1,
-    image: "../../images/impression-card/slider--2.jpg",
+    image: "/images/impression-card/slider--2.jpg",
     title: "Научим национальному танцу",
     category: "Природа",
     stars: 5,
   },
   {
     id: 2,
-    image: "../../images/impression-card/slider--1.jpg",
+    image: "/images/impression-card/slider--1.jpg",
     title: "Катание на лошадях",
     category: "Природа",
     stars: 3,
   },
   {
     id: 3,
-    image: "../../images/main-town-new-athos.jpg",
+    image: "/images/main-town-new-athos.jpg",
     title: "Отель Карамель",
     category: "История",
     stars: 2,
   },
   {
     id: 4,
-    image: "../../images/main-slider-lost-town.jpg",
+    image: "/images/main-slider-lost-town.jpg",
     title: "Отель Бомбей",
     category: "Архитектура, История и культура",
     stars: 5,
   },
   {
     id: 5,
-    image: "../../images/main-slider-gagra.jpg",
+    image: "/images/main-slider-gagra.jpg",
     title: "Отель Карандаш",
     category: "Архитектура, История и культура",
     stars: 4,
   },
   {
     id: 6,
-    image: "../../images/main-slider-lost-town.jpg",
+    image: "/images/main-slider-lost-town.jpg",
     title: "Отель Барабаш",
     category: "Архитектура, История и культура",
     stars: 4,
   },
   {
     id: 7,
-    image: "../../images/main-slider-gagra.jpg",
+    image: "/images/main-slider-gagra.jpg",
     title: "Отель Чебурашка",
     category: "Архитектура, История и культура",
     stars: 4,
@@ -77,17 +77,17 @@ const Town = "Гагра";
 const Description = {
   blueHeader: [
     {
-      image: "../../images/town-card/sun.svg",
+      image: "/images/tour-card/sun.svg",
       number: "1",
       text: "Кол-во дней",
     },
     {
-      image: "../../images/impression-card/login.svg",
+      image: "/images/impression-card/login.svg",
       number: "до 20",
       text: "Групповая",
     },
     {
-      image: "../../images/impression-card/time.svg",
+      image: "/images/impression-card/time.svg",
       number: "5 часов",
       text: "Длительность",
     },
@@ -125,7 +125,7 @@ const Description = {
   descriptionOptions: [
     {
       title: "Цена",
-      image: "../../images/housing-card/price.svg",
+      image: "/images/housing-card/price.svg",
       optionList: [
         {
           optionProperty: "Взрослый с 13 лет:",
@@ -164,7 +164,7 @@ const Description = {
   ],
   accountsList: [
     {
-      accountImage: "../../images/card-description/profile--2.jpg",
+      accountImage: "/images/card-description/profile--2.jpg",
       accountName: "Татьяна",
       stars: 5,
       dateOfRegistration: "12.04.2022 г.",
@@ -172,7 +172,7 @@ const Description = {
         "Прекрасный отель. Очень милые и приветливые хозяева. Расположен идеально удобно для прогулок по городу. Для отдыха на пляже лучше иметь машину. Всем рекомендую. Спасибо за хороший отдых.",
     },
     {
-      accountImage: "../../images/card-description/profile--3.jpg",
+      accountImage: "/images/card-description/profile--3.jpg",
       accountName: "Владимир",
       stars: 3,
       dateOfRegistration: "12.04.2022 г.",
@@ -180,7 +180,7 @@ const Description = {
         "Прекрасный отель. Очень милые и приветливые хозяева. Расположен идеально удобно для прогулок по городу. Для отдыха на пляже лучше иметь машину. Всем рекомендую. Спасибо за хороший отдых.",
     },
     {
-      accountImage: "../../images/card-description/profile--4.jpg",
+      accountImage: "/images/card-description/profile--4.jpg",
       accountName: "Кирилл",
       stars: 4,
       dateOfRegistration: "08.08.2022 г.",
@@ -188,7 +188,7 @@ const Description = {
         "Прекрасный отель. Очень милые и приветливые хозяева. Расположен идеально удобно для прогулок по городу. Для отдыха на пляже лучше иметь машину. Всем рекомендую. Спасибо за хороший отдых.",
     },
     {
-      accountImage: "../../images/card-description/profile--5.jpg",
+      accountImage: "/images/card-description/profile--5.jpg",
       accountName: "Олег",
       stars: 5,
       dateOfRegistration: "12.04.2022 г.",
@@ -196,7 +196,7 @@ const Description = {
         "Прекрасный отель. Очень милые и приветливые хозяева. Расположен идеально удобно для прогулок по городу. Для отдыха на пляже лучше иметь машину. Всем рекомендую. Спасибо за хороший отдых.",
     },
     {
-      accountImage: "../../images/card-description/profile--2.jpg",
+      accountImage: "/images/card-description/profile--2.jpg",
       accountName: "Татьяна",
       stars: 5,
       dateOfRegistration: "12.04.2022 г.",
@@ -204,7 +204,7 @@ const Description = {
         "Прекрасный отель. Очень милые и приветливые хозяева. Расположен идеально удобно для прогулок по городу. Для отдыха на пляже лучше иметь машину. Всем рекомендую. Спасибо за хороший отдых.",
     },
     {
-      accountImage: "../../images/card-description/profile--3.jpg",
+      accountImage: "/images/card-description/profile--3.jpg",
       accountName: "Владимир",
       stars: 3,
       dateOfRegistration: "12.04.2022 г.",
@@ -212,7 +212,7 @@ const Description = {
         "Прекрасный отель. Очень милые и приветливые хозяева. Расположен идеально удобно для прогулок по городу. Для отдыха на пляже лучше иметь машину. Всем рекомендую. Спасибо за хороший отдых.",
     },
     {
-      accountImage: "../../images/card-description/profile--4.jpg",
+      accountImage: "/images/card-description/profile--4.jpg",
       accountName: "Кирилл",
       stars: 4,
       dateOfRegistration: "08.08.2022 г.",
@@ -220,7 +220,7 @@ const Description = {
         "Прекрасный отель. Очень милые и приветливые хозяева. Расположен идеально удобно для прогулок по городу. Для отдыха на пляже лучше иметь машину. Всем рекомендую. Спасибо за хороший отдых.",
     },
     {
-      accountImage: "../../images/card-description/profile--5.jpg",
+      accountImage: "/images/card-description/profile--5.jpg",
       accountName: "Олег",
       stars: 5,
       dateOfRegistration: "12.04.2022 г.",
@@ -229,7 +229,7 @@ const Description = {
     },
   ],
   owner: {
-    ownerImage: "../../images/tour-card/owner.jpg",
+    ownerImage: "/images/tour-card/owner.jpg",
     ownerName: "Станислав",
     ownerDate: "На сайте: с 15.04.2022",
     ownerProtection: "Гид провёл более 100 экскурсий",
@@ -436,11 +436,11 @@ const TourCard = () => {
         reviews="10"
         adress="Гагра"
         imagesArr={[
-          "../../images/tour-card/tour-item--1.jpg",
-          "../../images/tour-card/tour-item--2.jpg",
-          "../../images/tour-card/tour-item--3.jpg",
-          "../../images/tour-card/tour-item--4.jpg",
-          "../../images/tour-card/tour-item--5.jpg",
+          "/images/tour-card/tour-item--1.jpg",
+          "/images/tour-card/tour-item--2.jpg",
+          "/images/tour-card/tour-item--3.jpg",
+          "/images/tour-card/tour-item--4.jpg",
+          "/images/tour-card/tour-item--5.jpg",
         ]}
       />
       <CardDescriptionReviews
@@ -479,7 +479,7 @@ const TourCard = () => {
                   </p>
                   <img
                     className="transfer-booking__form-image transfer-booking__form-image--calendar hotel-number__card-reserve"
-                    src="../../../images/transfer/calendar.svg"
+                    src="/images/transfer/calendar.svg"
                     width="13.5"
                     height="15"
                   />
@@ -503,7 +503,7 @@ const TourCard = () => {
                 <p className="transfer-booking__form-top-text">Гости</p>
                 <img
                   className="transfer-booking__form-image transfer-booking__form-image--person "
-                  src="../../images/transfer/person.svg"
+                  src="/images/transfer/person.svg"
                   width="11.25"
                   height="15.75"
                 />
