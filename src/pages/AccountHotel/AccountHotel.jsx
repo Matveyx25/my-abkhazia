@@ -26,6 +26,7 @@ import { CreateCalendarRent } from './pages/CreateCalendar/CreateCalendarRent';
 import { CreateCalendarTransfer } from './pages/CreateCalendar/CreateCalendarTransfer';
 import { CreateCalendarFood } from './pages/CreateCalendar/CreateCalendarFood';
 import { Wallet } from './pages/Wallet';
+import { MessengerChat } from './pages/MessengerChat';
 
 export const AccountHotel = () => {
   const [width, setWindowWidth] = useState(0);
@@ -68,6 +69,7 @@ export const AccountHotel = () => {
                     <Route path="reviews" element={<Reviews />}/>
                     <Route path="settings" element={<Settings />}/>
                     <Route path="messenger" element={<Messenger />}/>
+                    <Route path="messenger/chat" element={<MessengerChat/>}/>
                     <Route path="calendar" element={<CalendarPage />}/>
                     <Route path="wallet" element={<Wallet />}/>
                     <Route path="calendar/create-hotel" element={<CreateCalendarHotel />}/>
