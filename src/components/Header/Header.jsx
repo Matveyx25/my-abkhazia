@@ -237,7 +237,9 @@ const Header = ({ wallet, closeEmail}) => {
 
         {!registration && (
           <article className="header__enter">
-            <a className="header__enter-register" href="#">
+            <a className="header__enter-register" href="#"
+              onClick={() => setModalLogin(true)}
+              >
               Зарегистрироваться
             </a>
             <a
@@ -377,12 +379,14 @@ const Header = ({ wallet, closeEmail}) => {
             <a
               className="header__enter-register header__enter-register--mobile"
               href="#"
+              onClick={() => setModalLogin(true)}
             >
               Зарегистрироваться
             </a>
             <a
               className="header__enter-button header__enter-button--mobile"
               href="#"
+              onClick={() => setModalLogin(true)}
             >
               Войти
             </a>

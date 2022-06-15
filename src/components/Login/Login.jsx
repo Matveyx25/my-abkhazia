@@ -3,28 +3,21 @@ import { Modal } from "../Modal/Modal";
 import s from "./Login.module.css";
 import Checkbox from "../Checkbox/Checkbox";
 import Radio from "../Radio/Radio";
+import { RegistrationUser } from "./RegistrationUser";
+import { RegistrationHotel } from "./RegistrationHotel";
+import { RegistrationHouse } from './RegistrationHouse';
+import { RegistrationExcursion } from './RegistrationExcursion';
+import { RegistrationImpression } from './RegistrationImpression';
+import { RegistrationFood } from './RegistrationFood';
+import { RegistrationRent } from './RegistrationRent';
+import { RegistrationTransfer } from './RegistrationTransfer';
 
 export const Login = ({ visible, onClose }) => {
   const [typeModal, setTypeModal] = useState("login");
 
-  const [name, setName] = useState("");
-  const [LastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [EmailReg, setEmailReg] = useState("");
   const [visiblePassword, changeVisiblePassword] = useState(false);
-  const [visiblePasswordReg, changeVisiblePasswordReg] = useState(false);
-  const [visiblePassword2Reg, changeVisiblePassword2Reg] = useState(false);
   const [password, setPassword] = useState("");
-  const [country, setCountry] = useState("");
-  const [phone, setPhone] = useState("");
-  const [passwordReg, setPasswordReg] = useState("");
-  const [password2Reg, setPassword2Reg] = useState("");
-
-  const [bank, setBank] = useState([]);
-  const [organizationName, setOrganizationName] = useState("");
-  const [organizationType, setOrganizationType] = useState("");
-  const [organizationLocation, setOrganizationLocation] = useState("");
-  const [role, setRole] = useState("");
 
   const [accType, setAccType] = useState("");
 
@@ -130,6 +123,57 @@ export const Login = ({ visible, onClose }) => {
                 inputValue="Поставщик услуг"
                 changeFunction={(event) => setAccType(event.target.value)}
               />
+              {accType == 'Поставщик услуг' && <div className={s.subCheck}>
+                <Radio
+                  labelText="Отель"
+                  inputId="hotelService"
+                  inputName="typeService"
+                  inputValue="Отель"
+                  changeFunction={(event) => setAccType(accType + ", " + event.target.value)}
+                />
+                <Radio
+                  labelText="Частное жилье"
+                  inputId="houseService"
+                  inputName="typeService"
+                  inputValue="Частное жилье"
+                  changeFunction={(event) => setAccType(accType + ", " + event.target.value)}
+                />
+                <Radio
+                  labelText="Эскурсия"
+                  inputId="excursionService"
+                  inputName="typeService"
+                  inputValue="Эскурсия"
+                  changeFunction={(event) => setAccType(accType + ", " + event.target.value)}
+                />
+                <Radio
+                  labelText="Впечатление"
+                  inputId="impressionService"
+                  inputName="typeService"
+                  inputValue="Впечатление"
+                  changeFunction={(event) => setAccType(accType + ", " + event.target.value)}
+                />
+                <Radio
+                  labelText="Питание"
+                  inputId="foodService"
+                  inputName="typeService"
+                  inputValue="Питание"
+                  changeFunction={(event) => setAccType(accType + ", " + event.target.value)}
+                />
+                <Radio
+                  labelText="Аренда машин"
+                  inputId="rentService"
+                  inputName="typeService"
+                  inputValue="Аренда машин"
+                  changeFunction={(event) => setAccType(accType + ", " + event.target.value)}
+                />
+                <Radio
+                  labelText="Трансфер"
+                  inputId="transferService"
+                  inputName="typeService"
+                  inputValue="Трансфер"
+                  changeFunction={(event) => setAccType(accType + ", " + event.target.value)}
+                />
+              </div>}
               <Radio
                 labelText="Партнер"
                 inputId="partner"
@@ -139,131 +183,21 @@ export const Login = ({ visible, onClose }) => {
               />
             </div>
           </div>
-          <div className={s.inputRow}>
-            <div className={s.inputBlock}>
-              <p>Имя*</p>
-              <input
-                placeholder="Введите Ваше имя"
-                type="text"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                required
-              />
-            </div>
-            <div className={s.inputBlock}>
-              <p>Фамилия*</p>
-              <input
-                placeholder="Введите Вашу фамилию"
-                type="text"
-                value={LastName}
-                onChange={(event) => setLastName(event.target.value)}
-                required
-              />
-            </div>
-          </div>
-          <div className={s.inputBlock}>
-            <p>E-mail*</p>
-            <input
-              placeholder="Введите адрес электронной почты"
-              type="text"
-              value={EmailReg}
-              onChange={(event) => setEmailReg(event.target.value)}
-              required
-            />
-          </div>
-          <div className={s.inputRow}>
-            <div className={s.inputBlock}>
-              <p>Страна*</p>
-              <input
-                placeholder="Россия"
-                type="text"
-                value={country}
-                onChange={(event) => setCountry(event.target.value)}
-                required
-              />
-            </div>
-            <div className={s.inputBlock}>
-              <p>Номер телефона*</p>
-              <input
-                placeholder="+7 (000) 000-00-00"
-                type="text"
-                value={phone}
-                onChange={(event) => setPhone(event.target.value)}
-                required
-              />
-            </div>
-          </div>
-          <div className={s.inputRow}>
-            <div className={s.inputBlock}>
-              <p>Пароль*</p>
-              <div className="account-page__input-position">
-                <input
-                  placeholder="Пароль"
-                  value={passwordReg}
-                  onChange={(event) => setPasswordReg(event.target.value)}
-                  type={visiblePasswordReg ? "text" : "password"}
-                  required
-                />
-                {visiblePasswordReg ? (
-                  <img
-                    src="../images/eye-invisible-filled.svg"
-                    className={s.eye}
-                    alt=""
-                    onClick={() =>
-                      changeVisiblePasswordReg(!visiblePasswordReg)
-                    }
-                  />
-                ) : (
-                  <img
-                    src="../images/eye-filled.svg"
-                    className={s.eye}
-                    alt=""
-                    onClick={() =>
-                      changeVisiblePasswordReg(!visiblePasswordReg)
-                    }
-                  />
-                )}
-              </div>
-            </div>
-            <div className={s.inputBlock}>
-              <p>Повторите пароль*</p>
-              <div className="account-page__input-position">
-                <input
-                  placeholder="Пароль"
-                  value={password2Reg}
-                  onChange={(event) => setPassword2Reg(event.target.value)}
-                  type={visiblePassword2Reg ? "text" : "password"}
-                  required
-                />
-                {visiblePassword2Reg ? (
-                  <img
-                    src="../images/eye-invisible-filled.svg"
-                    className={s.eye}
-                    alt=""
-                    onClick={() =>
-                      changeVisiblePassword2Reg(!visiblePassword2Reg)
-                    }
-                  />
-                ) : (
-                  <img
-                    src="../images/eye-filled.svg"
-                    className={s.eye}
-                    alt=""
-                    onClick={() =>
-                      changeVisiblePassword2Reg(!visiblePassword2Reg)
-                    }
-                  />
-                )}
-              </div>
-            </div>
-          </div>
+          {(accType == "Турист" || accType == "Поставщик услуг" || accType == "Партнер" || !accType) && <RegistrationUser/>}
+          {accType.includes('Отель') && <RegistrationHotel />}
+          {accType.includes('Частное жилье') && <RegistrationHouse />}
+          {accType.includes('Эскурсия') && <RegistrationExcursion />}
+          {accType.includes('Впечатление') && <RegistrationImpression />}
+          {accType.includes('Питание') && <RegistrationFood />}
+          {accType.includes('Аренда машин') && <RegistrationRent />}
+          {accType.includes('Трансфер') && <RegistrationTransfer/>}
           <div className={s.forget}>
             <Checkbox
               labelText="Нажимая на кнопку, я соглашаюсь с Условиями и Политикой конфиденциальности"
               inputId="forget"
             />
           </div>
-          <button className={s.submitBtn} onClick={() => setTypeModal("reg2")}>
+          <button className={s.submitBtn} onClick={onClose}>
             Зарегистрироваться
           </button>
           <p className={s.withStar}>* Поля обязательны для заполнения</p>
@@ -273,192 +207,8 @@ export const Login = ({ visible, onClose }) => {
             <span></span>
           </div>
           <a href="#" className={s.withPhone}>
-            <img src="../images/google-fill.svg" alt=""/>С помощью Google
+            <img src="/images/google-fill.svg" alt=""/>С помощью Google
           </a>
-        </form>
-      )}
-      {typeModal == "reg2" && (
-        <form className={s.form}>
-          <div className={s.tabbarLr}>
-            <p className={s.active}>Заполните данные</p>
-          </div>
-
-          <div className={s.inputBlock}>
-            <p>Тип пользователя*</p>
-            <input
-              placeholder="Выберите тип пользователя"
-              type="text"
-              value={accType}
-              onChange={(event) => setAccType(accType)}
-              className="account-page__input-with-radio"
-              required
-            />
-            <div className="account-page__radios">
-              <Radio
-                labelText="Турист"
-                inputId="turist"
-                inputName="accType"
-                inputValue="Турист"
-                changeFunction={(event) => setAccType(event.target.value)}
-              />
-              <Radio
-                labelText="Поставщик услуг"
-                inputId="postav"
-                inputName="accType"
-                inputValue="Поставщик услуг"
-                changeFunction={(event) => setAccType(event.target.value)}
-              />
-              <Radio
-                labelText="Партнер"
-                inputId="partner"
-                inputName="accType"
-                inputValue="Партнер"
-                changeFunction={(event) => setAccType(event.target.value)}
-              />
-            </div>
-          </div>
-          <div className={s.inputBlock}>
-            <p>Ваша должность*</p>
-            <input
-              placeholder="Введите вашу должность "
-              type="text"
-              value={role}
-              onChange={(event) => setRole(event.target.value)}
-              required
-            />
-          </div>
-          <div className={s.inputBlock}>
-            <p>Название организации (или название отеля)*</p>
-            <input
-              placeholder="Введите название вашей организаци"
-              type="text"
-              value={organizationName}
-              onChange={(event) => setOrganizationName(event.target.value)}
-              required
-            />
-          </div>
-          <div className={s.inputBlock}>
-            <p>Тип отеля</p>
-            <input
-              placeholder="Тип отеля*"
-              type="text"
-              value={organizationType}
-              onChange={(event) => setOrganizationType(organizationType)}
-              className="account-page__input-with-radio"
-              required
-            />
-            <div className="account-page__radios">
-              <Radio
-                labelText="Отель"
-                inputId="hotel"
-                inputName="organizationType"
-                inputValue="Отель"
-                changeFunction={(event) =>
-                  setOrganizationType(event.target.value)
-                }
-              />
-              <Radio
-                labelText="Гостевой дом"
-                inputId="guest"
-                inputName="organizationType"
-                inputValue="Гостевой дом"
-                changeFunction={(event) =>
-                  setOrganizationType(event.target.value)
-                }
-              />
-              <Radio
-                labelText="Мини-гостиница"
-                inputId="miniHotel"
-                inputName="organizationType"
-                inputValue="Мини-гостиница"
-                changeFunction={(event) =>
-                  setOrganizationType(event.target.value)
-                }
-              />
-            </div>
-          </div>
-          <div className={s.inputBlock}>
-            <p>Нахождение объекта*</p>
-            <input
-              placeholder="Нахождение объекта"
-              type="text"
-              value={organizationLocation}
-              onChange={(event) => setOrganizationLocation(event.target.value)}
-              required
-            />
-          </div>
-          <div className={s.inputBlock}>
-            <p>Банк для получения платежа*</p>
-            <input
-              placeholder="Выберите подходящий банк"
-              type="text"
-              value={bank}
-              className="account-page__input-with-radio"
-              required
-            />
-            <div className="account-page__radios">
-              <Checkbox
-                labelText="Сбербанк"
-                inputId="sber"
-                inputName="bank"
-                inputValue="Сбербанк"
-                changeFunction={(event) =>
-                  setBank(
-                    event.target.checked
-                      ? [...bank, event.target.value]
-                      : bank.filter((item) => item != event.target.value)
-                  )
-                }
-              />
-              <Checkbox
-                labelText="Тинькоф банк"
-                inputId="tinkoff"
-                inputName="bank"
-                inputValue="Тинькоф банк"
-                changeFunction={(event) =>
-                  setBank(
-                    event.target.checked
-                      ? [...bank, event.target.value]
-                      : bank.filter((item) => item != event.target.value)
-                  )
-                }
-              />
-              <Checkbox
-                labelText="ВТБ"
-                inputId="vtb"
-                inputName="bank"
-                inputValue="ВТБ"
-                changeFunction={(event) =>
-                  setBank(
-                    event.target.checked
-                      ? [...bank, event.target.value]
-                      : bank.filter((item) => item != event.target.value)
-                  )
-                }
-              />
-              <Checkbox
-                labelText="Альфа банк"
-                inputId="alfa"
-                inputName="bank"
-                inputValue="Альфа банк"
-                changeFunction={(event) =>
-                  setBank(
-                    event.target.checked
-                      ? [...bank, event.target.value]
-                      : bank.filter((item) => item != event.target.value)
-                  )
-                }
-              />
-            </div>
-          </div>
-          <div className={s.forget}>
-            <Checkbox
-              labelText="Нажимая на кнопку, я соглашаюсь с Условиями сотрудничества"
-              inputId="forget"
-            />
-          </div>
-          <button className={s.submitBtn} onClick={onClose}>Продолжить</button>
-          <p className={s.withStar}>* Поля обязательны для заполнения</p>
         </form>
       )}
     </Modal>

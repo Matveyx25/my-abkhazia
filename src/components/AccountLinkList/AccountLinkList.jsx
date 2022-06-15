@@ -6,7 +6,7 @@ export const AccountLinkList = ({ pageType, clickHandler }) => {
       <li className="main__banner-link-list-item" onClick={() => clickHandler('Отели')}>
         <img
           className="main__banner-link-image"
-          src="../images/apartment_building_construction_home_hotel_icon 1.svg"
+          src="/images/apartment_building_construction_home_hotel_icon 1.svg"
           alt=""
         />
         <p
@@ -22,7 +22,7 @@ export const AccountLinkList = ({ pageType, clickHandler }) => {
       <li className="main__banner-link-list-item" onClick={() => clickHandler('Частное жилье')}>
         <img
           className="main__banner-link-image"
-          src="../images/bxs_home.svg"
+          src="/images/bxs_home.svg"
           alt=""
         />
         <p
@@ -38,7 +38,7 @@ export const AccountLinkList = ({ pageType, clickHandler }) => {
       <li className="main__banner-link-list-item" onClick={() => clickHandler('Эскурсии и впечатления')}>
         <img
           className="main__banner-link-image"
-          src="../images/header-tours.svg"
+          src="/images/header-tours.svg"
           alt=""
         />
         <p
@@ -54,7 +54,7 @@ export const AccountLinkList = ({ pageType, clickHandler }) => {
       <li className="main__banner-link-list-item" onClick={() => clickHandler('Трансфер')}>
         <img
           className="main__banner-link-image"
-          src="../images/header-transfer.svg"
+          src="/images/header-transfer.svg"
           alt=""
         />
         <p
@@ -70,7 +70,7 @@ export const AccountLinkList = ({ pageType, clickHandler }) => {
       <li className="main__banner-link-list-item" onClick={() => clickHandler('Аренда авто')}>
         <img
           className="main__banner-link-image"
-          src="../images/header-rent.svg"
+          src="/images/header-rent.svg"
           alt=""
         />
         <p
@@ -86,7 +86,7 @@ export const AccountLinkList = ({ pageType, clickHandler }) => {
       <li className="main__banner-link-list-item" onClick={() => clickHandler('Кухня Абхазии')}>
         <img
           className="main__banner-link-image"
-          src="../images/header-kitchen.svg"
+          src="/images/header-kitchen.svg"
           alt=""
         />
         <p

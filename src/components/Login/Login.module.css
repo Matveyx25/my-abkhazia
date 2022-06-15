@@ -7,6 +7,11 @@
     gap: 30px;
     margin-bottom: 30px;
 }
+.subCheck{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .tabbarLr p{
     width: fit-content;
     padding-bottom: 10px;
@@ -86,7 +91,7 @@
     position: absolute;
     right: 25px;
     top: 10px;
-    z-index: 100;
+    z-index: 1;
     cursor: pointer;
 }
 .forget{margin-top: 15px;}
@@ -166,4 +171,14 @@
     color: #000000;
     margin-top: 15px;
     margin-bottom: -15px;
+}
+@media screen and (max-width: 565px){
+    .form{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .inputRow{
+        flex-direction: column;
+        gap: 12px;
+    }
 }
