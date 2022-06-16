@@ -13,7 +13,7 @@ const DistanceInput = ({label, handel, value, slug}) => {
                 className="account-page__input-with-radio"
                 required
             />
-            <form className="account-page__radios">
+            <form className="account-page__radios distances">
                 <Radio
                 labelText="менее 50 м"
                 inputName={slug}

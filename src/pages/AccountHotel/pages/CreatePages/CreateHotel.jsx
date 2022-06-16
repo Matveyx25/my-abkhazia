@@ -5,7 +5,7 @@ import Radio from "../../../../components/Radio/Radio";
 import ReactImageUploading from "react-images-uploading";
 import { TimeInput } from "../../../../components/TimeInput/TimeInput";
 import { DistancesBlock } from "../../../../components/DistancesBlock/DistancesBlock";
-import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import { Link } from "react-router-dom";
 
 export const CreateHotel = () => {
@@ -24,9 +24,9 @@ export const CreateHotel = () => {
   const [hotelOptions, setHotelOptions] = useState([]);
   const [onLocal, setOlLocal] = useState([]);
   const [activeRelux, setActiveRelux] = useState([]);
-  const [sales, setSales] = useState([
-    {value: '', id: 1},
-  ]);
+  const [sales, setSales] = useState([{ value: "", id: 1 }]);
+  const [timer1, setTimer1] = useState();
+  const [timer2, setTimer2] = useState();
 
   const [options, setOptions] = useState([
     { title: "Трансфер от / до жд вокзала", slug: "zdvokzal", value: "0" },
@@ -65,7 +65,7 @@ export const CreateHotel = () => {
 
   const [moveModal, setMoveModal] = React.useState(false);
   const [images, setImages] = React.useState([]);
-  const maxNumber = 1;
+  const maxNumber = 5;
 
   const onChange = (imageList, addUpdateIndex) => {
     setImages(imageList);
@@ -79,7 +79,7 @@ export const CreateHotel = () => {
 
   const updateSales = (id, event) => {
     let newSales = [...sales];
-    newSales.find(el => el.id === id).value = event.target.value;
+    newSales.find((el) => el.id === id).value = event.target.value;
     setSales(newSales);
   };
 
@@ -92,8 +92,8 @@ export const CreateHotel = () => {
         <h1 className="account-page__title">Заполнение информации об отеле</h1>
         <button className="account-page__btn160 intitle">
           <img src="../../images/eye-filled_white.svg" />
-          <img src="../../images/eye-filled-blue.svg" className="blue-eye"/>
-          <p>Просмотр</p> 
+          <img src="../../images/eye-filled-blue.svg" className="blue-eye" />
+          <p>Просмотр</p>
         </button>
       </div>
       <form action="" className="account-page__settings-form">
@@ -149,7 +149,7 @@ export const CreateHotel = () => {
             </div>
           </div>
           <div className="account-page__input-block">
-            <p>Нахождение объекта</p>
+            <p>Нахождение объекта*</p>
             <input
               placeholder="Нахождение объекта"
               type="text"
@@ -175,55 +175,54 @@ export const CreateHotel = () => {
           onImageUpdate,
           onImageRemove,
         }) => (
-          <div>
+          <div className={s.row30}>
+            {imageList.map((image, index) => (
+              <div className="account-page__upload-photo-btn">
+                <div key={index} className="image-item">
+                  <img
+                    src={image["data_url"]}
+                    alt=""
+                    className="result-photo"
+                  />
+                  <img
+                    src="../../images/three-circle-vertical-fill.svg"
+                    className="btn-more-moves"
+                    onClick={() => {
+                      setMoveModal(moveModal ? null : (index + 1))
+                    }}
+                  />
+                  {moveModal == (index + 1) && (
+                    <div className="image-item__btn-wrapper">
+                      <button
+                        onClick={() => {
+                          onImageUpdate(index);
+                          setMoveModal(false);
+                        }}
+                      >
+                        Загрузить другое фото
+                      </button>
+                      <button
+                        onClick={() => {
+                          onImageRemove(index);
+                          setMoveModal(false);
+                        }}
+                      >
+                        Удалить фото
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
             <button
               className="account-page__upload-photo-btn"
               style={isDragging ? { color: "red" } : undefined}
               {...dragProps}
             >
-              {imageList.length == 0 ? (
-                <div onClick={onImageUpload}>
-                  <img src="../../images/add-photo.svg" />
-                  <p>Загрузить фотографию</p>
-                </div>
-              ) : (
-                <>
-                  {imageList.map((image, index) => (
-                    <div key={index} className="image-item">
-                      <img
-                        src={image["data_url"]}
-                        alt=""
-                        className="result-photo"
-                      />
-                      <img
-                        src="../../images/three-circle-vertical-fill.svg"
-                        className="btn-more-moves"
-                        onClick={() => setMoveModal(!moveModal)}
-                      />
-                      {moveModal && (
-                        <div className="image-item__btn-wrapper">
-                          <button
-                            onClick={() => {
-                              onImageUpdate(index);
-                              setMoveModal(false);
-                            }}
-                          >
-                            Загрузить другое фото
-                          </button>
-                          <button
-                            onClick={() => {
-                              onImageRemove(index);
-                              setMoveModal(false);
-                            }}
-                          >
-                            Удалить фото
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </>
-              )}
+              <div onClick={onImageUpload}>
+                <img src="../../images/add-photo.svg" />
+                <p>Загрузить фотографию</p>
+              </div>
             </button>
           </div>
         )}
@@ -359,10 +358,44 @@ export const CreateHotel = () => {
           <h2>Условия проживания:</h2>
           <div className={s.row}>
             <div className={s.ml30}>
-              <TimeInput label="Время заезда*" />
+            <div className={s.timeWrapper}>
+            <p className={s.timeTitle}>Время заезда*</p>
+              <div className={s.inputBlock}>
+              <img
+                  src="/images/transfer/timer.svg"
+                  width="18"
+                  height="18"
+                  alt=""
+              />
+                  <input
+                      type="text"
+                      name="transfer__time"
+                      value={timer1}
+                      onChange={(event) => setTimer1(event.target.value)}
+                      required
+                  />
+              </div>
+            </div>
             </div>
             <div className={s.ml30}>
-              <TimeInput label="Время выезда*" />
+            <div className={s.timeWrapper}>
+            <p className={s.timeTitle}>Время заезда*</p>
+              <div className={s.inputBlock}>
+              <img
+                  src="/images/transfer/timer.svg"
+                  width="18"
+                  height="18"
+                  alt=""
+              />
+                  <input
+                      type="text"
+                      name="transfer__time"
+                      value={timer2}
+                      onChange={(event) => setTimer2(event.target.value)}
+                      required
+                  />
+              </div>
+            </div>
             </div>
             <div className={s.ml30}>
               <div>
@@ -373,6 +406,7 @@ export const CreateHotel = () => {
                     name="transfer__time"
                     value={minDay}
                     onChange={(event) => setMinDay(event.target.value)}
+                    required
                   />
                 </div>
               </div>
@@ -396,11 +430,28 @@ export const CreateHotel = () => {
                       required
                     />
                   </div>
-                  {sales.length > 1 && <button className={s.removeDesc} onClick={() => setSales([...sales].filter(sale => sale.id != el.id))}>Удалить скидку</button>}
+                  {sales.length > 1 && (
+                    <button
+                      className={s.removeDesc}
+                      onClick={() =>
+                        setSales([...sales].filter((sale) => sale.id != el.id))
+                      }
+                    >
+                      Удалить скидку
+                    </button>
+                  )}
                 </div>
               );
             })}
-            <div className={s.addTextarea} onClick={() => setSales([...sales, {value: '', id: sales[sales.length - 1].id + 1}])}>
+            <div
+              className={s.addTextarea}
+              onClick={() =>
+                setSales([
+                  ...sales,
+                  { value: "", id: sales[sales.length - 1].id + 1 },
+                ])
+              }
+            >
               <img src="../../images/plus-add-hotel.svg" alt="" />
               <p>Добавить скидку</p>
             </div>
@@ -481,7 +532,7 @@ export const CreateHotel = () => {
           </div>
           <div className={s.inputsWrapper}>
             <h2>На территории:</h2>
-            <div className={s.row}>
+            <div className={`${s.row} ${s.normalText}`}>
               <div>
                 <Checkbox
                   labelText="Детская площадка"
@@ -572,24 +623,29 @@ export const CreateHotel = () => {
             Добавление карточки номера
           </h2>
           <div className={s.row30}>
-            <div className={s.numberCard}> 
-                <div className={s.imageBlock}>
-                  <img src="/images/hotel-number/item--1.jpg" alt="" />
-                </div>
-                <div className={s.contentNumber}>
-                  <span className={s.line}></span>
-                  <p className={s.descNumber}>Эконом, отдельный номер</p>
-                  <p className={s.titleNumber}>Бюджетный двухместный номер с 1 кроватью </p>
-                  <p className={s.blueNumber}>5 номеров</p>
-                </div>
-                <img src="/images/dashicons_trash-white.svg" alt="" className={s.removeNumber}/>
+            <div className={s.numberCard}>
+              <div className={s.imageBlock}>
+                <img src="/images/hotel-number/item--1.jpg" alt="" />
+              </div>
+              <div className={s.contentNumber}>
+                <span className={s.line}></span>
+                <p className={s.descNumber}>Эконом, отдельный номер</p>
+                <p className={s.titleNumber}>
+                  Бюджетный двухместный номер с 1 кроватью{" "}
+                </p>
+                <p className={s.blueNumber}>5 номеров</p>
+              </div>
+              <img
+                src="/images/dashicons_trash-white.svg"
+                alt=""
+                className={s.removeNumber}
+              />
             </div>
             <Link to="create-number" className={s.addNumber}>
-                <img src="../../images/plus-add-hotel.svg" alt="" />
-                <p>Добавить категорию номера</p>
+              <img src="../../images/plus-add-hotel.svg" alt="" />
+              <p>Добавить категорию номера</p>
             </Link>
           </div>
-          
         </div>
         <div>
           <h2 className="account-page__input-block-title">
@@ -599,7 +655,7 @@ export const CreateHotel = () => {
         </div>
         <div className={s.inputsWrapper}>
           <h2 className={s.mt25}>Активный отдых:</h2>
-          <div className={s.row}>
+          <div className={`${s.row} ${s.normalText}`}>
             <div>
               <Checkbox
                 labelText="Аквапарк"
@@ -745,7 +801,9 @@ export const CreateHotel = () => {
         </div>
       </div>
       <div className={s.btnsRow}>
-        <Link className={s.btn} to="../calendar/create-hotel">Перейти к календарю</Link>
+        <Link className={s.btn} to="../calendar/create-hotel">
+          Перейти к календарю
+        </Link>
         <button className={s.btnOutlined}>Сохранить как черновик</button>
       </div>
     </div>

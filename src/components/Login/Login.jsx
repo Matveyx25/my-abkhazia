@@ -63,14 +63,14 @@ export const Login = ({ visible, onClose }) => {
               />
               {visiblePassword ? (
                 <img
-                  src="../images/eye-invisible-filled.svg"
+                  src="/images/eye-invisible-filled.svg"
                   alt=""
                   className={s.eye}
                   onClick={() => changeVisiblePassword(!visiblePassword)}
                 />
               ) : (
                 <img
-                  src="../images/eye-filled.svg"
+                  src="/images/eye-filled.svg"
                   alt=""
                   className={s.eye}
                   onClick={() => changeVisiblePassword(!visiblePassword)}
@@ -88,10 +88,10 @@ export const Login = ({ visible, onClose }) => {
             <span></span>
           </div>
           <a href="#" className={s.withPhone}>
-            <img src="../images/gridicons_phone.svg" />С помощью номера телефона
+            <img src="/images/gridicons_phone.svg" />С помощью номера телефона
           </a>
           <a href="#" className={s.withPhone}>
-            <img src="../images/google-fill.svg" />С помощью Google
+            <img src="/images/google-fill.svg" />С помощью Google
           </a>
         </form>
       )}

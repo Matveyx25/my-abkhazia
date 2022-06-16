@@ -1,3 +1,40 @@
+.timeTitle{
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+}
+.timeWrapper .inputBlock img{
+    position: absolute;
+    left: 17px;
+    top: 14px;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+}
+.timeWrapper .inputBlock{
+    width: fit-content;
+    position: relative;
+    margin-top: 15px;
+}
+.timeWrapper .inputBlock input{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    width: 262px;
+    box-sizing: border-box;
+    padding: 12px 17px;
+    padding-left: 40px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+.timeWrapper{
+    width: fit-content;
+    position: relative;
+}
 .inputsWrapper label{
     margin-top: 15px;
     max-width: 317px;
@@ -19,7 +56,7 @@
     margin-top: 5px;
     margin-bottom: 10px;
 }
-.inputsWrapper .row label p{
+.inputsWrapper .row:not(.normalText) label p{
     font-size: 12px;
 }
 .timeInputsWrapper{
@@ -106,6 +143,9 @@
     resize: none;
     height: 100px;
 }
+input, textarea{
+    -webkit-appearance: none;
+}
 .inputBlock input:valid,
 .inputBlock input:focus,
 .inputBlock textarea:valid,
@@ -151,6 +191,8 @@
 .addInput{
     width: 317px;
     padding: 10px;
+    max-height: 45px;
+    box-sizing: border-box;
     background: #FFFFFF;
     border: 1px dashed rgba(0, 0, 0, 0.3);
     border-radius: 25px;
@@ -186,6 +228,9 @@
 }
 .mt25{
     margin-top: 25px;
+}
+.mt30{
+    margin-top: 30px;
 }
 .mt20{
     margin-top: 20px;

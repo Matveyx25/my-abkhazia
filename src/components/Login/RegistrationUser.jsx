@@ -82,7 +82,7 @@ export const RegistrationUser = () => {
                 />
                 {visiblePasswordReg ? (
                   <img
-                    src="../images/eye-invisible-filled.svg"
+                    src="/images/eye-invisible-filled.svg"
                     className={s.eye}
                     alt=""
                     onClick={() =>
@@ -91,7 +91,7 @@ export const RegistrationUser = () => {
                   />
                 ) : (
                   <img
-                    src="../images/eye-filled.svg"
+                    src="/images/eye-filled.svg"
                     className={s.eye}
                     alt=""
                     onClick={() =>
@@ -113,7 +113,7 @@ export const RegistrationUser = () => {
                 />
                 {visiblePassword2Reg ? (
                   <img
-                    src="../images/eye-invisible-filled.svg"
+                    src="/images/eye-invisible-filled.svg"
                     className={s.eye}
                     alt=""
                     onClick={() =>
@@ -122,7 +122,7 @@ export const RegistrationUser = () => {
                   />
                 ) : (
                   <img
-                    src="../images/eye-filled.svg"
+                    src="/images/eye-filled.svg"
                     className={s.eye}
                     alt=""
                     onClick={() =>

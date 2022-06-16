@@ -34,10 +34,10 @@ export const CreateImpression = () => {
   return (
     <div>
       <div className="account-page__breadcrumps">
-        <p>Добавление экскурсии</p>
+        <p>Добавление впечатление</p>
       </div>
       <div className="account-page__jcsb">
-        <h1 className="account-page__title">Заполнение информации о экскурсии</h1>
+        <h1 className="account-page__title">Заполнение информации о впечатление</h1>
         <button className="account-page__btn160 intitle">
           <img src="../../images/eye-filled_white.svg" />
           <img src="../../images/eye-filled-blue.svg" className="blue-eye"/>
@@ -171,13 +171,13 @@ export const CreateImpression = () => {
       <h2 className="account-page__input-block-title">Описание</h2>
       <textarea
         className="account-page__hotel-textarea"
-        placeholder="Напишите все самое важное об отеле"
+        placeholder="Напишите все самое важное о впечатлении"
         value={desc}
         onChange={(event) => setDesc(event.target.value)}
       ></textarea>
       <div className={`${s.row30} ${s.mt30}`}>
     <div>
-      <h2 className="account-page__input-block-title">Место отправки*</h2>
+      <h2>Место отправки*</h2>
       <div className={s.inputBlock}>
         <textarea
           placeholder="Введите место отправки"
@@ -188,7 +188,7 @@ export const CreateImpression = () => {
       </div>
     </div>
     <div>
-      <h2 className="account-page__input-block-title">Важно знать</h2>
+      <h2>Важно знать</h2>
       <div className={s.inputBlock}>
         <textarea
           placeholder="Введите важные моменты, например, возьмите паспорт"

@@ -5,6 +5,13 @@
     color: #000000;
     margin-bottom: 30px;
 }
+.person-sub-menu__minus.active, .person-sub-menu__plus.active{
+    opacity: 1;
+}
+.account-page__radios.distances{
+    max-height: 400px;
+    overflow-y: auto;
+}
 .account-page__subtitle {
     font-family: 'Century Gothic';
     font-weight: 700;
@@ -1345,9 +1352,9 @@ button{
         display: block;
         margin: 0;
     }
-    .account-page__breadcrumps{
+    /* .account-page__breadcrumps{
         display: none;
-    }
+    } */
     .account-page__inputs-row{
         gap: 12px;
     }

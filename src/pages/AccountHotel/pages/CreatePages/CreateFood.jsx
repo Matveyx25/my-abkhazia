@@ -105,11 +105,11 @@ export const CreateFood = () => {
         </div>
       </Modal>
       <div className="account-page__breadcrumps">
-        <p>Добавление экскурсии</p>
+        <p>Добавление кухни</p>
       </div>
       <div className="account-page__jcsb">
         <h1 className="account-page__title">
-          Заполнение информации о экскурсии
+        Заполнение информации о кухне
         </h1>
         <button className="account-page__btn160 intitle">
           <img src="../../images/eye-filled_white.svg" />
@@ -244,7 +244,7 @@ export const CreateFood = () => {
       <h2 className="account-page__input-block-title">Описание</h2>
       <textarea
         className="account-page__hotel-textarea"
-        placeholder="Напишите все самое важное об отеле"
+        placeholder="Напишите все самое важное о ресторане"
         value={desc}
         onChange={(event) => setDesc(event.target.value)}
       ></textarea>
@@ -446,7 +446,7 @@ export const CreateFood = () => {
         <div className={s.qrCard}>
           <p className={s.qrNumber}>1</p>
           <p className={s.qrCardText}>QR-код и акция</p>
-          <button className={s.btn160}>Изменить</button>
+          <button className={s.btn160} onClick={() => setQRModal(true)}>Изменить</button>
           <img src="/images/dashicons_trash-blue.svg" alt="" className={s.removeQr}/>
         </div>
         <div className={s.addQR} onClick={() => {

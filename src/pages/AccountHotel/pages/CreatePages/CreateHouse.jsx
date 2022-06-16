@@ -324,7 +324,7 @@ export const CreateHouse = () => {
       <h2 className="account-page__input-block-title">Описание</h2>
       <textarea
         className="account-page__hotel-textarea"
-        placeholder="Напишите все самое важное об отеле"
+        placeholder="Напишите все самое важное о доме"
         value={desc}
         onChange={(event) => setDesc(event.target.value)}
       ></textarea>
@@ -623,7 +623,7 @@ export const CreateHouse = () => {
             <p className={s.inputLabel}>Тип дома</p>
               <div className={s.inputBlock}>
                 <input
-                  placeholder="Ввыберите тип дома"
+                  placeholder="Введите тип дома"
                   value={choiceHouseType}
                   type="text"
                   onChange={(event) => setChoiceHouseType(event.target.value)}
@@ -1219,7 +1219,7 @@ export const CreateHouse = () => {
         </div>
       </div>
       <div className={s.btnsRow}>
-        <button className={s.btn} to='../calendar/create-house'>Перейти к календарю</button>
+        <Link className={s.btn} to='../calendar/create-house'>Перейти к календарю</Link>
         <button className={s.btnOutlined}>Сохранить как черновик</button>
       </div>
     </div>

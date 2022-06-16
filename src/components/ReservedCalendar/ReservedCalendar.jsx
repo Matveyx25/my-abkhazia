@@ -86,7 +86,7 @@ export const ReservedCalendar = ({
 
   return (
     <div>
-      <div className={s.wrapper}>
+      <div className={(type == "createHouse" || type == "createRent" || type == "createFood") ? `${s.wrapper} ${s.small}` : s.wrapper}>
         <p className={s.gridTitle}>Месяц</p>
         <p className={s.gridTitle}>Дата</p>
         {(type === "hotel" || type == "createHotel") && (

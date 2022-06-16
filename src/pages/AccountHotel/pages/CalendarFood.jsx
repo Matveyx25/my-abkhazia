@@ -21,11 +21,77 @@ export const CalendarFood = () => {
   const [tabels, setTabels] = useState(0)
 
   const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
   const [activeUser, setActiveUser] = useState(false);
 
   return (
     <div>
       <Modal visible={modal} onClose={() => setModal(false)}>
+        <h1 className={s.modalTitle}>Правки в календарь</h1>
+        <div className={s.modalContent}>
+          <div className={s.jcsb}>
+            <div>
+              <div className={s.ModalRow}>
+                <CalendarInput label="Дата посещения" />
+                <TimeInput />
+              </div>
+              <div className={s.ModalRow}>
+                <div className={s.inputBlock}>
+                  <p>Имя туриста</p>
+                  <input
+                    placeholder="Введите имя туриста"
+                    value={touristName}
+                    onChange={(event) => setTouristName(event.target.value)}
+                    type="text"
+                    required
+                  />
+                </div>
+                <div className={s.inputBlock}>
+                  <p>Телефон туриста</p>
+                  <input
+                    placeholder="+7 (000) 000-00-00"
+                    value={phone}
+                    onChange={(event) => setPhone(event.target.value)}
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+              <div className={s.btnsRow}>
+                <button className={s.btn200} disabled>
+                  Применить
+                </button>
+              </div>
+            </div>
+            <div className={s.leftBlock}>
+              <CalendarInput
+                label="Заезд"
+                error="Выберите дату, недоступную для брони"
+              />
+              <button className={s.btn160} disabled>
+                Применить
+              </button>
+              <div className={s.addBtn}>
+                <img src="../images/plus-add-hotel.svg" alt="" />
+                Добавить еще дату
+              </div>
+            </div>
+          </div>
+          <ReservedCalendar type="food" />
+          <div className={s.footerBtn}>
+            <button className={s.btn160} disabled>
+              Сохранить
+            </button>
+            <button
+              className={`${s.btn160} ${s.outlined}`}
+              onClick={() => setModal(false)}
+            >
+              Отменить
+            </button>
+          </div>
+        </div>
+      </Modal>
+      <Modal visible={modal2} onClose={() => setModal2(false)}>
         <h1 className={s.modalTitle}>Правки в календарь</h1>
         <div className={s.modalContent}>
         <p>День недели и время</p>
@@ -166,7 +232,7 @@ export const CalendarFood = () => {
               <button className={s.btn160} disabled>
               Сохранить
             </button>
-              <button className={`${s.btn160} ${s.outlined}`} onClick={() => setModal(false)}>
+              <button className={`${s.btn160} ${s.outlined}`} onClick={() => setModal2(false)}>
               Отменить
             </button>
         </div>
@@ -191,7 +257,7 @@ export const CalendarFood = () => {
         <button className={s.edit} onClick={() => setModal(true)}>
           Внести правки в календарь
         </button>
-        <button className={s.editOutlined} onClick={() => setModal(true)}>
+        <button className={s.editOutlined} onClick={() => setModal2(true)}>
           Изменить расписание
         </button>
       </div>

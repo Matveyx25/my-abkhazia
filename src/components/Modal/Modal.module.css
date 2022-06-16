@@ -38,8 +38,10 @@
 @media screen and (max-width: 565px){
     .modalDialog{
         padding: 40px 12px;
+        width: calc(100vw - 32px);
+        box-sizing: border-box;
     }
     .modalBody{
-        padding: 16px;
+        padding: 0;
     }
 }

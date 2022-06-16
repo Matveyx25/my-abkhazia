@@ -146,7 +146,7 @@ export const CreateRent = () => {
           <div className="account-page__input-block">
             <p>Стоимость аренды за 1 день*</p>
             <input
-              placeholder="Введите сумму аренды за 1 день чек ₽"
+              placeholder="Введите сумму аренды за 1 день ₽"
               type="number"
               value={priceDay}
               onChange={(event) => setPriceDay(event.target.value)}
@@ -156,7 +156,7 @@ export const CreateRent = () => {
           <div className="account-page__input-block">
             <p>Год выпуска*</p>
             <input
-              placeholder="Выберите год выпуска машины"
+              placeholder="Введите год выпуска машины"
               type="number"
               value={yearFrom}
               onChange={(event) => setYearFrom(event.target.value)}
@@ -166,7 +166,7 @@ export const CreateRent = () => {
           <div className="account-page__input-block">
             <p>Мощность двигателя*</p>
             <input
-              placeholder="Мощность двигателя"
+              placeholder="Введите мощность двигателя"
               type="number"
               value={enginePower}
               onChange={(event) => setEnginePower(event.target.value)}
@@ -256,7 +256,7 @@ export const CreateRent = () => {
       <h2 className="account-page__input-block-title">Описание</h2>
       <textarea
         className="account-page__hotel-textarea"
-        placeholder="Напишите все самое важное об отеле"
+        placeholder="Напишите все самое важное о машинах"
         value={desc}
         onChange={(event) => setDesc(event.target.value)}
       ></textarea>

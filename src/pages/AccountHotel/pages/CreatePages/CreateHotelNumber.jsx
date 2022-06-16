@@ -4,6 +4,7 @@ import s from "./Create.module.css";
 import Radio from "../../../../components/Radio/Radio";
 import ReactImageUploading from "react-images-uploading";
 import { CounterInput } from '../../../../components/CounterInput/CounterInput';
+import { Link } from "react-router-dom";
 
 export const CreateHotelNumber = () => {
   const [numberType, setNumberType] = useState("");
@@ -47,6 +48,9 @@ export const CreateHotelNumber = () => {
         <p>Добавление отеля</p>
         <p>Добавление карточки номера</p>
       </div>
+      <Link className="account-page__back-btn" to="../declarations/create-hotel">
+          <img src="/images/arrow-right-circle-fill.svg" alt=""/>
+      </Link>
       <div className="account-page__jcsb">
         <h1 className="account-page__title">Заполните информацию о номере</h1>
       </div>
@@ -131,7 +135,7 @@ export const CreateHotelNumber = () => {
               <p className={s.inputLabel}>Цена за сутки*</p>
               <div className={s.inputBlock}>
                 <input
-                  placeholder="Введите название номера"
+                  placeholder="Введите цену"
                   value={priceDay}
                   type="number"
                   onChange={(event) => setPriceDay(event.target.value)}

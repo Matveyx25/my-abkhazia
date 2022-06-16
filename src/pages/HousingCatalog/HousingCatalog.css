@@ -149,6 +149,7 @@ label {
 .housing-catalog__housing-pseudo-checkbox {
   position: relative;
   width: 20px;
+  min-width: 20px;
   height: 20px;
   box-sizing: border-box;
   margin-right: 10px;
