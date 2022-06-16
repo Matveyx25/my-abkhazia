@@ -3,6 +3,7 @@ import { Modal } from "../Modal/Modal";
 import s from "./Login.module.css";
 import Checkbox from "../Checkbox/Checkbox";
 import Radio from "../Radio/Radio";
+import { useTimer } from 'react-timer-hook';
 import { RegistrationUser } from "./RegistrationUser";
 import { RegistrationHotel } from "./RegistrationHotel";
 import { RegistrationHouse } from './RegistrationHouse';
@@ -13,15 +14,24 @@ import { RegistrationRent } from './RegistrationRent';
 import { RegistrationTransfer } from './RegistrationTransfer';
 
 export const Login = ({ visible, onClose }) => {
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 600)
+  
   const [typeModal, setTypeModal] = useState("login");
+
+  const {seconds, restart} = useTimer({ time, onExpire: () => console.warn('onExpire called') });
 
   const [email, setEmail] = useState("");
   const [visiblePassword, changeVisiblePassword] = useState(false);
+  const [confirmModal, setConfirmModal] = useState(false);
   const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [country, setCountry] = useState("");
 
   const [accType, setAccType] = useState("");
 
   return (
+    <>
     <Modal visible={visible} onClose={onClose}>
       {typeModal == "reg2" || (
         <div className={s.tabbar}>
@@ -87,7 +97,7 @@ export const Login = ({ visible, onClose }) => {
             <p>Или</p>
             <span></span>
           </div>
-          <a href="#" className={s.withPhone}>
+          <a href="#" className={s.withPhone} onClick={() => setTypeModal("phone")}>
             <img src="/images/gridicons_phone.svg" />С помощью номера телефона
           </a>
           <a href="#" className={s.withPhone}>
@@ -95,7 +105,49 @@ export const Login = ({ visible, onClose }) => {
           </a>
         </form>
       )}
-
+      {typeModal == "phone" && (
+        <form className={s.form}>
+          <div className={s.inputBlock}>
+            <p>Страна</p>
+            <input
+              placeholder="Россия"
+              type="text"
+              value={country}
+              onChange={(event) => setCountry(event.target.value)}
+              required
+            />
+          </div>
+          
+          <div className={s.inputBlock}>
+            <p>Номер телефона</p>
+            <input
+              placeholder="+7 (000) 000-00-00"
+              type="text"
+              value={phone}
+              onChange={(event) => setPhone(event.target.value)}
+              required
+            />
+          </div>
+          <p className={s.smallText}>Мы вам отправим SMS, чтобы подтвердить номер телефона. Применяются стандартные условия вашего тарифа на прием сообщений и передачу данных. 
+Политика конфиденциальности
+</p>
+          <button className={s.submitBtn} onClick={() => {
+            onClose()
+            setConfirmModal(true)
+            }}>Продолжить</button>
+          <div className={s.or}>
+            <span></span>
+            <p>Или</p>
+            <span></span>
+          </div>
+          <a href="#" className={s.withPhone} onClick={() => setTypeModal("login")}>
+            <img src="/images/clarity_email-solid.svg" />С помощью E-mail
+          </a>
+          <a href="#" className={s.withPhone}>
+            <img src="/images/google-fill.svg" />С помощью Google
+          </a>
+        </form>
+      )}
       {typeModal == "reg" && (
         <form className={s.form}>
           <div className={s.inputBlock}>
@@ -212,5 +264,16 @@ export const Login = ({ visible, onClose }) => {
         </form>
       )}
     </Modal>
+    <Modal visible={confirmModal} onClose={() => setConfirmModal(false)}>
+      <p className={s.titleModal}>
+        Подтвердите номер
+      </p>
+      <p>Введите код, отправленный на номер: +7 (927) 655-45-24:</p>
+      {/* <ReactInputVerificationCode length={4}/> */}
+      <p>
+        Новый код можно получить через:  00:56
+      </p>
+    </Modal>
+    </>
   );
 };

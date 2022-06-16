@@ -649,6 +649,7 @@
     font-size: 14px;
     margin-bottom: 10px;
 }
+
 .account-page__upload-photo-btn img{
     width: 48px;
     height: 48px;
@@ -669,6 +670,9 @@
     font-size: 14px;
     color: rgba(0, 0, 0, 0.3);
     margin-top: 30px;
+}
+.account-page__upload-photo-btn.result{
+    border: none;
 }
 .image-item{
     width: 100%;

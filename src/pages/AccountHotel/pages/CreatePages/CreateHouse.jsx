@@ -147,7 +147,7 @@ export const CreateHouse = () => {
               <div className="account-page__input-block">
                   <p>Укажите этаж*</p>
                   <input
-                    placeholder="Нахождение объекта"
+                    placeholder="Введите этаж"
                     type="number"
                     value={flatNumber}
                     onChange={(event) => setFlatNumber(event.target.value)}

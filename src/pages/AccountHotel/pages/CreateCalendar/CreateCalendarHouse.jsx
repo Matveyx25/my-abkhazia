@@ -40,9 +40,9 @@ export const CreateCalendarHouse = () => {
           error={error}
         />
       </div>
-      {openedForReserved && <ReservedCalendar
+      {openedForReserved &&  <><ReservedCalendar
         type="createHouse"
-      />}
+      />
       <div className={s.inputRow}>
         <div className={s.inputBlock}>
           <p className={s.inputTitle}>Цена за сутки </p>
@@ -81,7 +81,7 @@ export const CreateCalendarHouse = () => {
         }else{
           setModal(true)
         }
-      }}>Активировать и отправить на модерацию</button>
+      }}>Активировать и отправить на модерацию</button></>}
     </div>
   );
 };

@@ -209,7 +209,7 @@ export const CreateExcursion = () => {
                     required
                   />
                 </div>
-                {sales.length > 1 && <button className={s.removeDesc} onClick={() => setSales([...sales].filter(sale => sale.id != el.id))}>Удалить скидку</button>}
+                {sales.length > 1 && <button className={s.removeDesc} onClick={() => setSales([...sales].filter(sale => sale.id != el.id))}>Удалить пункт</button>}
               </div>
             );
           })}
@@ -333,7 +333,7 @@ export const CreateExcursion = () => {
                       />
                     </div>
                   </div>}
-                  {options.length > 1 && <button className={s.removeDesc} onClick={() => setOptions([...options].filter(sale => sale.id != el.id))}>Удалить скидку</button>}
+                  {options.length > 1 && <button className={s.removeDesc} onClick={() => setOptions([...options].filter(sale => sale.id != el.id))}>Удалить Доп. Опцию</button>}
               </div>
             );
           })}

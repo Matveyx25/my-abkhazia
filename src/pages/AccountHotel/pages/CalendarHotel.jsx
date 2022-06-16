@@ -107,13 +107,13 @@ export const CalendarHotel = () => {
           setOpened={setOpenedForReserved}
         />
       </div>
-      {openedForReserved &&
+      {openedForReserved && <>
       <ReservedCalendar
         activeUser={activeUser}
         clickHandler={() => setActiveUser(true)}
         user={user}
         type="hotel"
-      />}
+      />
       <button className={s.edit} onClick={() => setModal(true)}>
         Внести правки в календарь
       </button>
@@ -145,7 +145,7 @@ export const CalendarHotel = () => {
           />
         </div>
       </div>
-      <button className={s.savebtn}>Сохранить изменения</button>
+      <button className={s.savebtn}>Сохранить изменения</button></>}
     </div>
   );
 }

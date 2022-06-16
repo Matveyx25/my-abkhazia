@@ -246,13 +246,12 @@ export const CalendarFood = () => {
           setOpened={setOpenedForReserved}
         />
       </div>
-      {openedForReserved && (
+      {openedForReserved && (<>
         <ReservedCalendar
           type="food"
           activeUser={activeUser}
           clickHandler={() => setActiveUser(true)}
         />
-      )}
       <div className={s.ModalRow}>
         <button className={s.edit} onClick={() => setModal(true)}>
           Внести правки в календарь
@@ -284,6 +283,8 @@ export const CalendarFood = () => {
         </div>
         <button className={s.savebtn}>Сохранить изменения</button>
       </form>
+      </>
+      )}
     </div>
   );
 };

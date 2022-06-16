@@ -16,7 +16,7 @@ export const CreateHotel = () => {
   const [organizationLocation, setOrganizationLocation] = useState(
     "Абхазия, Пицунда, улица Речная 11а "
   );
-  const [textarea1, setTextarea1] = useState();
+  const [timerPopap, setTimerPopap] = useState(false);
   const [textarea2, setTextarea2] = useState();
   const [desc, setDesc] = useState();
   const [minDay, setMinDay] = useState();
@@ -177,7 +177,7 @@ export const CreateHotel = () => {
         }) => (
           <div className={s.row30}>
             {imageList.map((image, index) => (
-              <div className="account-page__upload-photo-btn">
+              <div className="account-page__upload-photo-btn result">
                 <div key={index} className="image-item">
                   <img
                     src={image["data_url"]}
@@ -285,7 +285,7 @@ export const CreateHotel = () => {
         </Tbody>
       </Table>
       <h2 className="account-page__input-block-title">Правила и скидки</h2>
-      <div className={s.row}>
+      <div className={s.row30}>
         <div className={s.inputsWrapper}>
           <h2>Правила проживания:</h2>
           <Checkbox
@@ -357,7 +357,7 @@ export const CreateHotel = () => {
         <div className={s.timeInputsWrapper}>
           <h2>Условия проживания:</h2>
           <div className={s.row}>
-            <div className={s.ml30}>
+            <div>
             <div className={s.timeWrapper}>
             <p className={s.timeTitle}>Время заезда*</p>
               <div className={s.inputBlock}>
@@ -379,7 +379,7 @@ export const CreateHotel = () => {
             </div>
             <div className={s.ml30}>
             <div className={s.timeWrapper}>
-            <p className={s.timeTitle}>Время заезда*</p>
+            <p className={s.timeTitle}>Время выезда*</p>
               <div className={s.inputBlock}>
               <img
                   src="/images/transfer/timer.svg"

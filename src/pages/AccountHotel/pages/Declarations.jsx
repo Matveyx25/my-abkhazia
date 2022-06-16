@@ -299,6 +299,7 @@ export const Declarations = () => {
               price="1 600₽ сутки"
               status="draft"
               link="/hotel-card"
+              choiseText="Удалить объявление"
             />
             <Link to="create-hotel" className="account-page__btn-add-hotel">
               <img src="../images/plus-add-hotel.svg" alt="" />

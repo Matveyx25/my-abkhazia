@@ -135,7 +135,27 @@ export const CreateFood = () => {
                 inputId="rest"
                 inputName="excurtionType"
                 inputValue="Ресторан"
-                changeFunction={(event) => setExcursionType(event.target.value)}
+                changeFunction={(event) =>
+                  setExcursionType(event.target.value)
+                }
+              />
+              <Radio
+                labelText="Кафе"
+                inputId="cafe"
+                inputName="excurtionType"
+                inputValue="Кафе"
+                changeFunction={(event) =>
+                  setExcursionType(event.target.value)
+                }
+              />
+              <Radio
+                labelText="Столовая"
+                inputId="minicafe"
+                inputName="excurtionType"
+                inputValue="Столовая"
+                changeFunction={(event) =>
+                  setExcursionType(event.target.value)
+                }
               />
             </div>
           </div>

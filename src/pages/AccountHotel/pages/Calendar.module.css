@@ -321,6 +321,36 @@
     position: relative;
     width: 100%;
 }
+.popup{
+    display: none;
+    box-sizing: border-box;
+}
+.inputsModalWrapper .weakInput input:focus + .popup{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    width: 100%;
+    padding: 15px 25px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    display: block;
+    z-index: 100;
+}
+.inputsModalWrapper .weakInput .popup img{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-right: 10px;
+}
+.inputsModalWrapper .weakInput .popup p{
+    display: flex;
+    align-items: center;
+}
 .inputsModalWrapper .weakInput input:focus{
     background: rgba(88, 180, 209, 0.3);
 }

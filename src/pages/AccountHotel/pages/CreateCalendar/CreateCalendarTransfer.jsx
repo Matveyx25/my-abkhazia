@@ -38,9 +38,9 @@ export const CreateCalendarTransfer = () => {
           error={error}
         />
       </div>
-      {openedForReserved && <ReservedCalendar
+      {openedForReserved && <><ReservedCalendar
         type="createTransfer"
-      />}
+      />
       <div className={s.inputRow}>
         <div className={s.inputBlock}>
           <p className={s.inputTitle}>Цена за км</p>
@@ -58,7 +58,7 @@ export const CreateCalendarTransfer = () => {
         }else{
           setModal(true)
         }
-      }}>Активировать и отправить на модерацию</button>
+      }}>Активировать и отправить на модерацию</button></>}
     </div>
   );
 };

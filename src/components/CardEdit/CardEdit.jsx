@@ -100,9 +100,9 @@ const CardEdit = ({
         <p className="searching-results__price">{price}</p>
         <div className="searching-results__btn-wrapper">
           <div className="account-page__row">
-            <Link className="searching-results__calendar-btn" to={link!==undefined ? link : './'}>
+            {status != "draft" && <Link className="searching-results__calendar-btn" to={link!==undefined ? link : './'}>
               Календарь
-            </Link>
+            </Link>}
             <Link className="searching-results__edit-btn" to={link!==undefined ? link : './'}>
             Редактировать
             </Link>

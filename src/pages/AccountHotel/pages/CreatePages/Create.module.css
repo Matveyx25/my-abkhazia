@@ -13,6 +13,25 @@
     width: 18px;
     height: 18px;
 }
+.menu{
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
+    padding: 20px;
+    z-index: 78;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    width: 170px;
+    z-index: 10;
+    top: 55px;
+    left: 0;
+}
+.menu p{
+    margin: 0;
+    padding: 0;
+}
 .timeWrapper .inputBlock{
     width: fit-content;
     position: relative;
@@ -41,7 +60,7 @@
 }
 .inputsWrapper .row{
     gap: 30px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 .inputsWrapper .radioRow{
     gap: 30px;
@@ -60,7 +79,6 @@
     font-size: 12px;
 }
 .timeInputsWrapper{
-    margin-left: 30px;
     flex-grow:1;
 }
 .kitchenRow{
@@ -92,6 +110,7 @@
     width: 100%;
     gap: 30px;
 }
+
 .timeInputsWrapper .row p{
     font-weight: 400;
     font-size: 12px;
@@ -636,5 +655,20 @@ input, textarea{
     }
     .row50p .jcsb{
         flex-direction: column;
+    }
+    .qrModalContent{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .viewBlock{
+        flex-direction: column;
+        height: 358px;
+        padding: 42px 24px;
+    }
+    .viewBlock .mute{
+        align-self: flex-start;
+    }
+    .qrModalContent .inputBlock textarea{
+        width: 100%;
     }
 }

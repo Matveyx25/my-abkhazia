@@ -118,20 +118,31 @@ export const CreateCalendarFood = () => {
             </div>
             </div>
             <div className={s.weakInput}>
-            <img
-                src="/images/transfer/timer.svg"
-                width="18"
-                height="18"
-                alt=""
-            />
-            <input
-              placeholder="Выберите время Со скольки"
-              type="text"
-              value={timer1}
-              onChange={(event) => setTimer1(event.target.value)}
-              className="account-page__input-with-radio"
-              required
-            />
+              <img
+                  src="/images/transfer/timer.svg"
+                  width="18"
+                  height="18"
+                  alt=""
+              />
+              <input
+                placeholder="Выберите время Со скольки"
+                type="text"
+                value={timer1}
+                onChange={(event) => setTimer1(event.target.value)}
+                className="account-page__input-with-radio"
+                required
+              />
+              <div className={s.popup}>
+                <p>
+                  <img
+                      src="/images/transfer/timer.svg"
+                      width="18"
+                      height="18"
+                      alt=""
+                  />
+                  00:00
+                </p>
+              </div>
             </div>
             <div className={s.weakInput}>
               <img
@@ -148,6 +159,17 @@ export const CreateCalendarFood = () => {
               className="account-page__input-with-radio"
               required
             />
+            <div className={s.popup}>
+                <p>
+                  <img
+                      src="/images/transfer/timer.svg"
+                      width="18"
+                      height="18"
+                      alt=""
+                  />
+                  00:00
+                </p>
+              </div>
             </div>
         </div>
         <div className={s.weekcounter}>
@@ -160,14 +182,14 @@ export const CreateCalendarFood = () => {
         </div>
         </div>
        
-          <button className={`${s.btn160} ${s.mt30}`} disabled>
+          <button className={`${s.btn160} ${s.mt30}`} disabled={weak.length == 0 || !timer1 || !timer2}>
             Применить
           </button>
           <ReservedCalendar
             type="createFood"
           />
           <div className={s.footerBtn}>
-              <button className={s.btn160} disabled>
+              <button className={s.btn160} disabled={weak.length == 0 || !timer1 || !timer2}>
               Сохранить
             </button>
               <button className={`${s.btn160} ${s.outlined}`} onClick={() => setModal(false)}>
@@ -189,7 +211,6 @@ export const CreateCalendarFood = () => {
         <CalendarCardAccount
           id="1"
           label="Ресторан Абаата"
-          option="5 человек" 
           opened={openedForReserved}
           setOpened={setOpenedForReserved}
           error={error}
@@ -198,7 +219,7 @@ export const CreateCalendarFood = () => {
           <button className={`${s.btn200} ${s.orange}`} onClick={() => setCalendarModal(true)}>Добавить расписание</button>
         </div>
       </div>
-      {openedForReserved && <ReservedCalendar type="createFood"/>}
+      {openedForReserved && <><ReservedCalendar type="createFood"/>
       <div className={s.inputRow}>
         <div className={s.inputBlock}>
           <p className={s.inputTitle}>Цена за средни йчек</p>
@@ -216,7 +237,7 @@ export const CreateCalendarFood = () => {
         }else{
           setModal(true)
         }
-      }}>Активировать и отправить на модерацию</button>
+      }}>Активировать и отправить на модерацию</button></>}
     </div>
   );
 };

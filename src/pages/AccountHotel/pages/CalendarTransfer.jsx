@@ -199,8 +199,8 @@ export const CalendarTransfer = () => {
           setOpened={setOpenedForReserved}
         />
       </div>
-      {openedForReserved &&
-      <ReservedCalendar type="transfer" activeUser={activeUser} clickHandler={() => setActiveUser(true)}/>}
+      {openedForReserved && <>
+      <ReservedCalendar type="transfer" activeUser={activeUser} clickHandler={() => setActiveUser(true)}/>
       <button className={s.edit} onClick={() => setModal(true)}>
         Внести правки в календарь
       </button>
@@ -232,7 +232,7 @@ export const CalendarTransfer = () => {
           </div>
         </div>
         <button className={s.savebtn}>Сохранить изменения</button>
-      </form>
+      </form></>}
     </div>
   );
 };

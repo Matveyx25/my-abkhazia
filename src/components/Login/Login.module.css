@@ -7,6 +7,10 @@
     gap: 30px;
     margin-bottom: 30px;
 }
+.smallText{
+    font-size: 12px;
+    margin-top: 15px;
+}
 .subCheck{
     margin-left: 20px;
     margin-top: 10px;

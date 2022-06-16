@@ -194,9 +194,9 @@ export const CreateCalendarImpretion = () => {
           <button className={`${s.btn200} ${s.orange}`} onClick={() => setCalendarModal(true)}>Добавить расписание</button>
         </div>
       </div>
-      {openedForReserved && <ReservedCalendar
+      {openedForReserved && <><ReservedCalendar
         type="createExcursion"
-      />}
+      />
       <form className={s.form}>
         <div className={s.inputRow}>
           <div className={s.inputBlock}>
@@ -234,7 +234,7 @@ export const CreateCalendarImpretion = () => {
         }else{
           setModal(true)
         }
-      }}>Активировать и отправить на модерацию</button>
+      }}>Активировать и отправить на модерацию</button></>}
     </div>
   );
 };

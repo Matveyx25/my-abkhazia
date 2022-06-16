@@ -45,9 +45,9 @@ export const CreateCalendarExcursion = () => {
           error={error}
         />
       </div>
-      {openedForReserved && <ReservedCalendar
-        type="createHouse"
-      />}
+      {openedForReserved && <> <ReservedCalendar
+        type="createExcursion"
+      />
       <form className={s.form}>
         <div className={s.inputRow}>
           <div className={s.inputBlock}>
@@ -121,7 +121,7 @@ export const CreateCalendarExcursion = () => {
         }else{
           setModal(true)
         }
-      }}>Активировать и отправить на модерацию</button>
+      }}>Активировать и отправить на модерацию</button></>}
     </div>
   );
 };
