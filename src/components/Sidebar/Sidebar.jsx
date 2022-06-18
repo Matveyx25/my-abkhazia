@@ -2,7 +2,7 @@ import React from 'react'
 import s from './Sidebar.module.css'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 
-export const Sidebar = ({visibleMenu}) => {
+export const Sidebar = ({visibleMenu, type}) => {
     const location = useLocation()
      
   return (
@@ -13,14 +13,19 @@ export const Sidebar = ({visibleMenu}) => {
             </div>
             Сергей
         </NavLink>
-        <NavLink to="declarations" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
+        {type != "tourist" ? <NavLink to="declarations" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
             <img src="/images/fluent_clipboard.svg"/>    
             Мои объявления
+        </NavLink> :
+        <NavLink to="orders" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
+            <img src="/images/list-ul.svg"/>    
+            Мои заказы
         </NavLink>
-        <NavLink to="calendar" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
+        }
+        {type != "tourist" && <NavLink to="calendar" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
             <img src="/images/bxs_calendar.svg"/>    
             Календарь занятости
-        </NavLink>
+        </NavLink>}
         <NavLink to="messenger" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
             <img src="/images/clarity_email-solid.svg"/>    
             Сообщения
@@ -29,6 +34,10 @@ export const Sidebar = ({visibleMenu}) => {
             <img src="/images/clarity_wallet-solid.svg"/>    
             Кошелек
         </NavLink>
+        {type == "tourist" && <NavLink to="bookmarked" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
+            <img src="/images/heart-filled.svg"/>    
+            Избранное
+        </NavLink>}
         <NavLink to="reviews" className={s.navLink} style={({ isActive }) => isActive ? {background: '#fff'} : undefined}>
             <img src="/images/bi_people-fill.svg"/>    
             Отзывы

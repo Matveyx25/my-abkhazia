@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const TouristCard = ({btnTitle, options}) => {
+export const TouristCard = ({btnTitle, options, title, owner}) => {
   return (
     <article className="card-description__owner small">
-          <h5 className="card-description__owner-title">Турист</h5>
+          <h5 className="card-description__owner-title">{owner ? "Владелец" : "Турист"}</h5>
           <div className="card-description__owner-data">
             <img
               className="card-description__owner-photo"
@@ -25,7 +25,7 @@ export const TouristCard = ({btnTitle, options}) => {
             <div className="owner-option__image-wrapper">
               <img
                 className="owner-option__image"
-                src="../../images/card-description/protection.svg"
+                src="/images/card-description/protection.svg"
                 alt="protection"
                 width="18.6"
                 height="22"
@@ -35,11 +35,25 @@ export const TouristCard = ({btnTitle, options}) => {
               Телефон и почта подверждены
             </p>
           </div>
+          {owner && <div className="card-description__owner-option">
+            <div className="owner-option__image-wrapper">
+              <img
+                className="owner-option__image"
+                src="/images/bxs_home.svg"
+                alt="protection"
+                width="24"
+                height="24"
+              />
+            </div>
+            <p className="owner-option__text">
+              1 вариант жилья
+            </p>
+          </div>}
           <div className="card-description__owner-option">
             <div className="owner-option__image-wrapper">
               <img
                 className="owner-option__image"
-                src="../../images/card-description/star.svg"
+                src="/images/card-description/star.svg"
                 alt="protection"
                 width="24"
                 height="24"
@@ -57,9 +71,9 @@ export const TouristCard = ({btnTitle, options}) => {
               ))}
             </ul>
             </div>}
-          <p className="card-description__owner-write" href="#">
+          {btnTitle && <p className="card-description__owner-write" href="#">
             {btnTitle}
-          </p>
+          </p>}
         </article> 
   )
 }

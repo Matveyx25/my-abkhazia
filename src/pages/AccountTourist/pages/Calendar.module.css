@@ -1,0 +1,469 @@
+.edit, .editOutlined{
+    background: #FB8500;
+    border-radius: 25px;
+    border: none;
+    padding: 13px 17px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin-top: 40px;
+}
+.editOutlined{
+    background: #fff;
+    border: 1px solid #58B4D1;
+    color: #58B4D1;
+}
+.savebtn:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
+.savebtn{
+    background: #58B4D1;
+    border-radius: 25px;
+    border: none;
+    padding: 13px;
+    width: 210px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin-top: 40px;
+    box-sizing: border-box;
+}
+.moderationButton{
+    background: #58B4D1;
+    border-radius: 25px;
+    border: none;
+    padding: 13px;
+    width: 347px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin-top: 40px;
+    box-sizing: border-box;
+}
+.inputRow{
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+.inputTitle{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+}
+.tourist{
+    margin-top: 30px;
+}
+.closeBtn{
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration-line: underline;
+    color: #FB8500;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.ModalRow{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.ModalRow:not(:last-child){
+    margin-bottom: 30px;
+}
+
+.form .inputBlock, .form .inputBlock input, .form .inputBlock textarea{
+    max-width:317px;
+}
+.inputBlock{
+    /* margin-top: 15px; */
+    max-width: 262px;
+    width: 100%;
+    position: relative;
+}
+.inputBlock p{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.inputBlock input, .inputBlock textarea{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    position: relative;
+    max-width: 262px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 25px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    outline: none !important;
+}
+.inputBlock textarea{
+    resize: none;
+    height: 100px;
+}
+.inputBlock input:valid,
+.inputBlock input:focus,
+.inputBlock textarea:valid,
+.inputBlock textarea:focus{
+    border: 1px solid #000000;
+}
+.inputBlock input:invalid,
+.inputBlock textarea:invalid{
+    border: none;
+}
+.inputBlock span{
+    display: block;
+    cursor: pointer;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration-line: underline;
+    color: #FB8500;
+    margin-top: 15px;
+}
+.thanks{
+    margin-top: 30px;
+    max-width: 350px;
+    text-align: center;
+}
+.thanks .btn160{
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.calendarCardText{
+    margin-top: 30px;
+    max-width: 317px;
+    margin-bottom: 25px;
+}
+.btn200:hover, .btn160:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
+.btn200, .btn160{
+    display: block;
+    border: none;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn200:disabled, .btn160:disabled{
+    opacity: 0.5;
+}
+.btn200{
+    width: 200px;
+}
+.btn200.orange:hover{
+    box-shadow: 0px 4px 15px #FB8500;
+}
+.btn200.orange{
+    background: #FB8500;
+}
+.btn160.outlined{
+    background: #FFFFFF;
+    border: 1px solid #58B4D1;
+    border-radius: 25px;
+    color: #58B4D1;
+}
+.btn160{
+    width: 160px;
+}
+.btnsRow{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 30px;
+}
+.jcsb{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.modalTitle{
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #58B4D1;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.modalContent{
+    max-width: 1012px;
+}
+.leftBlock .btn160{
+    margin-top: 20px;
+}
+.addBtn img{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+.addBtn{
+    cursor: pointer;
+    width: fit-content;
+    padding: 11px 40px;
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.footerBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 30px;
+}
+.minusBtn:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
+.minusBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    background-color: #58b4d1;
+    font-size: 20px;
+    line-height: 20px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.4;
+}
+.plusBtn:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
+.plusBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    background-color: #58b4d1;
+    font-size: 20px;
+    line-height: 20px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.4;
+}
+.countText{
+    width: 60px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+}
+.counterWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    max-width: 262px;
+    width: 100%;
+}
+.counterBlock{
+    display: flex;
+    align-items: center;
+}
+.switchText{
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    padding-bottom: 5px;
+    margin-right: 30px;
+}
+.inputsModalWrapper{
+    max-width: 292px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    margin-top: 10px;
+}
+.inputsModalWrapper .weakInput{
+    position: relative;
+    width: 100%;
+}
+.popup{
+    display: none;
+    box-sizing: border-box;
+}
+.inputsModalWrapper .weakInput input:focus + .popup{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    width: 100%;
+    padding: 15px 25px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    display: block;
+    z-index: 100;
+}
+.inputsModalWrapper .weakInput .popup img{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-right: 10px;
+}
+.inputsModalWrapper .weakInput .popup p{
+    display: flex;
+    align-items: center;
+}
+.inputsModalWrapper .weakInput input:focus{
+    background: rgba(88, 180, 209, 0.3);
+}
+.inputsModalWrapper .weakInput input{
+    padding: 15px;
+    width: 100%;
+    padding-left: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    outline: none !important;
+}
+.inputsModalWrapper .weakInput img{
+    position: absolute;
+    left: 25px;
+    top: 16px;
+}
+.mt30{
+    margin-top: 30px;
+}
+.mt15{
+    margin-top: 15px;
+}
+.checkboxesBlock{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 100;
+    padding: 30px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: none;
+}
+.inputsModalWrapper .weakInput input:focus + .checkboxesBlock, .checkboxesBlock:hover {
+    display: block;
+}
+.addInputsBlock img{
+    width: 32px;
+    height: 32px;
+    margin-bottom: 10px;
+}
+.addInputsBlock{
+    width: 292px;
+    height: 144px;
+    left: 533px;
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+}
+.weekcounter{
+    max-width: 292px;
+    width: 100%;
+    margin-top: 20px;
+}
+.weakWrapper{
+    max-width: 292px;
+    width: 100%;
+}
+.row30{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+@media screen and (max-width: 565px){
+    .edit{
+        width: 100%;
+        margin-top: 30px;
+    }
+    .inputRow{
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .inputBlock, .inputBlock input{
+        max-width:100%;
+    }
+    .savebtn{
+        width: 100%;
+        margin-top: 24px;
+    }
+    .modalContent{
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .ModalRow{
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        gap: 15px;
+        box-sizing: border-box;
+    }
+    .btn160, .btn200{
+        width: 100%;
+    }
+    .leftBlock{
+        margin-top: 24px;
+    }
+    .addBtn{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .footerBtn{
+        flex-direction: column;
+        gap: 14px;
+    }
+}

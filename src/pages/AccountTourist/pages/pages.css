@@ -1,0 +1,70 @@
+
+.account-page__info-list a {
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 10px;
+    text-decoration-line: underline;
+    color: #FB8500;
+}
+.ballance-page__modal-content .account-page__input-block,
+.ballance-page__modal-content .account-page__input-block input,
+.ballance-page__modal-content .account-page__input-block textarea{
+    max-width: 100%;
+}
+.ballance-page__modal-content .account-page__small-text{
+    font-size: 12px;
+    margin-top: 15px;
+}
+.account-page__forget-checkbox label p{
+    font-size: 12px;
+}
+.account-page__forget-checkbox label{
+    margin-top: 20px;
+}
+.account-page__mt25{
+    margin-top: 25px;
+}
+.account-page__input-block.required input{
+    border-color: #E3170A;
+}
+.account-page__input-block.required .account-page__input-error{
+    font-size: 14px;
+    font-weight: 400;
+    color: #E3170A;
+    text-decoration: none;
+    cursor: default;
+    margin-top: 10px;
+}
+.react-code-input{
+    margin: 20px 0;
+}
+.react-code-input input::-webkit-outer-spin-button,
+.react-code-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.react-code-input input[type=number] {
+  -moz-appearance: textfield;
+}
+.account-page__timer{
+    color: #58b4d1;
+}
+.account-page__timer-link{
+    display: block;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    color: #FB8500;
+}
+
+.balance-page__btns .account-page__input-block{
+    max-width: 160px;
+    margin: 0;
+}
+.ballance-page__modal-small-text{
+    font-size: 12px;
+    margin-top: 15px;
+}

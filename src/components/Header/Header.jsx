@@ -318,6 +318,9 @@ const Header = ({ wallet, closeEmail}) => {
                 <li className="login-name__menu-item">
                   <Link to="/hotel-account">Мой кабинет</Link>
                 </li>
+                <li className="login-name__menu-item">
+                  <Link to="/tourist-account">Кабинет туриста</Link>
+                </li>
                 <li className="login-name__menu-item">Добавить услугу</li>
                 <li
                   className="login-name__menu-item"

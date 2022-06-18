@@ -12,14 +12,10 @@ import { RegistrationImpression } from './RegistrationImpression';
 import { RegistrationFood } from './RegistrationFood';
 import { RegistrationRent } from './RegistrationRent';
 import { RegistrationTransfer } from './RegistrationTransfer';
+import ReactCodeInput from 'react-code-input';
 
 export const Login = ({ visible, onClose }) => {
-  const time = new Date();
-  time.setSeconds(time.getSeconds() + 600)
-  
   const [typeModal, setTypeModal] = useState("login");
-
-  const {seconds, restart} = useTimer({ time, onExpire: () => console.warn('onExpire called') });
 
   const [email, setEmail] = useState("");
   const [visiblePassword, changeVisiblePassword] = useState(false);
@@ -29,6 +25,11 @@ export const Login = ({ visible, onClose }) => {
   const [country, setCountry] = useState("");
 
   const [accType, setAccType] = useState("");
+
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 60);
+
+  const {seconds, minutes, restart} = useTimer({ time, onExpire: () => console.warn('onExpire called') });
 
   return (
     <>
@@ -134,6 +135,7 @@ export const Login = ({ visible, onClose }) => {
           <button className={s.submitBtn} onClick={() => {
             onClose()
             setConfirmModal(true)
+            restart(time)
             }}>Продолжить</button>
           <div className={s.or}>
             <span></span>
@@ -265,14 +267,14 @@ export const Login = ({ visible, onClose }) => {
       )}
     </Modal>
     <Modal visible={confirmModal} onClose={() => setConfirmModal(false)}>
-      <p className={s.titleModal}>
+    <p className="ballance-page__title">
         Подтвердите номер
       </p>
       <p>Введите код, отправленный на номер: +7 (927) 655-45-24:</p>
-      {/* <ReactInputVerificationCode length={4}/> */}
-      <p>
-        Новый код можно получить через:  00:56
-      </p>
+        <ReactCodeInput type='number' fields={4} inputStyle={{width: 45, height: 45,  border: '1px solid rgba(0, 0, 0, 0.3)', borderRadius: 10, marginRight: 10, fontSize: 18, padding: 10, boxSizing: 'border-box'}}/>
+      {minutes + seconds != 0 ? <p>
+        Новый код можно получить через:  <span className="account-page__timer">{minutes}:{seconds}</span>
+      </p> : <span className="account-page__timer-link" onClick={() => restart(time)}>Получить новый код</span>}
     </Modal>
     </>
   );

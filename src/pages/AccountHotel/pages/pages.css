@@ -293,6 +293,7 @@
     color: rgba(0, 0, 0, 0.3);
     background: #DFDFDF;
     border-radius: 25px;
+    width: fit-content;
 }
 .account-page__filter-fill label{
     padding: 13px 30px;
@@ -431,7 +432,7 @@
     color: #000000;
     margin-bottom: 10px;
 }
-.account-page__input-block input{
+.account-page__input-block input, .account-page__input-block textarea{
     background: #FFFFFF;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     border-radius: 25px;
@@ -445,6 +446,9 @@
     font-size: 14px;
     color: #000000;
     outline: none !important;
+}
+.account-page__input-block textarea{
+    resize: none;
 }
 .account-page__input-block input:valid,
 .account-page__input-block input:disabled:valid,
@@ -1121,6 +1125,12 @@ button{
     }
 }
 @media screen and (max-width: 565px) {
+    .card-description__owner.small{
+        min-width: 0;
+    }
+    .messenger-page__right{
+        width: 100%;
+    }
     .card-description__owner.chat-card{
         max-width: 100%;
     }

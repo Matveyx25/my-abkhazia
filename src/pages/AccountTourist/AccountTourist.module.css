@@ -1,0 +1,48 @@
+.container{
+    box-sizing: border-box;
+    margin: 40px;
+    min-height: calc(100vh - 210px);
+}
+.flex{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin-top: 40px;
+}
+.title h1{
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 36px;
+    color: #000000;
+}
+.title span{
+    height: 1px;
+    background: #000;
+    display: block;
+    position: relative;
+    flex-grow: 1;
+    margin-left: 78px;
+}
+.contentWrapper{
+    margin-left: 30px;
+    width: 100%;
+}
+@media screen and (max-width: 1150px) {
+    .title{
+        display: none;
+    }
+    .container{
+        margin: 16px;
+        min-height: none;
+    }
+    .contentWrapper{
+        margin: 0;
+    }
+}

@@ -19,6 +19,7 @@ import SentenceForm from "./pages/SentenceForm/SentenceForm";
 import ReportProblem from "./pages/ReportProblem/ReportProblem";
 import CheckData from "./pages/CheckData/CheckData";
 import { AccountHotel } from './pages/AccountHotel/AccountHotel';
+import { AccountTourist } from "./pages/AccountTourist/AccountTourist";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path="/check-data" element={<CheckData />} />   
 
           <Route path="/hotel-account/*" element={<AccountHotel />} />     
+          <Route path="/tourist-account/*" element={<AccountTourist />} />     
         </Routes>
       </BrowserRouter>
     </div>
