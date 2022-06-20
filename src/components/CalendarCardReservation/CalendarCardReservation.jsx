@@ -27,8 +27,7 @@ const CalendarCardReservation = ({
     <>
       <div className="calendar__table-and-numbers">
         <div className="calendar__table-and-numbers__wrapper">
-          <Calendar onChange={calendarChanger} value={calendarValue3} />
-          <Calendar onChange={calendarChanger} value={calendarValue} />
+          <Calendar onChange={calendarChanger} value={calendarValue} showDoubleView/>
         </div>
         <div className="calendar__reservation-information">
           <div className="calendar__reservation-information-item calendar__reservation-information-close">

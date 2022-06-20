@@ -531,7 +531,7 @@ const HotelNumber = () => {
                   className="form-search--data__calendar-wrapper"
                   onClick={(e) => changeDataInput(e)}
                 >
-                  <Calendar onChange={onChangeCalendar} value={calendarValue} />
+                  <Calendar onChange={onChangeCalendar} value={calendarValue}/>
                 </div>
               )}
             </article>
