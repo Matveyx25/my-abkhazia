@@ -10,6 +10,7 @@ import { Settings } from './pages/Settings';
 import { Messenger } from './pages/Messenger';
 import { Wallet } from './pages/Wallet';
 import { MessengerChat } from './pages/MessengerChat';
+import { BookedPage } from './pages/BookedPage';
 
 export const AccountTourist = () => {
   const [width, setWindowWidth] = useState(0);
@@ -49,6 +50,7 @@ export const AccountTourist = () => {
                     />
                     <Route index path="profile" element={<Profile/>}/>
                     <Route path="orders" element={<Orders/>}/>
+                    <Route path="bookmarked" element={<BookedPage />}/>
                     <Route path="reviews" element={<Reviews />}/>
                     <Route path="settings" element={<Settings />}/>
                     <Route path="messenger" element={<Messenger />}/>

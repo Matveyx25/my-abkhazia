@@ -1317,6 +1317,9 @@ button{
     .decorations-section .housing-catalog__searching-results-image img{
         width: 100% !important;
     }
+    .decorations-section .housing-catalog__searching-results-image img.booked-heart{
+        width: 24px !important;
+    }
     .account-page__filter-fill label{
         width: 100%;
         text-align: center;
