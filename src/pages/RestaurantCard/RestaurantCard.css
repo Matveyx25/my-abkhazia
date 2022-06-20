@@ -10,6 +10,9 @@
 .hotel-number .form-time__input-wrapper {
   top: 50px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 20px;
+  border-radius: 25px;
 }
 .calendar__reservation-information-close-half
   .reservation-information-close__number {

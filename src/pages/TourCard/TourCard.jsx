@@ -13,6 +13,7 @@ import HotelNumber from "../../components/HotelNumber/HotelNumber";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarCardReservation from "../../components/CalendarCardReservation/CalendarCardReservation";
+import Checkbox from "../../components/Checkbox/Checkbox";
 
 const Zaglushka = [
   {
@@ -597,13 +598,13 @@ const TourCard = () => {
                   {optionsReservationModalWindow && (
                     <div className="reservation__dop-options">
                       <div className="reservation__dop-options-wrapper">
-                        {Options.map((ourOption) => (
+                        {Options.map((ourOption, index) => (
                           <>
                             <div
                               className="dop-options__our-option"
                               onClick={() => tongleDopOption(ourOption.title)}
                             >
-                              <div className="dop-options__our-option-title">
+                              {/* <div className="dop-options__our-option-title">
                                 <div className="dop-options__our-option-circle">
                                   {" "}
                                   {dopOptionsArr.indexOf(ourOption.title) !==
@@ -617,7 +618,12 @@ const TourCard = () => {
                                 <p className="dop-options__our-option-text">
                                   {ourOption.title}
                                 </p>
-                              </div>
+                              </div> */}
+                              <Checkbox 
+                              inputName="options"
+                              inputValue={ourOption.title}
+                              inputId={"option" + index}
+                              labelText={ourOption.title}/>
                               {ourOption.list.map((biba) => (
                                 <div className="our-option-text__item">
                                   <p className="our-option-text__item-title">

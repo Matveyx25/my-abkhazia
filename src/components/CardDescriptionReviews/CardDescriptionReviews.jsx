@@ -10,6 +10,7 @@ const CardDescriptionReviews = ({
   owner,
   descriptionSubList,
   ownerTitle,
+  imageAbout
 }) => {
   const [descriptionType, changeDescriptionType] = useState("description");
   const [modalReviews, changeVisibilityReviews] = useState(false);
@@ -428,9 +429,15 @@ const CardDescriptionReviews = ({
             </div>
             <div className="card-description__owner-option">
               <div className="owner-option__image-wrapper">
-               {ownerTitle == "Гид-Экскурсовод" && <img
+               {ownerTitle == "Гид-Экскурсовод" ? <img
                   className="owner-option__image"
                   src="/images/tour-card/excursion-man.svg"
+                  alt="protection"
+                  width="20"
+                  height="20"
+                /> : <img
+                  className="owner-option__image"
+                  src={imageAbout}
                   alt="protection"
                   width="20"
                   height="20"

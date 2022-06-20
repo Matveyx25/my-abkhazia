@@ -4,6 +4,10 @@
 .impression-card .description-properties__property-wrapper {
   justify-content: flex-start;
 }
+.impression-card .options-bar__blue-header{
+  justify-content: center;
+  gap: 100px;
+}
 .impression-card .description-properties__property-number {
   margin-left: 10px;
   font-family: "Open Sans";

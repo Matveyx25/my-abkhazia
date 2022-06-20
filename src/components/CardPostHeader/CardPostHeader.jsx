@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ImgsViewer from "react-images-viewer";
 import "./CardPostHeader.css";
+import { Modal } from '../Modal/Modal';
 
 const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
   const [cardImageNumber, changeNumber] = useState(0);
@@ -170,6 +171,11 @@ const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
         </article>
       </section>
       <section className="town-card__galery">
+        {/* <Modal visible={isOpen} onClose={closeViewer}>
+          {stateSrc.map((el, index) => (
+            <img src={el} alt="" key={index}/>
+          ))}
+        </Modal> */}
         <ImgsViewer
           imgs={stateSrc}
           isOpen={isOpen}
@@ -177,6 +183,10 @@ const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
           onClickPrev={() => setCurr(curr - 1)}
           onClickNext={() => setCurr(curr + 1)}
           currImg={curr}
+          showThumbnails={true}
+          theme={{container: {
+            background: 'rgba(0, 0, 0, 0.3)'
+          }}}
         />
         <article className="town-card__galery-item">
           <img

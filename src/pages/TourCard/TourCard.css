@@ -46,7 +46,8 @@
   position: relative;
   width: 20px;
   height: 20px;
-  background: #58b4d1;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 2px;
   margin-right: 10px;
 }

@@ -99,7 +99,7 @@ const Card = ({
           ))}
         </ul>
         <p className="searching-results__price">{price}</p>
-        <Link className="searching-results__more-link" to={link!==undefined ? link : './'}>
+        <Link className="searching-results__more-link" to={link ? link : './'}>
           {choiseText}
         </Link>
       </div>

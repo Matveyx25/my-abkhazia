@@ -237,9 +237,10 @@ const RestaurantCard = () => {
   {
     /* Блок бронирования */
   }
+  const TimesForReservation = ["10:00", "11:00", "12:00"];
   const [calendarValue, onChangeCalendar] = useState(new Date());
   const [tongler, changeTongler] = useState(false);
-  const [timeChoise, changeTime] = useState("12:00");
+  const [timeChoise, changeTime] = useState();
   const [timeModalWindow, tongleModalTime] = useState(false);
 
   const reservationTongler = () => {
@@ -422,7 +423,7 @@ const RestaurantCard = () => {
                   )}
                 </article>
               </section>
-              <div className="transfer-booking__form-item transfer-booking__form-item--time">
+              {/* <div className="transfer-booking__form-item transfer-booking__form-item--time">
                 <p className="transfer-booking__form-top-text">Время</p>
                 <img
                   className="transfer-booking__form-image transfer-booking__form-image--time"
@@ -448,6 +449,44 @@ const RestaurantCard = () => {
                       required
                     />
                     <div className="sub-menu__timer-image"></div>
+                  </div>
+                )}
+              </div> */}
+              <div className="transfer-booking__form-item transfer-booking__form-item--time">
+                <p className="transfer-booking__form-top-text">Время</p>
+                <img
+                  className="transfer-booking__form-image transfer-booking__form-image--time"
+                  src="../../images/transfer/timer.svg"
+                  width="18"
+                  height="18"
+                />
+                <input
+                  className="transfer-booking__form-search transfer-booking__form-search--time"
+                  type="text"
+                  name="transfer__time"
+                  placeholder="11:00"
+                  value={timeChoise}
+                  onClick={() => tongleTime()}
+                />
+                {timeModalWindow && (
+                  <div className="form-time__input-wrapper">
+                    {TimesForReservation.map((timeElement) => (
+                      <div
+                        className="form-time__input_radio"
+                        onClick={() => changeTime(timeElement)}
+                      >
+                        <div className="form-time__input_radio-circle">
+                          {timeChoise == timeElement ? (
+                            <div className="form-time__input_radio-circle--active"></div>
+                          ) : (
+                            <></>
+                          )}
+                        </div>
+                        <p className="form-time__input_radio-text">
+                          {timeElement}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>

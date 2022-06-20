@@ -353,9 +353,10 @@ const CarRent = () => {
                   "Год выпуска: 2017",
                   "Максимальная скорость: 240 км/ч",
                 ]}
-                price="1 000₽ ден"
+                price="1 000₽ день"
                 choiseText="Подробнее"
                 pigeonDroppings=""
+                link="/car-card"
               />
             </ul>
           </section>

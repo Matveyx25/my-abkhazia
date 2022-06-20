@@ -249,7 +249,7 @@ const Description = {
   owner: {
     ownerImage: "../../images/card-description/profile--1.jpg",
     ownerName: "Дарья",
-    ownerDate: "На сайте: с 15.04.2022",
+    ownerDate: "с 15.04.2022",
     ownerProtection: "Проверено",
     ownerHouse: 1,
     ownerHouseText: "впечатление",
@@ -278,7 +278,7 @@ const ImpressionCard = () => {
   }
   const [calendarValue, onChangeCalendar] = useState(new Date());
   const [tongler, changeTongler] = useState(false);
-  const [timeChoise, changeTime] = useState("12:00");
+  const [timeChoise, changeTime] = useState();
   const [timeModalWindow, tongleModalTime] = useState(false);
 
   const reservationTongler = () => {
@@ -411,6 +411,7 @@ const ImpressionCard = () => {
         owner={true}
         descriptionSubList={true}
         ownerTitle={"Владелец"}
+        imageAbout="/images/balloon-filled.svg"
       />
 
       {/* Блок бронирования */}
@@ -474,6 +475,7 @@ const ImpressionCard = () => {
                   className="transfer-booking__form-search transfer-booking__form-search--time"
                   type="text"
                   name="transfer__time"
+                  placeholder="11:00"
                   value={timeChoise}
                   onClick={() => tongleTime()}
                 />

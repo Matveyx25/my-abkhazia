@@ -385,6 +385,7 @@ const CarCard = () => {
         descriptionSubList={true}
         owner={true}
         ownerTitle={"Владелец"}
+        imageAbout={'/images/car.svg'}
       />
 
       {/* Блок бронирования */}
