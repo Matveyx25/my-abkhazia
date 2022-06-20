@@ -111,6 +111,18 @@
 .transfer-automobile__back {
   padding-right: 5px;
 }
+.transfer-automobile__back {
+  position: relative;
+}
+.transfer-automobile__back::before{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  left: -15px;
+  background: #DFDFDF;
+}
 .transfer-automobile__time-to-destination {
   min-width: 115px;
 }

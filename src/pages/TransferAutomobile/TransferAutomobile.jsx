@@ -382,17 +382,27 @@ const TransferAutomobile = () => {
           <div className="transfer-automobile__to">
             <p className="transfer-automobile__sub-title">Ваша поездка</p>
             <p className="transfer-automobile__sub-text">
-              Аэропорт Сочи- Гагра, 2 взрослых, 21 мая, сб., в 12:00
+              Аэропорт Сочи- Гагра, 2 взрослых,
+              <br/>
+               21 мая, сб., в 12:00
             </p>
           </div>
           <div className="transfer-automobile__back">
+            <p className="transfer-automobile__sub-title">Ваша поездка</p>
+            <p className="transfer-automobile__sub-text">
+              Аэропорт Сочи- Гагра, 2 взрослых,
+              <br/>
+               21 мая, сб., в 12:00
+            </p>
+          </div>
+          {/* <div className="transfer-automobile__back">
             <p
               className="transfer-auto__add-back-travel"
               onClick={() => tongleSides()}
             >
               Добавить поездку обратно
             </p>
-          </div>
+          </div> */}
           <div className="transfer-automobile__time-to-destination">
             <img
               className="transfer-automobile__time-to-destination-image"

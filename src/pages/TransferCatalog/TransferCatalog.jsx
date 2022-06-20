@@ -227,9 +227,9 @@ const TransferCatalog = () => {
                   <div className="transfer-catalog__booking-to">
                     <p className="booking-to__description">До</p>
                     <p className="booking-to__place">Аэропорт Сочи</p>
-                    <p className="transfer-catalog__booking-to-passengers">
+                    {/* <p className="transfer-catalog__booking-to-passengers">
                       2 взрослых пассажира, 21 мая, сб., в 12:00.{" "}
-                    </p>
+                    </p> */}
                   </div>
                   {/* Тут еще одно окно*/}
                   {searchDataAndTimeWindow && (
