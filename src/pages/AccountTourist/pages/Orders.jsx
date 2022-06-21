@@ -35,10 +35,6 @@ export const Orders = () => {
             <img src="/images/filter.svg" alt="" />
             Фильтр
           </div>
-        <button className="account-page__btn-dashed">
-          <img src="../images/plus.svg" />
-          Добавить еще услугу
-        </button>
       </div>
       <div
         className={
@@ -243,7 +239,7 @@ export const Orders = () => {
                   checked={value2 == 0}
                   onChange={changeValue2}
                 />
-                <label htmlFor="filterActive">Активные</label>
+                <label htmlFor="filterActive">Будущие</label>
                 <input
                   type="radio"
                   value="1"
@@ -252,7 +248,7 @@ export const Orders = () => {
                   checked={value2 == 1}
                   onChange={changeValue2}
                 />
-                <label htmlFor="filterNotActive">Неактивные</label>
+                <label htmlFor="filterNotActive">Завершенные</label>
                 <input
                   type="radio"
                   value="2"
@@ -261,7 +257,7 @@ export const Orders = () => {
                   checked={value2 == 2}
                   onChange={changeValue2}
                 />
-                <label htmlFor="filterDraft">Черновики</label>
+                <label htmlFor="filterDraft">Отмененные</label>
               </form>
             </div>
           </>
@@ -280,7 +276,7 @@ export const Orders = () => {
             <CardOrders
               image="/images/housing-catalog/item-1.jpg"
               title='Отель у моря “Бамбучо”, Бюджетный двухместный номер с 1 кроватью '
-              pricePaid="1 600₽"
+              pricePaid="1 600₽ за бронь"
               priceFor="28 800₽"
               status="coming"
               type="hotel"
@@ -295,7 +291,7 @@ export const Orders = () => {
             <CardOrders
               image="/images/housing-catalog/item-1.jpg"
               title='Отель у моря “Бамбучо”, Бюджетный двухместный номер с 1 кроватью '
-              pricePaid="1 600₽"
+              pricePaid="1 600₽ за бронь"
               priceFor="28 800₽"
               status="end"
               type="hotel"
@@ -310,7 +306,7 @@ export const Orders = () => {
             <CardOrders
               image="/images/housing-catalog/item-1.jpg"
               title='Отель у моря “Бамбучо”, Бюджетный двухместный номер с 1 кроватью '
-              pricePaid="1 600₽"
+              pricePaid="1 600₽ за бронь"
               priceBack="1 600₽"
               status="closed"
               type="hotel"
@@ -331,7 +327,7 @@ export const Orders = () => {
             <CardOrders
                 image="/images/housing-catalog/item-4.jpg"
                 title='Отель у моря “Бамбучо”, Бюджетный двухместный номер с 1 кроватью '
-                pricePaid="1 600₽"
+                pricePaid="1 600₽ за бронь"
                 priceFor="28 800₽"
                 status="coming"
                 type="hotel"
@@ -350,9 +346,9 @@ export const Orders = () => {
         <>
           <div className="account-page__result-wrapper">
             <CardOrders
-                image="/images/impression-card/slider--1.jpg"
+                image="/images/tours/item-1.jpg"
                 title='Эскурсия на озеро Рица'
-                pricePaid="4 700₽"
+                pricePaid="4 700₽ с доп. опциями"
                 priceFor="0₽"
                 status="coming"
                 type="excursion"
@@ -362,7 +358,22 @@ export const Orders = () => {
                 guests="2 мая, пн."
                 meetLocation="г. Гагра, улица и дом"
                 link="/hotel-card"
-                hotelType="Мини гостиница"
+                hotelType="Природа"
+                hotelLocation="Абхазия, Гагра"
+              />
+            <CardOrders
+                image="/images/tours/item-2.jpg"
+                title='Лепка из глины'
+                pricePaid="4 000₽"
+                priceFor="0₽"
+                status="coming"
+                type="impression"
+                date="от 30.04.2022"
+                dateIn="4 мая, ср."
+                guests="2 мая, пн."
+                meetLocation="г. Гагра, улица и дом"
+                link="/hotel-card"
+                hotelType="Впечатление"
                 hotelLocation="Абхазия, Гагра"
               />
           </div>
@@ -374,7 +385,7 @@ export const Orders = () => {
             <CardOrders
                 image="/images/car-card/slider--2.jpg"
                 title='Автомобиль эконом класса'
-                pricePaid="500₽"
+                pricePaid="500₽ за бронь"
                 priceFor="1 000₽"
                 status="coming"
                 type="transfer"
@@ -396,7 +407,7 @@ export const Orders = () => {
               <CardOrders
                 image="/images/car-card/slider--1.jpg"
                 title='Audi Q5'
-                pricePaid="500₽"
+                pricePaid="500₽ за бронь"
                 priceFor="1 000₽"
                 status="coming"
                 type="rent"
@@ -407,6 +418,7 @@ export const Orders = () => {
                 link="/hotel-card"
                 hotelType="Audi"
                 hotelLocation="Новый Афон, ул Харазия 2"
+                meetLocation="Новый Афон, ул Харазия 2"
               />
           </div>
         </>
@@ -417,7 +429,7 @@ export const Orders = () => {
           <CardOrders
                 image="/images/restaurant-card/item--2.jpg"
                 title='Ресторан Абаата'
-                pricePaid="500₽"
+                pricePaid="500₽ за бронь"
                 priceFor="0₽"
                 status="coming"
                 type="food"

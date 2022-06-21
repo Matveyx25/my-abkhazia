@@ -3,6 +3,16 @@ import { AccountLinkList } from "../../../components/AccountLinkList/AccountLink
 import CardEdit from "../../../components/CardEdit/CardEdit";
 import "./pages.css";
 import { Link } from "react-router-dom";
+import { RegistrationImpression } from "../../../components/Login/RegistrationImpression";
+import { RegistrationFood } from "../../../components/Login/RegistrationFood";
+import { RegistrationRent } from "../../../components/Login/RegistrationRent";
+import { RegistrationTransfer } from "../../../components/Login/RegistrationTransfer";
+import { RegistrationExcursion } from "../../../components/Login/RegistrationExcursion";
+import { RegistrationHouse } from "../../../components/Login/RegistrationHouse";
+import { RegistrationHotel } from "../../../components/Login/RegistrationHotel";
+import Radio from "../../../components/Radio/Radio";
+import { Modal } from "../../../components/Modal/Modal";
+import Checkbox from "../../../components/Checkbox/Checkbox";
 
 export const Declarations = () => {
   const [value1, setValue1] = useState(0);
@@ -11,6 +21,9 @@ export const Declarations = () => {
   const [pageType, setPageType] = useState("Отели");
 
   const [filter, setFilter] = useState(false);
+
+  const [modal, setModal] = useState(false);
+  const [accType, setAccType] = useState("Отель");
 
   const changeValue1 = (event) => {
     setValue1(event.target.value);
@@ -22,6 +35,97 @@ export const Declarations = () => {
 
   return (
     <div className="decorations-section">
+      <Modal visible={modal} onClose={() => setModal(false)}>
+        <div className="ballance-page__modal-content">
+          <h1 className="ballance-page__title">Заполните данные</h1>
+          <div className="account-page__input-block">
+            <p>Выберите услугу *</p>
+            <input
+              placeholder="Выберите услугу"
+              type="text"
+              value={accType}
+              onChange={(event) => setAccType(accType)}
+              className="account-page__input-with-radio"
+              required
+            />
+            <div className="account-page__radios">
+                <Radio
+                labelText="Отель"
+                inputId="hotelService"
+                inputName="typeService"
+                inputValue="Отель"
+                changeFunction={(event) => setAccType(event.target.value)}
+                />
+                <Radio
+                labelText="Частное жилье"
+                inputId="houseService"
+                inputName="typeService"
+                inputValue="Частное жилье"
+                changeFunction={(event) => setAccType(event.target.value)}
+                />
+                <Radio
+                labelText="Эскурсия"
+                inputId="excursionService"
+                inputName="typeService"
+                inputValue="Эскурсия"
+                changeFunction={(event) => setAccType(event.target.value)}
+                />
+                <Radio
+                labelText="Впечатление"
+                inputId="impressionService"
+                inputName="typeService"
+                inputValue="Впечатление"
+                changeFunction={(event) => setAccType(event.target.value)}
+                />
+                <Radio
+                labelText="Питание"
+                inputId="foodService"
+                inputName="typeService"
+                inputValue="Питание"
+                changeFunction={(event) => setAccType(event.target.value)}
+                />
+                <Radio
+                labelText="Аренда машин"
+                inputId="rentService"
+                inputName="typeService"
+                inputValue="Аренда машин"
+                changeFunction={(event) => setAccType(event.target.value)}
+                />
+                <Radio
+                labelText="Трансфер"
+                inputId="transferService"
+                inputName="typeService"
+                inputValue="Трансфер"
+                changeFunction={(event) => setAccType(event.target.value)}
+                />
+            </div>
+          </div>
+          {accType.includes("Отель") && <RegistrationHotel />}
+          {accType.includes("Частное жилье") && <RegistrationHouse />}
+          {accType.includes("Эскурсия") && <RegistrationExcursion />}
+          {accType.includes("Впечатление") && <RegistrationImpression />}
+          {accType.includes("Питание") && <RegistrationFood />}
+          {accType.includes("Аренда машин") && <RegistrationRent />}
+          {accType.includes("Трансфер") && <RegistrationTransfer />}
+          <div className="account-page__forget-checkbox">
+            <Checkbox
+              labelText="Нажимая на кнопку, я соглашаюсь с Условиями сотрудничества "
+              inputId="forget"
+            />
+          </div>
+          <button
+            className="account-page__btn-100"
+            onClick={() => {
+              setModal(false);
+            }}
+          >
+            Продолжить
+          </button>
+          <p className="account-page__small-text">
+            * Поля обязательны для заполнения
+          </p>
+        </div>
+      </Modal>
       <Link className="account-page__back-btn" to="../">
           <img src="/images/arrow-right-circle-fill.svg" alt=""/>
       </Link>
@@ -34,7 +138,7 @@ export const Declarations = () => {
             <img src="/images/filter.svg" alt="" />
             Фильтр
           </div>
-        <button className="account-page__btn-dashed">
+        <button className="account-page__btn-dashed" onClick={() => setModal(true)}>
           <img src="../images/plus.svg" />
           Добавить еще услугу
         </button>

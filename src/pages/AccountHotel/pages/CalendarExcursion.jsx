@@ -8,6 +8,7 @@ import { TouristCard } from "../../../components/TouristCard/TouristCard";
 import { GuestsInput } from "../../../components/GuestsInput/GuestsInput";
 import { TimeInput } from "../../../components/TimeInput/TimeInput";
 import Checkbox from "../../../components/Checkbox/Checkbox";
+import { WeakInputs } from "../../../components/WeakInputs/WeakInputs";
 
 export const CalendarExcursion = () => {
   const [calendarId, setCalendar] = useState(1);
@@ -32,6 +33,7 @@ export const CalendarExcursion = () => {
   const [weak, setWeak] = useState([])
   const [timer1, setTimer1] = useState()
   const [timer2, setTimer2] = useState()
+  const [sales, setSales] = useState([{ value: "", id: 1 }]);
 
   const [activeUser, setActiveUser] = useState(false);
 
@@ -178,125 +180,21 @@ export const CalendarExcursion = () => {
         <div className={s.modalContent}>
         <p>День недели и время</p>
         <div className={s.row30}>
-        <div className={s.inputsModalWrapper}>
-        <div className={s.weakInput}>
-            <img
-              src="/images/transfer/calendar.svg"
-              width="13.5"
-              height="15"
-              alt=""
-            />
-            <input
-              placeholder="Выберите день недели"
-              type="text"
-              value={weak}
-              onChange={() => setWeak(weak)}
-              className="account-page__input-with-radio"
-              required
-            />
-            <div className={s.checkboxesBlock}>
-              <Checkbox
-                labelText="Понидельник"
-                inputId="pn"
-                inputName="weak"
-                inputValue="Понидельник"
-                changeFunction={(event) => setWeak(event.target.checked ?
-                  [...weak ,event.target.value] :
-                 weak.filter(item => item != event.target.value))}
-              />
-              <Checkbox
-                labelText="Вторник"
-                inputId="pn"
-                inputName="weak"
-                inputValue="Понидельник"
-                changeFunction={(event) => setWeak(event.target.checked ?
-                  [...weak ,event.target.value] :
-                 weak.filter(item => item != event.target.value))}
-              />
-              <Checkbox
-                labelText="Среда"
-                inputId="sr"
-                inputName="weak"
-                inputValue="Среда"
-                changeFunction={(event) => setWeak(event.target.checked ?
-                  [...weak ,event.target.value] :
-                 weak.filter(item => item != event.target.value))}
-              />
-              <Checkbox
-                labelText="Четверг"
-                inputId="cht"
-                inputName="weak"
-                inputValue="Четверг"
-                changeFunction={(event) => setWeak(event.target.checked ?
-                  [...weak ,event.target.value] :
-                 weak.filter(item => item != event.target.value))}
-              />
-              <Checkbox
-                labelText="Пятница"
-                inputId="pt"
-                inputName="weak"
-                inputValue="Пятница"
-                changeFunction={(event) => setWeak(event.target.checked ?
-                  [...weak ,event.target.value] :
-                 weak.filter(item => item != event.target.value))}
-              />
-              <Checkbox
-                labelText="Суббота"
-                inputId="sb"
-                inputName="weak"
-                inputValue="Суббота"
-                changeFunction={(event) => setWeak(event.target.checked ?
-                  [...weak ,event.target.value] :
-                 weak.filter(item => item != event.target.value))}
-              />
-              <Checkbox
-                labelText="Воскресенье"
-                inputId="vs"
-                inputName="weak"
-                inputValue="Воскресенье"
-                changeFunction={(event) => setWeak(event.target.checked ?
-                  [...weak ,event.target.value] :
-                 weak.filter(item => item != event.target.value))}
-              />
+        {sales.map((el, index) => (
+              <WeakInputs key={index} id={el.id}/>
+            ))}
+            <div
+              className={s.addInputsBlock}
+              onClick={() =>
+                setSales([
+                  ...sales,
+                  { value: "", id: sales[sales.length - 1].id + 1 },
+                ])
+              }
+            >
+              <img src="/images/plus-add-hotel.svg" alt="" />
+              <p>Добавить еще день недели и время</p>
             </div>
-            </div>
-            <div className={s.weakInput}>
-            <img
-                src="/images/transfer/timer.svg"
-                width="18"
-                height="18"
-                alt=""
-            />
-            <input
-              placeholder="Выберите время Со скольки"
-              type="text"
-              value={timer1}
-              onChange={(event) => setTimer1(event.target.value)}
-              className="account-page__input-with-radio"
-              required
-            />
-            </div>
-            <div className={s.weakInput}>
-              <img
-                  src="/images/transfer/timer.svg"
-                  width="18"
-                  height="18"
-                  alt=""
-              />
-            <input
-              placeholder="Выберите время До скольки"
-              type="text"
-              value={timer2}
-              onChange={(event) => setTimer2(event.target.value)}
-              className="account-page__input-with-radio"
-              required
-            />
-            </div>
-        </div>
-        <div className={s.addInputsBlock}>
-          <img src="/images/plus-add-hotel.svg" alt="" />
-          <p>Добавить еще день недели и время</p>
-        </div>
         </div>
        
           <button className={`${s.btn160} ${s.mt30}`} disabled>

@@ -377,6 +377,7 @@ const HousingCatalog = () => {
                 price="2 000₽ сутки"
                 choiseText="Подробнее"
                 pigeonDroppings="dayMonth"
+                link="/house-card"
               />
               <Card
                 image="../images/housing-catalog/item-4.jpg"
@@ -393,6 +394,7 @@ const HousingCatalog = () => {
                 price="1 000₽ сутки"
                 choiseText="Подробнее"
                 pigeonDroppings="day"
+                link="/room-card"
               />
             </ul>
           </section>

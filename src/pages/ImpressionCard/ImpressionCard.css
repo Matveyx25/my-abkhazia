@@ -20,6 +20,9 @@
 .hotel-number .transfer-booking__form-item .transfer-booking__form-search {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
+.hotel-number .transfer-booking__form-item--time{
+  box-shadow: none !important;
+}
 .form-time__input_radio {
   display: flex;
   justify-content: flex-start;

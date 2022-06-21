@@ -119,6 +119,14 @@
 .calendar__reservation .transfer-booking__form-search {
   color: #000000;
 }
+.calendar__body .react-calendar__navigation__label span{
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
 .calendar__body .react-calendar__navigation__label__labelText--from {
   font-family: "Century Gothic";
   font-style: normal;

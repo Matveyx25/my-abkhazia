@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import ReactCodeInput from "react-code-input";
 import { Link } from "react-router-dom";
+import { useTimer } from "react-timer-hook";
 import Checkbox from "../../../components/Checkbox/Checkbox";
 import { RegistrationExcursion } from "../../../components/Login/RegistrationExcursion";
 import { RegistrationFood } from "../../../components/Login/RegistrationFood";
@@ -15,53 +17,23 @@ import "./pages.css";
 
 export const Profile = () => {
   const [modal, setModal] = useState(false);
-  const [modal2, setModal2] = useState(false);
   const [accType, setAccType] = useState("Отель");
   const [hasService, setHasService] = useState(false);
+  const [confirmEmailModal, setConfirmEmailModal] = useState(false);
+  const [confirmPhoneModal, setConfirmPhoneModal] = useState(false);
 
-  const [service, setService] = useState();
-  const [role, setRole] = useState();
+
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 60);
+
+  const { seconds, minutes, restart } = useTimer({
+    time,
+    onExpire: () => console.warn("onExpire called"),
+  });
 
   return (
     <div className="profile-page">
       <Modal visible={modal} onClose={() => setModal(false)}>
-        <div className="ballance-page__modal-content">
-          <h1 className="ballance-page__title">Заполните данные</h1>
-          <div className="account-page__input-block">
-            <p>Выберите услугу *</p>
-            <input
-              placeholder="Выберите вашу услугу"
-              type="text"
-              value={service}
-              onChange={(event) => setService(event.target.value)}
-              required
-            />
-          </div>
-          <div className="account-page__input-block">
-            <p>Ваша должность *</p>
-            <input
-              placeholder="Введите вашу должность "
-              type="text"
-              value={role}
-              onChange={(event) => setRole(event.target.value)}
-              required
-            />
-          </div>
-          <button
-            className="account-page__btn-100"
-            onClick={() => {
-              setModal(false);
-              setModal2(true);
-            }}
-          >
-            Продолжить
-          </button>
-          <p className="account-page__small-text">
-            * Поля обязательны для заполнения
-          </p>
-        </div>
-      </Modal>
-      <Modal visible={modal2} onClose={() => setModal2(false)}>
         <div className="ballance-page__modal-content">
           <h1 className="ballance-page__title">Заполните данные</h1>
           <div className="account-page__input-block">
@@ -142,7 +114,7 @@ export const Profile = () => {
           <button
             className="account-page__btn-100"
             onClick={() => {
-              setModal2(false);
+              setModal(false);
               setHasService(true)
             }}
           >
@@ -152,6 +124,59 @@ export const Profile = () => {
             * Поля обязательны для заполнения
           </p>
         </div>
+      </Modal>
+      <Modal
+        visible={confirmEmailModal}
+        onClose={() => setConfirmEmailModal(false)}
+      >
+        <h1 className="ballance-page__title">Подтвердить E-mail</h1>
+        <div className="ballance-page__modal-content">
+          <p className="ballance-page__center-text">
+            На Вашу почту <srtong>nastenarodionova1993@mail.ru</srtong>{" "}
+            отправлено письмо с ссылкой для подтверждения
+          </p>
+          <div className="ballance-page__company-imgs account-page__mt25">
+            <img src="/images/mail_ru.svg" alt="" />
+            <img src="/images/ya_mail.svg" alt="" />
+            <img src="/images/google_mail.svg" alt="" />
+          </div>
+        </div>
+      </Modal>
+      <Modal
+        visible={confirmPhoneModal}
+        onClose={() => setConfirmPhoneModal(false)}
+      >
+        <p className="ballance-page__title">Подтвердите номер</p>
+        <p>Введите код, отправленный на номер: +7 (927) 655-45-24:</p>
+        <ReactCodeInput
+          type="number"
+          fields={4}
+          inputStyle={{
+            width: 45,
+            height: 45,
+            border: "1px solid rgba(0, 0, 0, 0.3)",
+            borderRadius: 10,
+            marginRight: 10,
+            fontSize: 18,
+            padding: 10,
+            boxSizing: "border-box",
+          }}
+        />
+        {minutes + seconds != 0 ? (
+          <p>
+            Новый код можно получить через:{" "}
+            <span className="account-page__timer">
+              {minutes}:{seconds}
+            </span>
+          </p>
+        ) : (
+          <span
+            className="account-page__timer-link"
+            onClick={() => restart(time)}
+          >
+            Получить новый код
+          </span>
+        )}
       </Modal>
       <div className="account-page__section">
         <Link className="account-page__back-btn" to="../">
@@ -184,12 +209,12 @@ export const Profile = () => {
               <li>
                 <span className="mute">Телефон:</span>
                 +7 (927) 655-45-24
-                <a href="#">Подтвердить номер телефона</a>
+                <a href="#" onClick={() => setConfirmPhoneModal(true)}>Подтвердить номер телефона</a>
               </li>
               <li>
                 <span className="mute">E-mail:</span>
                 nastenarodionova1993@mail.ru
-                <a href="#">Подтвердить E-mail</a>
+                <a href="#" onClick={() => setConfirmEmailModal(true)}>Подтвердить E-mail</a>
               </li>
               <li>
                 <span className="mute">Дата рождения:</span>
@@ -226,7 +251,7 @@ export const Profile = () => {
         </div>
       )}
       <div className="account-page__row">
-        <button className="account-page__btn">Редактировать профиль</button>
+        <Link to="../settings" className="account-page__btn mr">Редактировать профиль</Link>
         <button
           className="account-page__btn-outline"
           onClick={() => setModal(true)}

@@ -3,14 +3,19 @@ import s from "./Create.module.css";
 import Radio from "../../../../components/Radio/Radio";
 import ReactImageUploading from "react-images-uploading";
 import { Link } from "react-router-dom";
+import { CounterInput } from "../../../../components/CounterInput/CounterInput";
 
 export const CreateExcursion = () => {
   const [excursionName, setExcursionName] = useState(
     "Экскурсия на озеро Рица"
   );
   const [excursionType, setExcursionType] = useState("");
+  const [excursionClass, setExcursionClass] = useState("");
   const [fromPlace, setFromPlace] = useState();
   const [notePlace, setNotePlace] = useState();
+  const [hours, setHours] = useState(0);
+  const [days, setDays] = useState(0);
+  const [people, setPeople] = useState(0);
   const [excursionLocation, setExcursionLocation] = useState(
     "Гагра"
   );
@@ -84,11 +89,56 @@ export const CreateExcursion = () => {
               required
             />
             <div className="account-page__radios">
+            <Radio
+                labelText="Туры выходного дня"
+                inputId="weekend"
+                inputName="excursionType"
+                inputValue="Туры выходного дня"
+                changeFunction={(event) =>
+                  setExcursionType(event.target.value)
+                }
+              />
+              <Radio
+                labelText="Религиозные"
+                inputId="religion"
+                inputName="excursionType"
+                inputValue="Религиозные"
+                changeFunction={(event) =>
+                  setExcursionType(event.target.value)
+                }
+              />
+              <Radio
+                labelText="История и культура"
+                inputId="history"
+                inputName="excursionType"
+                inputValue="История и культура"
+                changeFunction={(event) =>
+                  setExcursionType(event.target.value)
+                }
+              />
               <Radio
                 labelText="Природа"
                 inputId="nature"
-                inputName="excurtionType"
+                inputName="excursionType"
                 inputValue="Природа"
+                changeFunction={(event) =>
+                  setExcursionType(event.target.value)
+                }
+              />
+              <Radio
+                labelText="Архитектура"
+                inputId="architecture"
+                inputName="excursionType"
+                inputValue="Архитектура"
+                changeFunction={(event) =>
+                  setExcursionType(event.target.value)
+                }
+              />
+              <Radio
+                labelText="Экстремальные"
+                inputId="extreme"
+                inputName="excursionType"
+                inputValue="Экстремальные"
                 changeFunction={(event) =>
                   setExcursionType(event.target.value)
                 }
@@ -114,6 +164,46 @@ export const CreateExcursion = () => {
               onChange={(event) => setExcursionLocation(event.target.value)}
               required
             />
+          </div>
+          <div className="account-page__input-block">
+            <p>Вид экскурсии*</p>
+            <input
+              placeholder="Выберите вид экскурсии"
+              type="text"
+              value={excursionClass}
+              onChange={() => setExcursionClass(excursionClass)}
+              className="account-page__input-with-radio"
+              required
+            />
+            <div className="account-page__radios">
+              <Radio
+                labelText="Групповая"
+                inputId="group"
+                inputName="excursionClass"
+                inputValue="Групповая"
+                changeFunction={(event) =>
+                  setExcursionClass(event.target.value)
+                }
+              />
+              <Radio
+                labelText="Индивидуальная"
+                inputId="individual"
+                inputName="excursionClass"
+                inputValue="Индивидуальная"
+                changeFunction={(event) =>
+                  setExcursionClass(event.target.value)
+                }
+              />
+            </div>
+          </div>
+          <div className={`${s.mt45} ${s.w317}`}>
+            <CounterInput label="Длительность (часов)*" value={hours} onUpdate={setHours}/>
+          </div>
+          <div className={`${s.mt45} ${s.w317}`}>
+            <CounterInput label="Кол-во дней*" value={days} onUpdate={setDays}/>
+          </div>
+          <div className={`${s.w317}`}>
+            <CounterInput label="Кол-во человек (максимум)*" value={people} onUpdate={setPeople}/>
           </div>
         </div>
       </form>
@@ -220,10 +310,10 @@ export const CreateExcursion = () => {
       </div>
       <div className={`${s.row30} ${s.mt30}`}>
     <div>
-      <h2>Место отправки*</h2>
+      <h2>Место встречи*</h2>
       <div className={s.inputBlock}>
         <textarea
-          placeholder="Введите место отправки"
+          placeholder="Введите место встречи"
           value={fromPlace}
           onChange={(event) => setFromPlace(event.target.value)}
           required

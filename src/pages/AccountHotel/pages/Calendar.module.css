@@ -406,7 +406,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-    font-family: 'Century Gothic';
+    font-family: 'Century Gothic' !important;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;

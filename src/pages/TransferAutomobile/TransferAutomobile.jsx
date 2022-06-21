@@ -378,6 +378,7 @@ const TransferAutomobile = () => {
       </section>
       {/* наша панель выбора предложения*/}
       <section className="transfer-automobile__offer">
+      {!mainFormWindow ?
         <article className="transfer-automobile__offer-body">
           <div className="transfer-automobile__to">
             <p className="transfer-automobile__sub-title">Ваша поездка</p>
@@ -388,7 +389,7 @@ const TransferAutomobile = () => {
             </p>
           </div>
           <div className="transfer-automobile__back">
-            <p className="transfer-automobile__sub-title">Ваша поездка</p>
+            <p className="transfer-automobile__sub-title">Поездка обратно</p>
             <p className="transfer-automobile__sub-text">
               Аэропорт Сочи- Гагра, 2 взрослых,
               <br/>
@@ -422,7 +423,7 @@ const TransferAutomobile = () => {
             Изменить маршрут
           </p>
         </article>
-        {mainFormWindow && (
+        : 
           <form action="" className="transfer-booking__form">
             <div
               className="transfer-booking__form-item"
@@ -753,7 +754,7 @@ const TransferAutomobile = () => {
               value="Найти"
             />
           </form>
-        )}
+        }
         {bothSides && (
           <form
             action=""

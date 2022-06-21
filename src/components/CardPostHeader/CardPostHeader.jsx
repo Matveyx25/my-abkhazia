@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ImgsViewer from "react-images-viewer";
+import { Carousel } from 'react-carousel-minimal';
 import "./CardPostHeader.css";
 import { Modal } from '../Modal/Modal';
 
@@ -171,23 +171,23 @@ const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
         </article>
       </section>
       <section className="town-card__galery">
-        {/* <Modal visible={isOpen} onClose={closeViewer}>
-          {stateSrc.map((el, index) => (
-            <img src={el} alt="" key={index}/>
-          ))}
-        </Modal> */}
-        <ImgsViewer
-          imgs={stateSrc}
-          isOpen={isOpen}
-          onClose={closeViewer}
-          onClickPrev={() => setCurr(curr - 1)}
-          onClickNext={() => setCurr(curr + 1)}
-          currImg={curr}
-          showThumbnails={true}
-          theme={{container: {
-            background: 'rgba(0, 0, 0, 0.3)'
-          }}}
-        />
+        <Modal visible={isOpen} onClose={closeViewer}>
+          <Carousel
+              data={[...stateSrc].map(el => ({image: el.src}))}
+              width="920px"
+              height="540px"
+              slideNumber={true}
+              slideImageFit="cover"
+              thumbnails={true}
+              thumbnailWidth="160px"
+              thumbnailHeight="160px"
+              style={{
+                textAlign: "center",
+                width: "920px",
+                margin: "0 35px"
+              }}
+            />
+        </Modal>
         <article className="town-card__galery-item">
           <img
             className="table-message__item__absolute-image"

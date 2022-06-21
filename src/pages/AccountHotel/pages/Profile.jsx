@@ -84,7 +84,7 @@ export const Profile = () => {
             </div>
         </div>
         <div className="account-page__row">
-            <button className="account-page__btn">Редактировать профиль</button>
+            <Link to="../settings" className="account-page__btn mr">Редактировать профиль</Link>
             <button className="account-page__btn-outline">Стать туристом</button>
         </div>
     </div>

@@ -26,6 +26,7 @@ export const CardOrders = ({
   locationTo
 }) => {
   const [modal, setModal] = useState(false)
+  const [modal2, setModal2] = useState(false)
   
   const [ratingOwner, setRatingOwner] = useState(0)
   const [ratingComfort, setRatingComfort] = useState(0)
@@ -117,10 +118,28 @@ export const CardOrders = ({
             className="account-page__btn-100"
             onClick={() => {
               setModal(false);
+              setModal2(true)
             }}
           >
             Отправить
           </button>
+        </div>
+      </Modal>
+      <Modal visible={modal2} onClose={() => setModal2(false)}>
+        <h1 className="ballance-page__title">Оставить отзыв об отеле</h1>
+        <div className="ballance-page__modal-content">
+          <p className="ballance-page__center-text">
+          Спасибо за ваш отзыв!<br/>
+          Все отзывы находятся в разделе “Отзывы”
+          </p>
+          <div className="balance-page__btns">
+            <button
+              className="account-page__btn"
+              onClick={() => setModal2(false)}
+            >
+              В  личный кабинет
+            </button>
+          </div>
         </div>
       </Modal>
       <div className="housing-catalog__searching-results-image">
@@ -183,7 +202,20 @@ export const CardOrders = ({
               Дополнительные опции: <span>{options}</span>
             </p>}
             <p className="searching-results__date">
-            Место встречи: <span>{meetLocation}</span>
+              Место отправки: <span>{meetLocation}</span>
+            </p>
+          </>
+        )}
+        {type == "impression" && (
+          <>
+            <p className="searching-results__date">
+              Дата: <span>{dateIn}</span>
+            </p>
+            <p className="searching-results__date">
+              Гости: <span>{guests}</span>
+            </p>
+            <p className="searching-results__date">
+              Место встречи:: <span>{meetLocation}</span>
             </p>
           </>
         )}
@@ -197,6 +229,9 @@ export const CardOrders = ({
             </p>
             <p className="searching-results__date">
               Гости: <span>{guests}</span>
+            </p>
+            <p className="searching-results__date">
+            Место встречи: <span>{meetLocation}</span>
             </p>
           </>
         )}
@@ -231,8 +266,7 @@ export const CardOrders = ({
         )}
 
         <p className="searching-results__price-order">
-          <p><span>Оплачено:</span>{pricePaid}
-          {type == "excursion" ? " с доп. опциями" : " за бронь"}</p>
+          <p><span>Оплачено:</span>{pricePaid}</p>
           {status == 'closed' ?
            <p className="back-price">
            <span>
@@ -244,6 +278,7 @@ export const CardOrders = ({
             <span>
               {type == "hotel" && "Оплата хозяину:"}
               {type == "excursion" && "Оплата гиду-экскурсоводу:"}
+              {type == "impression" && "Оплата владельцу:"}
               {type == "rent" && "Оплата владельцу:"}
               {type == "transfer" && "Оплата владельцу:"}
               {type == "food" && "Оплата владельцу:"}
@@ -260,7 +295,7 @@ export const CardOrders = ({
                   to={link !== undefined ? link : "./"}
                 >
                   {type == "hotel" && 'Написать владельцу'}
-                  {type == "excursion" && 'Написать гиду'}
+                  {(type == "excursion" || type == "impression") && 'Написать гиду'}
                   {type == "rent" && 'Написать владельцу'}
                   {type == "transfer" && 'Написать компании'}
                   {type == "food" && 'Написать компании'}
@@ -280,9 +315,17 @@ export const CardOrders = ({
               >
                   {type == "hotel" && 'Оставить отзыв об отеле'}
                   {type == "excursion" && 'Оставить отзыв об экскурсии'}
+                  {type == "impression" && 'Оставить отзыв о впечатлении'}
                   {type == "rent" && 'Оставить отзыв о компании'}
                   {type == "transfer" && 'Оставить отзыв о трансфере'}
                   {type == "food" && 'Оставить отзыв о ресторане'}
+              </button>
+            )}
+            {status == "closed" && (
+              <button
+              className="searching-results__calendar-btn"
+              >
+                  Удалить заказ
               </button>
             )}
           </div>

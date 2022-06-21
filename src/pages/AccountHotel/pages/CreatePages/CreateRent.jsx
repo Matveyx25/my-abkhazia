@@ -12,6 +12,7 @@ export const CreateRent = () => {
 
   const [modalText, setModalText] = useState("");
   const [desc, setDesc] = useState("");
+  const [fromPlace, setFromPlace] = useState("");
   const [requirements, setRequirements] = useState([]);
   const [options, setOptions] = useState([]);
 
@@ -260,6 +261,19 @@ export const CreateRent = () => {
         value={desc}
         onChange={(event) => setDesc(event.target.value)}
       ></textarea>
+      <div className={`${s.row30} ${s.mt30}`}>
+      <div>
+        <h2>Место встречи:</h2>
+        <div className={s.inputBlock}>
+          <textarea
+            placeholder="Введите место встречи"
+            value={fromPlace}
+            onChange={(event) => setFromPlace(event.target.value)}
+            required
+          />
+        </div>
+        </div>
+      </div>
       <h2 className="account-page__input-block-title">Условия аренды</h2>
       <div className={s.row30}>
             <div>

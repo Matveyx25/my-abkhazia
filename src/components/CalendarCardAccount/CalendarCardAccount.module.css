@@ -82,6 +82,10 @@
     margin-top: 10px;
     box-sizing: border-box;
 }
+.inputWrapper input{
+    outline: none !important;
+}
+
 .inputWrapper img{
     width: 18px;
     height: 18px;

@@ -20,6 +20,8 @@ import ReportProblem from "./pages/ReportProblem/ReportProblem";
 import CheckData from "./pages/CheckData/CheckData";
 import { AccountHotel } from './pages/AccountHotel/AccountHotel';
 import { AccountTourist } from "./pages/AccountTourist/AccountTourist";
+import HouseCard from "./pages/HousingCard/HouseCard";
+import RoomCard from "./pages/HousingCard/RoomCard";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
           <Route path="/cooking" element={<Cooking />} />
 
           <Route path="/housing-card" element={<HousingCard />} />
+          <Route path="/house-card" element={<HouseCard />} />
+          <Route path="/room-card" element={<RoomCard />} />
           <Route path="/hotel-card" element={<HotelCard />} />
           <Route path="/tour-card" element={<TourCard />} />
           <Route path="/impression-card" element={<ImpressionCard />} />

@@ -47,7 +47,7 @@ export const CreateImpression = () => {
       <form action="" className="account-page__settings-form">
         <div className="account-page__inputs-row">
           <div className="account-page__input-block">
-            <p>Навзание экскурсии*</p>
+            <p>Название впечатления*</p>
             <input
               placeholder="Навзание экскурсии"
               type="text"
@@ -177,10 +177,10 @@ export const CreateImpression = () => {
       ></textarea>
       <div className={`${s.row30} ${s.mt30}`}>
     <div>
-      <h2>Место отправки*</h2>
+      <h2>Место встречи*</h2>
       <div className={s.inputBlock}>
         <textarea
-          placeholder="Введите место отправки"
+          placeholder="Введите место встречи"
           value={fromPlace}
           onChange={(event) => setFromPlace(event.target.value)}
           required

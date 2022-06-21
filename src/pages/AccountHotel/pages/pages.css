@@ -187,7 +187,7 @@
     flex-direction: row;
 }
 
-.account-page__row button:not(:last-child) {
+.account-page__row a.mr {
     margin-right: 34px;
 }
 

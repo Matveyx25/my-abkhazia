@@ -139,7 +139,7 @@ export const Settings = () => {
             className="account-page__btn-100"
             onClick={() => {
               setEditPhone2(false);
-              confirmPhoneModal(true);
+              setConfirmPhoneModal(true);
               restart(time);
             }}
           >
@@ -396,7 +396,7 @@ export const Settings = () => {
           <div className="account-page__input-block">
             <p>Дата рождения</p>
             <input
-              placeholder="Выберите вашу дату рождения"
+              placeholder="Введите дату рождения"
               value={date}
               onChange={(event) => setDate(event.target.value)}
               type="text"
