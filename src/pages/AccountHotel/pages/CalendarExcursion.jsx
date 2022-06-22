@@ -22,18 +22,22 @@ export const CalendarExcursion = () => {
   const [priceBaby2, setPriceBaby2] = useState("Бесплатно");
 
   const [phone, setPhone] = useState();
+  const [phone2, setPhone2] = useState();
   const [openedForReserved, setOpenedForReserved] = useState(true);
   const [openedForReserved2, setOpenedForReserved2] = useState(true);
   const [touristName, setTouristName] = useState();
+  const [touristName2, setTouristName2] = useState();
   const [desc, setDesc] = useState("Экологичсекий сбор на озере Рица");
 
   const [modal, setModal] = useState(false);
   const [modal2, setModal2] = useState(false);
   const [calendarModal, setCalendarModal] = useState(false);
   const [filter, setFilter] = useState(0);
-  const [weak, setWeak] = useState([])
-  const [timer1, setTimer1] = useState()
-  const [timer2, setTimer2] = useState()
+  const [tourists, setTourists] = useState()
+  const [calendarValue, setCalendarValue] = useState()
+  const [tourists2, setTourists2] = useState()
+  const [calendarValue2, setCalendarValue2] = useState()
+  const [time, setTime] = useState()
   const [sales, setSales] = useState([{ value: "", id: 1 }]);
   const [reservedCalendars, setReservedCalendars] = useState([{id: 1}])
   const [reservedCalendars2, setReservedCalendars2] = useState([{id: 1}])
@@ -51,8 +55,8 @@ export const CalendarExcursion = () => {
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Дата экскурсии" />
-                <GuestsInput />
+                <CalendarInput label="Дата экскурсии" onChange={setCalendarValue}/>
+                <GuestsInput onChange={setTourists}/>
               </div>
               <div className={s.ModalRow}>
                 <div className={s.inputBlock}>
@@ -77,9 +81,17 @@ export const CalendarExcursion = () => {
                 </div>
               </div>
               <div className={s.btnsRow}>
-                <button className={s.btn200} disabled>
+                <button className={s.btn200} disabled={!phone || !touristName || !calendarValue || !tourists}>
                   Применить
                 </button>
+                {(phone && touristName && calendarValue && tourists) &&
+                  <button className={`${s.btn200} ${s.orange}`} onClick={() => {
+                    setPhone('')
+                    setTouristName('')
+                    }}>
+                    Добавить еще гостя
+                  </button>
+                }
               </div>
             </div>
             <div className={s.leftBlock}>
@@ -119,19 +131,37 @@ export const CalendarExcursion = () => {
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Дата экскурсии" />
-                <TimeInput />
+                <CalendarInput label="Дата экскурсии" onChange={setCalendarValue2}/>
+                <div className={s.dateWrapper}>
+                  <p className={s.dateTitle}>Время</p>
+                  <div className={s.inputBlock}>
+                  <img
+                      src="/images/transfer/timer.svg"
+                      width="18"
+                      height="18"
+                      alt=""
+                  />
+                  <input
+                      type="text"
+                      name="transfer__time"
+                      placeholder="00:00"
+                      value={time}
+                      onChange={(event) => setTime(event.target.value)}
+                      required
+                  />
+                  </div>
+              </div>
               </div>
               <div className={s.ModalRow}>
-                <GuestsInput />
+                <GuestsInput onChange={setTourists2}/>
               </div>
               <div className={s.ModalRow}>
                 <div className={s.inputBlock}>
                   <p>Имя гостя</p>
                   <input
                     placeholder="Введите имя туриста"
-                    value={touristName}
-                    onChange={(event) => setTouristName(event.target.value)}
+                    value={touristName2}
+                    onChange={(event) => setTouristName2(event.target.value)}
                     type="text"
                     required
                   />
@@ -140,17 +170,25 @@ export const CalendarExcursion = () => {
                   <p>Телефон гостя</p>
                   <input
                     placeholder="+7 (000) 000-00-00"
-                    value={phone}
-                    onChange={(event) => setPhone(event.target.value)}
+                    value={phone2}
+                    onChange={(event) => setPhone2(event.target.value)}
                     type="text"
                     required
                   />
                 </div>
               </div>
               <div className={s.btnsRow}>
-                <button className={s.btn200} disabled>
+                <button className={s.btn200} disabled={!phone2 || !touristName2 || !calendarValue2 || !tourists2 || !time}>
                   Применить
                 </button>
+                {(phone2 && touristName2 && calendarValue2 && tourists2 && time) &&
+                  <button className={`${s.btn200} ${s.orange}`} onClick={() => {
+                    setPhone2('')
+                    setTouristName2('')
+                    }}>
+                    Добавить еще гостя
+                  </button>
+                }
               </div>
             </div>
             <div className={s.leftBlock}>

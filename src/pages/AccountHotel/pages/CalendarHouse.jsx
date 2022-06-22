@@ -14,6 +14,8 @@ export const CalendarHouse = () => {
     const [life, setLife] = useState("от 3 ночей");
     const [phone, setPhone] = useState();
     const [touristName, setTouristName] = useState();
+    const [calendar, setCalendar] = useState();
+    const [calendar2, setCalendar2] = useState();
   const [openedForReserved, setOpenedForReserved] = useState(true);
   const [reservedCalendars, setReservedCalendars] = useState([{id: 1}])
 
@@ -35,8 +37,8 @@ export const CalendarHouse = () => {
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Заезд" />
-                <CalendarInput label="Выезд" />
+                <CalendarInput label="Заезд" onChange={setCalendar}/>
+                <CalendarInput label="Выезд" onChange={setCalendar2}/>
               </div>
               <div className={s.ModalRow}>
                 <div className={s.inputBlock}>
@@ -61,9 +63,17 @@ export const CalendarHouse = () => {
                 </div>
               </div>
               <div className={s.btnsRow}>
-                <button className={s.btn200} disabled>
+                <button className={s.btn200} disabled={!phone || !touristName || !calendar || !calendar2}>
                   Применить
                 </button>
+                {(phone && touristName && calendar && calendar2) &&
+                  <button className={`${s.btn200} ${s.orange}`} onClick={() => {
+                    setPhone('')
+                    setTouristName('')
+                    }}>
+                    Добавить еще гостя
+                  </button>
+                }
               </div>
             </div>
             <div className={s.leftBlock}>

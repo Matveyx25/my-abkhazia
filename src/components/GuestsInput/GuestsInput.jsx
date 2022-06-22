@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import s from "./GuestsInput.module.css"
 
-export const GuestsInput = () => {
+export const GuestsInput = ({onChange}) => {
   const [passengersModalWindow, tongleModalPassengers] = useState(false);
   const [adult, changeAdult] = useState(0);
   const [children, changeChildren] = useState(0);
@@ -38,6 +38,7 @@ export const GuestsInput = () => {
   };
   const setPassengersInput = () => {
     setPassengers(`Взрослых ${adult}, детей ${children}, малышей ${babies}`);
+    onChange(`Взрослых ${adult}, детей ${children}, малышей ${babies}`)
     tongleModalPassengers(false);
   };
 

@@ -19,7 +19,9 @@
     color: #000000;
     margin-bottom: 20px;
 }
-
+.form-sub-menu__item{
+    position: relative;
+}
 .account-page__image-wrapper {
     width: 115px;
     height: 115px;

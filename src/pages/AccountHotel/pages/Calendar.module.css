@@ -113,15 +113,15 @@
     resize: none;
     height: 100px;
 }
+.inputBlock input:invalid,
+.inputBlock textarea:invalid{
+    border: none;
+}
 .inputBlock input:valid,
 .inputBlock input:focus,
 .inputBlock textarea:valid,
 .inputBlock textarea:focus{
     border: 1px solid #000000;
-}
-.inputBlock input:invalid,
-.inputBlock textarea:invalid{
-    border: none;
 }
 .inputBlock span{
     display: block;
@@ -325,6 +325,18 @@
     display: none;
     box-sizing: border-box;
 }
+.position{
+    position: relative;
+}
+.position input{
+    padding-left: 40px;
+}
+.position img {
+    position: absolute;
+    left: 17px;
+    top: 14px;
+    z-index: 1;
+}
 .inputsModalWrapper .weakInput input:focus + .popup{
     position: absolute;
     bottom: 0;
@@ -426,7 +438,58 @@
     flex-wrap: wrap;
     gap: 30px;
 }
+.dateTitle{
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+}
+.dateTitle img{
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+}
+.dateWrapper{
+    width: fit-content;
+    position: relative;
+}
+
+.inputBlock{
+    width: fit-content;
+    position: relative;
+    margin-top: 15px;
+}
+.inputBlock input{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    width: 262px;
+    box-sizing: border-box;
+    padding: 12px 17px;
+    padding-left: 40px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+.inputBlock input:valid,
+.inputBlock input:focus{
+    border: 1px solid #000000;
+}
+.inputBlock input:invalid{
+    border: none;
+}
+.inputBlock img{
+    position: absolute;
+    left: 17px;
+    top: 14px;
+    z-index: 1;
+}
 @media screen and (max-width: 565px){
+    .dateWrapper, .inputBlock, .inputBlock input{
+        width: 100%;
+    }
     .edit{
         width: 100%;
         margin-top: 30px;

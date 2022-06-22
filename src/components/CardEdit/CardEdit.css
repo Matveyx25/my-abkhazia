@@ -262,3 +262,26 @@
 .ballance-page__modal-content table td label{
   margin-top: 0;
 }
+@media screen and (max-width: 565px){
+  .housing-catalog__searching-results-item.order .searching-results__item-order-number{
+    margin-top: 10px;
+  }
+  .housing-catalog__searching-results-item.order .searching-results__price-order {
+    position: relative;
+    align-items: start;
+    margin-top: 15px;
+  }
+  .housing-catalog__searching-results-item.order .searching-results__edit-btn, 
+  .housing-catalog__searching-results-item.order .searching-results__calendar-btn{
+    width: 100%;
+  }
+  .housing-catalog__searching-results-item.order{
+    margin-bottom: 20px;
+  }
+  .housing-catalog__searching-results-item.order-sm .searching-results__footer{
+    margin-top: 15px;
+  }
+  .housing-catalog__searching-results-item.order-sm{
+    height: auto;
+  }
+}

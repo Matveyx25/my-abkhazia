@@ -14,10 +14,16 @@ export const CalendarTransfer = () => {
   const [priceDay, setPriceDay] = useState("2 000₽");
 
   const [phone, setPhone] = useState();
+  const [calendar, setCalendar] = useState();
+  const [trakNumber, setTrakNumber] = useState();
+  const [location, setLocation] = useState();
+  const [location2, setLocation2] = useState();
   const [backCheck, setBackCheck] = useState(false);
   const [chair, setChair] = useState(0);
   const [booster, setBooster] = useState(0);
   const [touristName, setTouristName] = useState();
+  const [tourists, setTourists] = useState();
+  const [time, setTime] = useState();
   const [openedForReserved, setOpenedForReserved] = useState(true);
 
   const [modal, setModal] = useState(false);
@@ -32,20 +38,38 @@ export const CalendarTransfer = () => {
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Дата забора" />
-                <TimeInput label="Время забора" />
+                <CalendarInput label="Дата забора" onChange={setCalendar}/>
+                <div className={s.dateWrapper}>
+                  <p className={s.dateTitle}>Время забора</p>
+                  <div className={s.inputBlock}>
+                  <img
+                      src="/images/transfer/timer.svg"
+                      width="18"
+                      height="18"
+                      alt=""
+                  />
+                  <input
+                      type="text"
+                      name="transfer__time"
+                      placeholder="12:00"
+                      value={time}
+                      onChange={(event) => setTime(event.target.value)}
+                      required
+                  />
+                  </div>
+              </div>
               </div>
               <div className={s.ModalRow}>
-                <LocationInput label="Откуда" />
-                <LocationInput label="Куда" />
+                <LocationInput label="Откуда" onChange={setLocation}/>
+                <LocationInput label="Куда" onChange={setLocation2}/>
               </div>
               <div className={s.ModalRow}>
                 <div className={s.inputBlock}>
                   <p>Номер рейса</p>
                   <input
                     placeholder="№ Введите номер рейса"
-                    value={touristName}
-                    onChange={(event) => setTouristName(event.target.value)}
+                    value={trakNumber}
+                    onChange={(event) => setTrakNumber(event.target.value)}
                     type="text"
                     required
                   />
@@ -56,8 +80,8 @@ export const CalendarTransfer = () => {
                     <img src="../images/user-filled.svg" alt="" />
                     <input
                       placeholder="Выберите кол- во пассажиров"
-                      value={phone}
-                      onChange={(event) => setPhone(event.target.value)}
+                      value={tourists}
+                      onChange={(event) => setTourists(event.target.value)}
                       type="number"
                       required
                     />
@@ -159,9 +183,20 @@ export const CalendarTransfer = () => {
                 </div>
               </div>
               <div className={s.btnsRow}>
-                <button className={s.btn200} disabled>
+              <button className={s.btn200} disabled={!phone || !touristName || !calendar || !tourists || !time || !location || !location2 || !trakNumber}>
                   Применить
                 </button>
+                {(phone && touristName && calendar && tourists && time && location && location2 && trakNumber) &&
+                  <button className={`${s.btn200} ${s.orange}`} onClick={() => {
+                    setPhone('')
+                    setTouristName('')
+                    setTourists('')
+                    setTrakNumber('')
+                    setTime('')
+                    }}>
+                    Добавить еще гостя
+                  </button>
+                }
               </div>
             </div>
             <div className={s.leftBlock}>

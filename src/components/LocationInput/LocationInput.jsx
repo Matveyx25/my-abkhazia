@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import s from "./LocationInput.module.css"
 
-export const LocationInput = ({label}) => {
+export const LocationInput = ({label, onChange}) => {
 
     const [modal, setModal] = useState(false);
     const [from, setFrom] = useState();
@@ -28,7 +28,11 @@ export const LocationInput = ({label}) => {
         <ul className={s.menu}>
           <li
             className="form-sub-menu__item"
-            onClick={() => setFrom("Аэропорт Адлера")}
+            onClick={() => {
+              setFrom("Аэропорт Адлера")
+              onChange("Аэропорт Адлера")
+              setModal(false)
+            }}
           >
             <div className="form-sub-menu__image-wrapper">
               <img
@@ -43,7 +47,11 @@ export const LocationInput = ({label}) => {
           </li>
           <li
             className="form-sub-menu__item"
-            onClick={() => setFrom("Ж/Д вокзал Адлера")}
+            onClick={() => {
+              setFrom("Ж/Д вокзал Адлера")
+              onChange("Ж/Д вокзал Адлера")
+              setModal(false)
+            }}
           >
             <div className="form-sub-menu__image-wrapper">
               <img
@@ -58,7 +66,11 @@ export const LocationInput = ({label}) => {
           </li>
           <li
             className="form-sub-menu__item"
-            onClick={() => setFrom("Ж/Д вокзал Гагра")}
+            onClick={() => {
+              setFrom("Ж/Д вокзал Гагра")
+              onChange("Ж/Д вокзал Гагра")
+              setModal(false)
+            }}
           >
             <div className="form-sub-menu__image-wrapper">
               <img
@@ -73,7 +85,11 @@ export const LocationInput = ({label}) => {
           </li>
           <li
             className="form-sub-menu__item"
-            onClick={() => setFrom("Аэропорт Сочи")}
+            onClick={() => {
+              setFrom("Аэропорт Сочи")
+              onChange("Аэропорт Сочи")
+              setModal(false)
+            }}
           >
             <div className="form-sub-menu__image-wrapper">
               <img

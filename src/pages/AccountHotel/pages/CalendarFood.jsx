@@ -21,6 +21,8 @@ export const CalendarFood = () => {
   const [timer1, setTimer1] = useState()
   const [timer2, setTimer2] = useState()
   const [tabels, setTabels] = useState(0)
+  const [calendar, setCalendar] = useState()
+  const [time, setTime] = useState()
   const [sales, setSales] = useState([{ value: "", id: 1 }]);
   const [reservedCalendars, setReservedCalendars] = useState([{id: 1}])
 
@@ -37,8 +39,26 @@ export const CalendarFood = () => {
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Дата посещения" />
-                <TimeInput />
+                <CalendarInput label="Дата посещения" onChange={setCalendar}/>
+                <div className={s.dateWrapper}>
+                    <p className={s.dateTitle}>Время</p>
+                    <div className={s.inputBlock}>
+                    <img
+                        src="/images/transfer/timer.svg"
+                        width="18"
+                        height="18"
+                        alt=""
+                    />
+                    <input
+                        type="text"
+                        name="transfer__time"
+                        placeholder="12:00"
+                        value={time}
+                        onChange={(event) => setTime(event.target.value)}
+                        required
+                    />
+                    </div>
+                </div>
               </div>
               <div className={s.ModalRow}>
                 <div className={s.inputBlock}>
@@ -63,9 +83,18 @@ export const CalendarFood = () => {
                 </div>
               </div>
               <div className={s.btnsRow}>
-                <button className={s.btn200} disabled>
+                <button className={s.btn200} disabled={!phone || !touristName || !calendar || !time}>
                   Применить
                 </button>
+                {(phone && touristName && calendar && time) &&
+                  <button className={`${s.btn200} ${s.orange}`} onClick={() => {
+                    setPhone('')
+                    setTouristName('')
+                    setTime('')
+                    }}>
+                    Добавить еще гостя
+                  </button>
+                }
               </div>
             </div>
             <div className={s.leftBlock}>

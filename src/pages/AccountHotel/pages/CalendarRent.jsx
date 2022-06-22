@@ -13,6 +13,8 @@ export const CalendarRent = () => {
   const [priceDay, setPriceDay] = useState("2 000₽");
 
   const [phone, setPhone] = useState();
+  const [calendar, setCalendar] = useState();
+  const [calendar2, setCalendar2] = useState();
   const [touristName, setTouristName] = useState();
   const [openedForReserved, setOpenedForReserved] = useState(true);
   const [activeUser, setActiveUser] = useState(false);
@@ -28,11 +30,11 @@ export const CalendarRent = () => {
           <div className={s.jcsb}>
             <div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Дата забора" />
+                <CalendarInput label="Дата забора" onChange={setCalendar}/>
                 <TimeInput label="Время забора" />
               </div>
               <div className={s.ModalRow}>
-                <CalendarInput label="Дата возврата" />
+                <CalendarInput label="Дата возврата" onChange={setCalendar2}/>
                 <TimeInput label="Время возврата" />
               </div>
               <div className={s.ModalRow}>
@@ -58,9 +60,17 @@ export const CalendarRent = () => {
                 </div>
               </div>
               <div className={s.btnsRow}>
-                <button className={s.btn200} disabled>
+              <button className={s.btn200} disabled={!phone || !touristName || !calendar || !calendar2}>
                   Применить
                 </button>
+                {(phone && touristName && calendar && calendar2) &&
+                  <button className={`${s.btn200} ${s.orange}`} onClick={() => {
+                    setPhone('')
+                    setTouristName('')
+                    }}>
+                    Добавить еще гостя
+                  </button>
+                }
               </div>
             </div>
             <div className={s.leftBlock}>

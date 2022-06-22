@@ -101,4 +101,8 @@
     .dateWrapper, .dateWrapper .inputBlock, .dateWrapper .inputBlock input{
         width: 100%;
     }
+    .clear{
+        right: 10px;
+        top: 11px !important;
+    }
 }

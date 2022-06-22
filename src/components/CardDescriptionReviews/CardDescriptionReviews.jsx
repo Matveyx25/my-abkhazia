@@ -256,20 +256,6 @@ const CardDescriptionReviews = ({
                   </article>
                 ))}
               </section>
-              <div className="card-description__rules-bar-down-wrapper">
-                {Description.rulesDangerList.map((el) => (
-                  <div className="card-description__rules-bar-down">
-                    <img
-                      className="rules-bar-down__image"
-                      src="../../images/card-description/!.svg"
-                      alt="!"
-                      width="3.78"
-                      height="17.37"
-                    />
-                    <p className="rules-bar-down__text">{el}</p>
-                  </div>
-                ))}
-              </div>
             </>
           ) : (
             <></>

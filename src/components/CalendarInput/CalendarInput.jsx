@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import s from './CalendarInput.module.css';
 import { Calendar } from 'react-calendar';
 
-export const CalendarInput = ({label, error}) => {
+export const CalendarInput = ({label, error, onChange}) => {
     const [calendarValue, onChangeCalendar] = useState(new Date());
     const [calendarModalWindow, toggleModalCalendar] = useState(false);
     const [ourDateInForm, changeOurDateInForm] = useState();
@@ -40,6 +40,7 @@ export const CalendarInput = ({label, error}) => {
         className="form-search--data__calendar-wrapper"
         onClick={(e) => {
           changeOurDateInForm(e.target.attributes["aria-label"].value)
+          onChange(e.target.attributes["aria-label"].value)
         }}
       >
         <Calendar

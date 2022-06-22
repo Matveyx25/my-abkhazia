@@ -177,14 +177,15 @@ const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
               width="920px"
               height="540px"
               slideNumber={true}
-              slideImageFit="cover"
+              slideImageFit="contain"
               thumbnails={true}
               thumbnailWidth="160px"
               thumbnailHeight="160px"
+              slideBackgroundColor="none"
               style={{
                 textAlign: "center",
                 width: "920px",
-                margin: "0 35px"
+                margin: "0 35px",
               }}
             />
         </Modal>
