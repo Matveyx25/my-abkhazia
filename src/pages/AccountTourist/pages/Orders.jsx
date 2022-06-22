@@ -100,7 +100,7 @@ export const Orders = () => {
                   checked={value2 == 0}
                   onChange={changeValue2}
                 />
-                <label htmlFor="filterActive">Активные</label>
+                <label htmlFor="filterActive">Будущие</label>
                 <input
                   type="radio"
                   value="1"
@@ -109,7 +109,7 @@ export const Orders = () => {
                   checked={value2 == 1}
                   onChange={changeValue2}
                 />
-                <label htmlFor="filterNotActive">Неактивные</label>
+                <label htmlFor="filterNotActive">Завершенные</label>
                 <input
                   type="radio"
                   value="2"
@@ -118,7 +118,7 @@ export const Orders = () => {
                   checked={value2 == 2}
                   onChange={changeValue2}
                 />
-                <label htmlFor="filterDraft">Черновики</label>
+                <label htmlFor="filterDraft">Отмененные</label>
               </form>
             </div>
           </>
@@ -174,7 +174,7 @@ export const Orders = () => {
                   checked={value2 == 0}
                   onChange={changeValue2}
                 />
-                <label htmlFor="filterActive">Активные</label>
+                <label htmlFor="filterActive">Будущие</label>
                 <input
                   type="radio"
                   value="1"
@@ -183,7 +183,7 @@ export const Orders = () => {
                   checked={value2 == 1}
                   onChange={changeValue2}
                 />
-                <label htmlFor="filterNotActive">Неактивные</label>
+                <label htmlFor="filterNotActive">Завершенные</label>
                 <input
                   type="radio"
                   value="2"
@@ -192,7 +192,7 @@ export const Orders = () => {
                   checked={value2 == 2}
                   onChange={changeValue2}
                 />
-                <label htmlFor="filterDraft">Черновики</label>
+                <label htmlFor="filterDraft">Отмененные</label>
               </form>
             </div>
           </>
@@ -230,6 +230,111 @@ export const Orders = () => {
                 <label htmlFor="filterGuest">Впечатления</label>
               </form>
               <span className="line"></span>
+              <form className="account-page__filter-fill">
+                <input
+                  type="radio"
+                  value="0"
+                  id="filterActive"
+                  name="filter2"
+                  checked={value2 == 0}
+                  onChange={changeValue2}
+                />
+                <label htmlFor="filterActive">Будущие</label>
+                <input
+                  type="radio"
+                  value="1"
+                  id="filterNotActive"
+                  name="filter2"
+                  checked={value2 == 1}
+                  onChange={changeValue2}
+                />
+                <label htmlFor="filterNotActive">Завершенные</label>
+                <input
+                  type="radio"
+                  value="2"
+                  id="filterDraft"
+                  name="filter2"
+                  checked={value2 == 2}
+                  onChange={changeValue2}
+                />
+                <label htmlFor="filterDraft">Отмененные</label>
+              </form>
+            </div>
+          </>
+        )}
+        {pageType == "Трансфер" && (
+          <>
+            <div className="account-page__filter-wrapper">
+              <form className="account-page__filter-fill">
+                <input
+                  type="radio"
+                  value="0"
+                  id="filterActive"
+                  name="filter2"
+                  checked={value2 == 0}
+                  onChange={changeValue2}
+                />
+                <label htmlFor="filterActive">Будущие</label>
+                <input
+                  type="radio"
+                  value="1"
+                  id="filterNotActive"
+                  name="filter2"
+                  checked={value2 == 1}
+                  onChange={changeValue2}
+                />
+                <label htmlFor="filterNotActive">Завершенные</label>
+                <input
+                  type="radio"
+                  value="2"
+                  id="filterDraft"
+                  name="filter2"
+                  checked={value2 == 2}
+                  onChange={changeValue2}
+                />
+                <label htmlFor="filterDraft">Отмененные</label>
+              </form>
+            </div>
+          </>
+        )}
+        {pageType == "Аренда авто" && (
+          <>
+            <div className="account-page__filter-wrapper">
+              <form className="account-page__filter-fill">
+                <input
+                  type="radio"
+                  value="0"
+                  id="filterActive"
+                  name="filter2"
+                  checked={value2 == 0}
+                  onChange={changeValue2}
+                />
+                <label htmlFor="filterActive">Будущие</label>
+                <input
+                  type="radio"
+                  value="1"
+                  id="filterNotActive"
+                  name="filter2"
+                  checked={value2 == 1}
+                  onChange={changeValue2}
+                />
+                <label htmlFor="filterNotActive">Завершенные</label>
+                <input
+                  type="radio"
+                  value="2"
+                  id="filterDraft"
+                  name="filter2"
+                  checked={value2 == 2}
+                  onChange={changeValue2}
+                />
+                <label htmlFor="filterDraft">Отмененные</label>
+              </form>
+            </div>
+          </>
+        )}
+        {pageType == "Кухня Абхазии" && (
+          <>
+            <div className="account-page__filter-wrapper">
               <form className="account-page__filter-fill">
                 <input
                   type="radio"

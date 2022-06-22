@@ -36,13 +36,13 @@ export const MessengerChat = () => {
               <p className="messenger-page__date">Сегодня</p>
                 <Message 
                   text="Здравствуйте! Хотела узнать про ваш отель и город подробнее." 
-                  image="/images/card-description/profile--2.jpg"/>
+                  image="/images/card-description/profile--2.jpg"
+                  seen={true}
+                  isEnd={true}/>
                 <Message 
                   text="Здравствуйте!" 
                   image="/images/card-description/profile--1.jpg"
-                  author='me'
-                  seen={true}
-                  isEnd={true}/>
+                  author='me'/>
               </div>
             <div className="messenger-page__send-block">
               <div className="messenger-page__input-block">

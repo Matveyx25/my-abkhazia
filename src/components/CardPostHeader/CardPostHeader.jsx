@@ -173,7 +173,7 @@ const CardPostHeader = ({ title, type, stars, reviews, adress, imagesArr }) => {
       <section className="town-card__galery">
         <Modal visible={isOpen} onClose={closeViewer}>
           <Carousel
-              data={[...stateSrc].map(el => ({image: el.src}))}
+              data={[...imagesArr].map(el => ({image: el}))}
               width="920px"
               height="540px"
               slideNumber={true}

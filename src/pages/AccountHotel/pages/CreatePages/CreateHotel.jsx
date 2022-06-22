@@ -90,11 +90,11 @@ export const CreateHotel = () => {
       </div>
       <div className="account-page__jcsb">
         <h1 className="account-page__title">Заполнение информации об отеле</h1>
-        <button className="account-page__btn160 intitle">
+        <Link className="account-page__btn160 intitle" to="../../hotel-card">
           <img src="../../images/eye-filled_white.svg" />
           <img src="../../images/eye-filled-blue.svg" className="blue-eye" />
           <p>Просмотр</p>
-        </button>
+        </Link>
       </div>
       <form action="" className="account-page__settings-form">
         <div className="account-page__inputs-row">
@@ -651,7 +651,7 @@ export const CreateHotel = () => {
           <h2 className="account-page__input-block-title">
             Ориентиры поблизости{" "}
           </h2>
-          <DistancesBlock />
+          <DistancesBlock placeholder={"Выберите рассторяние от отеля"}/>
         </div>
         <div className={s.inputsWrapper}>
           <h2 className={s.mt25}>Активный отдых:</h2>

@@ -9,6 +9,7 @@ import { TouristCard } from "../../../components/TouristCard/TouristCard";
 import { CounterInput } from '../../../components/CounterInput/CounterInput';
 import Checkbox from '../../../components/Checkbox/Checkbox';
 import { WeakInputs } from '../../../components/WeakInputs/WeakInputs';
+import { CalendarInputReserved } from "../../../components/CalendarInput/CalendarInputReserved";
 
 export const CalendarFood = () => {
   const [priceDay, setPriceDay] = useState("2 000₽");
@@ -21,6 +22,7 @@ export const CalendarFood = () => {
   const [timer2, setTimer2] = useState()
   const [tabels, setTabels] = useState(0)
   const [sales, setSales] = useState([{ value: "", id: 1 }]);
+  const [reservedCalendars, setReservedCalendars] = useState([{id: 1}])
 
 
   const [modal, setModal] = useState(false);
@@ -67,14 +69,17 @@ export const CalendarFood = () => {
               </div>
             </div>
             <div className={s.leftBlock}>
-              <CalendarInput
-                label="Заезд"
-                error="Выберите дату, недоступную для брони"
-              />
-              <button className={s.btn160} disabled>
-                Применить
-              </button>
-              <div className={s.addBtn}>
+            {reservedCalendars.map((el, index) => 
+                <CalendarInputReserved
+                  label="Заезд"
+                  error={index == 0 && "Выберите дату, недоступную для брони"}
+                  key={el.id}
+                  withOutTitle={index > 0}
+                />
+              )}
+              <div className={s.addBtn} onClick={() => {
+                setReservedCalendars([...reservedCalendars, {id: reservedCalendars[reservedCalendars.length - 1].id + 1}])
+                }}>
                 <img src="../images/plus-add-hotel.svg" alt="" />
                 Добавить еще дату
               </div>
@@ -116,9 +121,6 @@ export const CalendarFood = () => {
             </div>
         </div>
        
-          <button className={`${s.btn160} ${s.mt30}`} disabled>
-            Применить
-          </button>
           <ReservedCalendar
             type="food"
           />

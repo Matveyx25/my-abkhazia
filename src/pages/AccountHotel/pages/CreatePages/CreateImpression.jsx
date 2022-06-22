@@ -38,11 +38,11 @@ export const CreateImpression = () => {
       </div>
       <div className="account-page__jcsb">
         <h1 className="account-page__title">Заполнение информации о впечатление</h1>
-        <button className="account-page__btn160 intitle">
+        <Link className="account-page__btn160 intitle" to="../../impression-card">
           <img src="../../images/eye-filled_white.svg" />
           <img src="../../images/eye-filled-blue.svg" className="blue-eye"/>
           <p>Просмотр</p> 
-        </button>
+        </Link>
       </div>
       <form action="" className="account-page__settings-form">
         <div className="account-page__inputs-row">
@@ -71,7 +71,7 @@ export const CreateImpression = () => {
         <div className="account-page__input-block">
             <p>Вид впечатления*</p>
             <input
-              placeholder="Категория экскурсии"
+              placeholder="Выберите вид впечатления"
               type="text"
               value={excursionType}
               onChange={() => setExcursionType(excursionType)}

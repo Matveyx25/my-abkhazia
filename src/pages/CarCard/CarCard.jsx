@@ -159,6 +159,27 @@ const Description = {
       stars: 5,
     },
   ],
+  rulesList: [
+    {
+      title: "Требования:",
+      list: [
+        "Паспорт",
+        "Водительское удостоверение",
+        "Ваш возраст должен составлять как минимум 23 года",
+      ],
+    },
+    {
+      title: "Условия по топливу:",
+      list: ["Возврат с тем же количеством топлива"],
+    },
+    {
+      title: "В стоимость входит:",
+      list: [
+        "Покрытие на случай угона",
+        "Покрытие на случай ДТП и повреждений",
+      ],
+    },
+  ],
   accountsList: [
     {
       accountImage: "../../images/card-description/profile--2.jpg",
@@ -381,7 +402,7 @@ const CarCard = () => {
         blueHeader={true}
         services={false}
         accounts={true}
-        rules={false}
+        rentRules={true}
         descriptionSubList={true}
         owner={true}
         ownerTitle={"Владелец"}

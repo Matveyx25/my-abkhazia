@@ -16,11 +16,42 @@
     width: fit-content;
     position: relative;
 }
-
+.btn160{
+    display: block;
+    border: none;
+    padding: 13px;
+    width: 160px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #58B4D1;
+    border-radius: 25px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn200:hover, .btn160:hover{
+    box-shadow: 0px 4px 15px #58B4D1;
+}
+.btn200:disabled, .btn160:disabled{
+    opacity: 0.5;
+}
 .inputBlock{
     width: fit-content;
     position: relative;
     margin-top: 15px;
+}
+.clear{
+    position: absolute;
+    right: -39px;
+    left: auto !important;
+    top: 9px !important;
+    width: 24px;
+    height: 24px;
 }
 .inputBlock input{
     background: #FFFFFF;

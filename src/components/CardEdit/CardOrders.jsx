@@ -298,7 +298,7 @@ export const CardOrders = ({
                   {(type == "excursion" || type == "impression") && 'Написать гиду'}
                   {type == "rent" && 'Написать владельцу'}
                   {type == "transfer" && 'Написать компании'}
-                  {type == "food" && 'Написать компании'}
+                  {type == "food" && 'Написать владельцу'}
                 </Link>
                 <Link
                  className="searching-results__calendar-btn"

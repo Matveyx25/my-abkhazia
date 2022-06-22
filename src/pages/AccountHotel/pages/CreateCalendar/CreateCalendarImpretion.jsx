@@ -57,10 +57,6 @@ export const CreateCalendarImpretion = () => {
               <p>Добавить еще день недели и время</p>
             </div>
           </div>
-
-          <button className={`${s.btn160} ${s.mt30}`} disabled>
-            Применить
-          </button>
           <ReservedCalendar type="createExcursion" />
           <div className={s.footerBtn}>
             <button className={s.btn160} disabled>

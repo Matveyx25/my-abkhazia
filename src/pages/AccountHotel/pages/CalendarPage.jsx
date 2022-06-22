@@ -97,36 +97,6 @@ export const CalendarPage = () => {
                   />
                   <label htmlFor="filterMiniHotel">Мини-гостиницы</label>
                 </form>
-                <span className="line"></span>
-                <form className="account-page__filter-fill">
-                  <input
-                    type="radio"
-                    value="0"
-                    id="filterActive"
-                    name="filter2"
-                    checked={value2 == 0}
-                    onChange={changeValue2}
-                  />
-                  <label htmlFor="filterActive">Активные</label>
-                  <input
-                    type="radio"
-                    value="1"
-                    id="filterNotActive"
-                    name="filter2"
-                    checked={value2 == 1}
-                    onChange={changeValue2}
-                  />
-                  <label htmlFor="filterNotActive">Неактивные</label>
-                  <input
-                    type="radio"
-                    value="2"
-                    id="filterDraft"
-                    name="filter2"
-                    checked={value2 == 2}
-                    onChange={changeValue2}
-                  />
-                  <label htmlFor="filterDraft">Черновики</label>
-                </form>
               </div>
             </>
           )}
@@ -171,36 +141,6 @@ export const CalendarPage = () => {
                   />
                   <label htmlFor="filterMiniHotel">Комнаты</label>
                 </form>
-                <span className="line"></span>
-                <form className="account-page__filter-fill">
-                  <input
-                    type="radio"
-                    value="0"
-                    id="filterActive"
-                    name="filter2"
-                    checked={value2 == 0}
-                    onChange={changeValue2}
-                  />
-                  <label htmlFor="filterActive">Активные</label>
-                  <input
-                    type="radio"
-                    value="1"
-                    id="filterNotActive"
-                    name="filter2"
-                    checked={value2 == 1}
-                    onChange={changeValue2}
-                  />
-                  <label htmlFor="filterNotActive">Неактивные</label>
-                  <input
-                    type="radio"
-                    value="2"
-                    id="filterDraft"
-                    name="filter2"
-                    checked={value2 == 2}
-                    onChange={changeValue2}
-                  />
-                  <label htmlFor="filterDraft">Черновики</label>
-                </form>
               </div>
             </>
           )}
@@ -235,36 +175,6 @@ export const CalendarPage = () => {
                     onChange={changeValue1}
                   />
                   <label htmlFor="filterGuest">Впечатления</label>
-                </form>
-                <span className="line"></span>
-                <form className="account-page__filter-fill">
-                  <input
-                    type="radio"
-                    value="0"
-                    id="filterActive"
-                    name="filter2"
-                    checked={value2 == 0}
-                    onChange={changeValue2}
-                  />
-                  <label htmlFor="filterActive">Активные</label>
-                  <input
-                    type="radio"
-                    value="1"
-                    id="filterNotActive"
-                    name="filter2"
-                    checked={value2 == 1}
-                    onChange={changeValue2}
-                  />
-                  <label htmlFor="filterNotActive">Неактивные</label>
-                  <input
-                    type="radio"
-                    value="2"
-                    id="filterDraft"
-                    name="filter2"
-                    checked={value2 == 2}
-                    onChange={changeValue2}
-                  />
-                  <label htmlFor="filterDraft">Черновики</label>
                 </form>
               </div>
             </>

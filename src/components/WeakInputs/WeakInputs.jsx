@@ -170,6 +170,22 @@ export const WeakInputs = ({counter, key, id}) => {
       <div className={s.weekcounter}>
       <CounterInput label="Кол-во столиков" value={tabels} onUpdate={setTabels}/>
     </div>}
+    
+    <div className={s.btnsRow}>
+        <button className={`${s.btn160}`} disabled={!timer1 || !timer2 || weak.length == 0}>
+          Применить
+        </button>
+        {(timer1 && timer2 && weak.length > 0) && <>
+          <button className={`${s.btnOutlined}`} onClick={() => {
+            setTimer1("")
+            setTimer2("")
+            setWeak([])
+          }}>
+          Очистить
+          </button>
+         </>}
+    </div>
+         
     </div>
   );
 };

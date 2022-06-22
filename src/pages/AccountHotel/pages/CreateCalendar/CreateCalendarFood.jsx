@@ -46,10 +46,6 @@ export const CreateCalendarFood = () => {
           <p>Добавить еще день недели и время</p>
         </div>
         </div>
-
-          <button className={`${s.btn160} ${s.mt30}`} disabled={weak.length == 0 || !timer1 || !timer2}>
-            Применить
-          </button>
           <ReservedCalendar
             type="createFood"
           />

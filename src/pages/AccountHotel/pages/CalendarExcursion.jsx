@@ -9,6 +9,7 @@ import { GuestsInput } from "../../../components/GuestsInput/GuestsInput";
 import { TimeInput } from "../../../components/TimeInput/TimeInput";
 import Checkbox from "../../../components/Checkbox/Checkbox";
 import { WeakInputs } from "../../../components/WeakInputs/WeakInputs";
+import { CalendarInputReserved } from "../../../components/CalendarInput/CalendarInputReserved";
 
 export const CalendarExcursion = () => {
   const [calendarId, setCalendar] = useState(1);
@@ -34,6 +35,8 @@ export const CalendarExcursion = () => {
   const [timer1, setTimer1] = useState()
   const [timer2, setTimer2] = useState()
   const [sales, setSales] = useState([{ value: "", id: 1 }]);
+  const [reservedCalendars, setReservedCalendars] = useState([{id: 1}])
+  const [reservedCalendars2, setReservedCalendars2] = useState([{id: 1}])
 
   const [activeUser, setActiveUser] = useState(false);
 
@@ -80,14 +83,17 @@ export const CalendarExcursion = () => {
               </div>
             </div>
             <div className={s.leftBlock}>
-              <CalendarInput
-                label="Заезд"
-                error="Выберите дату, недоступную для брони"
-              />
-              <button className={s.btn160} disabled>
-                Применить
-              </button>
-              <div className={s.addBtn}>
+            {reservedCalendars.map((el, index) => 
+                <CalendarInputReserved
+                  label="Заезд"
+                  error={index == 0 && "Выберите дату, недоступную для брони"}
+                  key={el.id}
+                  withOutTitle={index > 0}
+                />
+              )}
+              <div className={s.addBtn} onClick={() => {
+                setReservedCalendars([...reservedCalendars, {id: reservedCalendars[reservedCalendars.length - 1].id + 1}])
+                }}>
                 <img src="../images/plus-add-hotel.svg" alt="" />
                 Добавить еще дату
               </div>
@@ -148,14 +154,17 @@ export const CalendarExcursion = () => {
               </div>
             </div>
             <div className={s.leftBlock}>
-              <CalendarInput
-                label="Заезд"
-                error="Выберите дату, недоступную для брони"
-              />
-              <button className={s.btn160} disabled>
-                Применить
-              </button>
-              <div className={s.addBtn}>
+            {reservedCalendars2.map((el, index) => 
+                <CalendarInputReserved
+                  label="Заезд"
+                  error={index == 0 && "Выберите дату, недоступную для брони"}
+                  key={el.id}
+                  withOutTitle={index > 0}
+                />
+              )}
+              <div className={s.addBtn} onClick={() => {
+                setReservedCalendars2([...reservedCalendars2, {id: reservedCalendars2[reservedCalendars2.length - 1].id + 1}])
+                }}>
                 <img src="../images/plus-add-hotel.svg" alt="" />
                 Добавить еще дату
               </div>
@@ -196,10 +205,6 @@ export const CalendarExcursion = () => {
               <p>Добавить еще день недели и время</p>
             </div>
         </div>
-       
-          <button className={`${s.btn160} ${s.mt30}`} disabled>
-            Применить
-          </button>
           <ReservedCalendar
             type="createExcursion"
           />

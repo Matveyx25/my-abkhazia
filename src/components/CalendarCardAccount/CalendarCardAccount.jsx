@@ -1,11 +1,29 @@
 import React from "react";
 import { useState } from "react";
+import Calendar from "react-calendar";
 import Radio from "../Radio/Radio";
 import s from "./CalendarCardAccount.module.css";
 
 export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, option, clickHandler, opened, setOpened, error}) => {
   const [from, setFrom] = useState()
   const [to, setTo] = useState()
+
+  const [calendarValue, onChangeCalendar] = useState();
+  const [calendarValue2, onChangeCalendar2] = useState();  
+  const [modalCalendar, setModalCalendar] = useState(false)  
+  const [modalCalendar2, setModalCalendar2] = useState(false)  
+
+  const changeDataInput = (e) => {
+    let our = e.target.attributes["aria-label"].value;
+    console.log(our);
+    onChangeCalendar(String(our));
+  };
+
+  const changeDataInput2 = (e) => {
+    let our = e.target.attributes["aria-label"].value;
+    console.log(our);
+    onChangeCalendar2(String(our));
+  };
 
   return (
     <div className={error ? `${s.error} ${s.r100}` : s.r100}>
@@ -41,10 +59,22 @@ export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, opt
           type="text"
           placeholder="2 мая, пн"
           className={s.input}
-          value={from}
-          onChange={(event) => setFrom(event.target.value)}
+          value={calendarValue}
+          onChange={(event) => onChangeCalendar(event.target.value)}
+          onFocus={() => setModalCalendar(true)}
           required
         />
+        {modalCalendar &&
+          <div
+          className="form-search--data__calendar-wrapper"
+          onClick={(e) => {
+            changeDataInput(e)
+            setModalCalendar(false)
+          }}
+        > <Calendar
+              onChange={onChangeCalendar}
+              value={calendarValue}
+            /></div>}
       </div>
       <h1 className={s.inputTitle}>Свободная дата До</h1>
       <div className={s.inputWrapper}>
@@ -53,10 +83,23 @@ export const CalendarCardAccount = ({id, active, label, subtitle, freeRooms, opt
           type="text"
           placeholder="30 сентября, пн"
           className={s.input}
-          value={to}
-          onChange={(event) => setTo(event.target.value)}
+          value={calendarValue2}
+          onChange={(event) => onChangeCalendar2(event.target.value)}
+          onFocus={() => setModalCalendar2(true)}
           required
         />
+       {modalCalendar2 &&
+       <div
+        className="form-search--data__calendar-wrapper"
+        onClick={(e) => {
+          changeDataInput2(e)
+          setModalCalendar2(false)
+        }}
+      > 
+     <Calendar
+          onChange={onChangeCalendar2}
+          value={calendarValue2}
+        /></div>}
       </div></>}
     </div>
     {error && <p className={s.errorText}>Чтобы активировать, Вам нужно выбрать свободные даты или закрыть эту категорию для бронирования.</p>}

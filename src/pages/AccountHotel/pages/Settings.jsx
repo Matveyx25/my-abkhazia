@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Radio from "../../../components/Radio/Radio";
 import Checkbox from '../../../components/Checkbox/Checkbox';
 import { Link } from "react-router-dom";
+import { Modal } from '../../../components/Modal/Modal';
 
 export const Settings = () => {
   const [visible, setVisible] = useState(false);
@@ -19,6 +20,14 @@ export const Settings = () => {
   const [phone, setPhone] = useState("+7 (927) 655-45-24");
   const [email, setEmail] = useState("nastenarodionova1993@mail.ru");
 
+  const [editPassword, setEditPassword] = useState(false);
+  const [editPassword3, setEditPassword3] = useState(false);
+  const [passwordEdit, setPasswordEdit] = useState();
+  const [passwordEdit2, setPasswordEdit2] = useState();
+  const [visibleEdit, setVisibleEdit] = useState(false);
+  const [visibleEdit2, setVisibleEdit2] = useState(false);
+  const [passwordsIsEquel, setPasswordsIsEquel] = useState(true);
+
   const [password, setPassword] = useState("11111111");
 
   const [organizationName, setOrganizationName] = useState(
@@ -32,9 +41,116 @@ export const Settings = () => {
   const changeVisible = () => {
     setVisible(!visible);
   };
+  const changeVisibleEdit = () => {
+    setVisibleEdit(!visibleEdit);
+  };
+  const changeVisibleEdit2 = () => {
+    setVisibleEdit2(!visibleEdit2);
+  };
 
   return (
     <div>
+      <Modal visible={editPassword} onClose={() => setEditPassword(false)}>
+        <h1 className="ballance-page__title">Изменить пароль</h1>
+        <div className="ballance-page__modal-content">
+        <div className="account-page__input-block">
+            <p>Пароль</p>
+            <div className="account-page__input-position">
+              <input
+                placeholder="Введите новый пароль"
+                value={passwordEdit}
+                onChange={(event) => {
+                    setPasswordEdit(event.target.value);
+                }}
+                type={visibleEdit ? "text" : "password"}
+                required
+              />
+              {visibleEdit ? (
+                <img
+                  src="../images/eye-invisible-filled.svg"
+                  className="account-page__invisible-eye"
+                  alt=""
+                  onClick={changeVisibleEdit}
+                />
+              ) : (
+                <img
+                  src="../images/eye-filled.svg"
+                  className="account-page__visible-eye"
+                  alt=""
+                  onClick={changeVisibleEdit}
+                />
+              )}
+            </div>
+          </div>
+        <div className={passwordsIsEquel ? "account-page__input-block" : "account-page__input-block required"}>
+            <p>Пароль</p>
+            <div className="account-page__input-position">
+              <input
+                placeholder="Повторите новый пароль"
+                value={passwordEdit2}
+                onChange={(event) => {
+                  setPasswordEdit2(event.target.value);
+                  if(!passwordsIsEquel){
+                    if(passwordEdit == passwordEdit2){
+                      setPasswordsIsEquel(false)
+                    }
+                  }
+                }}
+                type={visibleEdit2 ? "text" : "password"}
+                required
+              />
+              {visibleEdit2 ? (
+                <img
+                  src="../images/eye-invisible-filled.svg"
+                  className="account-page__invisible-eye"
+                  alt=""
+                  onClick={changeVisibleEdit2}
+                />
+              ) : (
+                <img
+                  src="../images/eye-filled.svg"
+                  className="account-page__visible-eye"
+                  alt=""
+                  onClick={changeVisibleEdit2}
+                />
+              )}
+            </div>
+            {passwordsIsEquel || <span className="account-page__input-error">
+            Пароль не верный
+            </span>}
+          </div>
+          <button
+            className="account-page__btn-100"
+            onClick={() => {
+              if(passwordEdit != passwordEdit2){
+                setPasswordsIsEquel(true)
+              }else{
+                setPasswordsIsEquel(false)
+                setEditPassword(false);
+                setEditPassword3(true)
+              }
+            }}
+          >
+            Сохранить
+          </button>
+        </div>
+      </Modal>
+      <Modal visible={editPassword3} onClose={() => setEditPassword3(false)}>
+        <h1 className="ballance-page__title">Изменить пароль</h1>
+        <div className="ballance-page__modal-content">
+          <p className="ballance-page__center-text">
+          Вы успешно изменили пароль!
+          </p>
+          <div className="balance-page__btns">
+            <button
+              className="account-page__btn"
+              onClick={() => setEditPassword3(false)}
+            >
+              В  личный кабинет
+            </button>
+          </div>
+        </div>
+      </Modal>
       <Link className="account-page__back-btn" to="../">
             <img src="/images/arrow-right-circle-fill.svg" alt=""/>
         </Link>
@@ -76,7 +192,7 @@ export const Settings = () => {
           <div className="account-page__input-block">
             <p>Банк для оплаты</p>
             <input
-              placeholder="Напишите название компании"
+              placeholder="Выберите подходящий банк"
               type="text"
               value={bank}
               className="account-page__input-with-radio"
@@ -248,8 +364,8 @@ export const Settings = () => {
                 />
               )}
             </div>
-            <span onClick={() => setDisabledPassword(!isDisabledPassword)}>
-              {isDisabledPassword ? "Изменить пароль" : "Сохранить пароль"}
+            <span onClick={() => setEditPassword(true)}>
+                Изменить пароль
             </span>
           </div>
         </div>

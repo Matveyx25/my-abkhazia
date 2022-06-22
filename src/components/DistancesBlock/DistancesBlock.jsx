@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DistanceInput from "../DistanceInput/DistanceInput";
 import s from "./DistancesBlock.module.css";
 
-export const DistancesBlock = () => {
+export const DistancesBlock = ({placeholder}) => {
   const [distance, setDistance] = useState([
     { title: "Ресторан", value: "", type: "shops", slug: 'rest' },
     { title: "Кафе/бар", value: "", type: "shops", slug: 'cafe' },
@@ -53,6 +53,7 @@ export const DistancesBlock = () => {
                   slug={dist.slug}
                   key={dist.slug}
                   handel={(event) => updateDistance(dist, event)}
+                  placeholder={placeholder}
                 />
             );
           }
@@ -69,6 +70,7 @@ export const DistancesBlock = () => {
                   slug={dist.slug}
                   key={dist.slug}
                   handel={(event) => updateDistance(dist, event)}
+                  placeholder={placeholder}
                 />
             );
           }
@@ -85,6 +87,7 @@ export const DistancesBlock = () => {
                 slug={dist.slug}
                 key={dist.slug}
                 handel={(event) => updateDistance(dist, event)}
+                placeholder={placeholder}
               />
             );
           }
@@ -101,6 +104,7 @@ export const DistancesBlock = () => {
                   slug={dist.slug}
                   key={dist.slug}
                   handel={(event) => updateDistance(dist, event)}
+                  placeholder={placeholder}
                 />
             );
           }
@@ -117,6 +121,7 @@ export const DistancesBlock = () => {
                   slug={dist.slug}
                   key={dist.slug}
                   handel={(event) => updateDistance(dist, event)}
+                  placeholder={placeholder}
                 />
             );
           }

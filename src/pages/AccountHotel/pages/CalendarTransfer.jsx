@@ -8,6 +8,7 @@ import { TimeInput } from "../../../components/TimeInput/TimeInput";
 import { LocationInput } from "../../../components/LocationInput/LocationInput";
 import { TouristCard } from '../../../components/TouristCard/TouristCard';
 import { act } from "react-dom/test-utils";
+import { CalendarInputReserved } from "../../../components/CalendarInput/CalendarInputReserved";
 
 export const CalendarTransfer = () => {
   const [priceDay, setPriceDay] = useState("2 000₽");
@@ -21,6 +22,7 @@ export const CalendarTransfer = () => {
 
   const [modal, setModal] = useState(false);
   const [activeUser, setActiveUser] = useState(false);
+  const [reservedCalendars, setReservedCalendars] = useState([{id: 1}])
 
   return (
     <div>
@@ -163,14 +165,17 @@ export const CalendarTransfer = () => {
               </div>
             </div>
             <div className={s.leftBlock}>
-              <CalendarInput
-                label="Заезд"
-                error="Выберите дату, недоступную для брони"
-              />
-              <button className={s.btn160} disabled>
-                Применить
-              </button>
-              <div className={s.addBtn}>
+            {reservedCalendars.map((el, index) => 
+                <CalendarInputReserved
+                  label="Заезд"
+                  error={index == 0 && "Выберите дату, недоступную для брони"}
+                  key={el.id}
+                  withOutTitle={index > 0}
+                />
+              )}
+              <div className={s.addBtn} onClick={() => {
+                setReservedCalendars([...reservedCalendars, {id: reservedCalendars[reservedCalendars.length - 1].id + 1}])
+                }}>
                 <img src="../images/plus-add-hotel.svg" alt="" />
                 Добавить еще дату
               </div>

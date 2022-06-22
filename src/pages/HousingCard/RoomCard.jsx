@@ -19,21 +19,21 @@ const Zaglushka = [
     id: 0,
     image: "../../images/main-slider-ritsa.jpg",
     title: "1 комнатная квартира",
-    category: "Природа",
+    category: "Комната",
     stars: 5,
   },
   {
     id: 1,
     image: "../../images/main-slider-gag-waterfall.jpg",
     title: "Отель Пицунда",
-    category: "Природа",
+    category: "Комната",
     stars: 5,
   },
   {
     id: 2,
     image: "../../images/main-slider-kundig.jpg",
     title: "2 комнатная квартира",
-    category: "Природа",
+    category: "Комната",
     stars: 3,
   },
   {
@@ -720,7 +720,7 @@ const RoomCard = () => {
       />
       <Landmark />
       <PreFooterCard
-        title="Похожие квартиры в Сухуме"
+        title="Похожие комнаты в Сухуме"
         data={Zaglushka}
         card={true}
         town={Town}

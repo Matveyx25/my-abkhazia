@@ -9,7 +9,7 @@ export const Message = ({seen, text, image, author, isEnd}) => {
         </div>
         <div>
             <div className="message__text">{text}</div>
-            {isEnd && seen && (author == 'me') ? <p className="message__seen">Просмотрено</p> : null}
+            {isEnd && seen ? <p className="message__seen">Просмотрено</p> : null}
         </div>
     </div>
   )

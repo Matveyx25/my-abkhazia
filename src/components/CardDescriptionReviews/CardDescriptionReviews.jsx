@@ -10,7 +10,8 @@ const CardDescriptionReviews = ({
   owner,
   descriptionSubList,
   ownerTitle,
-  imageAbout
+  imageAbout,
+  rentRules
 }) => {
   const [descriptionType, changeDescriptionType] = useState("description");
   const [modalReviews, changeVisibilityReviews] = useState(false);
@@ -95,6 +96,20 @@ const CardDescriptionReviews = ({
                 onClick={() => changeDescriptionType("rules")}
               >
                 Правила и скидки
+              </p>
+            ) : (
+              <></>
+            )}
+            {rentRules ? (
+              <p
+                className={
+                  descriptionType == "rules"
+                    ? "card-description__option-bar  card-description__option-bar--active"
+                    : "card-description__option-bar"
+                }
+                onClick={() => changeDescriptionType("rentRules")}
+              >
+              Условия аренды
               </p>
             ) : (
               <></>
@@ -194,6 +209,39 @@ const CardDescriptionReviews = ({
 
           {/*Правила и скидки*/}
           {descriptionType == "rules" ? (
+            <>
+              {" "}
+              <section className="card-description__services-bar card-description__rules-bar">
+                {Description.rulesList.map((rule) => (
+                  <article className="services-bar__item">
+                    <h5 className="services-bar__item-title">{rule.title} </h5>
+                    <ul className="services-bar__item-list">
+                      {rule.list.map((item) => (
+                        <li className="services-bar__item-option">{item}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </section>
+              <div className="card-description__rules-bar-down-wrapper">
+                {Description.rulesDangerList.map((el) => (
+                  <div className="card-description__rules-bar-down">
+                    <img
+                      className="rules-bar-down__image"
+                      src="../../images/card-description/!.svg"
+                      alt="!"
+                      width="3.78"
+                      height="17.37"
+                    />
+                    <p className="rules-bar-down__text">{el}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+          {descriptionType == "rentRules" ? (
             <>
               {" "}
               <section className="card-description__services-bar card-description__rules-bar">

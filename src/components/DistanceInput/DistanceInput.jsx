@@ -1,12 +1,12 @@
 import React from 'react'
 import Radio from '../Radio/Radio';
 
-const DistanceInput = ({label, handel, value, slug}) => {
+const DistanceInput = ({label, handel, value, slug, placeholder}) => {
   return (
         <div className="account-page__input-block">
             <p>{label}</p>
             <input
-                placeholder="Выберите расстояние от отеля"
+                placeholder={placeholder}
                 value={value}
                 onChange={() => handel(value)}
                 type="text"

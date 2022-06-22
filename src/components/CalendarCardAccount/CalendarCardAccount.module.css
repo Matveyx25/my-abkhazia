@@ -81,6 +81,7 @@
     color: #000000;
     margin-top: 10px;
     box-sizing: border-box;
+    position: relative;
 }
 .inputWrapper input{
     outline: none !important;

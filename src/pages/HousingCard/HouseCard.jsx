@@ -19,21 +19,21 @@ const Zaglushka = [
     id: 0,
     image: "../../images/main-slider-ritsa.jpg",
     title: "1 комнатная квартира",
-    category: "Природа",
+    category: "Дом",
     stars: 5,
   },
   {
     id: 1,
     image: "../../images/main-slider-gag-waterfall.jpg",
     title: "Отель Пицунда",
-    category: "Природа",
+    category: "Дом",
     stars: 5,
   },
   {
     id: 2,
     image: "../../images/main-slider-kundig.jpg",
     title: "2 комнатная квартира",
-    category: "Природа",
+    category: "Дом",
     stars: 3,
   },
   {
@@ -107,7 +107,7 @@ const Description = {
   ],
   descriptionOptions: [
     {
-      title: "О квартире",
+      title: "О доме",
       image: "../../images/housing-card/flat.svg",
       optionList: [
         {
@@ -121,6 +121,20 @@ const Description = {
         {
           optionProperty: "Тип дома:",
           optionPropertyNumber: "Кирпичный",
+        },
+      ],
+    },
+    {
+      title: "На территории",
+      image: "../../images/housing-card/apartment.svg",
+      optionList: [
+        {
+          optionProperty: "Веранда или терраса",
+          optionPropertyNumber: "",
+        },
+        {
+          optionProperty: "Внутренний свой двор",
+          optionPropertyNumber: "",
         },
       ],
     },
@@ -725,7 +739,7 @@ const HouseCard = () => {
       />
       <Landmark />
       <PreFooterCard
-        title="Похожие квартиры в Сухуме"
+        title="Похожие дома в Сухуме"
         data={Zaglushka}
         card={true}
         town={Town}

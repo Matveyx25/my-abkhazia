@@ -24,9 +24,9 @@ export const RegistrationHouse = () => {
             />
           </div>
           <div className={s.inputBlock}>
-            <p>Тип владения*</p>
+            <p>Вид частного жилья*</p>
             <input
-              placeholder="Тип отеля*"
+              placeholder="Выберите вид частного жилья"
               type="text"
               value={organizationType}
               onChange={(event) => setOrganizationType(organizationType)}

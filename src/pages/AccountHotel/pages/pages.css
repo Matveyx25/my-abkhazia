@@ -628,6 +628,7 @@
     margin-right: 30px;
 }
 .main__banner-link-text.active{
+    background: none;
     color: #58B4D1;
 }
 .tourist-options__bold{

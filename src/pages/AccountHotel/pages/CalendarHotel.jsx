@@ -5,6 +5,7 @@ import { CalendarInput } from '../../../components/CalendarInput/CalendarInput';
 import { ReservedCalendar } from '../../../components/ReservedCalendar/ReservedCalendar';
 import { CalendarCardAccount } from '../../../components/CalendarCardAccount/CalendarCardAccount';
 import { TouristCard } from '../../../components/TouristCard/TouristCard';
+import { CalendarInputReserved } from '../../../components/CalendarInput/CalendarInputReserved';
 
 export const CalendarHotel = () => {
 
@@ -13,7 +14,8 @@ export const CalendarHotel = () => {
     const [phone, setPhone] = useState();
     const [touristName, setTouristName] = useState();
     const [filter, setFilter] = useState(0)
-  const [openedForReserved, setOpenedForReserved] = useState(true);
+    const [reservedCalendars, setReservedCalendars] = useState([{id: 1}])
+    const [openedForReserved, setOpenedForReserved] = useState(true);
 
   
     const [modal, setModal] = useState(false);
@@ -66,14 +68,17 @@ export const CalendarHotel = () => {
               </div>
             </div>
             <div className={s.leftBlock}>
-              <CalendarInput
-                label="Заезд"
-                error="Выберите дату, недоступную для брони"
-              />
-              <button className={s.btn160} disabled>
-                Применить
-              </button>
-              <div className={s.addBtn}>
+              {reservedCalendars.map((el, index) => 
+                <CalendarInputReserved
+                  label="Заезд"
+                  error={index == 0 && "Выберите дату, недоступную для брони"}
+                  key={el.id}
+                  withOutTitle={index > 0}
+                />
+              )}
+              <div className={s.addBtn} onClick={() => {
+                setReservedCalendars([...reservedCalendars, {id: reservedCalendars[reservedCalendars.length - 1].id + 1}])
+                }}>
                 <img src="../images/plus-add-hotel.svg" alt="" />
                 Добавить еще дату
               </div>
