@@ -68,14 +68,23 @@ export const CreateHouse = () => {
   return (
     <div>
       <div className="account-page__breadcrumps">
-        <p>Добавление дома</p>
+        <p>Добавление 
+        {(houseType == "Дом" || houseType == "") && " дома"}
+          {houseType == "Квартира" && " квартиры"}
+          {houseType == "Комната" && " комнаты"}
+        </p>
       </div>
       <div className="account-page__jcsb">
-        <h1 className="account-page__title">Заполнение информации о доме</h1>
+        <h1 className="account-page__title">
+          Заполнение информации о 
+          {(houseType == "Дом" || houseType == "") && " доме"}
+          {houseType == "Квартира" && " квартире"}
+          {houseType == "Комната" && " комнате"}
+        </h1>
         <Link className="account-page__btn160 intitle" to="../../housing-card">
           <img src="../../images/eye-filled_white.svg" />
-          <img src="../../images/eye-filled-blue.svg" className="blue-eye"/>
-          <p>Просмотр</p> 
+          <img src="../../images/eye-filled-blue.svg" className="blue-eye" />
+          <p>Просмотр</p>
         </Link>
       </div>
       <form action="" className="account-page__settings-form">
@@ -106,27 +115,21 @@ export const CreateHouse = () => {
                 inputId="appartment"
                 inputName="houseType"
                 inputValue="Квартира"
-                changeFunction={(event) =>
-                  setHouseType(event.target.value)
-                }
+                changeFunction={(event) => setHouseType(event.target.value)}
               />
               <Radio
                 labelText="Дом"
                 inputId="house"
                 inputName="houseType"
                 inputValue="Дом"
-                changeFunction={(event) =>
-                  setHouseType(event.target.value)
-                }
+                changeFunction={(event) => setHouseType(event.target.value)}
               />
               <Radio
                 labelText="Комната"
                 inputId="room"
                 inputName="houseType"
                 inputValue="Комната"
-                changeFunction={(event) =>
-                  setHouseType(event.target.value)
-                }
+                changeFunction={(event) => setHouseType(event.target.value)}
               />
             </div>
           </div>
@@ -141,114 +144,114 @@ export const CreateHouse = () => {
             />
           </div>
         </div>
-        {houseType == 'Квартира' &&  (
+        {houseType == "Квартира" && (
           <div className={s.row30}>
             <div className={s.w317}>
               <div className="account-page__input-block">
-                  <p>Укажите этаж*</p>
-                  <input
-                    placeholder="Введите этаж"
-                    type="number"
-                    value={flatNumber}
-                    onChange={(event) => setFlatNumber(event.target.value)}
-                    required
-                  />
+                <p>Укажите этаж*</p>
+                <input
+                  placeholder="Введите этаж"
+                  type="number"
+                  value={flatNumber}
+                  onChange={(event) => setFlatNumber(event.target.value)}
+                  required
+                />
               </div>
               <div className={s.mt20}>
-                    <CounterInput
-                      label="Кол-во комнат*"
-                      value={countRooms}
-                      onUpdate={setCountRooms}
-                    />
-                  </div>
-                   <div className={s.mt20}>
-                    <CounterInput
-                      label="Кол-во гостей*"
-                      value={countGuest}
-                      onUpdate={setCountGuest}
-                    />
-                  </div>
+                <CounterInput
+                  label="Кол-во комнат*"
+                  value={countRooms}
+                  onUpdate={setCountRooms}
+                />
               </div>
-              <div className="account-page__input-block">
-                  <p>Площадь кваритиры*</p>
-                  <input
-                    placeholder="Введите площадь квартиры м2"
-                    type="number"
-                    value={square}
-                    onChange={(event) => setSquare(event.target.value)}
-                    required
-                  />
+              <div className={s.mt20}>
+                <CounterInput
+                  label="Кол-во гостей*"
+                  value={countGuest}
+                  onUpdate={setCountGuest}
+                />
               </div>
+            </div>
+            <div className="account-page__input-block">
+              <p>Площадь кваритиры*</p>
+              <input
+                placeholder="Введите площадь квартиры м2"
+                type="number"
+                value={square}
+                onChange={(event) => setSquare(event.target.value)}
+                required
+              />
+            </div>
           </div>
         )}
-        {houseType == 'Дом' &&  (
+        {houseType == "Дом" && (
           <div className={s.row30}>
-              <div className={`${s.mt20} ${s.w317}`}>
-                   <div>
-                    <CounterInput
-                      label="Кол-во этажей в доме*"
-                      value={countFlats}
-                      onUpdate={setCountFlats}
-                    />
-                  </div>
-                   <div className={s.mt20}>
-                    <CounterInput
-                      label="Кол-во комнат*"
-                      value={countRooms}
-                      onUpdate={setCountRooms}
-                    />
-                  </div>
-                   <div className={s.mt20}>
-                    <CounterInput
-                      label="Кол-во гостей*"
-                      value={countGuest}
-                      onUpdate={setCountGuest}
-                    />
-                  </div>
+            <div className={`${s.mt20} ${s.w317}`}>
+              <div>
+                <CounterInput
+                  label="Кол-во этажей в доме*"
+                  value={countFlats}
+                  onUpdate={setCountFlats}
+                />
               </div>
-              <div className="account-page__input-block">
-                  <p>Площадь дома*</p>
-                  <input
-                    placeholder="Введите площадь квартиры м2"
-                    type="number"
-                    value={square}
-                    onChange={(event) => setSquare(event.target.value)}
-                    required
-                  />
+              <div className={s.mt20}>
+                <CounterInput
+                  label="Кол-во комнат*"
+                  value={countRooms}
+                  onUpdate={setCountRooms}
+                />
               </div>
+              <div className={s.mt20}>
+                <CounterInput
+                  label="Кол-во гостей*"
+                  value={countGuest}
+                  onUpdate={setCountGuest}
+                />
+              </div>
+            </div>
+            <div className="account-page__input-block">
+              <p>Площадь дома*</p>
+              <input
+                placeholder="Введите площадь квартиры м2"
+                type="number"
+                value={square}
+                onChange={(event) => setSquare(event.target.value)}
+                required
+              />
+            </div>
           </div>
         )}
-        {houseType == 'Комната' &&  (
+        {houseType == "Комната" && (
           <div className={s.row30}>
-              <div className="account-page__input-block">
-                  <p>Укажите этаж*</p>
-                  <input
-                    placeholder="Нахождение объекта"
-                    type="number"
-                    value={flatNumber}
-                    onChange={(event) => setFlatNumber(event.target.value)}
-                    required
-                  />
+            <div className="account-page__input-block">
+              <p>Укажите этаж*</p>
+              <input
+                placeholder="Нахождение объекта"
+                type="number"
+                value={flatNumber}
+                onChange={(event) => setFlatNumber(event.target.value)}
+                required
+              />
+            </div>
+            <div className="account-page__input-block">
+              <p>Площадь комнаты*</p>
+              <input
+                placeholder="Введите площадь квартиры м2"
+                type="number"
+                value={square}
+                onChange={(event) => setSquare(event.target.value)}
+                required
+              />
+            </div>
+            <div className={`${s.mt20} ${s.w317}`}>
+              <div className={s.mt20}>
+                <CounterInput
+                  label="Кол-во гостей*"
+                  value={countGuest}
+                  onUpdate={setCountGuest}
+                />
               </div>
-              <div className="account-page__input-block">
-                  <p>Площадь комнаты*</p>
-                  <input
-                    placeholder="Введите площадь квартиры м2"
-                    type="number"
-                    value={square}
-                    onChange={(event) => setSquare(event.target.value)}
-                    required
-                  />
-              </div>
-              <div className={`${s.mt20} ${s.w317}`}>
-                <div className={s.mt20}>
-                  <CounterInput
-                      label="Кол-во гостей*"
-                      value={countGuest}
-                      onUpdate={setCountGuest}
-                    />
-                </div>
-              </div>
+            </div>
           </div>
         )}
       </form>
@@ -275,7 +278,7 @@ export const CreateHouse = () => {
             >
               {imageList.length == 0 ? (
                 <div onClick={onImageUpload}>
-                  <img src="/images/add-photo.svg" alt=""/>
+                  <img src="/images/add-photo.svg" alt="" />
                   <p>Загрузить фотографию</p>
                 </div>
               ) : (
@@ -439,11 +442,28 @@ export const CreateHouse = () => {
                       required
                     />
                   </div>
-                  {sales.length > 1 && <button className={s.removeDesc} onClick={() => setSales([...sales].filter(sale => sale.id != el.id))}>Удалить скидку</button>}
+                  {sales.length > 1 && (
+                    <button
+                      className={s.removeDesc}
+                      onClick={() =>
+                        setSales([...sales].filter((sale) => sale.id != el.id))
+                      }
+                    >
+                      Удалить скидку
+                    </button>
+                  )}
                 </div>
               );
             })}
-            <div className={s.addTextarea} onClick={() => setSales([...sales, {value: '', id: sales[sales.length - 1].id + 1}])}>
+            <div
+              className={s.addTextarea}
+              onClick={() =>
+                setSales([
+                  ...sales,
+                  { value: "", id: sales[sales.length - 1].id + 1 },
+                ])
+              }
+            >
               <img src="../../images/plus-add-hotel.svg" alt="" />
               <p>Добавить скидку</p>
             </div>
@@ -465,9 +485,9 @@ export const CreateHouse = () => {
             </div>
           </div>
         </div>
-        </div>
-        <h2 className="account-page__input-block-title">Характериситики</h2>
-        <div className={s.row}>
+      </div>
+      <h2 className="account-page__input-block-title">Характериситики</h2>
+      <div className={s.row}>
         <div className={`${s.inputsWrapper} ${s.w317}`}>
           <h2>О квартире:</h2>
           <Checkbox
@@ -621,43 +641,43 @@ export const CreateHouse = () => {
           />
           <div className={s.mt15}>
             <p className={s.inputLabel}>Тип дома</p>
-              <div className={s.inputBlock}>
-                <input
-                  placeholder="Введите тип дома"
-                  value={choiceHouseType}
-                  type="text"
-                  onChange={(event) => setChoiceHouseType(event.target.value)}
-                  required
-                />
-              </div>
+            <div className={s.inputBlock}>
+              <input
+                placeholder="Введите тип дома"
+                value={choiceHouseType}
+                type="text"
+                onChange={(event) => setChoiceHouseType(event.target.value)}
+                required
+              />
+            </div>
           </div>
         </div>
         <div className={`${s.inputsWrapper} ${s.w317} ${s.priceBlock}`}>
           <h2>Цена:</h2>
           <div className={s.mt20}>
-              <p className={s.inputLabel}>Цена за сутки*</p>
-              <div className={s.inputBlock}>
-                <input
-                  placeholder="Введите цену за сутки ₽"
-                  value={priceDay}
-                  type="number"
-                  onChange={(event) => setPriceDay(event.target.value)}
-                  required
-                />
-              </div>
+            <p className={s.inputLabel}>Цена за сутки*</p>
+            <div className={s.inputBlock}>
+              <input
+                placeholder="Введите цену за сутки ₽"
+                value={priceDay}
+                type="number"
+                onChange={(event) => setPriceDay(event.target.value)}
+                required
+              />
             </div>
+          </div>
           <div className={s.mt20}>
-              <p className={s.inputLabel}>Цена за месяц*</p>
-              <div className={s.inputBlock}>
-                <input
-                  placeholder="Введите цену за месяц ₽"
-                  value={priceMonth}
-                  type="number"
-                  onChange={(event) => setPriceMonth(event.target.value)}
-                  required
-                />
-              </div>
+            <p className={s.inputLabel}>Цена за месяц*</p>
+            <div className={s.inputBlock}>
+              <input
+                placeholder="Введите цену за месяц ₽"
+                value={priceMonth}
+                type="number"
+                onChange={(event) => setPriceMonth(event.target.value)}
+                required
+              />
             </div>
+          </div>
         </div>
         <div className={`${s.row30} ${s.mt25}`}>
           <div className={`${s.inputsWrapper} ${s.w317}`}>
@@ -781,57 +801,56 @@ export const CreateHouse = () => {
             />
           </div>
           <div>
-            {[...sleep].slice(0,4).map((item, index) => {
+            {[...sleep].slice(0, 4).map((item, index) => {
               return (
                 <div className={s.counterWrapper} key={index}>
-                <CounterInput
-                  label={item.title}
-                  value={item.value}
-                  onPlus={() => {
-                    const arr = [...sleep];
-                    arr.find((el) => el.title === item.title).value =
-                      item.value + 1;
-                    setSleep(arr);
-                  }}
-                  onMinus={() => {
-                    const arr = [...sleep];
-                    arr.find((el) => el.title === item.title).value =
-                      item.value - 1;
-                    setSleep(arr);
-                  }}
-                />
+                  <CounterInput
+                    label={item.title}
+                    value={item.value}
+                    onPlus={() => {
+                      const arr = [...sleep];
+                      arr.find((el) => el.title === item.title).value =
+                        item.value + 1;
+                      setSleep(arr);
+                    }}
+                    onMinus={() => {
+                      const arr = [...sleep];
+                      arr.find((el) => el.title === item.title).value =
+                        item.value - 1;
+                      setSleep(arr);
+                    }}
+                  />
                 </div>
               );
             })}
           </div>
           <div>
-            {[...sleep].slice(4,8).map((item, index) => {
+            {[...sleep].slice(4, 8).map((item, index) => {
               return (
                 <div className={s.counterWrapper} key={index}>
-                <CounterInput
-                  label={item.title}
-                  value={item.value}
-                  onPlus={() => {
-                    const arr = [...sleep];
-                    arr.find((el) => el.title === item.title).value =
-                      item.value + 1;
-                    setSleep(arr);
-                  }}
-                  onMinus={() => {
-                    const arr = [...sleep];
-                    arr.find((el) => el.title === item.title).value =
-                      item.value - 1;
-                    setSleep(arr);
-                  }}
-                />
+                  <CounterInput
+                    label={item.title}
+                    value={item.value}
+                    onPlus={() => {
+                      const arr = [...sleep];
+                      arr.find((el) => el.title === item.title).value =
+                        item.value + 1;
+                      setSleep(arr);
+                    }}
+                    onMinus={() => {
+                      const arr = [...sleep];
+                      arr.find((el) => el.title === item.title).value =
+                        item.value - 1;
+                      setSleep(arr);
+                    }}
+                  />
                 </div>
               );
             })}
           </div>
         </div>
-        
-        </div>
-        <div className={s.inputsWrapper}>
+      </div>
+      <div className={s.inputsWrapper}>
         <h2 className={s.mt25}>Кухня</h2>
         <div className={s.kitchenRow}>
           <div>
@@ -949,129 +968,139 @@ export const CreateHouse = () => {
       <div className={s.inputsWrapper}>
         <h2 className={s.mt25}>Удобства:</h2>
         <div className={`${s.w317} ${s.mt15}`}>
-          <CounterInput label="Кол-во С/У" value={countSU} onUpdate={setCountSU}/>
+          <CounterInput
+            label="Кол-во С/У"
+            value={countSU}
+            onUpdate={setCountSU}
+          />
         </div>
         <div className={s.comfortRow}>
           <div className={s.w317}>
-          <Checkbox
-            labelText="Ванная комната"
-            inputId="bath"
-            inputName="comfort"
-            inputValue="bath"
-            changeFunction={(event) =>
-              setComfort(
-                event.target.checked
-                  ? [...comfort, event.target.value]
-                  : comfort.filter((item) => item !== event.target.value)
-              )
-            }
-          />
-          <Checkbox
-            labelText="Душевая кабина"
-            inputId="shower"
-            inputName="comfort"
-            inputValue="shower"
-            changeFunction={(event) =>
-              setComfort(
-                event.target.checked
-                  ? [...comfort, event.target.value]
-                  : comfort.filter((item) => item !== event.target.value)
-              )
-            }
-          />
-          <Checkbox
-            labelText="Туалет"
-            inputId="toilet"
-            inputName="comfort"
-            inputValue="toilet"
-            changeFunction={(event) =>
-              setComfort(
-                event.target.checked
-                  ? [...comfort, event.target.value]
-                  : comfort.filter((item) => item !== event.target.value)
-              )
-            }
-          />
+            <Checkbox
+              labelText="Ванная комната"
+              inputId="bath"
+              inputName="comfort"
+              inputValue="bath"
+              changeFunction={(event) =>
+                setComfort(
+                  event.target.checked
+                    ? [...comfort, event.target.value]
+                    : comfort.filter((item) => item !== event.target.value)
+                )
+              }
+            />
+            <Checkbox
+              labelText="Душевая кабина"
+              inputId="shower"
+              inputName="comfort"
+              inputValue="shower"
+              changeFunction={(event) =>
+                setComfort(
+                  event.target.checked
+                    ? [...comfort, event.target.value]
+                    : comfort.filter((item) => item !== event.target.value)
+                )
+              }
+            />
+            <Checkbox
+              labelText="Туалет"
+              inputId="toilet"
+              inputName="comfort"
+              inputValue="toilet"
+              changeFunction={(event) =>
+                setComfort(
+                  event.target.checked
+                    ? [...comfort, event.target.value]
+                    : comfort.filter((item) => item !== event.target.value)
+                )
+              }
+            />
           </div>
           <div className={s.w317}>
-          <Checkbox
-            labelText="Туалетные принадлежности"
-            inputId="toiletries"
-            inputName="comfort"
-            inputValue="toiletries"
-            changeFunction={(event) =>
-              setComfort(
-                event.target.checked
-                  ? [...comfort, event.target.value]
-                  : comfort.filter((item) => item !== event.target.value)
-              )
-            }
-          />
-          <Checkbox
-            labelText="Фен"
-            inputId="hairDryer"
-            inputName="comfort"
-            inputValue="hairDryer"
-            changeFunction={(event) =>
-              setComfort(
-                event.target.checked
-                  ? [...comfort, event.target.value]
-                  : comfort.filter((item) => item !== event.target.value)
-              )
-            }
-          />
-          <Checkbox
-            labelText="Сушилка для белья"
-            inputId="clothesDryer"
-            inputName="comfort"
-            inputValue="clothesDryer"
-            changeFunction={(event) =>
-              setComfort(
-                event.target.checked
-                  ? [...comfort, event.target.value]
-                  : comfort.filter((item) => item !== event.target.value)
-              )
-            }
-          />
+            <Checkbox
+              labelText="Туалетные принадлежности"
+              inputId="toiletries"
+              inputName="comfort"
+              inputValue="toiletries"
+              changeFunction={(event) =>
+                setComfort(
+                  event.target.checked
+                    ? [...comfort, event.target.value]
+                    : comfort.filter((item) => item !== event.target.value)
+                )
+              }
+            />
+            <Checkbox
+              labelText="Фен"
+              inputId="hairDryer"
+              inputName="comfort"
+              inputValue="hairDryer"
+              changeFunction={(event) =>
+                setComfort(
+                  event.target.checked
+                    ? [...comfort, event.target.value]
+                    : comfort.filter((item) => item !== event.target.value)
+                )
+              }
+            />
+            <Checkbox
+              labelText="Сушилка для белья"
+              inputId="clothesDryer"
+              inputName="comfort"
+              inputValue="clothesDryer"
+              changeFunction={(event) =>
+                setComfort(
+                  event.target.checked
+                    ? [...comfort, event.target.value]
+                    : comfort.filter((item) => item !== event.target.value)
+                )
+              }
+            />
           </div>
           <div className={s.w317}>
-        <Checkbox
-          labelText="Стиральная машинка"
-          inputId="clothesMachine"
-          inputName="comfort"
-          inputValue="clothesMachine"
-          changeFunction={(event) =>
-            setComfort(
-              event.target.checked
-                ? [...comfort, event.target.value]
-                : comfort.filter((item) => item !== event.target.value)
-            )
-          }
-        />
-        <Checkbox
-          labelText="Полотенца"
-          inputId="towels"
-          inputName="comfort"
-          inputValue="towels"
-          changeFunction={(event) =>
-            setComfort(
-              event.target.checked
-                ? [...comfort, event.target.value]
-                : comfort.filter((item) => item !== event.target.value)
-            )
-          }
-        />
+            <Checkbox
+              labelText="Стиральная машинка"
+              inputId="clothesMachine"
+              inputName="comfort"
+              inputValue="clothesMachine"
+              changeFunction={(event) =>
+                setComfort(
+                  event.target.checked
+                    ? [...comfort, event.target.value]
+                    : comfort.filter((item) => item !== event.target.value)
+                )
+              }
+            />
+            <Checkbox
+              labelText="Полотенца"
+              inputId="towels"
+              inputName="comfort"
+              inputValue="towels"
+              changeFunction={(event) =>
+                setComfort(
+                  event.target.checked
+                    ? [...comfort, event.target.value]
+                    : comfort.filter((item) => item !== event.target.value)
+                )
+              }
+            />
           </div>
         </div>
       </div>
-        <div className={s.row}>
+      <div className={s.row}>
         <div>
           <h2 className="account-page__input-block-title">
             Ориентиры поблизости{" "}
           </h2>
-          {houseType == 'Комната' &&  <DistancesBlock placeholder={"Выберите рассторяние от комнаты"}/>}
-          {(houseType == 'Дом' || !houseType) &&  <DistancesBlock placeholder={"Выберите рассторяние от дома"}/>}
-          {houseType == 'Квартира' &&  <DistancesBlock placeholder={"Выберите рассторяние от квартиры"}/>}
+          {houseType == "Комната" && (
+            <DistancesBlock placeholder={"Выберите рассторяние от комнаты"} />
+          )}
+          {(houseType == "Дом" || !houseType) && (
+            <DistancesBlock placeholder={"Выберите рассторяние от дома"} />
+          )}
+          {houseType == "Квартира" && (
+            <DistancesBlock placeholder={"Выберите рассторяние от квартиры"} />
+          )}
         </div>
         <div className={s.inputsWrapper}>
           <h2 className={s.mt25}>Активный отдых:</h2>
@@ -1221,7 +1250,9 @@ export const CreateHouse = () => {
         </div>
       </div>
       <div className={s.btnsRow}>
-        <Link className={s.btn} to='../calendar/create-house'>Перейти к календарю</Link>
+        <Link className={s.btn} to="../calendar/create-house">
+          Перейти к календарю
+        </Link>
         <button className={s.btnOutlined}>Сохранить как черновик</button>
       </div>
     </div>

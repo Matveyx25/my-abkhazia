@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Radio from "../../../components/Radio/Radio";
 import Checkbox from '../../../components/Checkbox/Checkbox';
 import { Link } from "react-router-dom";
-import { Modal } from '../../../components/Modal/Modal';
+import ReactCodeInput from "react-code-input";
+import { Modal } from "../../../components/Modal/Modal";
+import { useTimer } from "react-timer-hook";
 
 export const Settings = () => {
   const [visible, setVisible] = useState(false);
@@ -20,8 +22,20 @@ export const Settings = () => {
   const [phone, setPhone] = useState("+7 (927) 655-45-24");
   const [email, setEmail] = useState("nastenarodionova1993@mail.ru");
 
+  const [removeModal, setRemoveModal] = useState(false);
+  const [confirmEmailModal, setConfirmEmailModal] = useState(false);
+  const [confirmPhoneModal, setConfirmPhoneModal] = useState(false);
+
+  const [confirmPhone, setConfirmPhone] = useState(false);
+  const [confirmEmail, setConfirmEmail] = useState(false);
+  const [editEmail, setEditEmail] = useState(false);
+  const [editPhone, setEditPhone] = useState(false);
   const [editPassword, setEditPassword] = useState(false);
   const [editPassword3, setEditPassword3] = useState(false);
+  const [editPhone2, setEditPhone2] = useState(false);
+  const [country, setCountry] = useState("");
+
+
   const [passwordEdit, setPasswordEdit] = useState();
   const [passwordEdit2, setPasswordEdit2] = useState();
   const [visibleEdit, setVisibleEdit] = useState(false);
@@ -48,8 +62,102 @@ export const Settings = () => {
     setVisibleEdit2(!visibleEdit2);
   };
 
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 60);
+
+  const { seconds, minutes, restart } = useTimer({
+    time,
+    onExpire: () => console.warn("onExpire called"),
+  });
+
+
   return (
     <div>
+      <Modal visible={editEmail} onClose={() => setEditEmail(false)}>
+        <h1 className="ballance-page__title">Изменить E-mail</h1>
+        <div className="ballance-page__modal-content">
+          <div className="account-page__input-block">
+            <p>E-mail</p>
+            <input
+              placeholder="Введите новый адрес электронной почты"
+              type="text"
+              required
+            />
+          </div>
+          <button
+            className="account-page__btn-100"
+            onClick={() => {
+              setEditEmail(false);
+              setConfirmEmailModal(true);
+            }}
+          >
+            Продолжить
+          </button>
+        </div>
+      </Modal>
+      <Modal visible={editPhone} onClose={() => setEditPhone(false)}>
+        <h1 className="ballance-page__title">Изменить номер телефона</h1>
+        <div className="ballance-page__modal-content">
+          <p>
+            Для изменения номера телефона необходимо ввести код подтверждения
+          </p>
+          <div className="balance-page__btns">
+            <div className="account-page__input-block">
+              <input placeholder="Код из SMS" type="text" required />
+            </div>
+            <button
+              className="account-page__btn-outline"
+              onClick={() => {
+                setEditPhone(false);
+                setEditPhone2(true);
+              }}
+            >
+              Получить код
+            </button>
+          </div>
+        </div>
+      </Modal>
+      <Modal visible={editPhone2} onClose={() => setEditPhone2(false)}>
+        <h1 className="ballance-page__title">Изменить номер телефона</h1>
+        <div className="ballance-page__modal-content">
+          <p>Введите новый номер телефона</p>
+          <div className="account-page__input-block">
+            <p>Страна</p>
+            <input
+              placeholder="Россия"
+              type="text"
+              value={country}
+              onChange={(event) => setCountry(event.target.value)}
+              required
+            />
+          </div>
+          <div className="account-page__input-block">
+            <p>Номер телефона</p>
+            <input
+              placeholder="+7 (000) 000-00-00"
+              type="text"
+              value={phone}
+              onChange={(event) => setPhone(event.target.value)}
+              required
+            />
+          </div>
+          <p className="ballance-page__modal-small-text">
+            Мы вам отправим SMS, чтобы подтвердить номер телефона. Применяются
+            стандартные условия вашего тарифа на прием сообщений и передачу
+            данных. Политика конфиденциальности
+          </p>
+          <button
+            className="account-page__btn-100"
+            onClick={() => {
+              setEditPhone2(false);
+              setConfirmPhoneModal(true);
+              restart(time);
+            }}
+          >
+            Продолжить
+          </button>
+        </div>
+      </Modal>
       <Modal visible={editPassword} onClose={() => setEditPassword(false)}>
         <h1 className="ballance-page__title">Изменить пароль</h1>
         <div className="ballance-page__modal-content">
@@ -135,6 +243,28 @@ export const Settings = () => {
           </button>
         </div>
       </Modal>
+      <Modal visible={removeModal} onClose={() => setRemoveModal(false)}>
+        <h1 className="ballance-page__title">Удалить фото</h1>
+        <div className="ballance-page__modal-content">
+          <p className="ballance-page__center-text">
+            Вы точно хотите удалить фото?
+          </p>
+          <div className="balance-page__btns">
+            <button
+              className="account-page__btn"
+              onClick={() => setRemoveModal(false)}
+            >
+              Удалить фото
+            </button>
+            <button
+              className="account-page__btn-outline"
+              onClick={() => setRemoveModal(false)}
+            >
+              Отменить
+            </button>
+          </div>
+        </div>
+      </Modal>
       <Modal visible={editPassword3} onClose={() => setEditPassword3(false)}>
         <h1 className="ballance-page__title">Изменить пароль</h1>
         <div className="ballance-page__modal-content">
@@ -151,6 +281,59 @@ export const Settings = () => {
           </div>
         </div>
       </Modal>
+      <Modal
+        visible={confirmEmailModal}
+        onClose={() => setConfirmEmailModal(false)}
+      >
+        <h1 className="ballance-page__title">Подтвердить E-mail</h1>
+        <div className="ballance-page__modal-content">
+          <p className="ballance-page__center-text">
+            На Вашу почту <srtong>nastenarodionova1993@mail.ru</srtong>{" "}
+            отправлено письмо с ссылкой для подтверждения
+          </p>
+          <div className="ballance-page__company-imgs account-page__mt25">
+            <img src="/images/mail_ru.svg" alt="" />
+            <img src="/images/ya_mail.svg" alt="" />
+            <img src="/images/google_mail.svg" alt="" />
+          </div>
+        </div>
+      </Modal>
+      <Modal
+        visible={confirmPhoneModal}
+        onClose={() => setConfirmPhoneModal(false)}
+      >
+        <p className="ballance-page__title">Подтвердите номер</p>
+        <p>Введите код, отправленный на номер: +7 (927) 655-45-24:</p>
+        <ReactCodeInput
+          type="number"
+          fields={4}
+          inputStyle={{
+            width: 45,
+            height: 45,
+            border: "1px solid rgba(0, 0, 0, 0.3)",
+            borderRadius: 10,
+            marginRight: 10,
+            fontSize: 18,
+            padding: 10,
+            boxSizing: "border-box",
+          }}
+        />
+        {minutes + seconds != 0 ? (
+          <p>
+            Новый код можно получить через:{" "}
+            <span className="account-page__timer">
+              {minutes}:{seconds}
+            </span>
+          </p>
+        ) : (
+          <span
+            className="account-page__timer-link"
+            onClick={() => restart(time)}
+          >
+            Получить новый код
+          </span>
+        )}
+      </Modal>
       <Link className="account-page__back-btn" to="../">
             <img src="/images/arrow-right-circle-fill.svg" alt=""/>
         </Link>
@@ -163,7 +346,9 @@ export const Settings = () => {
           </div>
           <div>
             <button className="settings-page__btn-fill">Загрузить фото</button>
-            <button className="settings-page__btn-outlined">
+            <button className="settings-page__btn-outlined"
+              onClick={() => setRemoveModal(true)}
+              >
               Удалить фото
             </button>
           </div>
@@ -304,10 +489,8 @@ export const Settings = () => {
               type="text"
               required
             />
-            <span onClick={() => setDisabledPhone(!isDisabledPhone)}>
-              {isDisabledPhone
-                ? "Изменить номер телефона"
-                : "Сохранить номер телефона"}
+            <span onClick={() => setEditPhone(true)}>
+              Изменить номер телефона
             </span>
           </div>
           <div className="account-page__input-block">
@@ -325,8 +508,8 @@ export const Settings = () => {
               type="text"
               required
             />
-            <span onClick={() => setDisabledMail(!isDisabledMail)}>
-              {isDisabledMail ? "Изменить E-mail" : "Сохранить E-mail"}
+            <span onClick={() => setEditEmail(true)}>
+                Изменить E-mail
             </span>
           </div>
         </div>

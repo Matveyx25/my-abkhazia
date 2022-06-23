@@ -497,7 +497,7 @@ const CarCard = () => {
                     height="18"
                   />
                   <input
-                    className="transfer-booking__form-search transfer-booking__form-search--time"
+                    className="car-booking__form-search transfer-booking__form-search--time"
                     type="text"
                     name="transfer__time"
                     value={timeChoise}
@@ -528,7 +528,7 @@ const CarCard = () => {
                     height="18"
                   />
                   <input
-                    className="transfer-booking__form-search transfer-booking__form-search--time"
+                    className="car-booking__form-search transfer-booking__form-search--time"
                     type="text"
                     name="transfer__time"
                     value={timeChoise2}
@@ -559,7 +559,7 @@ const CarCard = () => {
                   height="15.75"
                 />
                 <input
-                  className="transfer-booking__form-search"
+                  className="transfer-booking__form-search car"
                   placeholder="2 взрослых"
                   type="text"
                   name="transfer-people"

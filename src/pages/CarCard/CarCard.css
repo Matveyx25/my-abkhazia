@@ -48,3 +48,42 @@
 .card-card .reservation__danger {
   margin-bottom: 0;
 }
+.hotel-number .transfer-booking__form-item .car-booking__form-search {
+  box-shadow: 0 4px 15px rgba(0,0,0,.1);
+}
+.hotel-number .transfer-booking__form-item .car-booking__form-search {
+  background: #fff;
+  border-radius: 25px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 33px;
+  max-height: 43px;
+  overflow: hidden;
+  padding: 5px 10px 5px 34px;
+  width: 90%;
+}
+.car-booking__form-search::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.car-booking__form-search::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.car-booking__form-search:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.car-booking__form-search::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.car-booking__form-search::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.car-booking__form-search:focus {
+  background: #58b4d1;
+  opacity: 0.3;
+}
+@media (max-width: 800px){
+  .transfer-booking__form-search.car {
+    margin-left: 15px;
+  }
+}
