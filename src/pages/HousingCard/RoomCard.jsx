@@ -253,7 +253,7 @@ const Description = {
   ],
   rulesList: [
     {
-      title: "Услуги включены в стоимость:",
+      title: "Правила проживания:",
       list: [
         "С домашними животными не принимаем",
         "Курение запрещено",
@@ -508,7 +508,7 @@ const RoomCard = () => {
         rules={true}
         owner={true}
         ownerTitle={"Владелец"}
-        imageAbout="/images/bxs_home.svg"
+        imageAbout={"/images/bxs_home.svg"}
       />
       {/*  Блок бронирования */}
       <section className="hotel-number calendar">

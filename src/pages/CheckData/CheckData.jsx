@@ -259,6 +259,18 @@ const CheckData = () => {
         <div className="page-way__decoration"></div>
         <p className="page-way__second">Оплата</p>
       </section>
+      <section className="transfer-catalog__stages-of-registration">
+        <p className="stages-of-registration__number">1</p>
+        <p className="stages-of-registration__text-active">Оформление заказа</p>
+        <img src="/images/done.svg" alt="" className="stages-of-registration__img"/>
+        <div className="stages-of-registration__decoration-fill"></div>
+        <p className="stages-of-registration__number stages-of-registration__number">
+          2
+        </p>
+        <p className="stages-of-registration__text stages-of-registration__text">
+          Оплата
+        </p>
+      </section>
       <section className="hotel-number calendar">
         <article className="calendar__title-wraper">
           <h5 className="calendar__title">Проверьте все данные и оплатите</h5>

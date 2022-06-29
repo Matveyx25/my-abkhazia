@@ -173,6 +173,11 @@ const Footer = ({ form }) => {
                   Стать партнером
                 </a>
               </li>
+              <li className="link-list__partners-item">
+                <a className="link-list__partners-item-link" href="#">
+                  Условия сотрудничества
+                </a>
+              </li>
             </ul>
           </div>
           <div className="link-list__feedback">
@@ -180,19 +185,11 @@ const Footer = ({ form }) => {
             <ul className="link-list__feedback-links">
               <li className="link-list__feedback-item">
                 <Link
-                  className="link-list__feedback-item-link"
-                  to="/hotel-card"
-                >
-                  Служба туристической заботы
-                </Link>
-              </li>
-              <li className="link-list__feedback-item">
-                <Link
-                  to="/town-card"
+                  to="/report-problem"
                   className="link-list__feedback-item-link"
                   href="#"
                 >
-                  Информация о безопасности
+                  Правила оказания услуг и условия отмены
                 </Link>
               </li>
               <li className="link-list__feedback-item">
@@ -206,7 +203,7 @@ const Footer = ({ form }) => {
               </li>
               <li className="link-list__feedback-item">
                 <Link
-                  to="/sentence-for"
+                  to="/sentence-form"
                   className="link-list__feedback-item-link"
                 >
                   Форма для предложений

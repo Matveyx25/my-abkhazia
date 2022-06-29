@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./HotelNumber.css";
 import Calendar from "react-calendar";
+import { Modal } from "../Modal/Modal";
+import { Carousel } from "react-carousel-minimal";
 
 const HotelNumberData = [
   {
@@ -195,6 +197,10 @@ const HotelNumber = () => {
   const [babies, changeBabies] = useState(0);
   const [passengers, setPassengers] = useState("");
 
+  const [isOpen, setIsOpen] = useState(false);
+  const [stateSrc, setSrc] = useState([]);
+  const [curr, setCurr] = useState(0);
+
   const changeAdultNumbers = (operation) => {
     if (operation == "+") {
       let some = adult + 1;
@@ -307,8 +313,32 @@ const HotelNumber = () => {
     }
   };
 
+  const closeViewer = () => {
+    setIsOpen(false)
+    setSrc([])
+    setCurr(0)
+  }
+
   return (
     <section className="hotel-number">
+       <Modal visible={isOpen} onClose={closeViewer}>
+          <Carousel
+              data={[...stateSrc].map(el => ({image: el}))}
+              width="920px"
+              height="540px"
+              slideNumber={true}
+              slideImageFit="contain"
+              thumbnails={true}
+              thumbnailWidth="160px"
+              thumbnailHeight="160px"
+              slideBackgroundColor="none"
+              style={{
+                textAlign: "center",
+                width: "920px",
+                margin: "0 35px",
+              }}
+            />
+      </Modal>
       <article className="hotel-number__title">
         <h3 className="hotel-number__title-text">Выбрать номер</h3>
         <p className="hotel-number__title-decoration"></p>
@@ -367,6 +397,10 @@ const HotelNumber = () => {
                   alt="glass"
                   width="24"
                   height="24"
+                  onClick={() => {
+                    setIsOpen(true)
+                    setSrc(el.imageArr)
+                  }}
                 />
                 <div className="hotel-number__card-options">
                   <h5 className="hotel-number__card-options-title">

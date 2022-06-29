@@ -11,6 +11,8 @@ import PreFooterCard from "../../components/PreFooterCard/PreFooterCard";
 import Landmark from "../../components/Landmark/Landmark";
 import CardDescriptionReviews from "../../components/CardDescriptionReviews/CardDescriptionReviews";
 import HotelNumber from "../../components/HotelNumber/HotelNumber";
+import { Modal } from "../../components/Modal/Modal";
+import { Carousel } from "react-carousel-minimal";
 
 const Zaglushka = [
   {
@@ -303,6 +305,7 @@ const HotelCard = () => {
         rules={true}
         owner={true}
         ownerTitle={"Владелец"}
+        imageAbout={"/images/bxs_home.svg"}
       />
       <HotelNumber />
       <CardMap

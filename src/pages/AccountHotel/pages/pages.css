@@ -845,6 +845,10 @@
     gap: 30px;
     margin-top: 30px;
 }
+.account-page__row-30 .account-page__btn,
+.account-page__row-30 .account-page__btn-outline{
+    max-width: 190px;
+}
 .account-page__wallet-card{
     width: 317px;
     background: #FFFFFF;
@@ -1383,6 +1387,14 @@ button{
     }
     .card-description__owner.small{
         max-width: 100%;
+    }
+    .account-page__row-30 .account-page__btn,
+    .account-page__row-30 .account-page__btn-outline{
+        max-width: none;
+        width: 100%;
+    }
+    .ballance-page__modal-content .account-page__row-30{
+        gap: 12px;
     }
 }
 

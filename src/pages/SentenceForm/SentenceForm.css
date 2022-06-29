@@ -59,3 +59,33 @@
 .sentence-form__half-wrapper {
   width: 48%;
 }
+@media screen and (max-width: 440px){
+  .sentence-form__body {
+    width: 100%;
+  }
+  .hotel-number.form{
+    padding: 0 16px;
+    padding-top: 9px;
+  }
+  .sentence-form__title{
+    margin-top: 0;
+  }
+  .sentence-form__half-wrapper{
+    width: 100%;
+  }
+  .sentence-form__half {
+    width: 100%;
+    display: block;
+  }
+  .sentence-form .form-body__submit{
+    margin-top: 0;
+  }
+  .sentence-form .form-body__checkbox-wrapper{
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .housing-catalog__page-way{
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

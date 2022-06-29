@@ -51,6 +51,26 @@
   line-height: 22px;
   color: #000000;
 }
+.stages-of-registration__img{
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+.stages-of-registration__text-active{
+  margin: 0 10px;
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #58b4d1;
+}
+.stages-of-registration__decoration-fill{
+  width: 210px;
+  height: 1px;
+  margin: 0 10px;
+  background: rgba(0, 0, 0, 0.3);
+}
 .stages-of-registration__decoration {
   width: 210px;
   height: 1px;

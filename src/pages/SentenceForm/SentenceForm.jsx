@@ -4,9 +4,11 @@ import Footer from "../../components/Footer/Footer";
 import Navigation from "../../components/Navigation/Navigation";
 import "./SentenceForm.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Modal } from "../../components/Modal/Modal";
 
 const SentenceForm = () => {
   const [checkedButton, changeChecked] = useState(true);
+  const [modal, setModal] = useState(false);
 
   const tongleCheked = () => {
     if (checkedButton) {
@@ -15,8 +17,20 @@ const SentenceForm = () => {
       changeChecked(true);
     }
   };
+
   return (
     <div className="sentence-form">
+      <Modal visible={modal} onClose={() => setModal(false)}>
+        <h1 className="ballance-page__title">Спасибо!</h1>
+        <p className="ballance-page__center-text">
+        Ваша заявка отправлена!
+        <br />
+        В ближайщее время мы с Вами свяжемся.
+       </p>
+       <div className="balance-page__btns">
+         <button className="account-page__btn" onClick={() => setModal(false)}>На сайт</button>
+       </div>
+      </Modal>
       <Header />
       <Navigation />
       <section className="housing-catalog__page-way">
@@ -28,7 +42,7 @@ const SentenceForm = () => {
           Форма для предложений
         </p>
       </section>
-      <section className="hotel-number calendar">
+      <section className="hotel-number form">
         <article className="calendar__title-wraper">
           <h5 className="calendar__title">Форма для предложений</h5>
           <p className="calendar__decoration"></p>
@@ -110,6 +124,7 @@ const SentenceForm = () => {
             class="form-body__submit"
             type="submit"
             value="Отправить"
+            onClick={() => setModal(true)}
           ></input>
           <div className="form-body__checkbox-wrapper">
             {checkedButton == true ? (
